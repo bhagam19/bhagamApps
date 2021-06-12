@@ -1,0 +1,42 @@
+Tareas pendientes:
+
+=======OPERATIVAS (Afectan el funcionamiento esencial de la aplicación)===============
+
+- En sesión activa de un usuario, al ejecutar la búsqueda debe arrojar solo bienes a cargo de ese usuario (En el momento enlista también bienes de otros usuarios).
+
+- En sesión de usuario, al aplicar el filtro carga el listado de todas las opciones. Debe cargar únicamente la opcion "Quitar Filtro" (Cuando no hay usuario logueado el filtro si muestra en la lista únicamente el valor filtrado).
+
+- Espacio entre los numeros de pagina y y cantidad de registros encontrados. En la primera pagina esta bien, en las demas hay que aumentar el espacio.
+
+- Organizar opción en filtros para no mostrar celdas vacias.
+
+- Respaldo de BD
+
+- Crear Código para el seriado e ID de cada Bien (000 para grupo de bien; 001 ... para cada bien único)
+
+- Incluir tablas: Cargo, Género
+
+
+=======MEJORAMIENTO (Ofrecen una mejor experiencia)===============
+
+- Fijar encabezado y Fijar tres primeras columnas. (Se hizo, pero el resultado no fue el esperado. Para mejorar)
+- crear opción "otras" que añadan nuevas opciones
+
+- Descargar archivo en excel
+- importar archivo en excel con cambios realizados offline.
+
+- Crear log de cambios a la base de datos.
+
+- Al rechazar un cambio, ofrecer una explicacion al docente que lo propuso.
+
+=======TAREAS FINALIZADAS===============
+- Crear acta de entrega para imprimir y firmar.
+- Vista de modificaciones pendientes por aprobación.
+- Confirmar aprobación y rechazo de cambios.
+- Continuar en vista de modificaciones mientras hayan pendientes por aprobar.
+- Ver perfil y actualizar contraseña desde modo Usuario.
+- Encriptar contraseñas.
+- Incluir seleccionador de Fecha en el campo "Fecha" del formulario de bienes, para editar la fecha.
+- Incluir lista de sugerencias para el ingreso de nuevos bienes (Con javascript y ajax)
+- Revisar la aprobación y rechazo de los detalles del bien, y enviar observacion (Que aparezca ventana para enviar observación)
+- Organizar el importador de archivo en excel "Inventario.xsls" (que se pueda seleccionar el archivo a cargar.)

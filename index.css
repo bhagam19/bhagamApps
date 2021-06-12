@@ -1,0 +1,603 @@
+html {
+	font-family: calibri, asap;
+	width: 99%;
+}
+#appsContenedorGlobal {
+	position: absolute;
+	top: 50px;
+	left: 0;
+	width: 100%;
+}
+#appsEncabezadoGral {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 50px;
+	margin: 0 auto;
+	border-bottom: 0.3px solid #AAAAAA;
+	z-index: 3;
+	background: rgb(255,255,255);
+	background: linear-gradient(122deg, rgba(255,255,255,1) 0%, rgba(171,169,191,1) 36%, rgba(163,159,170,1) 66%, rgba(116,0,0,1) 100%);
+	box-shadow: 2px 1px 5px 1px gray;
+}
+.appsBtnMenu {
+	position: relative;
+	width: 30px;
+	top: 13px;
+	left: 10px;
+	cursor: pointer;
+}
+.appsBtnMenu img {
+	width: 20px;
+	height: 20px
+}
+.appsLogo {
+	position: relative;
+	height: 45px;
+	width: 45px;
+	top: -22px;
+	left: 41px;
+	border-radius: 0;
+}
+.appsLogo img {
+	height: 45px;
+	width: 45px;
+}
+.appsTituloCinta {
+	position: relative;
+	top: -68px;
+	left: 90px;
+	width: 180px;
+	height: 45px;
+	font-size: 18px;
+	font-weight: bolder;
+	color: #a7061e;
+	text-align: center;
+	padding-left: 3px;
+}
+.appsContenidoCinta {
+	position: relative;
+	width: 50%;
+	top: -100px;
+	left: 340px;
+	font-weight: normal;
+	font-size: 14px;
+	color: #ffffff;
+	text-align: center;
+	padding-left: 5px;
+}
+.appsContenidoCinta ul {
+	position: relative;
+	left: 0;
+	list-style: none;
+	display: inline;
+}
+.appsContenidoCinta li {
+	position: relative;
+	width: auto;
+	left: -20px;
+	list-style: none;
+	display: inline;
+	margin: 4.0%;
+}
+
+.appsInicioSesionCinta {
+	position: relative;
+	float: right;
+	top: -125px;
+	width: auto;
+	text-align: center;
+	cursor: pointer;
+	margin: 3px;
+	padding: 2px 5px;
+	color: #0B0B61;
+	font-weight: bold;
+	font-size: 16px;
+	border: 1px solid #0B0B61;
+	border-radius: 5px;
+	background: white;
+}
+.appsInicioSesionCinta:hover {
+	background: #EBEEF8;
+	box-shadow: 0 0 2px 0 #EBEEF8;
+}
+/*==== Login====*/
+.appsFormularioLogin {
+	top: 0;
+	right: 0;
+}
+#appsFormulario {
+	position: absolute;
+	visibility: hidden;
+	padding: 10px;
+	border: 1px solid #0B0B61;
+	background: white;
+	box-shadow: 0px 0px 5px 0px gray;
+	border-radius: 5px;
+	z-index: 3;
+	font-weight: bold;
+	font-size: 0.8vw;
+}
+#appsFormulario input {
+	font-weight: normal;
+	font-size: 0.8vw;
+	border: 1px solid #0B0B61;
+	border-radius: 5px;
+}
+#appsFormulario input:focus {
+	border-color: #0B0B61;
+	box-shadow: 0 1px 1px rgba(14, 35, 144, 0.075)inset, 0 0 8px rgba(51, 228, 130,0.6);
+	outline: 0 none;
+}
+#appsFormulario .btnLogin {
+	left: 30px;
+	color: #0B0B61;
+	font-weight: bold;
+	font-size: 10px;
+	border: 1px solid #0B0B61;
+	border-radius: 5px;
+	background: white;
+	cursor: pointer;
+}
+#appsFormulario .btnLogin:hover {
+	background: #EBEEF8;
+	box-shadow: 0px 0px 2px 0px #EBEEF8;
+}
+/*==== LoggedIn====*/
+#appsSesionLogedIn {
+	position: relative;
+	width: auto;
+	top: -125px;
+	float: right;
+	cursor: pointer;
+	color: #0B0B61;
+	padding: 2px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border: 1px solid #0B0B61;
+	border-radius: 25px;
+	/*box-shadow:1px 1px 2px 1px #0B0B61;	*/
+	background: white;
+}
+#appsSesionLogedIn:hover {
+	background: #AABAF6;
+	box-shadow: 0px 0px 5px 0px #EBEEF8;
+}
+.appsSesionImg {
+	float: right;
+	width: 30px;
+	height: 30px;
+}
+/*====Formularios=====*/
+.appsFormularioDatosUsuario {
+	visibility: visible;
+	top: 0;
+	right: 28px;
+}
+.datosPersonales {
+	border-bottom: 1px solid gray;
+	margin: 10px 0px;
+	padding: 10px 0px;
+}
+.sesionImgInside {
+	margin: auto;
+	padding: 10px;
+	width: 50px;
+	height: 50px;
+}
+.appsFormularioDatosUsuario .etiqueta {
+	font-weight: bold;
+	padding: 10px 0px;
+}
+.appsFormularioDatosUsuario .datos {
+	font-weight: normal;
+	font-style: italic;
+}
+.appsFormularioDatosUsuario .btn {
+	width: auto;
+	left: 30px;
+	color: #0B0B61;
+	font-weight: bold;
+	font-size: 10px;
+	text-align: center;
+	border: 1px solid #0B0B61;
+	border-radius: 5px;
+	background: #EBEEF8;
+	cursor: pointer;
+	padding: 0px 5px;
+}
+.appsFormularioDatosUsuario .btn:hover {
+	background: #EBEEF8;
+	box-shadow: 0px 0px 2px 0px #EBEEF8;
+	box-shadow: 0 0 5px #353DA5;
+}
+.appsFormularioNuevoUsuario{
+	top: -500px;
+	right: 0;
+}
+/*=======Menú Navegación==========*/
+.menuNavegacion {
+	position: relative;
+	top: 75px;
+	width: 24px;
+	padding: 5px;
+	display: inline-block;
+	line-height: 18px;
+	background: #EFFDF5;
+	overflow: hidden;
+	z-index: 3;
+	/*box-shadow: 1px 0px 1px 1px gray;*/
+	background: white;
+	/*background: linear-gradient(to right, rgba(219, 246, 229,1) 0%,rgba(219, 230, 246,1) 100%);*/
+}
+.menuNavegacion ul {
+	position: relative;
+	top: -15px;
+	list-style: none;
+}
+.menuNavegacion img {
+	padding-right: 5px;
+}
+.menuNavegacion li {
+	position: relative;
+	width: 20px;
+	left: -40px;
+	border-style: solid;
+	border-width: 1px;
+	border-radius: 3px;
+	border-color: gray;
+	padding-left: 5px;
+	overflow: hidden;
+	cursor: pointer;
+}
+.menuNavegacion .menu li a {
+	width: 100%;
+	text-decoration: none;
+	padding: 1px 1px;
+	padding-left: 1px;
+	display: block;
+	font-family: arial, serif;
+	font-weight: bold;
+	font-size: 0.6vw;
+}
+.menuNavegacion .menu li a:hover {
+	background: #D0ECE7;
+	border-radius: 5px;
+	color: black;
+}
+.menuNavegacion .menu ul {
+	position: relative;
+	top: 0px;
+	left: -10px;
+}
+.menuNavegacion .menu .activado > a {
+	background: green;
+}
+.submenuAdmon {
+	display: none;
+	overflow: hidden;
+	transition: max-height 0.2s ease-out;
+}
+/*====CuerpoPrincipal====*/
+#appsContenedor {
+	position: relative;
+	top: 50px;
+	margin: 0 auto;
+	text-align: center;
+}
+#boton {
+	display: inline-block;
+	width: 150px;
+	text-align: center;
+	margin: 2px;
+}
+#boton img {
+	height: 120px;
+	width: 120px;
+	margin: 0 auto;
+	border-radius: 25px;
+	border: 1px solid #bdcdff;
+	box-shadow: 1px 1px 5px #a8baf5;
+}
+#boton p {
+	font-weight: normal;
+	line-height: auto;
+	font-size: 14px;
+	color: #8895bf;
+}
+#boton a {
+	text-decoration: none;
+}
+#h2 {
+	position: relative;
+	top: 100px;
+	text-align: center;
+	color: #1a3799;
+	z-index: 3;
+}
+/*==========ADAPTABILIDAD===============*/
+@media screen and (max-width:1400px) {
+	html {
+		width: 100%;
+	}
+	#boton {
+		width: 180px;
+	}
+	img {
+		height: 160px;
+		width: 160px;
+	}
+
+}
+@media screen and (max-width:800px) {
+	/* Esta es para mi celular*/
+	#appsContenedorGlobal {
+		position: absolute;
+		top: 150px;
+		left: 0;
+		width: 100%;
+	}
+	#appsEncabezadoGral {
+		height: 100px;
+		z-index: 99;
+	}
+	.appsBtnMenu {
+		position: relative;
+		top: 20px;
+		left: 40px;
+		width: 60px;
+		height: 60px;
+		cursor: pointer;
+	}
+	.appsBtnMenu img {
+		width: 60px;
+		height: 60px;
+	}
+	.appsLogo {
+		position: relative;
+		top: -55px;
+		left: 120px;
+		height: 90px;
+		width: 90px;
+	}
+	.appsLogo img {
+		height: 90px;
+		width: 90px;
+	}
+	.appsTituloCinta {
+		position: relative;
+		top: -140px;
+		left: 215px;
+		width: 450px;
+		height: auto;
+		font-size: 5vw;
+		user-select: none;
+	}
+	.appsContenidoCinta {
+		position: relative;
+		top: -130px;
+		left: 0px;
+		width: 100%;
+		height: auto;
+		padding: 5px 0px;
+		font-size: 2.2vw;
+		color: black;
+		box-shadow: 1px 1px 1px 1px gray;
+		background: white;
+		user-select: none;
+	}
+	.appsInicioSesionCinta {
+		position: relative;
+		top: -130px;
+		left: -15px;
+		font-size: 5vw;
+		user-select: none;
+	}
+	/*==== Login====*/
+#appsFormulario {
+	position: absolute;
+	visibility: hidden;
+	padding: 10px;
+	font-weight: bold;
+	font-size: 5vw;
+	border: 1px solid #0B0B61;
+	background: white;
+	box-shadow: 0px 0px 5px 0px gray;
+	border-radius: 5px;
+	z-index: 4;
+}
+.appsFormularioLogin {
+	top:	30px;
+	right: 20px;
+	width: 480px;
+}
+#appsFormulario input {
+	font-weight: normal;
+	font-size: 5vw;
+	border: 1px solid #0B0B61;
+	border-radius: 5px;
+}
+#appsFormulario input:focus {
+	border-color: #0B0B61;
+	box-shadow: 0 1px 1px rgba(14, 35, 144, 0.075)inset, 0 0 8px rgba(51, 228, 130,0.6);
+	outline: 0 none;
+}
+#appsFormulario .btnLogin {
+	left: 30px;
+	color: #0B0B61;
+	font-weight: bold;
+	font-size: 5vw;
+	border: 1px solid #0B0B61;
+	border-radius: 5px;
+	background: #e4e3e8;
+	cursor: pointer;
+}
+#appsFormulario .btnLogin:hover {
+	background: #EBEEF8;
+	box-shadow: 0px 0px 2px 0px #EBEEF8;
+}
+	/*==== LogedIn====*/
+	#appsSesionLogedIn {
+		position: relative;
+		top: -255px;
+		right: 30px;
+		width: 85px;
+		height:85px;
+		border: 1px solid #0B0B61;
+		border-radius: 50px;
+	}
+	.appsSesionNom {
+		position: relative;
+		right: -100px;
+		padding: 2px 10px;
+		font-size: 2.3vw;
+		font-weight: bold;
+	}
+	.appsSesionImg img{
+		position: absolute;
+		top:3px;
+		right:3px;
+		width: 80px;
+		height: 80px;
+		border: 1px solid #0B0B61;
+		border-radius: 50px;
+	}
+	.sesionNom .nom {
+		position: relative;
+		top: 0px;
+		right: -20px;
+		text-align: right;
+	}
+	#sesionLogedIn .btn {
+		position: relative;
+		top: 0px;
+		right: 0px;
+		padding: 3px 4px;
+		font-size: 3.5vw;
+		font-weight: bold;
+		color: #0B0B61;
+		border: 1px solid #0B0B61;
+		border-radius: 5px;
+		background: #EBEEF8;
+	}
+	.formularioLogin {
+		position: absolute;
+		top: 190px;
+		right: -45px;
+		width: auto;
+		border: 1px solid #0B0B61;
+		font-size: 4.5vw;
+		font-weight: bold;
+		box-shadow: 0px 0px 5px 0px gray;
+		border-radius: 5px;
+		z-index: 3;
+		background: white;
+	}
+	.formularioLogin input {
+		font-weight: normal;
+		font-size: 4.5vw;
+		border: 1px solid #0B0B61;
+		border-radius: 5px;
+	}
+	.formularioLogin input:focus {
+		border-color: #0B0B61;
+		box-shadow: 0 1px 1px rgba(14, 35, 144, 0.075)inset, 0 0 8px rgba(51, 228, 130,0.6);
+		outline: 0 none;
+	}
+	.formularioLogin .btnLogin {
+		left: 30px;
+		color: #0B0B61;
+		font-weight: bold;
+		font-size: 4.5vw;
+		border: 1px solid #0B0B61;
+		border-radius: 5px;
+		background: white;
+	}
+	#parche {
+		position: fixed;
+		top: 130px;
+		height: 160px;
+		width: 100%;
+		font-size: 3vw;
+		text-align: center;
+		color: #1a3799;
+		z-index: 2;
+		background: white;
+		user-select: none;
+	}	/*actua como un separador*/
+	#h2 {
+		position: fixed;
+		top: 200px;
+		font-size: 3vw;
+		width: 100%;
+		text-align: center;
+		color: #1a3799;
+		z-index: 3;
+		user-select: none;
+	}	
+	#appsContenedor {
+		position: relative;
+		display:inline-block;
+		top: 270px;
+		user-select: none;
+	}
+	#boton {
+		position:relative;
+		top:0px;
+		width: 96%;
+		height: 100px;
+		margin-bottom: 15px;
+		border-radius: 5px;
+		box-shadow: 0px 0px 1px #021860;
+		border: 0px solid #021860;
+		user-select: none;
+	}
+	#boton img {
+		position: relative;
+		top: 4px;
+		left:-260px;
+		height: 90px;
+		width: 90px;
+		border-radius: 5px;
+		box-shadow: 1px 1px 5px #EBE6EC;
+		user-select: none;
+	}
+	#boton p {
+		position: absolute;
+		top: -20px;
+		left: 140px;
+		width: 500px;
+		color: black;
+		font-weight: normal;
+		text-align: left;
+		line-height: auto;
+		font-size: 48px;
+		user-select: none;
+	}
+	
+	/*====Menú de Navegación====*/
+	#menuNavegacion {
+		position: relative;
+		left: 0px;
+		top: 180px;
+		width: 150px;
+	}
+	#menuNavegacion a {
+		font-size: 8px;
+	}
+	#contenedor {
+		top: 190px;
+		left: 160px;
+		font-size: 8px;
+	}
+	.tablaBD td img {
+		height: 10px;
+		width: 10px;
+		padding: 2px 2px;
+	}
+	.encabezadoTabla {
+		padding: 1px 3px;
+	}
+}

@@ -1,0 +1,36 @@
+tabla usuarios
+	-id
+	-foto
+	-usuario
+	-contraseña
+	-nombres
+	-apellidos
+	-edad
+	-correo electrónico
+	-institucion
+	-asignatura1
+	-asignatura2
+	-asignatura3
+	-asignatura4
+
+tabla grupos
+	-usuario
+	-contraseña
+	-grupo
+
+tabla estudiantes
+	-usuario
+	-contraseña
+	-grupo
+	-nombre
+	-apellido
+	-edad
+	
+parte 1
+	-usuario
+	-contraseña
+	-asignatura
+	-imagen
+	-opcion1
+	-opcion2
+	-opcion3

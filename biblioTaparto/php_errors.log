@@ -1,0 +1,10 @@
+[23-Sep-2017 00:45:45 UTC] PHP Warning:  include(..conexion/datosConexion.php): failed to open stream: No such file or directory in /home/ubuntu/workspace/bdUsuarios/nuevoUsuario.php on line 37
+[23-Sep-2017 00:45:45 UTC] PHP Stack trace:
+[23-Sep-2017 00:45:45 UTC] PHP   1. {main}() /home/ubuntu/workspace/bdUsuarios/nuevoUsuario.php:0
+[23-Sep-2017 00:45:45 UTC] PHP Warning:  include(): Failed opening '..conexion/datosConexion.php' for inclusion (include_path='.:/usr/share/php:/usr/share/pear') in /home/ubuntu/workspace/bdUsuarios/nuevoUsuario.php on line 37
+[23-Sep-2017 00:45:45 UTC] PHP Stack trace:
+[23-Sep-2017 00:45:45 UTC] PHP   1. {main}() /home/ubuntu/workspace/bdUsuarios/nuevoUsuario.php:0
+[05-Apr-2018 16:45:01 UTC] PHP Warning:  mysqli_close(): 3 is not a valid mysqli-Link resource in /home/ubuntu/workspace/bdLibros/formularioActualizarLibro.php on line 182
+[05-Apr-2018 16:45:01 UTC] PHP Stack trace:
+[05-Apr-2018 16:45:01 UTC] PHP   1. {main}() /home/ubuntu/workspace/bdLibros/formularioActualizarLibro.php:0
+[05-Apr-2018 16:45:01 UTC] PHP   2. mysqli_close() /home/ubuntu/workspace/bdLibros/formularioActualizarLibro.php:182

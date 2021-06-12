@@ -1,0 +1,184 @@
+@media screen{
+	#encabezadoGenerarActa{
+		position:fixed;
+		right:10px;
+		z-index:2;
+		background:white;
+		box-shadow: 2px 2px 2px 2px gray;
+		border-radius: 5px;
+		display:block;
+	}
+
+	#hoja{
+		position:relative;
+		width:960px;
+		background:white;
+		border:1px solid #A0A0A0;
+		}
+
+	#encabezadoActa{
+		position:relative;
+		top:0px;
+		left:70px;
+		width:810px;
+		height:160px;
+		}
+
+	#legalidad{
+		position:relative;
+		left:90px;
+		top:-70px;
+		width:710px;
+	}
+
+	#separadorColores{
+		position:relative;
+		top:-80px;
+		width:810px;
+		margin:0 auto;
+	}
+
+	#identificacion{
+		position:relative;
+		top:0px;
+		width:810px;
+		margin:0 auto;	
+	}
+
+	#tabla{
+		position: relative;
+		top:-10px;
+		width:810px;
+		margin:0 auto;
+	}
+
+	#tabla td{
+		word-wrap: break-word;
+	}
+
+	#encabezadoTabla{
+		background:#A0A0A0;
+		font-size:11px;
+	}
+
+	#tabla2{
+		position: relative;
+		top:0px;
+		width:810px;
+		margin:0 auto;
+	}
+
+	#firmas{
+		position: relative;
+		top:0px;
+		width:810px;
+		margin:0 auto;
+	}
+
+	#piedePaginaActa{
+		position:relative;
+		bottom: 0px;
+		width:810px;
+		height:90px;
+		margin:0 auto;
+		bottom:0px;
+		page-break-after:always;
+	}
+
+	#breakline{
+		page-break-before:always;
+	}
+
+}
+
+@media print{
+	
+	@page {
+    	size: 210mm 297mm; 
+      	margin: 10mm 10mm 10mm 10mm;    	
+    }
+   
+	#encabezadoGenerarActa{
+		display:none;
+	}	
+
+	#hoja{
+		border:none;
+		}
+
+	#encabezadoActa{
+		position:fixed;
+		top:-20px;
+		}
+
+	#legalidad{
+		position:relative;
+		left:90px;
+		top:-70px;
+		width:710px;
+	}
+
+	#separadorColores{
+		position:relative;
+		top:-80px;
+		width:810px;
+		margin:0 auto;
+	}
+
+	#identificacion{
+		position:relative;
+		top:120px;
+	}
+
+	#tabla{
+		position: relative;
+		top:100px;
+	}
+	
+	#tituloPagina{
+		position: relative;
+		top:130px;
+	}
+
+	#tituloPagina2{
+		position: relative;
+		top:20px;
+	}
+
+	#tabla2{
+		position: relative;
+		top:130px;
+		width:810px;
+		margin:0 auto;
+	}
+
+	#encabezadoTabla{
+		background:#A0A0A0;
+		font-size:11px;
+	}
+
+	#firmas{
+		position: relative;
+		top:120px;
+	}
+
+	#piedePaginaActa{
+		position:fixed;
+		bottom: 0px;
+		height:90px;
+		width:810px;		
+		margin:0 auto;
+		page-break-before: always;
+	}
+
+	#breakline{
+		page-break-before:always;
+		border:0px solid white;
+	}
+
+	#hr1{
+		page-break-before:always;
+		border:0px solid white;
+	}
+
+}

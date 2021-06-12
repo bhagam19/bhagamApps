@@ -1,0 +1,120 @@
+<NotepadPlus>
+    <Project name="CosasporHacer" />
+    <Project name="BiblioApp">
+        <Folder name="portadas">
+            <File name="C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\projects\BiblioApp\portadas\cover.jpg" />
+            <File name="C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\projects\BiblioApp\portadas\emilio.jpg" />
+            <File name="C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\projects\BiblioApp\portadas\img1.jpg" />
+            <File name="C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\projects\BiblioApp\portadas\photo.jpg" />
+            <File name="C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\projects\BiblioApp\portadas\vueltamundo.jpg" />
+        </Folder>
+        <File name="C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\projects\BiblioApp\actualizarLibro.php" />
+        <File name="C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\projects\BiblioApp\actualizarUsuario.php" />
+        <File name="C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\projects\BiblioApp\Biblio App.zip" />
+        <File name="C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\projects\BiblioApp\cerrarsesion.php" />
+        <File name="C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\projects\BiblioApp\codigoCrear.php" />
+        <File name="C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\projects\BiblioApp\conectarBD.css" />
+        <File name="C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\projects\BiblioApp\conectarBD.php" />
+        <File name="C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\projects\BiblioApp\conectarBD2.php" />
+        <File name="C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\projects\BiblioApp\datosConexion.php" />
+        <File name="C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\projects\BiblioApp\eliminarLibro.php" />
+        <File name="C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\projects\BiblioApp\eliminarusuario.php" />
+        <File name="C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\projects\BiblioApp\encabezado.php" />
+        <File name="C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\projects\BiblioApp\formularioActualizarLibro.js" />
+        <File name="C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\projects\BiblioApp\formularioActualizarLibro.php" />
+        <File name="C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\projects\BiblioApp\formularioaltausuario.php" />
+        <File name="C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\projects\BiblioApp\formularioNuevoLibro.js" />
+        <File name="C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\projects\BiblioApp\formularioNuevoLibro.php" />
+        <File name="C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\projects\BiblioApp\gestionarUsuarios.php" />
+        <File name="C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\projects\BiblioApp\index.php" />
+        <File name="C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\projects\BiblioApp\instalacion.php" />
+        <File name="C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\projects\BiblioApp\javascripts.js" />
+        <File name="C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\projects\BiblioApp\login.php" />
+        <File name="C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\projects\BiblioApp\logsEscribir.php" />
+        <File name="C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\projects\BiblioApp\logsVer.php" />
+        <File name="C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\projects\BiblioApp\menuBuscar.php" />
+        <File name="C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\projects\BiblioApp\menuNavegacion.php" />
+        <File name="C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\projects\BiblioApp\nuevoLibro.php" />
+        <File name="C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\projects\BiblioApp\nuevoUsuario.php" />
+        <File name="C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\projects\BiblioApp\portadaSubir.php" />
+        <File name="C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\projects\BiblioApp\principal.css" />
+        <File name="C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\projects\BiblioApp\principal.php" />
+        <File name="C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\projects\BiblioApp\validarFormulario.js" />
+        <File name="C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\projects\BiblioApp\verBD.js" />
+        <File name="C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\projects\BiblioApp\verBD.php" />
+    </Project>
+    <Project name="FavoritosOnline">
+        <File name="C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\projects\FavoritosOnline\actualizarfavoritos.php" />
+        <File name="C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\projects\FavoritosOnline\actualizarusuario.php" />
+        <File name="C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\projects\FavoritosOnline\cerrarsesion.php" />
+        <File name="C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\projects\FavoritosOnline\crearfavorito.php" />
+        <File name="C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\projects\FavoritosOnline\crearusuario.php" />
+        <File name="C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\projects\FavoritosOnline\eliminarfavorito.php" />
+        <File name="C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\projects\FavoritosOnline\eliminarusuario.php" />
+        <File name="C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\projects\FavoritosOnline\Favoritos Online" />
+        <File name="C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\projects\FavoritosOnline\formularioactualizar.php" />
+        <File name="C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\projects\FavoritosOnline\formularioactualizarusuario.php" />
+        <File name="C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\projects\FavoritosOnline\formularioaltausuario.php" />
+        <File name="C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\projects\FavoritosOnline\formulariologin.php" />
+        <File name="C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\projects\FavoritosOnline\gestionusuarios.php" />
+        <File name="C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\projects\FavoritosOnline\index.php" />
+        <File name="C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\projects\FavoritosOnline\instalacion.php" />
+        <File name="C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\projects\FavoritosOnline\login.php" />
+        <File name="C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\projects\FavoritosOnline\logs.php" />
+        <File name="C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\projects\FavoritosOnline\principal.css" />
+        <File name="C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\projects\FavoritosOnline\principal.php" />
+        <File name="C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\projects\FavoritosOnline\prueba date.php" />
+        <File name="C:\Program Files (x86)\EasyPHP-DevServer-13.1VC9\data\localweb\projects\FavoritosOnline\verlogs.php" />
+    </Project>
+    <Project name="CreaExamen">
+        <Folder name="conexion">
+            <File name="conexion\conectarBD.css" />
+            <File name="conexion\conectarBD.php" />
+            <File name="conexion\conectarBD2.php" />
+            <File name="conexion\datosConexion.php" />
+        </Folder>
+        <Folder name="images">
+            <File name="images\baby.jpg" />
+            <File name="images\dog.jpg" />
+            <File name="images\one and five.gif" />
+            <File name="images\oveja.jpg" />
+            <File name="images\pencil.jpg" />
+            <File name="images\teacher.jpg" />
+            <File name="images\tortuga.jpg" />
+            <File name="images\wake up.jpg" />
+        </Folder>
+        <Folder name="jquery">
+            <File name="jquery\jquery-1.9.1.js" />
+            <File name="jquery\jquery-ui.custom.js" />
+            <File name="jquery\jquery.ui.core.js" />
+            <File name="jquery\jquery.ui.draggable.js" />
+            <File name="jquery\jquery.ui.mouse.js" />
+            <File name="jquery\jquery.ui.widget.js" />
+        </Folder>
+        <Folder name="login">
+            <File name="login\login.php" />
+            <File name="login\loginFormulario.php" />
+            <File name="login\cerrarsesion.php" />
+        </Folder>
+        <Folder name="principal">
+            <File name="principal\encabezadoFormulario.php" />
+            <File name="principal\menuPrincipal.php" />
+            <File name="principal\principal.css" />
+            <File name="principal\principal.js" />
+            <File name="principal\principal.php" />
+            <File name="principal\jarvis.css" />
+        </Folder>
+        <Folder name="tipoImagenes">
+            <File name="tipoImagenes\imagenSubir.php" />
+            <File name="tipoImagenes\nuevaPreguntaTipoImagen.php" />
+            <File name="tipoImagenes\tipoImagen.php" />
+            <File name="tipoImagenes\tipoImagenFormulario.php" />
+            <File name="tipoImagenes\verPreguntasTipoImagen.php" />
+        </Folder>
+        <File name="componentes de las tablas.txt" />
+        <File name="escudo.jpg" />
+        <File name="index.php" />
+        <File name="instalacion.php" />
+        <File name="jquery-ui-1.10.2.custom.zip" />
+    </Project>
+</NotepadPlus>

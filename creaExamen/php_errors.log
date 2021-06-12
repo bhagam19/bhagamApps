@@ -1,0 +1,111 @@
+[09-May-2015 20:24:40 UTC] PHP Warning:  include(menuPrincipal.php): failed to open stream: No such file or directory in /home/ubuntu/workspace/principal/principal.php on line 3
+[09-May-2015 20:24:40 UTC] PHP Warning:  include(): Failed opening 'menuPrincipal.php' for inclusion (include_path='.:/usr/share/php:/usr/share/pear') in /home/ubuntu/workspace/principal/principal.php on line 3
+[09-May-2015 20:24:40 UTC] PHP Warning:  include(encabezadoFormulario.php): failed to open stream: No such file or directory in /home/ubuntu/workspace/principal/principal.php on line 4
+[09-May-2015 20:24:40 UTC] PHP Warning:  include(): Failed opening 'encabezadoFormulario.php' for inclusion (include_path='.:/usr/share/php:/usr/share/pear') in /home/ubuntu/workspace/principal/principal.php on line 4
+[09-May-2015 20:24:40 UTC] PHP Warning:  include(../login/loginFormulario.php): failed to open stream: No such file or directory in /home/ubuntu/workspace/principal/principal.php on line 5
+[09-May-2015 20:24:40 UTC] PHP Warning:  include(): Failed opening '../login/loginFormulario.php' for inclusion (include_path='.:/usr/share/php:/usr/share/pear') in /home/ubuntu/workspace/principal/principal.php on line 5
+[09-May-2015 20:29:23 UTC] PHP Warning:  include(menuPrincipal.php): failed to open stream: No such file or directory in /home/ubuntu/workspace/principal/principal.php on line 3
+[09-May-2015 20:29:23 UTC] PHP Warning:  include(): Failed opening 'menuPrincipal.php' for inclusion (include_path='.:/usr/share/php:/usr/share/pear') in /home/ubuntu/workspace/principal/principal.php on line 3
+[09-May-2015 20:29:23 UTC] PHP Warning:  include(../login/loginFormulario.php): failed to open stream: No such file or directory in /home/ubuntu/workspace/principal/principal.php on line 5
+[09-May-2015 20:29:23 UTC] PHP Warning:  include(): Failed opening '../login/loginFormulario.php' for inclusion (include_path='.:/usr/share/php:/usr/share/pear') in /home/ubuntu/workspace/principal/principal.php on line 5
+[09-May-2015 22:00:33 UTC] PHP Parse error:  syntax error, unexpected end of file in /home/ubuntu/workspace/css/jarvisVerde.php on line 22
+[09-May-2015 22:00:45 UTC] PHP Parse error:  syntax error, unexpected end of file in /home/ubuntu/workspace/css/jarvisVerde.php on line 22
+[09-May-2015 22:01:21 UTC] PHP Parse error:  syntax error, unexpected end of file in /home/ubuntu/workspace/css/jarvisVerde.php on line 29
+[09-May-2015 22:02:08 UTC] PHP Parse error:  syntax error, unexpected end of file in /home/ubuntu/workspace/css/jarvisVerde.php on line 45
+[09-May-2015 22:04:11 UTC] PHP Parse error:  syntax error, unexpected end of file in /home/ubuntu/workspace/css/jarvisVerde.php on line 45
+[09-May-2015 22:04:30 UTC] PHP Parse error:  syntax error, unexpected end of file in /home/ubuntu/workspace/css/jarvisVerde.php on line 45
+[09-May-2015 22:07:55 UTC] PHP Parse error:  syntax error, unexpected end of file in /home/ubuntu/workspace/css/jarvisVerde.php on line 45
+[09-May-2015 22:08:34 UTC] PHP Parse error:  syntax error, unexpected end of file in /home/ubuntu/workspace/css/jarvisVerde.php on line 45
+[09-May-2015 22:09:01 UTC] PHP Parse error:  syntax error, unexpected end of file in /home/ubuntu/workspace/css/jarvisVerde.php on line 45
+[09-May-2015 22:09:16 UTC] PHP Parse error:  syntax error, unexpected end of file in /home/ubuntu/workspace/css/jarvisVerde.php on line 45
+[09-May-2015 22:11:54 UTC] PHP Parse error:  syntax error, unexpected end of file in /home/ubuntu/workspace/css/jarvisVerde.php on line 45
+[09-May-2015 22:12:59 UTC] PHP Parse error:  syntax error, unexpected end of file in /home/ubuntu/workspace/css/jarvisVerde.php on line 45
+[09-May-2015 22:29:17 UTC] PHP Parse error:  syntax error, unexpected end of file in /home/ubuntu/workspace/css/jarvisVerde.php on line 45
+[09-May-2015 22:29:56 UTC] PHP Parse error:  syntax error, unexpected end of file, expecting variable (T_VARIABLE) or heredoc end (T_END_HEREDOC) or ${ (T_DOLLAR_OPEN_CURLY_BRACES) or {$ (T_CURLY_OPEN) in /home/ubuntu/workspace/css/jarvisVerde.php on line 30
+[09-May-2015 22:30:13 UTC] PHP Parse error:  syntax error, unexpected '.' in /home/ubuntu/workspace/css/jarvisVerde.php on line 10
+[09-May-2015 22:30:18 UTC] PHP Parse error:  syntax error, unexpected '.' in /home/ubuntu/workspace/css/jarvisVerde.php on line 10
+[09-May-2015 22:30:29 UTC] PHP Parse error:  syntax error, unexpected '.' in /home/ubuntu/workspace/css/jarvisVerde.php on line 10
+[09-May-2015 22:30:45 UTC] PHP Parse error:  syntax error, unexpected '.' in /home/ubuntu/workspace/css/jarvisVerde.php on line 10
+[09-May-2015 22:31:09 UTC] PHP Parse error:  syntax error, unexpected '.' in /home/ubuntu/workspace/css/jarvisVerde.php on line 10
+[09-May-2015 23:05:55 UTC] PHP Notice:  Undefined variable: boderHover in /home/ubuntu/workspace/css/jarvisVerde.php on line 75
+[09-May-2015 23:05:55 UTC] PHP Notice:  Undefined variable: boderHover in /home/ubuntu/workspace/css/jarvisVerde.php on line 76
+[09-May-2015 23:05:55 UTC] PHP Notice:  Undefined variable: boderHover in /home/ubuntu/workspace/css/jarvisVerde.php on line 87
+[09-May-2015 23:05:55 UTC] PHP Notice:  Undefined variable: boderHover in /home/ubuntu/workspace/css/jarvisVerde.php on line 88
+[09-May-2015 23:05:55 UTC] PHP Notice:  Undefined variable: boderHover in /home/ubuntu/workspace/css/jarvisVerde.php on line 92
+[09-May-2015 23:07:33 UTC] PHP Notice:  Undefined variable: boderHover in /home/ubuntu/workspace/css/jarvisVerde.php on line 74
+[09-May-2015 23:07:33 UTC] PHP Notice:  Undefined variable: boderHover in /home/ubuntu/workspace/css/jarvisVerde.php on line 76
+[09-May-2015 23:07:33 UTC] PHP Notice:  Undefined variable: boderHover in /home/ubuntu/workspace/css/jarvisVerde.php on line 77
+[09-May-2015 23:07:33 UTC] PHP Notice:  Undefined variable: boderHover in /home/ubuntu/workspace/css/jarvisVerde.php on line 88
+[09-May-2015 23:07:33 UTC] PHP Notice:  Undefined variable: boderHover in /home/ubuntu/workspace/css/jarvisVerde.php on line 89
+[09-May-2015 23:08:31 UTC] PHP Notice:  Undefined variable: boderHover in /home/ubuntu/workspace/css/jarvisVerde.php on line 75
+[09-May-2015 23:08:31 UTC] PHP Notice:  Undefined variable: boderHover in /home/ubuntu/workspace/css/jarvisVerde.php on line 77
+[09-May-2015 23:08:31 UTC] PHP Notice:  Undefined variable: boderHover in /home/ubuntu/workspace/css/jarvisVerde.php on line 78
+[09-May-2015 23:08:31 UTC] PHP Notice:  Undefined variable: boderHover in /home/ubuntu/workspace/css/jarvisVerde.php on line 89
+[09-May-2015 23:08:31 UTC] PHP Notice:  Undefined variable: boderHover in /home/ubuntu/workspace/css/jarvisVerde.php on line 90
+[09-May-2015 23:09:03 UTC] PHP Notice:  Undefined variable: boderHover in /home/ubuntu/workspace/css/jarvisVerde.php on line 75
+[09-May-2015 23:09:03 UTC] PHP Notice:  Undefined variable: boderHover in /home/ubuntu/workspace/css/jarvisVerde.php on line 77
+[09-May-2015 23:09:03 UTC] PHP Notice:  Undefined variable: boderHover in /home/ubuntu/workspace/css/jarvisVerde.php on line 78
+[09-May-2015 23:09:03 UTC] PHP Notice:  Undefined variable: boderHover in /home/ubuntu/workspace/css/jarvisVerde.php on line 89
+[09-May-2015 23:09:03 UTC] PHP Notice:  Undefined variable: boderHover in /home/ubuntu/workspace/css/jarvisVerde.php on line 90
+[09-May-2015 23:09:47 UTC] PHP Notice:  Undefined variable: boderHover in /home/ubuntu/workspace/css/jarvisVerde.php on line 75
+[09-May-2015 23:09:47 UTC] PHP Notice:  Undefined variable: boderHover in /home/ubuntu/workspace/css/jarvisVerde.php on line 77
+[09-May-2015 23:09:47 UTC] PHP Notice:  Undefined variable: boderHover in /home/ubuntu/workspace/css/jarvisVerde.php on line 78
+[09-May-2015 23:09:47 UTC] PHP Notice:  Undefined variable: boderHover in /home/ubuntu/workspace/css/jarvisVerde.php on line 89
+[09-May-2015 23:09:47 UTC] PHP Notice:  Undefined variable: boderHover in /home/ubuntu/workspace/css/jarvisVerde.php on line 90
+[09-May-2015 23:10:45 UTC] PHP Notice:  Undefined variable: boderHover in /home/ubuntu/workspace/css/jarvisVerde.php on line 75
+[09-May-2015 23:10:45 UTC] PHP Notice:  Undefined variable: boderHover in /home/ubuntu/workspace/css/jarvisVerde.php on line 78
+[09-May-2015 23:11:10 UTC] PHP Notice:  Undefined variable: boderHover in /home/ubuntu/workspace/css/jarvisVerde.php on line 75
+[09-May-2015 23:11:51 UTC] PHP Notice:  Undefined variable: boderHover in /home/ubuntu/workspace/css/jarvisVerde.php on line 75
+[09-May-2015 23:12:34 UTC] PHP Notice:  Undefined variable: boderHover in /home/ubuntu/workspace/css/jarvisVerde.php on line 78
+[09-May-2015 23:13:03 UTC] PHP Notice:  Undefined variable: boderHover in /home/ubuntu/workspace/css/jarvisVerde.php on line 78
+[09-May-2015 23:15:20 UTC] PHP Notice:  Undefined variable: boderHover in /home/ubuntu/workspace/css/jarvisVerde.php on line 77
+[09-May-2015 23:16:32 UTC] PHP Notice:  Undefined variable: fondo0 in /home/ubuntu/workspace/css/jarvisVerde.php on line 36
+[09-May-2015 23:16:32 UTC] PHP Notice:  Undefined variable: boderHover in /home/ubuntu/workspace/css/jarvisVerde.php on line 77
+[09-May-2015 23:16:46 UTC] PHP Notice:  Undefined variable: fondo0 in /home/ubuntu/workspace/css/jarvisVerde.php on line 36
+[09-May-2015 23:16:46 UTC] PHP Notice:  Undefined variable: boderHover in /home/ubuntu/workspace/css/jarvisVerde.php on line 77
+[09-May-2015 23:16:57 UTC] PHP Notice:  Undefined variable: boderHover in /home/ubuntu/workspace/css/jarvisVerde.php on line 77
+[09-May-2015 23:17:08 UTC] PHP Notice:  Undefined variable: boderHover in /home/ubuntu/workspace/css/jarvisVerde.php on line 77
+[09-May-2015 23:17:19 UTC] PHP Notice:  Undefined variable: boderHover in /home/ubuntu/workspace/css/jarvisVerde.php on line 77
+[09-May-2015 23:17:48 UTC] PHP Notice:  Undefined variable: fondo0 in /home/ubuntu/workspace/css/jarvisVerde.php on line 36
+[09-May-2015 23:17:48 UTC] PHP Notice:  Undefined variable: boderHover in /home/ubuntu/workspace/css/jarvisVerde.php on line 77
+[09-May-2015 23:17:56 UTC] PHP Notice:  Undefined variable: boderHover in /home/ubuntu/workspace/css/jarvisVerde.php on line 77
+[09-May-2015 23:18:46 UTC] PHP Notice:  Undefined variable: boderHover in /home/ubuntu/workspace/css/jarvisVerde.php on line 77
+[09-May-2015 23:20:11 UTC] PHP Notice:  Undefined variable: boderHover in /home/ubuntu/workspace/css/jarvisVerde.php on line 77
+[09-May-2015 23:21:59 UTC] PHP Notice:  Undefined variable: boderHover in /home/ubuntu/workspace/css/jarvisVerde.php on line 77
+[09-May-2015 23:22:48 UTC] PHP Notice:  Undefined variable: boderHover in /home/ubuntu/workspace/css/jarvisVerde.php on line 77
+[09-May-2015 23:23:08 UTC] PHP Notice:  Undefined variable: boderHover in /home/ubuntu/workspace/css/jarvisVerde.php on line 77
+[09-May-2015 23:23:43 UTC] PHP Notice:  Undefined variable: boderHover in /home/ubuntu/workspace/css/jarvisVerde.php on line 77
+[09-May-2015 23:24:13 UTC] PHP Notice:  Undefined variable: boderHover in /home/ubuntu/workspace/css/jarvisVerde.php on line 77
+[09-May-2015 23:24:19 UTC] PHP Notice:  Undefined variable: boderHover in /home/ubuntu/workspace/css/jarvisVerde.php on line 77
+[09-May-2015 23:24:33 UTC] PHP Notice:  Undefined variable: boderHover in /home/ubuntu/workspace/css/jarvisVerde.php on line 77
+[09-May-2015 23:27:59 UTC] PHP Notice:  session_start(): ps_files_cleanup_dir: opendir(/var/lib/php5) failed: Permission denied (13) in /home/ubuntu/workspace/principal/principal.php on line 2
+[09-May-2015 23:38:27 UTC] PHP Notice:  Undefined variable: fondo0 in /home/ubuntu/workspace/css/jarvisVerde.php on line 35
+[09-May-2015 23:47:57 UTC] PHP Notice:  Undefined variable: luz in /home/ubuntu/workspace/css/jarvisVerde.php on line 544
+[09-May-2015 23:59:19 UTC] PHP Notice:  Undefined variable: lu in /home/ubuntu/workspace/css/jarvisVerde.php on line 544
+[10-May-2015 00:25:00 UTC] PHP Notice:  Undefined variable: lu in /home/ubuntu/workspace/css/jarvisVerde.php on line 149
+[10-May-2015 00:27:28 UTC] PHP Notice:  Undefined variable: luz in /home/ubuntu/workspace/css/jarvisVerde.php on line 193
+[10-May-2015 00:27:32 UTC] PHP Notice:  Undefined variable: luz in /home/ubuntu/workspace/css/jarvisVerde.php on line 193
+[10-May-2015 00:35:42 UTC] PHP Notice:  Undefined variable: luz in /home/ubuntu/workspace/css/jarvisVerde.php on line 191
+[10-May-2015 00:45:24 UTC] PHP Notice:  Undefined variable: fon in /home/ubuntu/workspace/css/jarvisVerde.php on line 212
+[10-May-2015 01:41:10 UTC] PHP Notice:  Undefined variable: lu in /home/ubuntu/workspace/css/jarvisVerde.php on line 298
+[10-May-2015 03:47:13 UTC] PHP Notice:  Undefined variable: t in /home/ubuntu/workspace/css/jarvisVerde.php on line 369
+[10-May-2015 05:07:57 UTC] PHP Notice:  Undefined variable: fondo1 in /home/ubuntu/workspace/css/jarvisVerde.php on line 501
+[10-May-2015 06:00:12 UTC] PHP Notice:  Undefined variable: lu in /home/ubuntu/workspace/css/jarvisVerde.php on line 570
+[10-May-2015 06:17:52 UTC] PHP Notice:  Undefined variable: t in /home/ubuntu/workspace/css/jarvisVerde.php on line 403
+[10-May-2015 06:46:01 UTC] PHP Notice:  Undefined variable: tex in /home/ubuntu/workspace/css/jarvisVerde.php on line 583
+[10-May-2015 06:46:15 UTC] PHP Notice:  Undefined variable: tex in /home/ubuntu/workspace/css/jarvisVerde.php on line 583
+[10-May-2015 06:54:03 UTC] PHP Notice:  Undefined variable: lu in /home/ubuntu/workspace/css/jarvisVerde.php on line 572
+[10-May-2015 07:15:33 UTC] PHP Notice:  Undefined variable: te in /home/ubuntu/workspace/css/jarvisVerde.php on line 147
+[10-May-2015 07:25:48 UTC] PHP Notice:  Undefined variable: bo in /home/ubuntu/workspace/css/jarvisVerde.php on line 59
+[10-May-2015 07:27:19 UTC] PHP Notice:  Undefined variable: bor in /home/ubuntu/workspace/css/jarvisVerde.php on line 102
+[10-May-2015 07:27:57 UTC] PHP Notice:  Undefined variable: bor in /home/ubuntu/workspace/css/jarvisVerde.php on line 149
+[11-May-2015 20:36:15 UTC] PHP Warning:  include(cambiarApariencia): failed to open stream: No such file or directory in /home/ubuntu/workspace/principal/principal.php on line 19
+[11-May-2015 20:36:15 UTC] PHP Warning:  include(): Failed opening 'cambiarApariencia' for inclusion (include_path='.:/usr/share/php:/usr/share/pear') in /home/ubuntu/workspace/principal/principal.php on line 19
+[11-May-2015 20:38:28 UTC] PHP Warning:  include(cambiarApariencia): failed to open stream: No such file or directory in /home/ubuntu/workspace/principal/principal.php on line 19
+[11-May-2015 20:38:28 UTC] PHP Warning:  include(): Failed opening 'cambiarApariencia' for inclusion (include_path='.:/usr/share/php:/usr/share/pear') in /home/ubuntu/workspace/principal/principal.php on line 19
+[11-May-2015 20:39:23 UTC] PHP Warning:  include(cambiarApariencia): failed to open stream: No such file or directory in /home/ubuntu/workspace/principal/principal.php on line 19
+[11-May-2015 20:39:23 UTC] PHP Warning:  include(): Failed opening 'cambiarApariencia' for inclusion (include_path='.:/usr/share/php:/usr/share/pear') in /home/ubuntu/workspace/principal/principal.php on line 19
+[11-May-2015 20:39:41 UTC] PHP Warning:  include(cambiarApariencia): failed to open stream: No such file or directory in /home/ubuntu/workspace/principal/principal.php on line 19
+[11-May-2015 20:39:41 UTC] PHP Warning:  include(): Failed opening 'cambiarApariencia' for inclusion (include_path='.:/usr/share/php:/usr/share/pear') in /home/ubuntu/workspace/principal/principal.php on line 19
+[11-May-2015 21:03:25 UTC] PHP Notice:  Undefined variable: textoA in /home/ubuntu/workspace/css/jarvisVerde.php on line 329
+[11-May-2015 21:47:38 UTC] PHP Notice:  Undefined variable: tx in /home/ubuntu/workspace/css/jarvisVerde.php on line 348

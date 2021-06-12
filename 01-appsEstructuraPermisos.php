@@ -3,7 +3,7 @@
 		$codigo=$_SESSION['permiso'];
 		if($codigo==6){//Usuario SuperAdministrador Frontend y Backend (Desarrollador) 
 			include('02-appsEncabezadoGral.php');
-			//include('appsLogin/03-formularioDatosUsuario.php');
+			include('appsLogin/03-formularioDatosUsuario.php');
 			//include('appsLogin/04-formularioNuevaContrasena.php');
 			//include('../login/formularioNuevoUsuario.php');
 			//include('03-appsMenuNavegacion.php');		
@@ -72,7 +72,7 @@
 	}else{//Usuario visitante (No tiene bienes a cargos, no administra)
 		include('02-appsEncabezadoGral.php');
 		include('appsLogin/00-formularioLogin.php');
-		//include('../login/formularioNuevoUsuario.php');
+		include('appsLogin/06-formularioNuevoUsuario.php');
 		//include('03-appsMenuNavegacion.php');
 		echo'
 			<div id="appsContenedor">';
