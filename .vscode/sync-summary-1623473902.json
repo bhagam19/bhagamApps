@@ -1,0 +1,19 @@
+{
+    "_readMe": "Review list of sync operations, then use Ftp-sync: Commit command to accept changes. Note that if you're not in your root directory then all the parent directories will also be uploaded",
+    "_warning": "This file should not be saved, reopened review file won't work!",
+    "filesToUpdate": [
+        "02-appsEncabezadoGral.php"
+    ],
+    "filesToAdd": [
+        "MrXmile.php",
+        "cch.html"
+    ],
+    "dirsToAdd": [],
+    "filesToRemove": [
+        "CTEApp/bdEstudiantes/2019-10-15  Encuentro Seguimiento Octubre.pdf"
+    ],
+    "dirsToRemove": [
+        ".tmp.drivedownload",
+        "tmp.drivedownload"
+    ]
+}
