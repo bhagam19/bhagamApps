@@ -1,0 +1,1 @@
+[18-Aug-2019 16:23:12 UTC] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, boolean given in /home1/dorianrh/adolforuiz.site/CTEApp/index.php on line 10

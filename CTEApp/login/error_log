@@ -1,0 +1,13 @@
+[11-May-2019 23:08:51 UTC] PHP Warning:  mysqli_fetch_assoc() expects parameter 1 to be mysqli_result, boolean given in /home1/dorianrh/adolforuiz.site/inventarioIET/login/formularioNuevoUsuario.php on line 17
+[11-May-2019 23:08:51 UTC] PHP Warning:  mysqli_fetch_assoc() expects parameter 1 to be mysqli_result, boolean given in /home1/dorianrh/adolforuiz.site/inventarioIET/login/formularioNuevoUsuario.php on line 23
+[11-May-2019 23:09:06 UTC] PHP Warning:  mysqli_fetch_assoc() expects parameter 1 to be mysqli_result, boolean given in /home1/dorianrh/adolforuiz.site/inventarioIET/login/formularioNuevoUsuario.php on line 17
+[11-May-2019 23:09:06 UTC] PHP Warning:  mysqli_fetch_assoc() expects parameter 1 to be mysqli_result, boolean given in /home1/dorianrh/adolforuiz.site/inventarioIET/login/formularioNuevoUsuario.php on line 23
+[12-May-2019 01:16:09 UTC] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, boolean given in /home1/dorianrh/adolforuiz.site/inventarioIET/login/login.php on line 13
+[12-May-2019 01:16:12 UTC] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, boolean given in /home1/dorianrh/adolforuiz.site/inventarioIET/login/login.php on line 13
+[12-May-2019 01:16:29 UTC] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, boolean given in /home1/dorianrh/adolforuiz.site/inventarioIET/login/login.php on line 13
+[12-May-2019 03:34:16 UTC] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, boolean given in /home1/dorianrh/adolforuiz.site/inventarioIET/login/login.php on line 13
+[14-May-2019 01:06:37 UTC] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, boolean given in /home1/dorianrh/adolforuiz.site/inventarioIET/login/login.php on line 13
+[14-May-2019 01:06:46 UTC] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, boolean given in /home1/dorianrh/adolforuiz.site/inventarioIET/login/login.php on line 13
+[14-May-2019 01:06:54 UTC] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, boolean given in /home1/dorianrh/adolforuiz.site/inventarioIET/login/login.php on line 13
+[14-May-2019 01:08:41 UTC] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, boolean given in /home1/dorianrh/adolforuiz.site/inventarioIET/login/login.php on line 13
+[14-May-2019 01:09:13 UTC] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, boolean given in /home1/dorianrh/adolforuiz.site/inventarioIET/login/login.php on line 13

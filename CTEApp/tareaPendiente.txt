@@ -1,0 +1,28 @@
+TAREAS PENDIENTES
+
+=======OPERATIVAS (Afectan el funcionamiento esencial de la aplicación)===============
+
+
+
+
+=======ADMINISTRATIVAS (Ofrecen más facilidad al usuario administrador)==============
+
+
+- Alistar operaciones básicas (CRUD) para el módulo estudiantes.
+- Alistar operaciones básicas (CRUD) para el módulo sedes.
+- Alistar operaciones básicas (CRUD) para el módulo razones Sugerencias.
+
+- Disponer filtros para la base de datos de los estudiantes (e.g. Filtro por sedes, y por grupos.)
+- Disponer filtros para la base de datos de la asignación académica (e.g. Filtro por docentes, o por áreas, o por grupos)
+
+- En el módulo "Estudiantes", en la opción "Nuevo", el selector de grupos debe estar condicionado por el selector de sedes.
+- Modificar la tabla "Grupos". Añadir campo "Sedes".
+
+
+
+
+
+=======MEJORAMIENTO (Ofrecen una mejor experiencia)===============
+- 
+
+=======TAREAS FINALIZADAS===============
