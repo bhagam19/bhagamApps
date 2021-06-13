@@ -1,0 +1,26 @@
+/* HEIGHT */
+.h-full { height: 100% !important; }
+.h-half { height: 50% !important; }
+.h-quarter { height: 25% !important }
+.h-auto { height: auto !important }
+
+@include respond-up(sm) {
+.h-full-sm { height: 100% !important; }
+.h-half-sm { height: 50% !important; }
+.h-quarter-sm { height: 25% !important }
+.h-auto-sm { height: auto !important }
+}
+
+@include respond-up(md) {
+.h-full-md { height: 100% !important; }
+.h-half-md { height: 50% !important; }
+.h-quarter-md { height: 25% !important }
+.h-auto-md { height: auto !important }
+}
+
+@include respond-up(lg) {
+.h-full-lg { height: 100% !important; }
+.h-half-lg { height: 50% !important; }
+.h-quarter-lg { height: 25% !important }
+.h-auto-lg { height: auto !important }
+}
