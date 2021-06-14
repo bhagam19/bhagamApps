@@ -7,16 +7,23 @@
 	--RojoOnActivo:#fd0101;
 	--RojoOnPasivo:#d80202;
 	--RojoOff:#960404;  
-    --fondo01:rgba(1,1,108,0.1);
-    --fondo03:rgba(1,1,108,0.3);
-    --fondo05:rgba(1,1,108,0.5); /*Estado inactivo*/
-    --fondo07:rgba(1,1,108,0.7);
-    --fondo09:rgba(1,1,108,0.9); /*Estado activo*/
-    --fondo10:rgba(1,1,108,1);
+    --fondo01:rgba(117, 208, 250, 0.1);
+    --fondo03:rgba(117, 208, 250, 0.3);
+    --fondo05:rgba(117, 208, 250, 0.5); /*Estado inactivo*/
+    --fondo07:rgba(117, 208, 250, 0.7);
+    --fondo09:rgba(117, 208, 250,0.9); /*Estado activo*/
+    --fondo10:rgba(117, 208, 250,1);
+	--fondoOff01:rgba(15, 25, 44, 0.1);
+    --fondoOff03:rgba(15, 25, 44, 0.3);
+    --fondoOff05:rgba(15, 25, 44, 0.5); /*Estado inactivo*/
+    --fondoOff07:rgba(15, 25, 44, 0.7);
+    --fondoOff09:rgba(15, 25, 44,0.9); /*Estado activo*/
+    --fondoOff10:rgba(15, 25, 44,1);
   }
 html {
 	font-family: calibri, asap;
-	width: 99%;
+	width: 99%;	
+	background:#020a22;
 	background-image:url("appsArt/fondo.jpg");
 }
 #appsContenedorGlobal {
@@ -24,9 +31,9 @@ html {
 	top: 0px;
 	left: 0;
 	width: 100%;
-	height:100%;
-	background: rgb(52,111,176);
-	background: radial-gradient(circle, rgba(52,111,176,1) 0%, rgba(63,72,117,1) 100%);
+	height:100%;	
+	/*background: rgb(52,111,176);
+	background: radial-gradient(circle, rgba(52,111,176,1) 0%, rgba(63,72,117,1) 100%);*/
 }
 #appsEncabezadoGral {
 	position: fixed;
@@ -36,14 +43,14 @@ html {
 	height: 50px;
 	margin: 0 auto;
 	border:1px solid var(--Off);	
-	background: var(--fondo07);
+	background: var(--fondo03);
 	border-radius: 15px 0px 15px 0px;
 	z-index: 3;
 }
 #appsEncabezadoGral:hover{
 	border:1px solid var(--OnActivo);
 	box-shadow: 2px 1px 5px 1px var(--luzOn);
-	background: var(--fondo03);
+	background: var(--fondo05);
 }
 #appsEncabezadoGral:hover .appsTituloCinta{
 	color: var(--RojoOnActivo);
@@ -135,15 +142,15 @@ html {
 	font-size: 16px;
 	border: 1px solid var(--Off);
 	border-radius: 10px 0px ;
-	background: var(--fondo05);		
+	background: var(--fondo01);		
 	cursor: pointer;
 }
 .appsInicioSesionCinta:hover {
-	border: 1px solid var(--OnActivo);
-	background: var(--fondo09);	
-	box-shadow: 2px 1px 5px 1px var(--luzOn);
 	color: var(--OnActivo);
 	text-shadow: 10px var(--OnActivo);
+	border: 1px solid var(--OnActivo);
+	box-shadow: 2px 1px 5px 1px var(--luzOn);
+	background: var(--fondo03);		
 }
 /*==== Formularios Login====*/
 #appsFormulario {
@@ -153,22 +160,24 @@ html {
 	font-weight: normal;
 	font-size: 0.8vw;	
 	color: var(--OnPasivo);
-	border: 1px solid var(--Off);
-	border-radius: 15px 0;	
-	background: var(--fondo01);	
-	z-index: 3;
+	border-radius: 15px 0;
+	border: 1px solid var(--OnActivo);
+	box-shadow: 0px 0px 5px 0px var(--luzOn);	
+	background: var(--fondoOff07);	
+	z-index: 4;
 }
 #appsFormulario:hover{
 	color: var(--OnActivo);
 	text-shadow: 0px 0px 10px var(--OnActivo);
 	border: 1px solid var(--OnActivo);
-	box-shadow: 0px 0px 5px 0px var(--luzOn);
+	box-shadow: 0px 0px 25px 0px var(--OnActivo);
+	background: var(--fondoOff09);	
 }
 #appsFormulario input {
 	color: var(--OnPasivo);
 	font-weight: normal;
 	font-size: 0.8vw;
-	border: 1px solid var(--Off);
+	border: 1px solid var(--OnPasivo);
 	border-radius: 8px 0;
 	background: var(--fondo03);	
 }
@@ -176,7 +185,8 @@ html {
 	color: var(--OnActivo);
 	text-shadow: 0px 0px 10px var(--OnActivo);
 	border-color: var(--OnActivo);
-	box-shadow: 0 1px 1px var(--OnActivo)inset, 0 0 8px var(--luzOn);
+	box-shadow: 0 1px 10px var(--OnActivo)inset, 0 0 8px var(--luzOn);
+	background: var(--fondo01);
 	outline: 0 none;
 }
 #appsFormulario .btnLogin {
@@ -184,7 +194,7 @@ html {
 	color: var(--OnPasivo);
 	font-weight: normal;
 	font-size: 0.8vw;
-	border: 1px solid var(--Off);
+	border: 1px solid var(--OnPasivo);
 	border-radius: 8px 0;
 	background: var(--fondo01);	
 	cursor: pointer;
@@ -192,15 +202,31 @@ html {
 #appsFormulario .btnLogin:hover {
 	color: var(--OnActivo);
 	text-shadow: 0px 0px 10px var(--OnActivo);
-	box-shadow: 0px 0px 5px 0px var(--luzOn);
+	border-color: var(--OnActivo);
+	box-shadow: 0 1px 10px var(--OnActivo)inset, 0 0 8px var(--luzOn);
 }
 .appsFormularioLogin {
-	top: 50px;
+	top: 53px;
 	right: 0;
 }
 .appsFormularioNuevoUsuario{
 	top: -500px;
 	right: 0;
+}
+.appsFormularioNuevoUsuario .cerrar{
+	padding:0 5px;
+	color: var(--OnPasivo);
+	border-radius: 50px;
+	border: 1px solid var(--OnActivo);
+	box-shadow: 0px 0px 5px 0px var(--luzOn);
+	cursor: pointer;
+}
+.appsFormularioNuevoUsuario .cerrar:hover{
+	color: var(--OnActivo);
+	text-shadow: 0px 0px 10px var(--OnActivo);
+	border: 1px solid var(--OnActivo);
+	box-shadow: 0 1px 10px var(--OnActivo)inset, 0 0 8px var(--luzOn);
+	background: var(--fondo01);
 }
 /*==== LoggedIn====*/
 #appsSesionLogedIn {
@@ -230,7 +256,7 @@ html {
 }
 /*====Formularios LoggedIn=====*/
 .appsFormularioDatosUsuario {
-	top: 0;
+	top: 50px;
 	right: 0;
 }
 .datosPersonales {
@@ -255,30 +281,33 @@ html {
 .appsFormularioDatosUsuario .btn {
 	width: auto;
 	left: 30px;
-	color: #0B0B61;
-	font-weight: bold;
-	font-size: 10px;
+	color: var(--OnPasivo);
+	font-weight: normal;
+	font-size: 0.8vw;
 	text-align: center;
-	border: 1px solid #0B0B61;
+	border: 1px solid var(--OnPasivo);
 	border-radius: 5px;
-	background: #EBEEF8;
+	background: var(--fondo03);;
 	cursor: pointer;
 	padding: 0px 5px;
 }
 .appsFormularioDatosUsuario .btn:hover {
-	background: #EBEEF8;
-	box-shadow: 0px 0px 2px 0px #EBEEF8;
-	box-shadow: 0 0 5px #353DA5;
+	font-weight: bold;
+	color: var(--OnActivo);
+	text-shadow: 10px var(--OnActivo);
+	border: 1px solid var(--OnActivo);
+	box-shadow: 2px 1px 5px 1px var(--luzOn);
+	background: var(--fondo01);		
 }
 .appsFormularioNuevaContrasena{
-	top: 181px;
+	top: 231px;
 	right: 192px;
 }
 /*=======Menú Navegación==========*/
 .menuNavegacion {
 	position: absolute;
 	display: inline-block;
-	top: 50px;
+	top: 75px;
 	width: 34px;
 	padding: 5px;	
 	line-height: 18px;
@@ -302,14 +331,14 @@ html {
 	padding-left: 5px;
 	border:1px solid var(--OnPasivo);
 	border-radius: 10px 0;	
-	background: var(--fondo03);
+	background: var(--fondo01);
 	overflow: hidden;
 	cursor: pointer;
 }
 .menuNavegacion li:hover {
 	border:1px solid var(--OnActivo);
 	box-shadow: 2px 1px 5px 1px var(--luzOn);	
-	background: var(--fondo01);
+	background: var(--fondo03);
 }
 .menuNavegacion .menu li a {
 	width: 100%;
@@ -342,26 +371,33 @@ html {
 /*====CuerpoPrincipal====*/
 #appsContenedor {
 	position: relative;
-	top: 100px;
+	top: 180px;
 	margin: 0 auto;
-	text-align: center;
+	text-align: center;	
 }
 #boton {
 	display: inline-block;
 	width: 150px;
 	text-align: center;
-	margin: 2px;
-	
+	margin: 50px;
+	border: 1px solid var(--OnPasivo);
+	border-radius: 15px 0;
+	background: var(--fondo03);
+}
+#boton:hover {
+	border: 1px solid var(--OnActivo);
+	border-radius: 15px 0;
+	background: var(--fondo05);
+	box-shadow: 1px 1px 5px var(--OnActivo);
 }
 #boton img {
 	height: 120px;
 	width: 120px;
 	margin: 0 auto;
-	border-radius: 15px 0;
+	border-radius: 15px;
 	border: 1px solid var(--OnActivo);
 	box-shadow: 1px 1px 5px var(--OnActivo);
 }
-
 #boton p {
 	font-weight: normal;
 	line-height: auto;
@@ -378,7 +414,7 @@ html {
 }
 #h2 {
 	position: relative;
-	top: 100px;
+	top: 180px;
 	text-align: center;
 	color: var(--OnActivo);
 	text-shadow: 0px 0px 10px var(--OnActivo);

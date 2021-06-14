@@ -11,10 +11,10 @@
 					array("","appsArt/cteApp.jpg","CTE App"),
 					array("","appsArt/examCreator.jpg","Creador de Exámenes"),
 					array("","appsArt/inventApp.png","Inventario App"),
-					array("","appsArt/biblioApp.png","Biblio App"),
+					array("","appsArt/biblioAppOnPasiva.png","Biblio App"),
 					array("","appsArt/tablet.jpg","Préstamo de Tabletas"),
 					array("","appsArt/pollaMundialista.png","Polla Mundialista"),
-					array("","appsArt/arcReactor.png","Proyecto Ironman")
+					array("","appsArt/arcReactorOnPasiva.png","Proyecto Ironman")
 				);
 				foreach ($datosApp as $App) {
 					echo '
@@ -35,8 +35,8 @@
 		$codigo=$_SESSION['permiso'];
 		if ($codigo==1) {//Usuario con resp [sug. add, sug. mod, sug. del], bienes propios unic. No admin. (Doc, Aux no conf.). Puede acceder a las Apps
 			include('02-appsEncabezadoGral.php');
-			//include('appsLogin/03-formularioDatosUsuario.php');
-			//include('appsLogin/04-formularioNuevaContrasena.php');
+			include('appsLogin/03-formularioDatosUsuario.php');
+			include('appsLogin/04-formularioNuevaContrasena.php');
 			//include('../login/formularioNuevoUsuario.php');
 			//include('03-appsMenuNavegacion.php');		
 			echo '<div id="appsContenedor">';
@@ -46,10 +46,10 @@
 						array("CTEApp/index.php","appsArt/cteApp.jpg","CTE App"),
 						array("creaExamen/index.php","appsArt/examCreator.jpg","Creador de Exámenes"),
 						array("inventarioApp/index.php","appsArt/inventApp.png","Inventario App"),
-						array("biblioTaparto/index.php","appsArt/biblioApp.png","Biblio App"),
+						array("biblioTaparto/index.php","appsArt/biblioAppOnPasiva.png","Biblio App"),
 						array("prestamoTabletas/index.php","appsArt/tablet.jpg","Préstamo de Tabletas"),
 						array("pollaMundialista/index.php","appsArt/pollaMundialista.png","Polla Mundialista"),
-						array("ironManProject/index.html","appsArt/arcReactor.png","Proyecto Ironman")
+						array("ironManProject/index.html","appsArt/arcReactorOnPasiva.png","Proyecto Ironman")
 					);
 					foreach ($datosApp as $App) {
 						echo '
@@ -81,7 +81,7 @@
 					array("CTEApp/index.php","appsArt/cteApp.jpg","CTE App"),
 					array("creaExamen/index.php","appsArt/examCreator.jpg","Creador de Exámenes"),
 					array("inventarioApp/index.php","appsArt/inventApp.png","Inventario App"),
-					array("biblioTaparto/index.php","appsArt/biblioApp.png","Biblio App"),
+					array("biblioTaparto/index.php","appsArt/biblioAppOnPasiva.png","Biblio App"),
 					array("prestamoTabletas/index.php","appsArt/tablet.jpg","Préstamo de Tabletas"),
 					array("pollaMundialista/index.php","appsArt/pollaMundialista.png","Polla Mundialista"),
 					array("ironManProject/index.html","appsArt/arcReactor.png","Proyecto Ironman")

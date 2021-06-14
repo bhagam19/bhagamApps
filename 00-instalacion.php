@@ -65,12 +65,13 @@ function insertar(){
 		'
 			CREATE TABLE '.$tabla.'(			
 			usuarioID int NOT NULL AUTO_INCREMENT,
-			PRIMARY KEY(usuarioID),
-			usuarioCED int(11) NOT NULL,
+			PRIMARY KEY(usuarioID),			
 			usuario varchar(20) CHARACTER SET utf8 COLLATE utf8_spanish_ci NOT NULL,
 			contrasena varchar(200) CHARACTER SET utf8 COLLATE utf8_spanish_ci NOT NULL,
 		    nombres varchar(40) CHARACTER SET utf8 COLLATE utf8_spanish_ci NOT NULL,
 			apellidos varchar(40) CHARACTER SET utf8 COLLATE utf8_spanish_ci NOT NULL,
+			correo varchar(200) CHARACTER SET utf8 COLLATE utf8_spanish_ci NOT NULL,
+			usuarioCED int(11) NULL,
 			defUsuario int NOT NULL ,
 			permiso int(1) NOT NULL
 		)';
@@ -79,8 +80,7 @@ function insertar(){
 	ejecutarConsulta();
 	
 //################### CONTENIDO DE PRUEBA PARA LA TABLA "USUARIOS". ###################
-	$usuarios = array( 
-
+	$usuarios = array(
 		//(responsableCED, usuario, contrasena, nombres, apellidos, defUsuario, permiso)
 		/*
 			Niveles de usuarios
@@ -93,19 +93,14 @@ function insertar(){
 				5	Usuario 	//Usuario SuperAdministrador Frontend (Rector)	
 				6	Usuario 	//Usuario SuperAdministrador Frontend y Backend (Desarrollador) 
 		*/
-
-		array(71379517,71379517,"bhagam19Apps","Adolfo León","Ruiz Hernández",1,6),
-		array(12345,12345,"admin12345","Super","Admin IE",1,6)
-		);
-	
+		array(71379517,"bhagamApps","Adolfo León","Ruiz Hernández","bhagam19@gmail.com",71379517,1,6),
+		array(12345,"admin12345","Super","Admin IE","ieerectoria2021@gmail.com",12345,1,6)
+		);	
 	foreach ($usuarios as $usuario){
-		$sql='INSERT INTO '.$tabla.' (usuarioCED, usuario, contrasena, nombres, apellidos, defUsuario, permiso) 
-			VALUES ('.$usuario[0].','.$usuario[1].',"'.$usuario[2].'","'.$usuario[3].'","'.$usuario[4].'",'.$usuario[5].','.$usuario[6].')';
+		$sql='INSERT INTO '.$tabla.' (usuario, contrasena, nombres, apellidos, correo, usuarioCED, defUsuario, permiso) 
+			VALUES ("'.$usuario[0].'","'.$usuario[1].'","'.$usuario[2].'","'.$usuario[3].'","'.$usuario[4].'",'.$usuario[5].','.$usuario[6].','.$usuario[7].')';
 			insertar();		
-	}	
-
-
-
+	}
 //################### CREAR UNA TABLA DE LOGS. ###################
 	
 	//Preparar

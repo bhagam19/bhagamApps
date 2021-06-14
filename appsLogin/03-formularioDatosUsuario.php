@@ -3,7 +3,7 @@
 	$nombre="";
 	$nombres="";
 	$apellidos="";
-	$consulta=mysqli_query($conexion,"SELECT * FROM usuarios WHERE usuario=".$_SESSION['usuario']);
+	$consulta=mysqli_query($conexion,"SELECT * FROM usuarios WHERE usuario='".$_SESSION['usuario']."'");
 	while($fila=mysqli_fetch_array($consulta)){
 		$nombres=$fila['nombres'];
 		$apellidos=$fila['apellidos'];

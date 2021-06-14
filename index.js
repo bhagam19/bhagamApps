@@ -73,13 +73,11 @@ $(document).ready(function(){
 	});
 	
 });
-
 function mostrarFormularios(clase){	
 	//alert(clase);
 	$(clase).css({"visibility":"visible"});
-	$(clase).animate({'top':'230px'},500);
+	$(clase).animate({'top':'238px'},500);
 }
-
 $(document).ready(function(){ //ocultar formularios
 	$('.cerrar').click(function(){
 		var elemento=$(this).parent().parent();		
@@ -88,7 +86,6 @@ $(document).ready(function(){ //ocultar formularios
 		});
 	});
 });//ocultar formularios
-
 $(document).ready(function() {//mover formularios
 				$("#formulario").draggable({stack:"#formulario"}, {handle:"#handler"});
 			});//mover formularios
@@ -97,56 +94,105 @@ $(document).ready(function() {//mover formulario Mis Reservaciones
 	$("#formulario").draggable({stack:"#formulario"}, {handle:"#handler"});
 });//mover formulario Mis Reservaciones
 
-function registrarUsuario(id){ //id=1 representa que no hay formulario que ocultar. (e.g. formularioNuevoUsuario.php)
+function cambiarFondoInput(id){//Esta función reestablece el color del fondo de un input después de haberse puesto rojo como validación de dato fatante o equivocado.
+	//alert(id);
+	document.getElementById(id).style.boxShadow="0 1px 10px #abe2f8 inset, 0 0 8px #0076fc";
+	if(id=="nombres"||id=="apellidos"){
+		var valor=document.getElementById(id).value;
+		valor=ucwords(valor.toLowerCase());	
+		document.getElementById(id).value = valor;//escribimos la palabra con la primera letra mayuscula
+	}
+	if(id=="correo"||id=="usuario"){
+		var valor=document.getElementById(id).value;
+		valor=valor.toLowerCase();
+		document.getElementById(id).value = valor;//escribimos el correo en minúsculas
+	}
+}
+function validarEmail(valor) {
+	if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3,4})+$/.test(valor)){
+		alert("La dirección de email " + valor + " es correcta.");
+	} else {
+		alert("La dirección de email es incorrecta.");
+	}
+}
+function registrarUsuario(id){ //id=0 representa que no hay formulario que ocultar. (e.g. formularioNuevoUsuario.php)
+	//alert("Registro de usuario nuevo");
+	//valor=ucwords(valor.toLowerCase());
+	var nombres= document.getElementById("nombres").value;
+	var apellidos= document.getElementById("apellidos").value;
+	var correo= document.getElementById("correo").value;
 	var usuario= document.getElementById("usuario").value;
 	var contrasena= document.getElementById("contrasena").value;
 	var confirmarContrasena=document.getElementById("confirmarContrasena").value;
-	var docente=document.getElementById("docente").value;
-	if(usuario===""){
-		alert("Por favor, ingrese el Usuario.");
+	if(nombres===""){
+		alert("Por favor, ingrese el nombre.");
+		document.getElementById("nombres").style.boxShadow="0 1px 10px #fd0101 inset, 0 0 8px #d80202";
+		document.getElementById("nombres").focus();
+		return false;
+	}else if(apellidos===""){
+		alert("Por favor, ingrese los apellidos.");
+		document.getElementById("apellidos").style.boxShadow="0 1px 10px #fd0101 inset, 0 0 8px #d80202";
+		document.getElementById("apellidos").focus();
+		return false;
+	}else if(correo===""){
+		alert("Por favor, ingrese un correo.");
+		document.getElementById("correo").style.boxShadow="0 1px 10px #fd0101 inset, 0 0 8px #d80202";
+		document.getElementById("correo").focus();
+		return false;
+	}else if(usuario===""){
+		alert("Por favor, ingrese un usuario.");
+		document.getElementById("usuario").style.boxShadow="0 1px 10px #fd0101 inset, 0 0 8px #d80202";
 		document.getElementById("usuario").focus();
 		return false;
-	}else if(contrasena===""){
-		alert("Por favor, ingrese una Contraseña.");
+	}else if(confirmarContrasena===""){
+		alert("Por favor, confirme la Contraseña.");
+		document.getElementById("contrasena").style.boxShadow="0 1px 10px #fd0101 inset, 0 0 8px #d80202";
 		document.getElementById("contrasena").focus();
 		return false;
-	}else if(confirmarContrasena===""){
-		alert("Por favor, confurme la Contraseña.");
-		document.getElementById("confirmarContrasena").focus();
-		return false;
-	}else if(docente==="Docente..."){
-		alert("Por favor, seleccione un nombre de la lista.");
-		document.getElementById("docente").focus();
-		return false;
 	}else{
+		if(correo!==""){
+			re=/^([\da-z_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$/;
+			if(!re.exec(correo)){
+				alert("Por favor, revise que el correo esté bien escrito (p.e micorreo@dominio.com) ");
+				document.getElementById("correo").style.boxShadow="0 1px 10px #fd0101 inset, 0 0 8px #d80202";
+				document.getElementById("correo").focus();
+				return false;			
+			}	
+		}
 		if(contrasena===confirmarContrasena){
 			var xmlhttp = new XMLHttpRequest();
-	        xmlhttp.open("GET", "../bdUsuarios/crearUsuario.php?usuario="+usuario+"&contrasena="+contrasena+"&docente="+docente, false);
+	        xmlhttp.open("GET", "appsBdUsuarios/03-crearUsuario.php?nombres="+nombres+"&apellidos="+apellidos+"&correo="+correo+"&usuario="+usuario+"&contrasena="+contrasena, false);
 	        xmlhttp.send();
 	        if(xmlhttp.responseText.trim()==="si"){
-				if(id===0){
+				if(id===1){
 					var elemento=$("#handler").parent();		
 					elemento.animate({'top':'-500px'},500,function(){
 						$('#separador').fadeOut('fast');
 					});
-        			alert("Te damos una afectuosa bienvenida, "+usuario);
+        			alert("Te damos una cordial bienvenida, "+usuario);
         			validarLogin(usuario,contrasena);
         			return true;
 				}else{
 					return true;
 				}
 	        }else{
-	        	alert("El usuario "+usuario+" ya existe. Intenta con otro usuario.");
-	        	document.getElementById("usuario").value="";
-        		document.getElementById("usuario").focus();
-        		return false;
+				if(xmlhttp.responseText.trim()==="NoUsuario"){
+					//alert(xmlhttp.responseText.trim());
+					alert("Ya existe un usuario "+usuario+". Intenta con otro.");
+					document.getElementById("usuario").value="";
+					document.getElementById("usuario").focus();
+					return false;
+				}else if(xmlhttp.responseText.trim()==="NoCorreo"){
+					//alert(xmlhttp.responseText.trim());
+					alert("Ya hay registrado un correo "+correo+". Intenta con otro.");
+					document.getElementById("correo").value="";
+					document.getElementById("correo").focus();
+					return false;
+				}				
 	        }
 		}else{
 			alert("Las contraseñas no coinciden. Vuelve a ingresarlas.");
-			document.getElementById("usuario").value=usuario;
-			document.getElementById("docente").value=docente;
-			document.getElementById("contrasena").value="";
-			document.getElementById("confirmarContrasena").value="";
+			document.getElementById("contrasena").style.boxShadow="0 1px 10px #fd0101 inset, 0 0 8px #d80202";
 			document.getElementById("contrasena").focus();
 			return false;
 		}
@@ -233,4 +279,8 @@ function reinstalarBD(){
 	}
 
 }
-
+function ucwords(f){
+    return f.replace(/^([a-z\u00E0-\u00FC])|\s+([a-z\u00E0-\u00FC])/g, function($1){
+       return $1.toUpperCase(); 
+    });
+}
