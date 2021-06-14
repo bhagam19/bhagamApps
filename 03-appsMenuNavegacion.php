@@ -1,6 +1,4 @@
 <script type="text/javascript" src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
-<script>
-</script>
 <?php
 	$salt = substr(base64_encode(openssl_random_pseudo_bytes('30')), 0, 22);
 	$salt = strtr($salt, array('+' => '.'));
@@ -44,42 +42,21 @@
 			break;
 	}
 	if(!isset($_SESSION['usuario'])){
+		//Por ahora en este proyecto, la sesión de usuario visitante no tendrá ningún menú asignado. Ni siquiera se carga en la estructura.
+		//Por ahora dejo el siguiente código, por si después se decide asignar algún menú.
 		echo'
 			<div id="menuNavegacion"> 	
 				<ul>
-					<li><a href="../../index.php">Ir a Lista de Proyectos</a> </li>
-					<li><a href="?pg=$p01">Inventario de Bienes</a></li>
+					<li><a href="">Opción 01</a> </li>
+					<li><a href="">Opción 02</a></li>
 				</ul>				
 			</div>
 		';
 	}else{
 		$codigo=$_SESSION['permiso'];
-		if($codigo==6){
-			echo 
-			'
-				<div id="menuNavegacion" class="menuNavegacion" onmouseenter="mostrarMenu()" onmouseleave="ocultarMenu()"> 
-					<ul class="menu">						
-						<li class="li"><a id="listProy" href="../../index.php"><img style="width:15px;height:15px" src="../art/atras.svg"></a></li>
-						<li class="li"><a id="verBD" href="?pg=$pzz'.crypt($pzz,"$2y$10$".$salt).'"><img style="width:15px;height:15px" src="../art/bd.svg"></a></li>
-						<li class="li"><a id="invBienes" href="?pg=$p01"><img style="width:15px;height:15px" src="../art/inventario.png"></a></li>
-						<li class="li"><a id="admon" onclick="mostrarSubMenu()"><img style="width:15px;height:15px" src="../art/administracion.svg"></a></li>
-							
-							<ul class="submenuAdmon">
-								<li class="li"><a href="?pg=$p02'.crypt($p02,"$2y$10$".$salt).'">Almacenamiento</a></li>
-								<li class="li"><a href="?pg=$p03'.crypt($p03,"$2y$10$".$salt).'">Clases de Bienes</a></li>
-								<li class="li"><a href="?pg=$p04'.crypt($p04,"$2y$10$".$salt).'">Categorías de Bienes</a></li>
-								<li class="li"><a href="?pg=$p05'.crypt($p05,"$2y$10$".$salt).'">Dependencias</a></li>
-								<li class="li"><a href="?pg=$p06'.crypt($p06,"$2y$10$".$salt).'">Estado del Bien</a></li>
-								<li class="li"><a href="?pg=$p07'.crypt($p07,"$2y$10$".$salt).'">Estado de Mantenimiento</a></li>
-							</ul>
-							
-						<li class="li"><a id="reiniciarBD" href="#" onClick="reinstalarBD()" style="cursor:pointer"><img style="width:15px;height:15px" src="../art/reiniciar.svg"></a></li>
-						<li class="li"><a id="genActa" href="../bdBienes/10.00-generarActadeEntrega.php"><img style="width:15px;height:15px" src="../art/acta.svg"></a></li>
-					</ul>				
-				</div>
-			';
-		}
 		if($codigo==1){
+			//Por ahora en este proyecto, la sesión de usuario nivel 1 no tendrá ningún menú asignado. Ni siquiera se carga en la estructura.
+			//Por ahora dejo el siguiente código (para que sirva como guía, por si después se decide asignar algún menú)
 			echo 
 			'
 				<div id="menuNavegacion" class="menuNavegacion" onmouseenter="mostrarMenu()" onmouseleave="ocultarMenu()"> 	
@@ -89,7 +66,24 @@
 					</ul>				
 				</div>
 			';
-		}			
-	}		
-
+		}elseif($codigo==6){
+			echo'
+				<div id="menuNavegacion" class="menuNavegacion" onmouseenter="mostrarMenu()" onmouseleave="ocultarMenu()"> 
+					<ul class="menu">						
+						<li class="li"><a id="verBD" href="?pg=$pzz'.crypt($pzz,"$2y$10$".$salt).'"><img src="appsArt/bdOnPasiva.png"></a></li>
+						<li class="li"><a id="admon" onclick="mostrarSubMenu()"><img src="appsArt/administracion.svg"></a></li>							
+							<ul class="submenuAdmon">
+								<li class="li"><a href="?pg=$p02'.crypt($p02,"$2y$10$".$salt).'">Almacenamiento</a></li>
+								<li class="li"><a href="?pg=$p03'.crypt($p03,"$2y$10$".$salt).'">Clases de Bienes</a></li>
+								<li class="li"><a href="?pg=$p04'.crypt($p04,"$2y$10$".$salt).'">Categorías de Bienes</a></li>
+								<li class="li"><a href="?pg=$p05'.crypt($p05,"$2y$10$".$salt).'">Dependencias</a></li>
+								<li class="li"><a href="?pg=$p06'.crypt($p06,"$2y$10$".$salt).'">Estado del Bien</a></li>
+								<li class="li"><a href="?pg=$p07'.crypt($p07,"$2y$10$".$salt).'">Estado de Mantenimiento</a></li>
+								<li class="li"><a href="?pg=$p07'.crypt($p07,"$2y$10$".$salt).'">Usuarios</a></li>
+							</ul>
+					</ul>				
+				</div>
+			';
+		}					
+	}
 ?>

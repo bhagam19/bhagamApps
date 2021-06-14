@@ -1,4 +1,4 @@
-<div id="formulario" class="formularioNuevaContrasena">
+<div id="appsFormulario" class="appsFormularioNuevaContrasena">
 	<div>	
 		<div>
 			<table class="nuevo-usuario" border=0>

@@ -11,8 +11,8 @@
 	<div class="appsContenidoCinta">
 		<ul>
 			<li>Aplicaciones Educativas</li>
-			<li>Version: 3.0.0</li>
-			<li>Creado por: <a href="https://www.facebook.com/adolfo.ruiz.79" target="_blank" style="text-decoration:none;color:#0B0B61">Adolfo Ruiz © 2019</a></li>
+			<li>Version: 3.0.1</li>
+			<li>Creado por: <a href="https://www.facebook.com/adolfo.ruiz.79" target="_blank" style="">Adolfo Ruiz © 2019</a></li>
 		</ul>	
 	</div>	
 

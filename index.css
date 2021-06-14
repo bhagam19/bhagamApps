@@ -1,12 +1,32 @@
+:root {
+	--imagenFondo:url('appsArt/fondo.jpg');
+	--luzOn:#0076fc;
+	--OnActivo: #abe2f8;
+	--OnPasivo: #80c0fc;	
+    --Off: #4e79fc;
+	--RojoOnActivo:#fd0101;
+	--RojoOnPasivo:#d80202;
+	--RojoOff:#960404;  
+    --fondo01:rgba(1,1,108,0.1);
+    --fondo03:rgba(1,1,108,0.3);
+    --fondo05:rgba(1,1,108,0.5); /*Estado inactivo*/
+    --fondo07:rgba(1,1,108,0.7);
+    --fondo09:rgba(1,1,108,0.9); /*Estado activo*/
+    --fondo10:rgba(1,1,108,1);
+  }
 html {
 	font-family: calibri, asap;
 	width: 99%;
+	background-image:url("appsArt/fondo.jpg");
 }
 #appsContenedorGlobal {
 	position: absolute;
-	top: 50px;
+	top: 0px;
 	left: 0;
 	width: 100%;
+	height:100%;
+	background: rgb(52,111,176);
+	background: radial-gradient(circle, rgba(52,111,176,1) 0%, rgba(63,72,117,1) 100%);
 }
 #appsEncabezadoGral {
 	position: fixed;
@@ -15,11 +35,27 @@ html {
 	width: 100%;
 	height: 50px;
 	margin: 0 auto;
-	border-bottom: 0.3px solid #AAAAAA;
+	border:1px solid var(--Off);	
+	background: var(--fondo07);
+	border-radius: 15px 0px 15px 0px;
 	z-index: 3;
-	background: rgb(255,255,255);
-	background: linear-gradient(122deg, rgba(255,255,255,1) 0%, rgba(171,169,191,1) 36%, rgba(163,159,170,1) 66%, rgba(116,0,0,1) 100%);
-	box-shadow: 2px 1px 5px 1px gray;
+}
+#appsEncabezadoGral:hover{
+	border:1px solid var(--OnActivo);
+	box-shadow: 2px 1px 5px 1px var(--luzOn);
+	background: var(--fondo03);
+}
+#appsEncabezadoGral:hover .appsTituloCinta{
+	color: var(--RojoOnActivo);
+	text-shadow: 0px 0px 10px var(--RojoOnActivo);
+}
+#appsEncabezadoGral:hover .appsContenidoCinta{
+	color: var(--OnActivo);
+	text-shadow: 0px 0px 10px var(--OnActivo);
+}
+#appsEncabezadoGral:hover .appsContenidoCinta li a{
+	color: var(--RojoOnActivo);
+	text-shadow: 0px 0px 10px var(--RojoOnActivo);
 }
 .appsBtnMenu {
 	position: relative;
@@ -51,8 +87,8 @@ html {
 	width: 180px;
 	height: 45px;
 	font-size: 18px;
-	font-weight: bolder;
-	color: #a7061e;
+	font-weight: bolder;	
+	color: var(--RojoOnPasivo);
 	text-align: center;
 	padding-left: 3px;
 }
@@ -63,7 +99,7 @@ html {
 	left: 340px;
 	font-weight: normal;
 	font-size: 14px;
-	color: #ffffff;
+	color: var(--OnPasivo);
 	text-align: center;
 	padding-left: 5px;
 }
@@ -81,67 +117,90 @@ html {
 	display: inline;
 	margin: 4.0%;
 }
+.appsContenidoCinta li a{
+	font-weight: 900;
+	text-decoration:none;
+	color:var(--RojoOnPasivo);
+}
 .appsInicioSesionCinta {
 	position: relative;
 	float: right;
 	top: -125px;
 	width: auto;
-	text-align: center;
-	cursor: pointer;
 	margin: 3px;
 	padding: 2px 5px;
-	color: #0B0B61;
+	text-align: center;
+	color: var(--OnPasivo);
 	font-weight: bold;
 	font-size: 16px;
-	border: 1px solid #0B0B61;
-	border-radius: 5px;
-	background: white;
+	border: 1px solid var(--Off);
+	border-radius: 10px 0px ;
+	background: var(--fondo05);		
+	cursor: pointer;
 }
 .appsInicioSesionCinta:hover {
-	background: #EBEEF8;
-	box-shadow: 0 0 2px 0 #EBEEF8;
+	border: 1px solid var(--OnActivo);
+	background: var(--fondo09);	
+	box-shadow: 2px 1px 5px 1px var(--luzOn);
+	color: var(--OnActivo);
+	text-shadow: 10px var(--OnActivo);
 }
-/*==== Login====*/
-.appsFormularioLogin {
-	top: 0;
-	right: 0;
-}
+/*==== Formularios Login====*/
 #appsFormulario {
 	position: absolute;
 	visibility: hidden;
-	padding: 10px;
-	border: 1px solid #0B0B61;
-	background: white;
-	box-shadow: 0px 0px 5px 0px gray;
-	border-radius: 5px;
+	padding: 10px;	
+	font-weight: normal;
+	font-size: 0.8vw;	
+	color: var(--OnPasivo);
+	border: 1px solid var(--Off);
+	border-radius: 15px 0;	
+	background: var(--fondo01);	
 	z-index: 3;
-	font-weight: bold;
-	font-size: 0.8vw;
+}
+#appsFormulario:hover{
+	color: var(--OnActivo);
+	text-shadow: 0px 0px 10px var(--OnActivo);
+	border: 1px solid var(--OnActivo);
+	box-shadow: 0px 0px 5px 0px var(--luzOn);
 }
 #appsFormulario input {
+	color: var(--OnPasivo);
 	font-weight: normal;
 	font-size: 0.8vw;
-	border: 1px solid #0B0B61;
-	border-radius: 5px;
+	border: 1px solid var(--Off);
+	border-radius: 8px 0;
+	background: var(--fondo03);	
 }
 #appsFormulario input:focus {
-	border-color: #0B0B61;
-	box-shadow: 0 1px 1px rgba(14, 35, 144, 0.075)inset, 0 0 8px rgba(51, 228, 130,0.6);
+	color: var(--OnActivo);
+	text-shadow: 0px 0px 10px var(--OnActivo);
+	border-color: var(--OnActivo);
+	box-shadow: 0 1px 1px var(--OnActivo)inset, 0 0 8px var(--luzOn);
 	outline: 0 none;
 }
 #appsFormulario .btnLogin {
 	left: 30px;
-	color: #0B0B61;
-	font-weight: bold;
-	font-size: 10px;
-	border: 1px solid #0B0B61;
-	border-radius: 5px;
-	background: white;
+	color: var(--OnPasivo);
+	font-weight: normal;
+	font-size: 0.8vw;
+	border: 1px solid var(--Off);
+	border-radius: 8px 0;
+	background: var(--fondo01);	
 	cursor: pointer;
 }
 #appsFormulario .btnLogin:hover {
-	background: #EBEEF8;
-	box-shadow: 0px 0px 2px 0px #EBEEF8;
+	color: var(--OnActivo);
+	text-shadow: 0px 0px 10px var(--OnActivo);
+	box-shadow: 0px 0px 5px 0px var(--luzOn);
+}
+.appsFormularioLogin {
+	top: 50px;
+	right: 0;
+}
+.appsFormularioNuevoUsuario{
+	top: -500px;
+	right: 0;
 }
 /*==== LoggedIn====*/
 #appsSesionLogedIn {
@@ -169,11 +228,10 @@ html {
 	width: 30px;
 	height: 30px;
 }
-/*====Formularios=====*/
+/*====Formularios LoggedIn=====*/
 .appsFormularioDatosUsuario {
-	visibility: visible;
 	top: 0;
-	right: 28px;
+	right: 0;
 }
 .datosPersonales {
 	border-bottom: 1px solid gray;
@@ -212,24 +270,20 @@ html {
 	box-shadow: 0px 0px 2px 0px #EBEEF8;
 	box-shadow: 0 0 5px #353DA5;
 }
-.appsFormularioNuevoUsuario{
-	top: -500px;
-	right: 0;
+.appsFormularioNuevaContrasena{
+	top: 181px;
+	right: 192px;
 }
 /*=======Menú Navegación==========*/
 .menuNavegacion {
-	position: relative;
-	top: 75px;
-	width: 24px;
-	padding: 5px;
+	position: absolute;
 	display: inline-block;
+	top: 50px;
+	width: 34px;
+	padding: 5px;	
 	line-height: 18px;
-	background: #EFFDF5;
 	overflow: hidden;
 	z-index: 3;
-	/*box-shadow: 1px 0px 1px 1px gray;*/
-	background: white;
-	/*background: linear-gradient(to right, rgba(219, 246, 229,1) 0%,rgba(219, 230, 246,1) 100%);*/
 }
 .menuNavegacion ul {
 	position: relative;
@@ -238,33 +292,39 @@ html {
 }
 .menuNavegacion img {
 	padding-right: 5px;
+	height: 25px;
+	width: 25px;
 }
 .menuNavegacion li {
 	position: relative;
-	width: 20px;
+	width: 30px;
 	left: -40px;
-	border-style: solid;
-	border-width: 1px;
-	border-radius: 3px;
-	border-color: gray;
 	padding-left: 5px;
+	border:1px solid var(--OnPasivo);
+	border-radius: 10px 0;	
+	background: var(--fondo03);
 	overflow: hidden;
 	cursor: pointer;
 }
+.menuNavegacion li:hover {
+	border:1px solid var(--OnActivo);
+	box-shadow: 2px 1px 5px 1px var(--luzOn);	
+	background: var(--fondo01);
+}
 .menuNavegacion .menu li a {
 	width: 100%;
+	display: block;
 	text-decoration: none;
 	padding: 1px 1px;
-	padding-left: 1px;
-	display: block;
+	padding-left: 1px;	
 	font-family: arial, serif;
-	font-weight: bold;
-	font-size: 0.6vw;
+	font-weight: normal;
+	font-size: 0.6vw;	
+	color:var(--OnPasivo);
 }
 .menuNavegacion .menu li a:hover {
-	background: #D0ECE7;
-	border-radius: 5px;
-	color: black;
+	color: var(--OnActivo);
+	text-shadow: 0px 0px 10px var(--OnActivo);
 }
 .menuNavegacion .menu ul {
 	position: relative;
@@ -282,7 +342,7 @@ html {
 /*====CuerpoPrincipal====*/
 #appsContenedor {
 	position: relative;
-	top: 50px;
+	top: 100px;
 	margin: 0 auto;
 	text-align: center;
 }
@@ -291,20 +351,27 @@ html {
 	width: 150px;
 	text-align: center;
 	margin: 2px;
+	
 }
 #boton img {
 	height: 120px;
 	width: 120px;
 	margin: 0 auto;
-	border-radius: 25px;
-	border: 1px solid #bdcdff;
-	box-shadow: 1px 1px 5px #a8baf5;
+	border-radius: 15px 0;
+	border: 1px solid var(--OnActivo);
+	box-shadow: 1px 1px 5px var(--OnActivo);
 }
+
 #boton p {
 	font-weight: normal;
 	line-height: auto;
 	font-size: 14px;
 	color: #8895bf;
+	color: var(--OnPasivo);
+}
+#boton:hover p{
+	color: var(--OnActivo);
+	text-shadow: 0px 0px 10px var(--OnActivo);
 }
 #boton a {
 	text-decoration: none;
@@ -313,8 +380,10 @@ html {
 	position: relative;
 	top: 100px;
 	text-align: center;
-	color: #1a3799;
+	color: var(--OnActivo);
+	text-shadow: 0px 0px 10px var(--OnActivo);
 	z-index: 3;
+	
 }
 /*==========ADAPTABILIDAD===============*/
 @media screen and (max-width:1400px) {

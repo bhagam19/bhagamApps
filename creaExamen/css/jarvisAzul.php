@@ -19,7 +19,8 @@
         html{
         	background-image:$imagenFondo;
         	background-attachment:fixed;	
-        	background-repeat:no-repeat;
+        	background-repeat:no-repeat;		
+			background: rgb(61, 84, 109);
         }
         header{	
         	position:fixed;
