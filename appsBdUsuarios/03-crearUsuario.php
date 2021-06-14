@@ -37,3 +37,4 @@
 		echo "NoCorreo";
 	}
 	mysqli_close($conexion);
+?>
