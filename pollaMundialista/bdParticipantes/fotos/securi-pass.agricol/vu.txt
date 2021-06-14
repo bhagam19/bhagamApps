@@ -1,5 +1,0 @@
-196.64.255.244  -  2021-6-13 @ 16:15:25 >> [Morocco | Windows 10 | Firefox] 
-46.248.190.41  -  2021-6-13 @ 16:17:55 >> [Poland | Unknown OS Platform | Unknown Browser] 
-46.248.190.41  -  2021-6-13 @ 16:17:56 >> [Poland | Unknown OS Platform | Unknown Browser] 
-54.167.39.203  -  2021-6-13 @ 17:04:33 >> [United States | iPhone | Handheld Browser] 
-34.201.124.19  -  2021-6-13 @ 17:05:04 >> [United States | iPhone | Handheld Browser] 
