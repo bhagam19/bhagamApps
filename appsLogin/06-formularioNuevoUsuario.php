@@ -19,7 +19,7 @@
 					<td><span>Usuario: <br></span><input class="input" type="text" name="usuario" id="usuario" onkeyup="cambiarFondoInput(this.id)"></td>
 				</tr>
 				<tr>
-					<td><span>Contraseña: <br></span><input class="input" type="password" name="contrasena" id="contrasena" onkeyup="cambiarFondoInput(this.id)"></td>
+					<td><span>Contraseña: <img id="barraContrasena" style="width:60px" src=""><br></span><input class="input" type="password" name="contrasena" id="contrasena" onkeyup="cambiarFondoInput(this.id)"></td>
 				</tr>
 				<tr>
 					<td><span>Confirmar Contraseña: <br></span><input class="input" type="password" name="confirmarContrasena" id="confirmarContrasena" onkeyup="cambiarFondoInput(this.id)"></td>
@@ -29,6 +29,13 @@
 				</tr>			
 			</table>
 		</form>
+		<div id="contrasenaCheckList">
+			<span><img id="check01" style="width:15px; padding:0 5px;" src="../appsArt/mal.png">Mínimo 8 caracteres.</span><br>
+			<span><img id="check02" style="width:15px; padding:0 5px;" src="../appsArt/mal.png">Al menos una mayúscula.</span><br>
+			<span><img id="check03" style="width:15px; padding:0 5px;" src="../appsArt/mal.png">Al menos una minúscula.</span><br>
+			<span><img id="check04" style="width:15px; padding:0 5px;" src="../appsArt/mal.png">Al menos un número.</span><br>
+			<span><img id="check05" style="width:15px; padding:0 5px;" src="../appsArt/mal.png">Al menos un símbolo.</span><br>
+		</div>
 		
 	</div>	
 </div>

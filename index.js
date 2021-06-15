@@ -107,6 +107,10 @@ function cambiarFondoInput(id){//Esta función reestablece el color del fondo de
 		valor=valor.toLowerCase();
 		document.getElementById(id).value = valor;//escribimos el correo en minúsculas
 	}
+	if(id=="contrasena"){
+		document.getElementById("contrasenaCheckList").style.visibility="visible";
+		validarContrasenaSegura(id);
+	}
 }
 function validarEmail(valor) {
 	if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3,4})+$/.test(valor)){
@@ -218,7 +222,6 @@ function validarLogin(usuario,contrasena){
   	return false;
   }
 }
-
 function validarNuevaContrasena(actual,nueva,confirmacion){
 
 	if(actual===""){
@@ -255,7 +258,136 @@ function validarNuevaContrasena(actual,nueva,confirmacion){
 		}
 	}		
 }
-
+function validarContrasenaSegura(id){
+	var input=document.getElementById(id);
+	var contrasena=input.value;
+	//alert(contrasena);
+	var cnt=0;
+	var cantidad=false;
+	var mayuscula=false;
+	var minuscula=false;
+	var numero=false;
+	var simbolo=false;
+	var checklist="";
+	if(contrasena.length>=8){
+		cantidad=true;
+		for(var i=0;i<contrasena.length;i++){
+			if(contrasena.charCodeAt(i)>=65&&contrasena.charCodeAt(i)<=90){
+				mayuscula=true;
+			}else if(contrasena.charCodeAt(i)>=97&&contrasena.charCodeAt(i)<=122){
+				minuscula=true;
+			}else if(contrasena.charCodeAt(i)>=48&&contrasena.charCodeAt(i)<=57){
+				numero=true;
+			}else{
+				simbolo=true;
+			}
+		}
+		if(cantidad==true){
+			//alert("cantidad");
+			cnt=cnt+1;
+			document.getElementById('check01').src ="../appsArt/bien.png";		
+		}else{
+			document.getElementById('check01').src ="../appsArt/mal.png";
+		}
+		if(mayuscula==true){	
+			//alert("mayuscula");
+			cnt=cnt+1;		
+			document.getElementById('check02').src ="../appsArt/bien.png";	
+		}else{
+			document.getElementById('check02').src ="../appsArt/mal.png";
+		}
+		if(minuscula==true){
+			//alert("minuscula");	
+			cnt=cnt+1;		
+			document.getElementById('check03').src ="../appsArt/bien.png";		
+		}else{
+			document.getElementById('check03').src ="../appsArt/mal.png";
+		}
+		if(numero==true){	
+			//alert("numero");
+			cnt=cnt+1;		
+			document.getElementById('check04').src ="../appsArt/bien.png";		
+		}else{
+			document.getElementById('check04').src ="../appsArt/mal.png";
+		}
+		if(simbolo==true){
+			//alert("simbolo");	
+			cnt=cnt+1;		
+			document.getElementById('check05').src ="../appsArt/bien.png";		
+		}else{
+			document.getElementById('check05').src ="../appsArt/mal.png";
+		}
+		switch (cnt) {			
+			case 1:
+				//alert(cnt);
+				document.getElementById('barraContrasena').src ="../appsArt/contrasena01.png";
+				document.getElementById(id).style.boxShadow="0 1px 10px #ff6105 inset, 0 0 8px #0076fc";
+				break;
+			case 2:
+				//alert(cnt);
+				document.getElementById('barraContrasena').src ="../appsArt/contrasena02.png";
+				document.getElementById(id).style.boxShadow="0 1px 10px #ff8a05 inset, 0 0 8px #0076fc";
+				break;
+			case 3:
+				//alert(cnt);
+				document.getElementById('barraContrasena').src ="../appsArt/contrasena03.png";
+				document.getElementById(id).style.boxShadow="0 1px 10px #e6ff07 inset, 0 0 8px #0076fc";
+				break;
+			case 4:
+				//alert(cnt);
+				document.getElementById('barraContrasena').src ="../appsArt/contrasena04.png";
+				document.getElementById(id).style.boxShadow="0 1px 10px #8bff07 inset, 0 0 8px #0076fc";
+				break;
+			case 5:
+				//alert(cnt);
+				document.getElementById('barraContrasena').src ="../appsArt/contrasena05.png";
+				document.getElementById(id).style.boxShadow="0 1px 10px #02aa64 inset, 0 0 8px #0076fc";
+				break;			
+		}
+		if(cnt==5){
+			return true;
+		}
+	}else{
+		if(cantidad==true){
+			//alert("cantidad");
+			cnt=cnt+1;
+			document.getElementById('check01').src ="../appsArt/bien.png";		
+		}else{
+			document.getElementById('check01').src ="../appsArt/mal.png";
+		}
+		if(mayuscula==true){	
+			//alert("mayuscula");
+			cnt=cnt+1;		
+			document.getElementById('check02').src ="../appsArt/bien.png";	
+		}else{
+			document.getElementById('check02').src ="../appsArt/mal.png";
+		}
+		if(minuscula==true){
+			//alert("minuscula");	
+			cnt=cnt+1;		
+			document.getElementById('check03').src ="../appsArt/bien.png";		
+		}else{
+			document.getElementById('check03').src ="../appsArt/mal.png";
+		}
+		if(numero==true){	
+			//alert("numero");
+			cnt=cnt+1;		
+			document.getElementById('check04').src ="../appsArt/bien.png";		
+		}else{
+			document.getElementById('check04').src ="../appsArt/mal.png";
+		}
+		if(simbolo==true){
+			//alert("simbolo");	
+			cnt=cnt+1;		
+			document.getElementById('check05').src ="../appsArt/bien.png";		
+		}else{
+			document.getElementById('check05').src ="../appsArt/mal.png";
+		}
+		document.getElementById('barraContrasena').src ="../appsArt/contrasena00.png";
+		document.getElementById(id).style.boxShadow="0 1px 10px #fc3504 inset, 0 0 8px #0076fc";
+		return false;
+	}
+}
 function mostrarFormCargueExcel(){
   if( $('#formCargueExcel').css('visibility') !== 'hidden') {
 	    $('#formCargueExcel').css('visibility', 'hidden');	    
@@ -263,7 +395,6 @@ function mostrarFormCargueExcel(){
 	    $('#formCargueExcel').css('visibility', 'visible');	    
 	  }  
 }
-
 function reinstalarBD(){
 
 	var confirmar=confirm("¿Realmente desea reinstalar la Base de Datos?\n\nEsta acción no se puede deshacer.");
