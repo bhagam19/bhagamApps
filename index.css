@@ -325,6 +325,22 @@ html {
 	top: 231px;
 	right: 192px;
 }
+.appsFormularioNuevaContrasena #contrasenaCheckList{
+	position: absolute;
+	visibility: hidden;
+	top: 70px;
+	left:-210px;
+	padding: 10px;
+	color: var(--OnActivo);
+	text-shadow: 0px 0px 10px var(--OnActivo);
+	border-radius: 15px 0;
+	border: 1px solid var(--OnActivo);
+	box-shadow: 0 1px 10px var(--OnActivo)inset, 0 0 8px var(--luzOn);
+	border: 1px solid var(--OnActivo);
+	box-shadow: 0px 0px 25px 0px var(--OnActivo);
+	background: var(--fondoOff09);	
+}
+
 /*=======Menú Navegación==========*/
 .menuNavegacion {
 	position: absolute;

@@ -111,6 +111,10 @@ function cambiarFondoInput(id){//Esta función reestablece el color del fondo de
 		document.getElementById("contrasenaCheckList").style.visibility="visible";
 		validarContrasenaSegura(id);
 	}
+	if(id=="nuevaContrasena"){//Este ID pertenece al formulario Nueva Contraseña de la sesión de usuario logueado.
+		document.getElementById("contrasenaCheckList").style.visibility="visible";
+		validarContrasenaSegura(id);
+	}
 }
 function validarEmail(valor) {
 	if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3,4})+$/.test(valor)){
@@ -223,33 +227,33 @@ function validarLogin(usuario,contrasena){
   }
 }
 function validarNuevaContrasena(actual,nueva,confirmacion){
-
 	if(actual===""){
 		alert("Por favor, ingrese la contraseña actual para poder continuar.");
+		document.getElementById("contrasenaActual").style.boxShadow="0 1px 10px #fd0101 inset, 0 0 8px #d80202";
 		document.getElementById("contrasenaActual").focus();
+		return false;		
 	}else if(nueva===""){
 		alert("Por favor, ingrese una nueva contraseña.");
+		document.getElementById("nuevaContrasena").style.boxShadow="0 1px 10px #fd0101 inset, 0 0 8px #d80202";
 		document.getElementById("nuevaContrasena").focus();
+		return false;
 	}else{
 		if(nueva!==confirmacion){
 			alert("Las contraseñas no coinciden.");
-	    	document.getElementById("nuevaContrasena").value=nueva;
-	    	document.getElementById("confirmacionContrasena").value=confirmacionContrasena;
-	    	document.getElementById("confirmacionContrasena").focus();
+			document.getElementById("nuevaContrasena").style.boxShadow="0 1px 10px #fd0101 inset, 0 0 8px #d80202";
+			document.getElementById("nuevaContrasena").focus();
+			return false;
 		}else{
-			var xmlhttp = new XMLHttpRequest();
-			        
-	        xmlhttp.open("GET", "../login/cambiarContrasena.php?actual="+actual+"&nueva="+nueva, false);
+			var xmlhttp = new XMLHttpRequest();			        
+	        xmlhttp.open("GET", "appsLogin/05-cambiarContrasena.php?actual="+actual+"&nueva="+nueva, false);
 	        xmlhttp.send();
-
-	        // alert(xmlhttp.responseText.trim());
-	        
+	        alert(xmlhttp.responseText.trim());	        
 	        if("si" === xmlhttp.responseText.trim()){
 	        	alert("La contraseña se cambió exitosamente");
-
 	        	document.getElementById("contrasenaActual").value="";
 	        	document.getElementById("nuevaContrasena").value="";
 		    	document.getElementById("confirmacionContrasena").value="";
+				$('#contrasenaCheckList').css('visibility', 'hidden');
 		    	$('.formularioNuevaContrasena').css('visibility', 'hidden');
 	        	
 	        }else{        	
