@@ -1,4 +1,4 @@
-<?php
+	<?php
 include('../conexion/datosConexion.php');
 
 date_default_timezone_set('America/Bogota');
@@ -45,7 +45,7 @@ include('10.02-cargarEncabezadoHoja.php');
 						<tr id="encabezadoTabla">
 							<th style="width:130px">BIENES ASIGNADOS</th>
 							<th style="width:230px">DETALLE</th>
-							<th style="width:130px">DEPENDENCIA</th>
+							<th style="width:200px">DEPENDENCIA</th>
 							<th>CANT</th>
 							<th>ESTADO</th>
 						</tr>						
@@ -129,8 +129,6 @@ include('10.02-cargarEncabezadoHoja.php');
 															<th style="width:120px">DEPENDENCIA</th>
 															<th>CANT</th>
 															<th>ESTADO</th>
-															<th>UBICACIÓN</th>
-															<th>ALMACEN.</th>
 														</tr>						
 													</thead>
 													<tbody>	';										
@@ -138,7 +136,6 @@ include('10.02-cargarEncabezadoHoja.php');
 								}							
 							}
 						}
-
 					
 					echo'
 
@@ -199,21 +196,6 @@ include('10.02-cargarEncabezadoHoja.php');
 										<tr>
 											<td><br></td>
 										</tr>
-										<tr style="">
-											<td>Veedor Estudiantil:</td>
-											<td></td>
-											<td></td>
-										</tr>
-										<tr style="">
-											<td></td>
-											<td>Nombre: </td>
-											<td style="font-weight:bold">LUISA MARÍA ARCILA RESTREPO</td>
-										</tr>	
-										<tr style="">
-											<td></td>
-											<td>Cargo: </td>
-											<td>Veedor Estudiantil</td>
-										</tr>
 									</table>
 								</div>		
 								';
@@ -269,23 +251,7 @@ include('10.02-cargarEncabezadoHoja.php');
 								<h4 id="tituloPagina2" style="text-align:center;">ACTA DE ENTREGA DE INVENTARIO // '.$responsable.' - Página '.$pgActa.'</h4>
 								<div>	
 									<br><br><br>
-									<table border="0" style="border-collapse:collapse">						
-										<tr style="">
-											<td>Veedor Estudiantil:</td>
-											<td></td>
-											<td></td>
-										</tr>
-										<tr style="">
-											<td></td>
-											<td>Nombre: </td>
-											<td style="font-weight:bold">LUISA MARÍA ARCILA RESTREPO</td>
-										</tr>	
-										<tr style="">
-											<td></td>
-											<td>Cargo: </td>
-											<td>Veedor Estudiantil</td>
-										</tr>
-									</table>
+									
 								</div>
 
 								';
@@ -334,21 +300,7 @@ include('10.02-cargarEncabezadoHoja.php');
 										<tr>
 											<td><br></td>
 										</tr>
-										<tr style="">
-											<td>Veedor Estudiantil:</td>
-											<td></td>
-											<td></td>
-										</tr>
-										<tr style="">
-											<td></td>
-											<td>Nombre: </td>
-											<td style="font-weight:bold">LUISA MARÍA ARCILA RESTREPO</td>
-										</tr>	
-										<tr style="">
-											<td></td>
-											<td>Cargo: </td>
-											<td>Veedor Estudiantil</td>
-										</tr>
+										
 									</table>
 								</div>';
 							break;
@@ -397,21 +349,7 @@ include('10.02-cargarEncabezadoHoja.php');
 							<tr>
 								<td><br></td>
 							</tr>
-							<tr style="">
-								<td>Veedor Estudiantil:</td>
-								<td></td>
-								<td></td>
-							</tr>
-							<tr style="">
-								<td></td>
-								<td>Nombre: </td>
-								<td style="font-weight:bold">LUISA MARÍA ARCILA RESTREPO</td>
-							</tr>	
-							<tr style="">
-								<td></td>
-								<td>Cargo: </td>
-								<td>Veedor Estudiantil</td>
-							</tr>
+							
 						</table>
 					</div>';
 				}

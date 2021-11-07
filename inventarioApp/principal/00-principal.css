@@ -533,6 +533,7 @@ a.cerrar{
 	font-size: 20px;
 	font-weight: bolder;
 }
+
 .tablaBD th img, .tablaBD td img{
 	height:10px;
 	width: 10px;
@@ -543,6 +544,7 @@ a.cerrar{
 	background:white;
 	border-radius: 5px;
 }
+
 .tablaBD thead th{	
 	position: sticky;
 	top:0;

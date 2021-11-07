@@ -38,7 +38,7 @@
 		}
 
 		//Se verifica si hay bienes "MALOS" sin "DAR DE BAJA" 
-		if($estadoOriginal=="MALO" && $nomMantenimiento!="DADO DE BAJA"){//HAY INCONSISTENCIAS: Está guardado como MALO pero NO está DADO DE BAJA.
+		if($estadoOriginal=="Malo" && $nomMantenimiento!="Dado De Baja"){//HAY INCONSISTENCIAS: Está guardado como MALO pero NO está DADO DE BAJA.
 			//Se añade un "title" y un "img" alerta.
 			$salida.= 
 			'
@@ -50,7 +50,7 @@
 			$salida.= '<td id="tdEstado'.$fila1["codBien"].'" style="background:#D2F6B3; border: 2px solid gray" title="Valor original: '.$estadoOriginal.'.&#13;&#13;Este cambio está pendiente de ser verificado y aprobado por el administrador."><img onMouseOver="this.style.background=\'none\'; this.style.borderRadius=\'0px\'" style="width:10px; height:10px" src="../art/modificar.svg"/><img onMouseOver="this.style.background=\'none\'; this.style.borderRadius=\'0px\'" style="width:10px; height:10px" src="../art/ok.svg"/ title="Aprobar" onClick="confirmarAccion(1,'.$fila1["codBien"].',\''.$vlr[10].'\',\'codEstado\',\''.$queryUrl."&md=1".'\')"><img onMouseOver="this.style.background=\'none\'; this.style.borderRadius=\'0px\'" style="width:10px; height:10px" src="../art/cancelar.svg" title="Rechazar" onClick="confirmarAccion(0,'.$fila1["codBien"].',\''.$fila1["codEstado"].'\',\'codEstado\',\''.$queryUrl."&md=2".'\')"> '.$nomEstado.'</td>';
 		}
 	}else{//===Aquí No hay modificaciones pendientes
-		if($nomEstado=="MALO" && @$nomMantenimiento!="DADO DE BAJA"){
+		if($nomEstado=="Malo" && @$nomMantenimiento!="Dado De Baja"){
 			$salida.= 
 			'
 				<td id="tdEstado'.$fila1["codBien"].'" title="Este elemento esta malo, pero aún no ha sido dado de baja." ondblclick="actualizarSeleccionBien(this.id,'.$fila1["codBien"].',\'codEstado\',\'estadoAct'.$fila1["codBien"].'\','.$fila1['codEstado'].',\'estadoDelBien\',\'nomEstado\',\''.$queryUrl.'\',\'80px\')">'.$nomEstado.' <img onMouseOver="this.style.background=\'none\'; this.style.borderRadius=\'0px\'" style="width:10px; height:9px" src="../art/alerta.svg"/> Dar de baja. </td>';
@@ -163,7 +163,7 @@ $salida.=
 		'	<td id="tdPrecio'.$fila1["codBien"].'" style="background:#D2F6B3; border: 2px solid gray;text-align:right;padding:0px 10px" title="Valor original: $'.$fila1["precio"].'.oo.&#13;&#13;Este cambio está pendiente de ser verificado y aprobado por el administrador."><img onMouseOver="this.style.background=\'none\'; this.style.borderRadius=\'0px\'" style="width:10px; height:10px" src="../art/modificar.svg"/><img onMouseOver="this.style.background=\'none\'; this.style.borderRadius=\'0px\'" style="width:10px; height:10px" src="../art/ok.svg"/ title="Aprobar" onClick="confirmarAccion(1,'.$fila1["codBien"].',\''.$vlr[6].'\',\'precio\',\''.$queryUrl."&md=1".'\')"><img onMouseOver="this.style.background=\'none\'; this.style.borderRadius=\'0px\'" style="width:10px; height:10px" src="../art/cancelar.svg" title="Rechazar" onClick="confirmarAccion(0,'.$fila1["codBien"].',\''.$fila1["precio"].'\',\'precio\',\''.$queryUrl."&md=2".'\')"> $'.number_format($vlr[6]).'.oo</td>';
 	}else{
 		$salida.= 
-		'	<td id="tdPrecio'.$fila1["codBien"].'" style="text-align:right;padding:0px 10px" title="Click para modificar" ondblclick="actualizarInputBien(this.id,'.$fila1["codBien"].',\'precio\',\'precioAct'.$fila1["codBien"].'\',\''.$queryUrl.'\',\'80px\')">$'.number_format($fila1["precio"]).'.oo</td>';
+		'	<td id="tdPrecio'.$fila1["codBien"].'" style="text-align:right;padding:0px 10px" title="Click para modificar" ondblclick="actualizarInputBien(this.id,'.$fila1["codBien"].',\'precio\',\'precioAct'.$fila1["codBien"].'\',\''.$queryUrl.'\',\'80px\', event)">$'.number_format($fila1["precio"]).'.oo</td>';
 	}
 
 	
@@ -216,7 +216,7 @@ $salida.=
 		'	<td id="tdObserv'.$fila1["codBien"].'" style="background:#D2F6B3; border: 2px solid gray"  title="Valor original: '.$fila1["observaciones"].'.&#13;&#13;Este cambio está pendiente de ser verificado y aprobado por el administrador."><img onMouseOver="this.style.background=\'none\'; this.style.borderRadius=\'0px\'" style="width:10px; height:10px" src="../art/modificar.svg"/><img onMouseOver="this.style.background=\'none\'; this.style.borderRadius=\'0px\'" style="width:10px; height:10px" src="../art/ok.svg"/ title="Aprobar" onClick="confirmarAccion(1,'.$fila1["codBien"].',\''.$vlr[13].'\',\'observaciones\',\''.$queryUrl."&md=1".'\')"><img onMouseOver="this.style.background=\'none\'; this.style.borderRadius=\'0px\'" style="width:10px; height:10px" src="../art/cancelar.svg" title="Rechazar" onClick="confirmarAccion(0,'.$fila1["codBien"].',\''.$fila1["observaciones"].'\',\'observaciones\',\''.$queryUrl."&md=2".'\')"> '.$vlr[13].'</td>';
 	}else{
 		$salida.= 
-		'	<td id="tdObserv'.$fila1["codBien"].'" title="Click para modificar" ondblclick="actualizarInputBien(this.id,'.$fila1["codBien"].',\'observaciones\',\'observAct'.$fila1["codBien"].'\',\''.$queryUrl.'\',\'300px\')">'.$fila1["observaciones"].'</td>';
+		'	<td id="tdObserv'.$fila1["codBien"].'" title="Click para modificar" ondblclick="actualizarInputBien(this.id,'.$fila1["codBien"].',\'observaciones\',\'observAct'.$fila1["codBien"].'\',\''.$queryUrl.'\',\'300px\',event)">'.$fila1["observaciones"].'</td>';
 	}	
 
 	$salida.= 

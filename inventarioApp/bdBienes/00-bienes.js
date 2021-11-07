@@ -80,6 +80,7 @@ function actualizarSeleccionBien(tdId,numReg,campo1,selId,value,tabla,campo2,q,c
 }
 
 function actualizarInputBien(tdId,numReg,campo,inpId,q,px,event){
+	
 	//alert(tdId+", "+numReg+", "+campo+", "+inpId+", "+q);
 	cancelarAccionBien(q);
 
@@ -100,18 +101,18 @@ function actualizarInputBien(tdId,numReg,campo,inpId,q,px,event){
 	}else{
 		texto=td.innerHTML;
 	}	
-	
 	*/
 	
-	if(campo=='precio'){
+	
+	if(campo==='precio'){
 		texto=(texto.substring(1,texto.length-3)).replace(/,/g,""); // Se toma el valor actual y se le quita el signo pesos.
 	}
 	var contenido="";
-	if(campo=='observaciones'){
+	if(campo==='observaciones'){
 		contenido =	'<textarea id="'+inpId+'" value="'+texto+'" style="width:'+px+'; height:12px;color:#2D3D9F;font-weight:normal;font-size:10px;" onkeyup="sugerirObservaciones2(this.value,this.id,'+y+')">'+texto+'</textarea>'+" "+
 		   			'<input type="image" style="width:10px; height:10px;position:relative;top:0px" src="../art/ok.svg" onclick="actualizarRegistroBien('+numReg+','+inpId+'.value,\''+campo+'\',\''+q+'\')">'+" "+
     				'<input type="image" style="width:10px; height:10px;position:relative;top:0px" src="../art/cancelar.svg" onclick="cancelarAccionBien(\''+q+'\')">';
-	}else if(campo=='fechaAdquisicion'){
+	}else if(campo==='fechaAdquisicion'){
 		contenido =	'<input type="date" id="'+inpId+'" value="'+texto+'" style="width:100px; height:10px;color:#2D3D9F;font-weight:normal;font-size:10px">'+" "+
 		   			'<input type="image" style="width:10px; height:10px;position:relative;top:4px" src="../art/ok.svg" onclick="actualizarRegistroBien('+numReg+','+inpId+'.value,\''+campo+'\',\''+q+'\')">'+" "+
     				'<input type="image" style="width:10px; height:10px;position:relative;top:4px" src="../art/cancelar.svg" onclick="cancelarAccionBien(\''+q+'\')">';
@@ -128,12 +129,13 @@ function actualizarInputBien(tdId,numReg,campo,inpId,q,px,event){
 	if(obj.value!==""){
 		obj.value+="";
 	}	
+	
 }
 
 function confirmarAccion(tipo,id,valor,campo,q){
 	//alert(q);
 	var confirmacion;
-	if(tipo==1){
+	if(tipo===1){
 		confirmacion=confirm("¿Con seguridad desea aprobar el cambio?");
 		if(confirmacion){
 			actualizarRegistroBien(id,valor,campo,q);
@@ -159,7 +161,7 @@ function actualizarRegistroBien(id,valor,campo,q){
 	var n = q.search("uP");
 	n = parseInt(q.substring(n+3,n+4));
 
-	if(n==6){
+	if(n===6){
 
 		xmlhttp = new XMLHttpRequest();
 		xmlhttp.open("GET", "../bdBienes/consultarPorModificaciones.php", false);
@@ -202,7 +204,7 @@ function agregarBien(id,nomBien,cEspecial,cTamano,material,color,marca,otra,estB
 													"&fecha="+fecha+"&precio="+precio+"&cant="+cant+"&almacen="+almacen+"&mant="+mant+"&observ="+observ, false);
 	xmlhttp.send();
 	//alert(xmlhttp.responseText);
-	if(xmlhttp.responseText.trim()=="si"){
+	if(xmlhttp.responseText.trim()==="si"){
     	alert("El bien "+nomBien+" fue registrada con exito, con el número "+id+".");
 		// xmlhttp = new XMLHttpRequest();
 		// xmlhttp.open("GET","../bdAlmacenamiento/02-cargarOpcionesAlmacenamiento.php",false);
@@ -216,7 +218,7 @@ function agregarBien(id,nomBien,cEspecial,cTamano,material,color,marca,otra,estB
 		// return false;
     }
     var v =$('#formEditBienes').css('visibility');
-    if(v!='hidden') {			
+    if(v!=='hidden') {			
 	    $('#formEditBienes').css('visibility', 'hidden');
 	  }else{  	
 	  	var x=event.clientX;
@@ -245,7 +247,7 @@ function registrarAlmacenamiento(){
 	//alert(clase);
 	//alert(categoria);
 
-	if(almacenamiento==""){
+	if(almacenamiento===""){
 		alert("Por favor, ingrese una opción de almacenamiento. Por ejemplo, \"En uso\".");
 		document.getElementById("almacenamiento").focus();
 		return false;
@@ -253,12 +255,12 @@ function registrarAlmacenamiento(){
 		var xmlhttp = new XMLHttpRequest();
         xmlhttp.open("GET", "../bdAlmacenamiento/03-crearAlmacenamiento.php?almacenamiento="+almacenamiento, false);
     	xmlhttp.send();
-	    if(xmlhttp.responseText.trim()=="si"){
+	    if(xmlhttp.responseText.trim()==="si"){
 	    	//alert("La opción de almacenamiento "+almacenamiento+" fue registrada con exito.");
 			xmlhttp = new XMLHttpRequest();
 			xmlhttp.open("GET","../bdAlmacenamiento/02-cargarOpcionesAlmacenamiento.php",false);
 			xmlhttp.send();
-			document.getElementById("actualizable").innerHTML=""
+			document.getElementById("actualizable").innerHTML="";
 			document.getElementById("actualizable").innerHTML=xmlhttp.responseText.trim();	
         }else{
         	alert("La opción de almacenamiento "+almacenamiento+" ya está registrada.");
@@ -276,10 +278,10 @@ function eliminarRegistroAlmacen(id){
 	xmlhttp.open("GET","../bdAlmacenamiento/05-eliminarAlmacenamiento.php?codAlmacenamiento="+id,false);
 	xmlhttp.send();
 		
-	var xmlhttp = new XMLHttpRequest();
+
 	xmlhttp.open("GET","../bdAlmacenamiento/02-cargarOpcionesAlmacenamiento.php",false);
 	xmlhttp.send();
-	document.getElementById("actualizable").innerHTML=""
+	document.getElementById("actualizable").innerHTML="";
 	document.getElementById("actualizable").innerHTML=xmlhttp.responseText.trim();
 }
 

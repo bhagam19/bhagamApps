@@ -104,12 +104,12 @@
 			
 			//Definimos los colores para los estados REGULAR y MALO
 			
-			if($nomEstado=="REGULAR"){
+			if($nomEstado=="Regular"){
 				$salida.='<tr class="regular">';
-			}else if($nomEstado=="MALO"){
+			}else if($nomEstado=="Malo"){
 				$salida.='<tr class="malo">';
 			}else{
-				$salida.='<tr>';
+				$salida.='<tr class="">';
 			}
 
 			//======Cargamos tabla según permisos de modificaciones. ==================

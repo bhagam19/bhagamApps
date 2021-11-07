@@ -46,7 +46,7 @@
 		'
 		<div id="encabezadoGenerarActa">
 			
-			<a title="Ir a la página Principal" style="position:relative;top:8px;margin:3px;text-decoration:none" href="../principal/principal.php"><img style="width:25px; height:25px" src="../art/anterior.svg"></a> ||  
+			<a title="Ir a la página Principal" style="position:relative;top:8px;margin:3px;text-decoration:none" href="../principal/00-principal.php"><img style="width:25px; height:25px" src="../art/anterior.svg"></a> ||  
 			<select onchange="cargarActa(this.value)">
 				<option value="">Seleccione el Responsable...</option>';
 
