@@ -1,6 +1,6 @@
 <html>
 	<head>
-		<link rel="stylesheet" type="text/css" href="conexion/instalacion.css">
+		<link rel="stylesheet" type="text/css" href="../../css/instalacion.css">
 	</head>
 
 	<body>
@@ -25,11 +25,12 @@ function ejecutarConsulta(){
 	}else{
 		echo "<div>========================= CREACIÓN DE LA TABLA '".strtoupper($tabla)."' =========================
             <br>====================================================================================<br></div>";
-		echo "<div>No se pudo crear la tabla <span>'".strtoupper($tabla)."'</span>. Razón: <span>[".mysqli_error($con)."]</span><br><br></div>";		
+		echo "<div><p class='rojo'>No se pudo crear la tabla <span>'".strtoupper($tabla)."'</span><span>. Razón: <span>[".mysqli_error($con)."]</span></p><br><br></div>";		
 	}
 }
 	
 function insertar(){
+    set_time_limit(600);
 	global $sql;
 	global $con;
     global $tabla;		
@@ -1557,7 +1558,7 @@ function insertar(){
         array(32,'Puerto Carreño'),
         array(32,'Santa Rosalía'),        
     );
-    set_time_limit(600);
+    
     foreach ($municipios as $municipio){
         $sql='INSERT INTO '.$tabla.' (idDepartamento, nombre) 
             VALUES ('.$municipio[0].',"'.$municipio[1].'")';
@@ -1603,14 +1604,26 @@ function insertar(){
 		'
 			CREATE TABLE IF NOT EXISTS '.$tabla.'(
 				id int NOT NULL AUTO_INCREMENT,
-                idSedes int(2) NOT NULL,
 				nombre varchar(80) CHARACTER SET utf8 COLLATE utf8_spanish_ci NOT NULL,
-				PRIMARY KEY(id),				
-				FOREIGN KEY(idSedes) REFERENCES sedes (id)
+				PRIMARY KEY(id)
 			)
 		';
 	//Ejecutar
 	ejecutarConsulta();
+
+    //########## INGRESAR CONTENIDO A LA TABLA "JORNADAS" ##########
+        $jornadas = array(
+            array(1,"Mañana"),
+            array(2,"Tarde"),
+            array(3,"Sabatina"),
+            );
+        
+        foreach ($jornadas as $jornada){
+            $sql='INSERT INTO '.$tabla.' (id, nombre) 
+                VALUES ('.$jornada[0].',"'.$jornada[1].'")';
+                insertar();		
+        }
+        
     //########## CREAR UNA TABLA DE "JORNADAS POR SEDES" ##########
 	// Preparamos la consulta SQL
 	$tabla = 'jornadasXsedes';
@@ -1635,10 +1648,48 @@ function insertar(){
 		'
 			CREATE TABLE IF NOT EXISTS '.$tabla.'(
 				id int NOT NULL AUTO_INCREMENT,
+				nombre varchar(80) CHARACTER SET utf8 COLLATE utf8_spanish_ci NOT NULL,
+				PRIMARY KEY(id)
+			)
+		';
+	//Ejecutar
+	ejecutarConsulta();
+
+    //########## INGRESAR CONTENIDO A LA TABLA "GRADOS" ##########
+        $grados = array(
+            array(1,"Preescolar"),
+            array(2,"Primero"),
+            array(3,"Segundo"),
+            array(4,"Tercero"),
+            array(5,"Cuarto"),
+            array(6,"Quinto"),
+            array(7,"Sexto"),
+            array(8,"Séptimo"),
+            array(9,"Octavo"),
+            array(10,"Noveno"),
+            array(11,"Décimo"),
+            array(12,"Once"),
+            );
+        
+        foreach ($grados as $grado){
+            $sql='INSERT INTO '.$tabla.' (id, nombre) 
+                VALUES ('.$grado[0].',"'.$grado[1].'")';
+                insertar();		
+        }
+        
+    //########## CREAR UNA TABLA DE "GRADOS POR JORNADA" ##########
+	// Preparamos la consulta SQL
+	$tabla = 'jornadasXsedes';
+	$sql=
+		'
+			CREATE TABLE IF NOT EXISTS '.$tabla.'(
+				id int NOT NULL AUTO_INCREMENT,
+                idGrados int(2) NOT NULL,
                 idJornadas int(2) NOT NULL,
 				nombre varchar(80) CHARACTER SET utf8 COLLATE utf8_spanish_ci NOT NULL,
 				PRIMARY KEY(id),				
-				FOREIGN KEY(idJornadas) REFERENCES jornadas (id)
+				FOREIGN KEY(idGrados) REFERENCES grados (id),
+                FOREIGN KEY(idJornadas) REFERENCES jornadas (id)
 			)
 		';
 	//Ejecutar
@@ -1650,14 +1701,36 @@ function insertar(){
 		'
 			CREATE TABLE IF NOT EXISTS '.$tabla.'(
 				id int NOT NULL AUTO_INCREMENT,
-                idGrados int(2) NOT NULL,
 				nombre varchar(80) CHARACTER SET utf8 COLLATE utf8_spanish_ci NOT NULL,
-				PRIMARY KEY(id),				
-				FOREIGN KEY(idGrados) REFERENCES grados (id)
+				PRIMARY KEY(id)
 			)
 		';
 	//Ejecutar
 	ejecutarConsulta();
+
+    //########## INGRESAR CONTENIDO A LA TABLA "GRUPOS" ##########
+        $grupos = array(
+            array(1,"0.1"),
+            array(2,"1.1"),
+            array(3,"2.1"),
+            array(4,"3.1"),
+            array(5,"4.1"),
+            array(6,"5.1"),
+            array(7,"6.1"),
+            array(8,"7.1"),
+            array(9,"8.1"),
+            array(10,"9.1"),
+            array(11,"10.1"),
+            array(12,"11.1"),
+            );
+        
+        foreach ($grupos as $grupo){
+            $sql='INSERT INTO '.$tabla.' (id, nombre) 
+                VALUES ('.$grupo[0].',"'.$grupo[1].'")';
+                insertar();		
+        }
+        
+    
     //########## CREAR UNA TABLA DE "GRUPOS POR GRADOS" ##########
 	// Preparamos la consulta SQL
 	$tabla = 'gruposXgrados';
