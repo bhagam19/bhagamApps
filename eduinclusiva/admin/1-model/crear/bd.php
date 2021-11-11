@@ -23,7 +23,7 @@ function ejecutarConsulta(){
             <br>====================================================================================<br></div>";
 		echo "<div> Se creó la tabla <span>'".strtoupper($tabla)."'</span> con exito.<br><br></div>";		
 	}else{
-		echo "<div>========================= CREACIÓN DE LA TABLA '".strtoupper($tabla)."' =========================
+		echo "<div><p class='rojo'>========================= CREACIÓN DE LA TABLA '".strtoupper($tabla)."' =========================</p>
             <br>====================================================================================<br></div>";
 		echo "<div><p class='rojo'>No se pudo crear la tabla <span>'".strtoupper($tabla)."'</span><span>. Razón: <span>[".mysqli_error($con)."]</span></p><br><br></div>";		
 	}
@@ -1562,7 +1562,7 @@ function insertar(){
     foreach ($municipios as $municipio){
         $sql='INSERT INTO '.$tabla.' (idDepartamento, nombre) 
             VALUES ('.$municipio[0].',"'.$municipio[1].'")';
-            echo $sql;
+            //echo $sql;
             insertar();		
     }
 //########## CREAR UNA TABLA DE "INSTITUCIONES EDUCATIVAS" ##########
@@ -1689,7 +1689,7 @@ function insertar(){
 				nombre varchar(80) CHARACTER SET utf8 COLLATE utf8_spanish_ci NOT NULL,
 				PRIMARY KEY(id),				
 				FOREIGN KEY(idGrados) REFERENCES grados (id),
-                FOREIGN KEY(idJornadas) REFERENCES jornadas (id)
+                FOREIGN KEY(idJornadas) REFERENCES jornadasxsede (id)
 			)
 		';
 	//Ejecutar
@@ -1748,6 +1748,130 @@ function insertar(){
 		';
 	//Ejecutar
 	ejecutarConsulta();
+    
+    //########## CREAR UNA TABLA DE "ÁREAS" ##########
+	// Preparamos la consulta SQL
+    $tabla = 'areas';
+	$sql=
+		'
+			CREATE TABLE IF NOT EXISTS '.$tabla.'(
+				id int NOT NULL AUTO_INCREMENT,
+				nombre varchar(80) CHARACTER SET utf8 COLLATE utf8_spanish_ci NOT NULL,
+				PRIMARY KEY(id)
+			)
+		';
+	//Ejecutar
+	ejecutarConsulta();
+
+    //########## INGRESAR CONTENIDO A LA TABLA "ÁREAS" ##########
+        $periodos = array(
+            array(1,"Matemáticas"),
+            array(2,"Ciencias"),
+            array(3,"Lenguaje"),
+            array(4,"Convivencia"),
+            array(5,"Socialización"),
+            array(6,"Participación"),
+            array(7,"Autonomía"),
+            array(8,"Autocontrol"),
+            );
+        
+        foreach ($areas as $area){
+            $sql='INSERT INTO '.$tabla.' (id, nombre) 
+                VALUES ('.$area[0].',"'.$area[1].'")';
+                insertar();		
+        }
+
+    //########## CREAR UNA TABLA DE "ÁREAS POR GRUPO" ##########
+	// Preparamos la consulta SQL
+	$tabla = 'areasxgrupos';
+	$sql=
+		'
+			CREATE TABLE IF NOT EXISTS '.$tabla.'(
+				id int NOT NULL AUTO_INCREMENT,
+                idGruposGrados int(2) NOT NULL,
+                idAreas int(2) NOT NULL,
+				nombre varchar(80) CHARACTER SET utf8 COLLATE utf8_spanish_ci NOT NULL,
+				PRIMARY KEY(id),				
+				FOREIGN KEY(idAreas) REFERENCES areas (id),
+                FOREIGN KEY(idGruposGrados) REFERENCES gruposXgrado (id)
+			)
+		';
+	//Ejecutar
+	ejecutarConsulta();        
+    
+    //########## CREAR UNA TABLA DE "PERIODOS" ##########
+	// Preparamos la consulta SQL
+    $tabla = 'periodos';
+	$sql=
+		'
+			CREATE TABLE IF NOT EXISTS '.$tabla.'(
+				id int NOT NULL AUTO_INCREMENT,
+				nombre varchar(80) CHARACTER SET utf8 COLLATE utf8_spanish_ci NOT NULL,
+				PRIMARY KEY(id)
+			)
+		';
+	//Ejecutar
+	ejecutarConsulta();
+
+    //########## INGRESAR CONTENIDO A LA TABLA "PERIODOS" ##########
+        $periodos = array(
+            array(1,"Primero"),
+            array(2,"Segundo"),
+            array(3,"Tercero"),
+            array(4,"Cuarto"),
+            );
+        
+        foreach ($periodos as $periodo){
+            $sql='INSERT INTO '.$tabla.' (id, nombre) 
+                VALUES ('.$periodo[0].',"'.$periodo[1].'")';
+                insertar();		
+        }
+
+    //########## CREAR UNA TABLA DE "PERIODOS POR ÁREA" ##########
+	// Preparamos la consulta SQL
+	$tabla = 'periodosxareas';
+	$sql=
+		'
+			CREATE TABLE IF NOT EXISTS '.$tabla.'(
+				id int NOT NULL AUTO_INCREMENT,
+                idAreasGrupo int(2) NOT NULL,
+                idPeriodos int(2) NOT NULL,
+				nombre varchar(80) CHARACTER SET utf8 COLLATE utf8_spanish_ci NOT NULL,
+				PRIMARY KEY(id),				
+				FOREIGN KEY(idPeriodos) REFERENCES periodos (id),
+                FOREIGN KEY(idAreasGrupo) REFERENCES areasXgrupo (id)
+			)
+		';
+	//Ejecutar
+	ejecutarConsulta();        
+   
+    //########## CREAR UNA TABLA DE "ESTUDIANTES" ##########
+	// Preparamos la consulta SQL
+    $tabla = 'estudiantes';
+	$sql=
+		'
+			CREATE TABLE IF NOT EXISTS '.$tabla.'(
+				id int NOT NULL AUTO_INCREMENT,
+				nombre1 varchar(80) CHARACTER SET utf8 COLLATE utf8_spanish_ci NOT NULL,
+                nombre2 varchar(80) CHARACTER SET utf8 COLLATE utf8_spanish_ci,
+                apellido1 varchar(80) CHARACTER SET utf8 COLLATE utf8_spanish_ci NOT NULL,
+                apellido2 varchar(80) CHARACTER SET utf8 COLLATE utf8_spanish_ci,
+                email varchar(80) CHARACTER SET utf8 COLLATE utf8_spanish_ci,
+                telefono int(10) NOT NULL,
+                tipoDoc int(2) NOT NULL,
+                documento int(10) NOT NULL,
+                fechaNacimiento date NOT NULL,
+                edad int(2) NOT NULL,
+                lugarHermanos int(2) NOT NULL,
+                viveCon varchar(80) CHARACTER SET utf8 COLLATE utf8_spanish_ci NOT NULL,
+                victima boolean NOT NULL,
+                registroVictima boolean NOT NULL;
+				PRIMARY KEY(id)
+			)
+		';
+	//Ejecutar
+	ejecutarConsulta();
+    
 //################### CREAR UNA TABLA DE "USUARIOS". ###################
 	//Preparar consulta SQL
 	$tabla='usuarios';
