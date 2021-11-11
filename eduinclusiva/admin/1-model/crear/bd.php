@@ -1679,7 +1679,7 @@ function insertar(){
         
     //########## CREAR UNA TABLA DE "GRADOS POR JORNADA" ##########
 	// Preparamos la consulta SQL
-	$tabla = 'jornadasXsedes';
+	$tabla = 'gradosXjornada';
 	$sql=
 		'
 			CREATE TABLE IF NOT EXISTS '.$tabla.'(
@@ -1738,12 +1738,12 @@ function insertar(){
 		'
 			CREATE TABLE IF NOT EXISTS '.$tabla.'(
 				id int NOT NULL AUTO_INCREMENT,
-                idGrados int(2) NOT NULL,
+                idGradosJornada int(2) NOT NULL,
                 idGrupos int(2) NOT NULL,
 				nombre varchar(80) CHARACTER SET utf8 COLLATE utf8_spanish_ci NOT NULL,
 				PRIMARY KEY(id),				
 				FOREIGN KEY(idGrupos) REFERENCES grupos (id),
-                FOREIGN KEY(idGrados) REFERENCES grados (id)
+                FOREIGN KEY(idGradosJornada) REFERENCES gradosXjornada (id)
 			)
 		';
 	//Ejecutar
