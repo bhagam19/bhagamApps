@@ -1624,9 +1624,9 @@ function insertar(){
                 insertar();		
         }
         
-    //########## CREAR UNA TABLA DE "JORNADAS POR SEDES" ##########
+    //########## CREAR UNA TABLA DE "JORNADAS POR SEDE" ##########
 	// Preparamos la consulta SQL
-	$tabla = 'jornadasXsedes';
+	$tabla = 'jornadasXsede';
 	$sql=
 		'
 			CREATE TABLE IF NOT EXISTS '.$tabla.'(
@@ -1685,11 +1685,11 @@ function insertar(){
 			CREATE TABLE IF NOT EXISTS '.$tabla.'(
 				id int NOT NULL AUTO_INCREMENT,
                 idGrados int(2) NOT NULL,
-                idJornadas int(2) NOT NULL,
+                idJornadasSede int(2) NOT NULL,
 				nombre varchar(80) CHARACTER SET utf8 COLLATE utf8_spanish_ci NOT NULL,
 				PRIMARY KEY(id),				
 				FOREIGN KEY(idGrados) REFERENCES grados (id),
-                FOREIGN KEY(idJornadas) REFERENCES jornadasxsede (id)
+                FOREIGN KEY(idJornadasSede) REFERENCES jornadasXsede (id)
 			)
 		';
 	//Ejecutar
@@ -1731,13 +1731,13 @@ function insertar(){
         }
         
     
-    //########## CREAR UNA TABLA DE "GRUPOS POR GRADOS" ##########
+    //########## CREAR UNA TABLA DE "GRUPOS POR GRADO" ##########
 	// Preparamos la consulta SQL
-	$tabla = 'gruposXgrados';
+	$tabla = 'gruposXgrado';
 	$sql=
 		'
 			CREATE TABLE IF NOT EXISTS '.$tabla.'(
-				id int NOT NULL AUTO_INCREMENT,
+				id int(4) NOT NULL AUTO_INCREMENT,
                 idGradosJornada int(2) NOT NULL,
                 idGrupos int(2) NOT NULL,
 				nombre varchar(80) CHARACTER SET utf8 COLLATE utf8_spanish_ci NOT NULL,
@@ -1783,17 +1783,17 @@ function insertar(){
 
     //########## CREAR UNA TABLA DE "ÁREAS POR GRUPO" ##########
 	// Preparamos la consulta SQL
-	$tabla = 'areasxgrupos';
+	$tabla = 'areasXgrupo';
 	$sql=
 		'
 			CREATE TABLE IF NOT EXISTS '.$tabla.'(
 				id int NOT NULL AUTO_INCREMENT,
-                idGruposGrados int(2) NOT NULL,
+                idGruposGrado int(2) NOT NULL,
                 idAreas int(2) NOT NULL,
 				nombre varchar(80) CHARACTER SET utf8 COLLATE utf8_spanish_ci NOT NULL,
 				PRIMARY KEY(id),				
 				FOREIGN KEY(idAreas) REFERENCES areas (id),
-                FOREIGN KEY(idGruposGrados) REFERENCES gruposXgrado (id)
+                FOREIGN KEY(idGruposGrado) REFERENCES gruposXgrado (id)
 			)
 		';
 	//Ejecutar
@@ -1829,11 +1829,11 @@ function insertar(){
 
     //########## CREAR UNA TABLA DE "PERIODOS POR ÁREA" ##########
 	// Preparamos la consulta SQL
-	$tabla = 'periodosxareas';
+	$tabla = 'periodosXarea';
 	$sql=
 		'
 			CREATE TABLE IF NOT EXISTS '.$tabla.'(
-				id int NOT NULL AUTO_INCREMENT,
+				id int(2) NOT NULL AUTO_INCREMENT,
                 idAreasGrupo int(2) NOT NULL,
                 idPeriodos int(2) NOT NULL,
 				nombre varchar(80) CHARACTER SET utf8 COLLATE utf8_spanish_ci NOT NULL,
@@ -1844,7 +1844,142 @@ function insertar(){
 		';
 	//Ejecutar
 	ejecutarConsulta();        
+
+    //########## CREAR UNA TABLA DE "TIPOS DE DOCUMENTO" ##########
+	// Preparamos la consulta SQL
+    $tabla = 'tiposDocumento';
+	$sql=
+		'
+			CREATE TABLE IF NOT EXISTS '.$tabla.'(
+				id int(2) NOT NULL AUTO_INCREMENT,
+				tipo varchar(80) CHARACTER SET utf8 COLLATE utf8_spanish_ci NOT NULL,
+				PRIMARY KEY(id)
+			)
+		';
+	//Ejecutar
+	ejecutarConsulta();
+
+    //########## INGRESAR CONTENIDO A LA TABLA "TIPOS DE DOCUMENTO" ##########
+        $tipos = array(
+            array(1,"Registro Cívil"),
+            array(2,"Tarjeta de Identidad"),
+            array(3,"Cédula de Ciudadanía"),
+            array(4,"Cédula de Extranjería"),
+            array(5,"Permiso Especial de Permanencia"),
+            array(6,"NES"),
+            array(7,"Pasaporte"),
+            array(8,"Visa"),
+            );
+        
+        foreach ($tipos as $tipo){
+            $sql='INSERT INTO '.$tabla.' (id, nombre) 
+                VALUES ('.$tipo[0].',"'.$tipo[1].'")';
+                insertar();		
+        }
+
+    //########## CREAR UNA TABLA DE "GRUPOS ÉTNICOS" ##########
+	// Preparamos la consulta SQL
+    $tabla = 'gruposEtnicos';
+	$sql=
+		'
+			CREATE TABLE IF NOT EXISTS '.$tabla.'(
+				id int(2) NOT NULL AUTO_INCREMENT,
+				name varchar(80) CHARACTER SET utf8 COLLATE utf8_spanish_ci NOT NULL,
+				PRIMARY KEY(id)
+			)
+		';
+	//Ejecutar
+	ejecutarConsulta();
+
+    //########## INGRESAR CONTENIDO A LA TABLA "GRUPOS ÉTNICOS" ##########
+        $etnias = array(
+            array(1,"Afrodescendiente"),
+            array(2,"Indígena"),
+            array(3,"Raizal"),
+            array(4,"Rrom"),
+            );
+        
+        foreach ($etnias as $etnia){
+            $sql='INSERT INTO '.$tabla.' (id, name) 
+                VALUES ('.$etnia[0].',"'.$etnia[1].'")';
+                insertar();		
+        }     
    
+    //########## CREAR UNA TABLA DE "CENTROS DE PROTECCIÓN" ##########
+	// Preparamos la consulta SQL
+    $tabla = 'centrosDEproteccion';
+	$sql=
+		'
+			CREATE TABLE IF NOT EXISTS '.$tabla.'(
+				id int(2) NOT NULL AUTO_INCREMENT,
+				name varchar(80) CHARACTER SET utf8 COLLATE utf8_spanish_ci NOT NULL,
+				PRIMARY KEY(id)
+			)
+		';
+	//Ejecutar
+	ejecutarConsulta();
+
+    //########## CREAR UNA TABLA DE "EPS" ##########
+	// Preparamos la consulta SQL
+    $tabla = 'eps';
+	$sql=
+		'
+			CREATE TABLE IF NOT EXISTS '.$tabla.'(
+				id int(2) NOT NULL AUTO_INCREMENT,
+				nombre varchar(80) CHARACTER SET utf8 COLLATE utf8_spanish_ci NOT NULL,
+				PRIMARY KEY(id)
+			)
+		';
+	//Ejecutar
+	ejecutarConsulta();
+
+    //########## INGRESAR CONTENIDO A LA TABLA "EPS" ##########
+        $empresas = array(
+            array(1,'ALIANSALUD E.P.S. '),
+            array(2,'SALUD TOTAL S.A. '),
+            array(3,'CAFESALUD E.P.S. '),
+            array(4,'E.P.S. SANITAS '),
+            array(5,'COMPENSAR E.P.S. '),
+            array(6,'EPS Y MEDICINA PREPAGADA SURAMERICANA S.A. '),
+            array(7,'COMFENALCO VALLE '),
+            array(8,'COOMEVA E.P.S. S.A. '),
+            array(9,'FAMISANAR E.P.S. LTDA - CAFAM - COLSUBSIDIO '),
+            array(10,'SERVICIO OCCIDENTAL DE SALUD - S.O.S. S.A. '),
+            array(11,'CRUZ BLANCA E.P.S. '),
+            array(12,'SALUDVIDA S.A. E.P.S. '),
+            array(13,'NUEVA EPS S.A. '),
+            array(14,'COOPERATIVA DE SALUD Y DESARROLLO INTEGRAL ZONA SUR ORIENTAL DE CARTAGENA - COOSALUD '),
+            array(15,'MEDIMÁS EPS S.A.S. CONTRIBUTIVO '),
+            array(16,'A.R.S. CONVIDA '),
+            array(17,'CAJA DE PREVISION SOCIAL Y SEGURIDAD DEL CASANARE - CAPRESOCA E.P.S. S'),
+
+
+            );
+        
+        foreach ($empresas as $empresa){
+            $sql='INSERT INTO '.$tabla.' (id, nombre) 
+                VALUES ('.$empresa[0].',"'.$empresa[1].'")';
+                insertar();		
+        }
+
+    //########## CREAR UNA TABLA DE "AFILIACIONES" ##########
+	// Preparamos la consulta SQL
+    $tabla = 'afiliaciones';
+	$sql=
+		'
+			CREATE TABLE IF NOT EXISTS '.$tabla.'(
+				id int NOT NULL AUTO_INCREMENT,
+                eps int(2) NOT NULL,
+                atendiendo int(1) NOT NULL,
+                frecuencia int(2) NOT NULL,
+				lugar varchar(80) CHARACTER SET utf8 COLLATE utf8_spanish_ci NOT NULL,
+				PRIMARY KEY(id),
+                FOREIGN KEY(eps) REFERENCES eps (id)
+			)
+		';
+	//Ejecutar
+	ejecutarConsulta();
+    
     //########## CREAR UNA TABLA DE "ESTUDIANTES" ##########
 	// Preparamos la consulta SQL
     $tabla = 'estudiantes';
@@ -1856,6 +1991,7 @@ function insertar(){
                 nombre2 varchar(80) CHARACTER SET utf8 COLLATE utf8_spanish_ci,
                 apellido1 varchar(80) CHARACTER SET utf8 COLLATE utf8_spanish_ci NOT NULL,
                 apellido2 varchar(80) CHARACTER SET utf8 COLLATE utf8_spanish_ci,
+                grupo int(4) NOT NULL,
                 email varchar(80) CHARACTER SET utf8 COLLATE utf8_spanish_ci,
                 telefono int(10) NOT NULL,
                 tipoDoc int(2) NOT NULL,
@@ -1865,19 +2001,27 @@ function insertar(){
                 lugarHermanos int(2) NOT NULL,
                 viveCon varchar(80) CHARACTER SET utf8 COLLATE utf8_spanish_ci NOT NULL,
                 victima boolean NOT NULL,
-                registroVictima boolean NOT NULL;
-				PRIMARY KEY(id)
+                registroVictima boolean NOT NULL,
+                grupoEtnico int(2) NOT NULL,
+                centroProteccion int(2) NOT NULL,
+                afiliacion int(2) NOT NULL,
+				PRIMARY KEY(id),
+                FOREIGN KEY(grupo) REFERENCES gruposXgrado (id),
+                FOREIGN KEY(tipoDoc) REFERENCES tiposDocumento (id),
+                FOREIGN KEY(grupoEtnico) REFERENCES gruposEtnicos (id),
+                FOREIGN KEY(centroProteccion) REFERENCES centrosDEproteccion (id),
+                FOREIGN KEY(afiliacion) REFERENCES afiliaciones (id)
+
 			)
 		';
 	//Ejecutar
 	ejecutarConsulta();
-    
 //################### CREAR UNA TABLA DE "USUARIOS". ###################
 	//Preparar consulta SQL
 	$tabla='usuarios';
 	$sql=
 		'
-			CREATE TABLE '.$tabla.'(			
+			CREATE TABLE IF NOT EXISTS '.$tabla.'(			
 			usuarioID int NOT NULL AUTO_INCREMENT,
 			PRIMARY KEY(usuarioID),
 			usuarioCED int(11) NOT NULL,
@@ -1926,7 +2070,7 @@ function insertar(){
 	$tabla='logs';
 	$sql=
 		'
-			CREATE TABLE '.$tabla.'(
+			CREATE TABLE IF NOT EXISTS '.$tabla.'(
 			utc int,
 			anio varchar(4) CHARACTER SET utf8 COLLATE utf8_spanish_ci,
 			mes varchar(2) CHARACTER SET utf8 COLLATE utf8_spanish_ci,
