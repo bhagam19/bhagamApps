@@ -7,7 +7,6 @@ function mostrarLogin(){
 	    $('.appsFormularioLogin').css('visibility', 'visible');	    
 	  }	
 }
-
 function mostrarDatosUsuario(){
 	//alert("Hola");
 	if( $('.appsFormularioDatosUsuario').css('visibility') !== 'hidden' ) {
