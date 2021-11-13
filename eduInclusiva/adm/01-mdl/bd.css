@@ -1,0 +1,17 @@
+div {
+	position:relative;
+	left:10px;
+	text-align:center; 
+	font-weight:bolder;
+	width:900px;
+}
+
+span{
+	font-weight:bolder;
+	color:red;
+}
+
+table{
+	position:relative;
+	left:20px;
+}
