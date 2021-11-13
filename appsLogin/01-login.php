@@ -1,6 +1,6 @@
 <?php
 	session_name("bhagamApps");
-  session_start();
+  	session_start();
 	include('../appsConexion/datosConexion.php');
 	$usuario=$_REQUEST['usuario'];
 	$contrasena=$_REQUEST['contrasena'];

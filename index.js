@@ -210,21 +210,21 @@ function registrarUsuario(id){ //id=0 representa que no hay formulario que ocult
 
 function validarLogin(usuario,contrasena){
 	var xmlhttp = new XMLHttpRequest();
-  xmlhttp.open("GET", "/appsLogin/01-login.php?usuario="+usuario+"&contrasena="+contrasena, false);
-  xmlhttp.send();
-  //alert(xmlhttp.responseText.trim());
-  if("si" === xmlhttp.responseText.trim()){
-  	return true;
-  }else if(xmlhttp.responseText.trim()==="cambiar"){
-  	alert("Recuerde cambiar la contraseña asignada por el administrador. Es poco segura.");
-  	return true;
-	}else{        	
-  	alert("El usuario y la contraseña no coinciden.");
-  	document.getElementById("usuarioLogin").value=usuario;
-  	document.getElementById("contrasenaLogin").value="";
-  	document.getElementById("contrasenaLogin").focus();
-  	return false;
-  }
+	xmlhttp.open("GET", "/appsLogin/01-login.php?usuario="+usuario+"&contrasena="+contrasena, false);
+	xmlhttp.send();
+	//alert(xmlhttp.responseText.trim());
+	if("si" === xmlhttp.responseText.trim()){
+		return true;
+	}else if(xmlhttp.responseText.trim()==="cambiar"){
+		alert("Recuerde cambiar la contraseña asignada por el administrador. Es poco segura.");
+		return true;
+		}else{        	
+		alert("El usuario y la contraseña no coinciden.");
+		document.getElementById("usuarioLogin").value=usuario;
+		document.getElementById("contrasenaLogin").value="";
+		document.getElementById("contrasenaLogin").focus();
+		return false;
+	}
 }
 function validarNuevaContrasena(actual,nueva,confirmacion){
 	if(actual===""){

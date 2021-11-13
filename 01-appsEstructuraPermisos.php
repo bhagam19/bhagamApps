@@ -78,7 +78,7 @@
 				<div id="appsContenedor">';
 					$datosApp=array(
 					array("planeaApp/00-index.php","appsArt/planeador.png","Planeador"),
-					array("eduInclusiva/00-index.php","appsArt/DUA.png","EduInclusiva"),
+					array("eduInclusiva/index.php","appsArt/DUA.png","EduInclusiva"),
 					array("CTEApp/index.php","appsArt/cteApp.jpg","CTE App"),
 					array("creaExamen/index.php","appsArt/examCreator.jpg","Creador de Exámenes"),
 					array("inventarioApp/index.php","appsArt/inventApp.png","Inventario App"),
