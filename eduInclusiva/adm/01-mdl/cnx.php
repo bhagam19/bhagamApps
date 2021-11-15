@@ -1,11 +1,6 @@
 <?php
   #Parámetros de conexión a la base de datos del aplicativo
-  $host="62.171.160.194";
-  $user="Adolfo_bd";
-  $password="66GHvrJuN0";
-  $dbname="Adolfo_eduinclusiva";
-  $port=3306;
-  $socket="";
+  include('./dtcnx.php');
   if(!($cnx = new mysqli($host, $user, $password, $dbname, $port, $socket))){
       die ("No se puede conectar a la Base de Datos." .mysqli_connect_error());
       }else{ 
