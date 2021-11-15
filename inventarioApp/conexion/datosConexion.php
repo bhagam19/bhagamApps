@@ -3,7 +3,7 @@
 	//####Este modulo da por hecho que ya fue creada la base de datos.
     
     //Estabelecemos la conexion ("host","usuario","contrasena")
-	include("dtcnx.php");
+	include("dtcnx.php"); //
 	@$conexion = mysqli_connect($host, $user, $password, $dbname, $port, $socket);
 	
 	if ($conexion){//Si se conecta, trabajamos en línea.
