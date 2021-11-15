@@ -2142,7 +2142,22 @@
 	//Ejecutar
 	ejecutarConsulta();
     
-//########## CREAR UNA TABLA DE "ENTORNO FAMILIAR" ##########
+//########## CREAR UNA TABLA DE "MADRES" ##########
+	// Preparamos la consulta SQL
+    $tabla = 'madres';
+	$sql=
+		'
+			CREATE TABLE IF NOT EXISTS '.$tabla.'(
+				id int NOT NULL AUTO_INCREMENT,
+                nomMadre(80) CHARACTER SET utf8 COLLATE utf8_spanish_ci NOT NULL,
+                docMadre int(10) NOT NULL,
+                
+				PRIMARY KEY(id)
+			)
+		';
+	//Ejecutar
+	ejecutarConsulta();
+  //########## CREAR UNA TABLA DE "ENTORNO FAMILIAR" ##########
 	// Preparamos la consulta SQL
     $tabla = 'entornoFamiliar';
 	$sql=
