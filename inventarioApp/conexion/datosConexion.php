@@ -3,8 +3,8 @@
 	//####Este modulo da por hecho que ya fue creada la base de datos.
     
     //Estabelecemos la conexion ("host","usuario","contrasena")
-	
-	@$conexion = mysqli_connect('localhost','Adolfo_bd','66GHvrJuN0','Adolfo_inventarioApp');
+	include("dtcnx.php");
+	@$conexion = mysqli_connect($host, $user, $password, $dbname, $port, $socket);
 	
 	if ($conexion){//Si se conecta, trabajamos en línea.
 		 $BD = 'Adolfo_inventarioApp'; //cargamos la BD en el servidor remoto.
