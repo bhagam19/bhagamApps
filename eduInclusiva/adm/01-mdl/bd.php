@@ -6,42 +6,42 @@
 	<body>
 
 <?php
-	//Establecer conexion
-	include('./1-mdl/cnx.php');
+//Establecer conexion
+	include('./cnx.php');
 
 	echo "<div> <a href='index.php'>Volver</a> || <a href='mostrarTablasenBD.php'>Mostrar Base de Datos</a> <br><br></div>";
 	echo "<div> <H1>===== RESUMEN DE INSTALACIÓN ===== </H1><br><br></div>";
 
 //################### Creamos las funciones ejecutarConsulta() e insertar(). ###################		
-function ejecutarConsulta(){
-	global $sql;
-	global $cnx;
-	global $tabla;
-	//if (mysqli_query($conexion,$sql)){
-    if ($query=$cnx->query($sql)){
-		echo "<div>========================= CREACIÓN DE LA TABLA '".strtoupper($tabla)."' =========================
-            <br>====================================================================================<br></div>";
-		echo "<div> Se creó la tabla <span>'".strtoupper($tabla)."'</span> con exito.<br><br></div>";		
-	}else{
-		echo "<div><p class='rojo'>========================= CREACIÓN DE LA TABLA '".strtoupper($tabla)."' =========================</p>
-            <br>====================================================================================<br></div>";
-		echo "<div><p class='rojo'>No se pudo crear la tabla <span>'".strtoupper($tabla)."'</span><span>. Razón: <span>[".mysqli_error($cnx)."]</span></p><br><br></div>";		
-	}
-}
+    function ejecutarConsulta(){
+        global $sql;
+        global $cnx;
+        global $tabla;
+        //if (mysqli_query($conexion,$sql)){
+        if ($query=$cnx->query($sql)){
+            echo "<div>========================= CREACIÓN DE LA TABLA '".strtoupper($tabla)."' =========================
+                <br>====================================================================================<br></div>";
+            echo "<div> Se creó la tabla <span>'".strtoupper($tabla)."'</span> con exito.<br><br></div>";		
+        }else{
+            echo "<div><p class='rojo'>========================= CREACIÓN DE LA TABLA '".strtoupper($tabla)."' =========================</p>
+                <br>====================================================================================<br></div>";
+            echo "<div><p class='rojo'>No se pudo crear la tabla'".strtoupper($tabla)."'. Razón: [".mysqli_error($cnx)."]</p><br><br></div>";		
+        }
+    }
 	
-function insertar(){
-    set_time_limit(600);
-	global $sql;
-	global $cnx;
-    global $tabla;		
-	if ($query=$cnx->query($sql)){
-		echo "<div>===== INSERTANDO REGISTROS EN LA TABLA ".strtoupper($tabla)."======<br><br></div>";
-		echo "<div>Se insertaron los datos exitosamente.<br><br></div>";			
-	}else{
-		echo "<div>===== INSERTANDO REGISTROS EN LA TABLA ".strtoupper($tabla)."======<br><br></div>";
-		echo "<div>No se insertaron los datos. <span>".mysqli_error($cnx)."</span><br><br></div>";		
-	}
-}	
+    function insertar(){
+        set_time_limit(600);
+        global $sql;
+        global $cnx;
+        global $tabla;		
+        if ($query=$cnx->query($sql)){
+            echo "<div>===== INSERTANDO REGISTROS EN LA TABLA ".strtoupper($tabla)."======<br><br></div>";
+            echo "<div>Se insertaron los datos exitosamente.<br><br></div>";			
+        }else{
+            echo "<div><p class='rojo'>===== INSERTANDO REGISTROS EN LA TABLA ".strtoupper($tabla)."======<br><br></p></div>";
+            echo "<div><p class='rojo'>No se insertaron los datos. ".mysqli_error($cnx)."</p><br><br></div>";		
+        }
+    }	
 
 //########## CREAR UNA TABLA DE "INSTALACION" ##########
 	// Preparamos la consulta SQL
@@ -57,7 +57,7 @@ function insertar(){
 	//Ejecutar
 	ejecutarConsulta();
 
-//########## INGRESAR CONTENIDO A LA TABLA "INSTALACION" ##########
+    //########## INGRESAR CONTENIDO A LA TABLA "INSTALACION" ##########
 	
 	$sql='INSERT INTO '.$tabla.' (codInstalacion, confirmacion) 
 			VALUES (1,1)';
@@ -70,25 +70,25 @@ function insertar(){
 	$sql=
 		'
 			CREATE TABLE IF NOT EXISTS '.$tabla.' (
-				codInstalacion int(1) NOT NULL,
-				opcion int(1) NOT NULL,
-				PRIMARY KEY(codInstalacion)
+				id int(2) NOT NULL,
+				opcion varchar(2) CHARACTER SET utf8 COLLATE utf8_spanish_ci,
+				PRIMARY KEY(id)
 			)
 		';
 	//Ejecutar
 	ejecutarConsulta();
 
-//########## INGRESAR CONTENIDO A LA TABLA "OPCIONES" ##########
-$opciones = array(
-    array(1,"Si"),
-    array(2,"No"),
+    //########## INGRESAR CONTENIDO A LA TABLA "OPCIONES" ##########
+    $opciones = array(
+        array(1,"Si"),
+        array(2,"No"),
     );
 
-foreach ($opciones as $opcion) {
-    $sql='INSERT INTO '.$tabla.' (id, nomContinente) 
-        VALUES ('.$opcion[0].',"'.$opcion[1].'")';
+    foreach ($opciones as $opcion) {
+        $sql='INSERT INTO '.$tabla.' (id, opcion) 
+            VALUES ('.$opcion[0].',"'.$opcion[1].'")';
         insertar();		
-}
+    }
 
 //########## CREAR UNA TABLA DE "CONTINENTES" ##########
 	// Preparamos la consulta SQL
@@ -104,7 +104,7 @@ foreach ($opciones as $opcion) {
 	//Ejecutar
 	ejecutarConsulta();
 
-//########## INGRESAR CONTENIDO A LA TABLA "CONTINENTES" ##########
+    //########## INGRESAR CONTENIDO A LA TABLA "CONTINENTES" ##########
 	$continentes = array(
 		array(1,"África"),
 		array(2,"América"),
@@ -135,7 +135,7 @@ foreach ($opciones as $opcion) {
 	//Ejecutar
 	ejecutarConsulta();
 
-//########## INGRESAR CONTENIDO A LA TABLA "PAISES" ##########
+    //########## INGRESAR CONTENIDO A LA TABLA "PAISES" ##########
 	
 	$paises = array(
         array(4,"Austria"),
@@ -404,7 +404,7 @@ foreach ($opciones as $opcion) {
 	//Ejecutar
 	ejecutarConsulta();
 
-//########## INGRESAR CONTENIDO A LA TABLA "DEPARTAMENTOS" ##########
+    //########## INGRESAR CONTENIDO A LA TABLA "DEPARTAMENTOS" ##########
 	
 	$departamentos = array(
         array(158, "Amazonas"),
@@ -462,7 +462,7 @@ foreach ($opciones as $opcion) {
 	//Ejecutar
 	ejecutarConsulta();
 
-//########## INGRESAR CONTENIDO A LA TABLA "MUNICIPIOS" ##########
+    //########## INGRESAR CONTENIDO A LA TABLA "MUNICIPIOS" ##########
 	
 	$municipios = array(
         array(1,'El Encanto'),
@@ -1608,7 +1608,7 @@ foreach ($opciones as $opcion) {
 		';
 	//Ejecutar
 	ejecutarConsulta();
-    //########## CREAR UNA TABLA DE "SEDES" ##########
+//########## CREAR UNA TABLA DE "SEDES" ##########
 	// Preparamos la consulta SQL
 	$tabla = 'sedes';
 	$sql=
@@ -1624,7 +1624,7 @@ foreach ($opciones as $opcion) {
 		';
 	//Ejecutar
 	ejecutarConsulta();
-    //########## CREAR UNA TABLA DE "JORNADAS" ##########
+//########## CREAR UNA TABLA DE "JORNADAS" ##########
 	// Preparamos la consulta SQL
 	$tabla = 'jornadas';
 	$sql=
@@ -1651,7 +1651,7 @@ foreach ($opciones as $opcion) {
                 insertar();		
         }
         
-    //########## CREAR UNA TABLA DE "JORNADAS POR SEDE" ##########
+//########## CREAR UNA TABLA DE "JORNADAS POR SEDE" ##########
 	// Preparamos la consulta SQL
 	$tabla = 'jornadasXsede';
 	$sql=
@@ -1668,7 +1668,7 @@ foreach ($opciones as $opcion) {
 		';
 	//Ejecutar
 	ejecutarConsulta();
-    //########## CREAR UNA TABLA DE "GRADOS" ##########
+//########## CREAR UNA TABLA DE "GRADOS" ##########
 	// Preparamos la consulta SQL
     $tabla = 'grados';
 	$sql=
@@ -1704,7 +1704,7 @@ foreach ($opciones as $opcion) {
                 insertar();		
         }
         
-    //########## CREAR UNA TABLA DE "GRADOS POR JORNADA" ##########
+//########## CREAR UNA TABLA DE "GRADOS POR JORNADA" ##########
 	// Preparamos la consulta SQL
 	$tabla = 'gradosXjornada';
 	$sql=
@@ -1721,7 +1721,7 @@ foreach ($opciones as $opcion) {
 		';
 	//Ejecutar
 	ejecutarConsulta();
-    //########## CREAR UNA TABLA DE "GRUPOS" ##########
+//########## CREAR UNA TABLA DE "GRUPOS" ##########
 	// Preparamos la consulta SQL
     $tabla = 'grupos';
 	$sql=
@@ -1755,10 +1755,8 @@ foreach ($opciones as $opcion) {
             $sql='INSERT INTO '.$tabla.' (id, nombre) 
                 VALUES ('.$grupo[0].',"'.$grupo[1].'")';
                 insertar();		
-        }
-        
-    
-    //########## CREAR UNA TABLA DE "GRUPOS POR GRADO" ##########
+        }   
+//########## CREAR UNA TABLA DE "GRUPOS POR GRADO" ##########
 	// Preparamos la consulta SQL
 	$tabla = 'gruposXgrado';
 	$sql=
@@ -1776,7 +1774,7 @@ foreach ($opciones as $opcion) {
 	//Ejecutar
 	ejecutarConsulta();
     
-    //########## CREAR UNA TABLA DE "ÁREAS" ##########
+//########## CREAR UNA TABLA DE "ÁREAS" ##########
 	// Preparamos la consulta SQL
     $tabla = 'areas';
 	$sql=
@@ -1808,7 +1806,7 @@ foreach ($opciones as $opcion) {
                 insertar();		
         }
 
-    //########## CREAR UNA TABLA DE "ÁREAS POR GRUPO" ##########
+//########## CREAR UNA TABLA DE "ÁREAS POR GRUPO" ##########
 	// Preparamos la consulta SQL
 	$tabla = 'areasXgrupo';
 	$sql=
@@ -1826,7 +1824,7 @@ foreach ($opciones as $opcion) {
 	//Ejecutar
 	ejecutarConsulta();        
     
-    //########## CREAR UNA TABLA DE "PERIODOS" ##########
+//########## CREAR UNA TABLA DE "PERIODOS" ##########
 	// Preparamos la consulta SQL
     $tabla = 'periodos';
 	$sql=
@@ -1854,7 +1852,7 @@ foreach ($opciones as $opcion) {
                 insertar();		
         }
 
-    //########## CREAR UNA TABLA DE "PERIODOS POR ÁREA" ##########
+//########## CREAR UNA TABLA DE "PERIODOS POR ÁREA" ##########
 	// Preparamos la consulta SQL
 	$tabla = 'periodosXarea';
 	$sql=
@@ -1872,7 +1870,7 @@ foreach ($opciones as $opcion) {
 	//Ejecutar
 	ejecutarConsulta();        
 
-    //########## CREAR UNA TABLA DE "TIPOS DE DOCUMENTO" ##########
+//########## CREAR UNA TABLA DE "TIPOS DE DOCUMENTO" ##########
 	// Preparamos la consulta SQL
     $tabla = 'tiposDocumento';
 	$sql=
@@ -1904,7 +1902,7 @@ foreach ($opciones as $opcion) {
                 insertar();		
         }
 
-    //########## CREAR UNA TABLA DE "GRUPOS ÉTNICOS" ##########
+//########## CREAR UNA TABLA DE "GRUPOS ÉTNICOS" ##########
 	// Preparamos la consulta SQL
     $tabla = 'gruposEtnicos';
 	$sql=
@@ -1932,7 +1930,7 @@ foreach ($opciones as $opcion) {
                 insertar();		
         }     
    
-    //########## CREAR UNA TABLA DE "CENTROS DE PROTECCIÓN" ##########
+//########## CREAR UNA TABLA DE "CENTROS DE PROTECCIÓN" ##########
 	// Preparamos la consulta SQL
     $tabla = 'centrosDEproteccion';
 	$sql=
@@ -1946,7 +1944,7 @@ foreach ($opciones as $opcion) {
 	//Ejecutar
 	ejecutarConsulta();
 
-    //########## CREAR UNA TABLA DE "EPS" ##########
+//########## CREAR UNA TABLA DE "EPS" ##########
 	// Preparamos la consulta SQL
     $tabla = 'eps';
 	$sql=
@@ -1989,7 +1987,7 @@ foreach ($opciones as $opcion) {
                 insertar();		
         }
 
-    //########## CREAR UNA TABLA DE "AFILIACIONES" ##########
+//########## CREAR UNA TABLA DE "AFILIACIONES" ##########
 	// Preparamos la consulta SQL
     $tabla = 'afiliaciones';
 	$sql=
@@ -2008,7 +2006,7 @@ foreach ($opciones as $opcion) {
 	//Ejecutar
 	ejecutarConsulta();
     
-    //########## CREAR UNA TABLA DE "DIAGNÓSTICOS" ##########
+//########## CREAR UNA TABLA DE "DIAGNÓSTICOS" ##########
 	// Preparamos la consulta SQL
     $tabla = 'diagnosticos';
 	$sql=
@@ -2022,7 +2020,7 @@ foreach ($opciones as $opcion) {
 	//Ejecutar
 	ejecutarConsulta();
     
-    //########## CREAR UNA TABLA DE "TRATAMIENTOS" ##########
+//########## CREAR UNA TABLA DE "TRATAMIENTOS" ##########
 	// Preparamos la consulta SQL
     $tabla = 'tratamientos';
 	$sql=
@@ -2036,7 +2034,7 @@ foreach ($opciones as $opcion) {
 	//Ejecutar
 	ejecutarConsulta();
     
-    //########## CREAR UNA TABLA DE "MEDICAMENTOS" ##########
+//########## CREAR UNA TABLA DE "MEDICAMENTOS" ##########
 	// Preparamos la consulta SQL
     $tabla = 'medicamentos';
 	$sql=
@@ -2050,7 +2048,7 @@ foreach ($opciones as $opcion) {
 	//Ejecutar
 	ejecutarConsulta();
     
-    //########## CREAR UNA TABLA DE "FRECUENCIAS" ##########
+//########## CREAR UNA TABLA DE "FRECUENCIAS" ##########
 	// Preparamos la consulta SQL
     $tabla = 'frecuencias';
 	$sql=
@@ -2101,13 +2099,13 @@ foreach ($opciones as $opcion) {
         );
     
     foreach ($tiempos as $tiempo){
-        $sql='INSERT INTO '.$tabla.' (id, nombre) 
+        $sql='INSERT INTO '.$tabla.' (id, descripcion) 
             VALUES ('.$tiempo[0].',"'.$tiempo[1].'")';
             insertar();		
     }
 
     
-    //########## CREAR UNA TABLA DE "CONSUMOS" ##########
+//########## CREAR UNA TABLA DE "CONSUMOS" ##########
 	// Preparamos la consulta SQL
     $tabla = 'consumos';
 	$sql=
@@ -2125,9 +2123,9 @@ foreach ($opciones as $opcion) {
 	//Ejecutar
 	ejecutarConsulta();
     
-    //########## CREAR UNA TABLA DE "TERAPIAS" ##########
+//########## CREAR UNA TABLA DE "TERAPIAS" ##########
 	// Preparamos la consulta SQL
-    $tabla = 'TERAPIAS';
+    $tabla = 'terapias';
 	$sql=
 		'
 			CREATE TABLE IF NOT EXISTS '.$tabla.'(
@@ -2144,7 +2142,27 @@ foreach ($opciones as $opcion) {
 	//Ejecutar
 	ejecutarConsulta();
     
-    //########## CREAR UNA TABLA DE "ESTUDIANTES" ##########
+//########## CREAR UNA TABLA DE "ENTORNO FAMILIAR" ##########
+	// Preparamos la consulta SQL
+    $tabla = 'entornoFamiliar';
+	$sql=
+		'
+			CREATE TABLE IF NOT EXISTS '.$tabla.'(
+				id int NOT NULL AUTO_INCREMENT,
+                nomMadre(80) CHARACTER SET utf8 COLLATE utf8_spanish_ci NOT NULL,
+                docMadre int(10) NOT NULL,
+                terapia2 varchar(80) CHARACTER SET utf8 COLLATE utf8_spanish_ci NOT NULL,
+                terapia3 varchar(80) CHARACTER SET utf8 COLLATE utf8_spanish_ci NOT NULL,
+                idFrecuencia1 int(2) NOT NULL,
+                idFrecuencia2 int(2) NOT NULL,
+                idFrecuencia3 int(2) NOT NULL,
+				PRIMARY KEY(id)
+			)
+		';
+	//Ejecutar
+	ejecutarConsulta();
+   
+//########## CREAR UNA TABLA DE "ESTUDIANTES" ##########
 	// Preparamos la consulta SQL
     $tabla = 'estudiantes';
 	$sql=
@@ -2179,13 +2197,16 @@ foreach ($opciones as $opcion) {
                 FOREIGN KEY(idCentroProteccion) REFERENCES centrosDEproteccion (id),
                 FOREIGN KEY(idAfiliacion) REFERENCES afiliaciones (id),
                 FOREIGN KEY(idDiagnostico) REFERENCES diagnosticos (id),
+                FOREIGN KEY(idTratamiento) REFERENCES tratamientos (id),
+                FOREIGN KEY(idApoyo) REFERENCES apoyos (id)
 
 
 			)
 		';
 	//Ejecutar
 	ejecutarConsulta();
-//################### CREAR UNA TABLA DE "USUARIOS". ###################
+
+    //################### CREAR UNA TABLA DE "USUARIOS". ###################
 	//Preparar consulta SQL
 	$tabla='usuarios';
 	$sql=
@@ -2269,8 +2290,8 @@ foreach ($opciones as $opcion) {
 	//Insertar
 	insertar();
 	
-	//Cerrar
-	mysqli_close($con);
+//Cerrar
+	mysqli_close($cnx);
 	
 	echo "<div> ===== INSTALACIÓN FINALIZADA =====<br><br> <a href='index.php'>Volver</a> </div>";
 

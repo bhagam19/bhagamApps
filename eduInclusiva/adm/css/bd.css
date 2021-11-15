@@ -8,9 +8,11 @@ div {
 
 span{
 	font-weight:bolder;
+	color:green;
+}
+.rojo{
 	color:red;
 }
-
 table{
 	position:relative;
 	left:20px;
