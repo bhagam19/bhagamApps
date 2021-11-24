@@ -19,16 +19,16 @@
 	         		echo '<a title="ir a la página '.$i.'" style="margin:3px;padding:5px 25px;border:1px solid #4163B8;border-radius:10px;color:#4163B8;text-decoration:none" href="00-principal.php'.$queryUrl.'&p='.$i.'"> '.$i.' </a>';
 	         	}else if($i>$p-6 && $i<=$total_paginas){
 	         		//Si hay páginas para mostrar por debajo del rango inferior.
-	         		echo '<a title="ir a la página 1"style="position:relative;top:8px;margin:3px;color:green;text-decoration:none" href="principal.php'.$queryUrl.'&p=1"><img style="width:25px; height:25px" src="../art/primero.svg"></a>';
+	         		echo '<a title="ir a la página 1"style="position:relative;top:8px;margin:3px;color:green;text-decoration:none" href="00-principal.php'.$queryUrl.'&p=1"><img style="width:25px; height:25px" src="../art/primero.svg"></a>';
 
-	         		echo '<a title="ir a la página '.$i.'" style="position:relative;top:8px;margin:3px;color:green;text-decoration:none" href="principal.php'.$queryUrl.'&p='.$i.'""><img style="width:25px; height:25px" src="../art/anterior.svg"></a>';
+	         		echo '<a title="ir a la página '.$i.'" style="position:relative;top:8px;margin:3px;color:green;text-decoration:none" href="00-principal.php'.$queryUrl.'&p='.$i.'""><img style="width:25px; height:25px" src="../art/anterior.svg"></a>';
 	         	}
 
 	         	if($i==$p+4 && $i<=$total_paginas){
 	         		//Si hay páginas para mostrar por encima del rango superior.
 	         		$j=$i+1;
-	         		echo '<a title="ir a la página '.$j.'"style="position:relative;top:8px;margin:3px;color:green;text-decoration:none" href="principal.php'.$queryUrl.'&p='.$j.'"><img style="width:25px; height:25px" src="../art/siguiente.svg"></a>';
-	         		echo '<a title="ir a la página '.$total_paginas.'" style="position:relative;top:8px;margin:3px;color:green;text-decoration:none" href="principal.php'.$queryUrl.'&p='.$total_paginas.'"><img style="width:25px; height:25px" src="../art/ultimo.svg"></a>';		         		
+	         		echo '<a title="ir a la página '.$j.'"style="position:relative;top:8px;margin:3px;color:green;text-decoration:none" href="00-principal.php'.$queryUrl.'&p='.$j.'"><img style="width:25px; height:25px" src="../art/siguiente.svg"></a>';
+	         		echo '<a title="ir a la página '.$total_paginas.'" style="position:relative;top:8px;margin:3px;color:green;text-decoration:none" href="00-principal.php'.$queryUrl.'&p='.$total_paginas.'"><img style="width:25px; height:25px" src="../art/ultimo.svg"></a>';		         		
 	         	}
 	       	}
 	   	} 

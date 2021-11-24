@@ -1,10 +1,8 @@
 <?php
 	// session_start();
 	include('../conexion/datosConexion.php');
-
 	$columnas =array('codBien','nomBien','detalleDelBien','serieDelBien','origenDelBien','fechaAdquisicion','precio','cantBien','codCategoria','codDependencias','codEstado','codAlmacenamiento','codMantenimiento');
-	
-	//Obtener variables.
+		//Obtener variables.
 	$id=$_REQUEST['id'];
 	$vlr1=$_REQUEST['vlr1'];
 	$vlr2=$_REQUEST['vlr2'];
@@ -12,7 +10,6 @@
 	$vlr4=$_REQUEST['vlr4'];
 	$vlr5=$_REQUEST['vlr5'];
 	$vlr6=$_REQUEST['vlr6'];
-
 	if($vlr1==""){
 		$vlr1="N/A";
 	}
@@ -31,20 +28,15 @@
 	if($vlr6==""){
 		$vlr6="N/A";
 	}	
-
-
 	$sql01=mysqli_query($conexion,"SELECT * FROM detallesDeBienes WHERE codBien=".$id);    
     $row1 = mysqli_num_rows($sql01); //Verificamos cuántas filas cumplen con la consulta "$sql"
-
 	if($row1==0){			
 		mysqli_query($conexion,"INSERT INTO detallesDeBienes (codBien, carEspecial, tamano, material, color, marca, otra) VALUES (".$id.",'".$vlr1."','".$vlr2."','".$vlr3."','".$vlr4."','".$vlr5."','".$vlr6."')");
 	}else{
 		mysqli_query($conexion,"UPDATE detallesDeBienes SET carEspecial ='".$vlr1."', tamano ='".$vlr2."', material ='".$vlr3."', color ='".$vlr4."', marca ='".$vlr5."', otra ='".$vlr6."' WHERE codBien=".$id);
 	}
-	
 	$sql01=mysqli_query($conexion,"SELECT * FROM modificacionesBienes WHERE codBien=".$id);    
     $row2 = mysqli_num_rows($sql01); //Verificamos cuántas filas cumplen con la consulta "$sql"
-
     $valor=$vlr1."; ".$vlr2."; ".$vlr3."; ".$vlr4."; ".$vlr5."; ".$vlr6;
 
 	if($row2==0){

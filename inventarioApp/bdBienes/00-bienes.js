@@ -1,7 +1,6 @@
 function averiguarDimensionPantalla(){
 	alert("La resolución de tu pantalla es: " + screen.width + " x " + screen.height);
 }
-
 function ordenarBien(q,d,c){
 	// alert(d+", "+c);	
 	var xmlhttp = new XMLHttpRequest();
@@ -10,16 +9,14 @@ function ordenarBien(q,d,c){
 	document.getElementById("contenedorTablaBienes").innerHTML="";
 	document.getElementById("contenedorTablaBienes").innerHTML=xmlhttp.responseText.trim();	
 }
-
 function aplicarFiltros(q,f,v){
-	// alert(f+", "+v);	
+	//alert(f+", "+v);	
 	var xmlhttp = new XMLHttpRequest();
 	xmlhttp.open("GET","../bdBienes/01.00-cargarArchivos.php"+q+"&"+f+"="+v,false);
 	xmlhttp.send();
 	document.getElementById("contenedorTablaBienes").innerHTML="";
 	document.getElementById("contenedorTablaBienes").innerHTML=xmlhttp.responseText.trim();	
 }
-
 function actualizarSeleccionBien(tdId,numReg,campo1,selId,value,tabla,campo2,q,c){
 	//alert(tdId+", "+numReg+", "+campo1+", "+selId+", "+value+", "+tabla+", "+campo2+", "+q);
 	
@@ -78,7 +75,6 @@ function actualizarSeleccionBien(tdId,numReg,campo1,selId,value,tabla,campo2,q,c
 		obj.value+="";	
 	}
 }
-
 function actualizarInputBien(tdId,numReg,campo,inpId,q,px,event){
 	
 	//alert(tdId+", "+numReg+", "+campo+", "+inpId+", "+q);
@@ -131,7 +127,6 @@ function actualizarInputBien(tdId,numReg,campo,inpId,q,px,event){
 	}	
 	
 }
-
 function confirmarAccion(tipo,id,valor,campo,q){
 	//alert(q);
 	var confirmacion;
@@ -147,7 +142,6 @@ function confirmarAccion(tipo,id,valor,campo,q){
 		}
 	}
 }
-
 function actualizarRegistroBien(id,valor,campo,q){
 	// alert(id+", "+valor+", "+campo+", "+q);
 	valor=ucwords(valor.toLowerCase());
@@ -183,21 +177,69 @@ function actualizarRegistroBien(id,valor,campo,q){
 	document.getElementById("contenedorTablaBienes").innerHTML="";
 	document.getElementById("contenedorTablaBienes").innerHTML=xmlhttp.responseText.trim();
 }
-
-function agregarBien(id,nomBien,cEspecial,cTamano,material,color,marca,otra,estBien,tipoInv,depend,origen,fecha,precio,cant,almacen,mant,observ){
+function cambiarFondoInput(id){//Esta función reestablece el color del fondo de un input después de haberse puesto rojo como validación de dato fatante o equivocado.
+	//alert(id);
+	document.getElementById(id).style.boxShadow="0 1px 1px rgba(47, 144, 14, 0.075)inset, 0 0 8px rgba(96, 228, 51,0.6)";
+}
+function agregarBien(qry,id,nomBien,cEspecial,cTamano,material,color,marca,otra,estBien,tipoInv,depend,origen,fecha,precio,cant,almacen,mant,observ){
+	//alert(qry+", "+id);
+	
 	//alert(id+", "+nomBien+", "+cEspecial+", "+cTamano+", "+material+", "+color+", "+marca+", "+otra+", "+estBien+", "+tipoInv+", "+depend+", "+origen+", "+fecha+", "+precio+", "+cant+", "+almacen+", "+mant+", "+observ);
-	
-  nomBien=ucwords(nomBien.toLowerCase());
-  cEspecial=ucwords(cEspecial.toLowerCase());
-  cTamano=ucwords(cTamano.toLowerCase());
-  material=ucwords(material.toLowerCase());
-  color=ucwords(color.toLowerCase());
-  marca=ucwords(marca.toLowerCase());
-  otra=ucwords(otra.toLowerCase());
-  origen=ucwords(origen.toLowerCase());
-  observ=ucwords(observ.toLowerCase());  
-  	//alert(id+", "+nomBien+", "+cEspecial+", "+cTamano+", "+material+", "+color+", "+marca+", "+otra+", "+estBien+", "+tipoInv+", "+depend+", "+origen+", "+fecha+", "+precio+", "+cant+", "+almacen+", "+mant+", "+observ);
-	
+	nomBien=ucwords(nomBien.toLowerCase());
+	cEspecial=ucwords(cEspecial.toLowerCase());
+	cTamano=ucwords(cTamano.toLowerCase());
+	material=ucwords(material.toLowerCase());
+	color=ucwords(color.toLowerCase());
+	marca=ucwords(marca.toLowerCase());
+	otra=ucwords(otra.toLowerCase());
+	origen=ucwords(origen.toLowerCase());
+	observ=ucwords(observ.toLowerCase());  
+  	if(nomBien===""){
+		alert("Por favor, ingrese el nombre del bien.");
+		document.getElementById("inputNomBien").style.boxShadow="0 1px 10px #fd0101 inset, 0 0 8px #d80202";
+		document.getElementById("inputNomBien").focus();
+		return false;
+	}else if(estBien===""){
+		alert("Por favor, seleccione el Estado del Bien.");
+		document.getElementById("selEstBien").style.boxShadow="0 1px 10px #fd0101 inset, 0 0 8px #d80202";
+		document.getElementById("selEstBien").focus();
+		return false;
+	}else if(tipoInv===""){
+		alert("Por favor, seleccione el Tipo de Inventario.");
+		document.getElementById("selTipoInv").style.boxShadow="0 1px 10px #fd0101 inset, 0 0 8px #d80202";
+		document.getElementById("selTipoInv").focus();
+		return false;
+	}else if(depend===""){
+		alert("Por favor, seleccione la Dependencia.");
+		document.getElementById("selDep").style.boxShadow="0 1px 10px #fd0101 inset, 0 0 8px #d80202";
+		document.getElementById("selDep").focus();
+		return false;
+	}else if(origen===""){
+		alert("Por favor, ingrese el origen del bien. Si no lo sabe escriba '-'.");
+		document.getElementById("inputOrigen").style.boxShadow="0 1px 10px #fd0101 inset, 0 0 8px #d80202";
+		document.getElementById("inputOrigen").focus();
+		return false;
+	}else if(precio===""){
+		alert("Por favor, ingrese el Precio del bien. Si no lo sabe escriba '0'.");
+		document.getElementById("inputPrecio").style.boxShadow="0 1px 10px #fd0101 inset, 0 0 8px #d80202";
+		document.getElementById("inputPrecio").focus();
+		return false;
+	}else if(cant===""){
+		alert("Por favor, ingrese la Cantidad");
+		document.getElementById("inputCant").style.boxShadow="0 1px 10px #fd0101 inset, 0 0 8px #d80202";
+		document.getElementById("inputCant").focus();
+		return false;
+	}else if(almacen===""){
+		alert("Por favor, ingrese el Estado de Uso");
+		document.getElementById("selAlmacen").style.boxShadow="0 1px 10px #fd0101 inset, 0 0 8px #d80202";
+		document.getElementById("selAlmacen").focus();
+		return false;
+	}else if(mant===""){
+		alert("Por favor, ingrese el Estado de Mantenimiento");
+		document.getElementById("selMant").style.boxShadow="0 1px 10px #fd0101 inset, 0 0 8px #d80202";
+		document.getElementById("selMant").focus();
+		return false;
+	}
 	var xmlhttp = new XMLHttpRequest();
 	xmlhttp.open("GET", "../bdBienes/03-crearBien.php?id="+id+"&nomBien="+nomBien+"&cEspecial="+cEspecial+"&cTamano="+cTamano+"&material="+material+"&color="+color+
 													"&marca="+marca+"&otra="+otra+"&estBien="+estBien+"&tipoInv="+tipoInv+"&depend="+depend+"&origen="+origen+
@@ -206,16 +248,24 @@ function agregarBien(id,nomBien,cEspecial,cTamano,material,color,marca,otra,estB
 	//alert(xmlhttp.responseText);
 	if(xmlhttp.responseText.trim()==="si"){
     	alert("El bien "+nomBien+" fue registrada con exito, con el número "+id+".");
-		// xmlhttp = new XMLHttpRequest();
-		// xmlhttp.open("GET","../bdAlmacenamiento/02-cargarOpcionesAlmacenamiento.php",false);
-		// xmlhttp.send();
-		// document.getElementById("actualizable").innerHTML=""
-		// document.getElementById("actualizable").innerHTML=xmlhttp.responseText.trim();	
-    }else{
-    	alert("El bien "+nomBien+" no se pudo guardar. Por favor, inténtelo de nuevo.");
-  //   	document.getElementById("almacenamiento").value="";
-		// document.getElementById("almacenamiento").focus();
-		// return false;
+		var xmlhttp = new XMLHttpRequest();
+		xmlhttp.open("GET","../bdBienes/01.00-cargarArchivos.php"+qry,false);
+		xmlhttp.send();
+		document.getElementById("contenedorTablaBienes").innerHTML="";
+		document.getElementById("contenedorTablaBienes").innerHTML=xmlhttp.responseText.trim();  
+		var v =$('#formEditBienes').css('visibility');
+		if(v!=='hidden') {			
+			$('#formEditBienes').css('visibility', 'hidden');
+		}else{  	
+			var x=event.clientX;
+			var y=event.clientY;
+			//alert("x: "+x+" || y:"+y);
+			$('#formEditBienes').css('visibility', 'visible');
+			$('#formEditBienes').css('top', "95px");
+			$('#formEditBienes').css('left', "50px");	    
+		}	 
+	}else{
+		alert("El bien "+nomBien+" no se pudo guardar. Por favor, inténtelo de nuevo.");
     }
     var v =$('#formEditBienes').css('visibility');
     if(v!=='hidden') {			
@@ -227,9 +277,8 @@ function agregarBien(id,nomBien,cEspecial,cTamano,material,color,marca,otra,estB
 	    $('#formEditBienes').css('visibility', 'visible');
 	    $('#formEditBienes').css('top', "95px");
 	    $('#formEditBienes').css('left', "50px");	    
-	  }	
+	  }		
 }
-
 function cancelarAccionBien(q){
 	// alert(q);
 	var xmlhttp = new XMLHttpRequest();
@@ -238,7 +287,6 @@ function cancelarAccionBien(q){
 	document.getElementById("contenedorTablaBienes").innerHTML="";
 	document.getElementById("contenedorTablaBienes").innerHTML=xmlhttp.responseText.trim();
 }
-
 function registrarAlmacenamiento(){
 	var almacenamiento= document.getElementById("almacenamiento").value;
 
@@ -270,7 +318,6 @@ function registrarAlmacenamiento(){
         }    
 	}		
 }
-
 function eliminarRegistroAlmacen(id){
 	//alert(id);
 	
@@ -284,7 +331,6 @@ function eliminarRegistroAlmacen(id){
 	document.getElementById("actualizable").innerHTML="";
 	document.getElementById("actualizable").innerHTML=xmlhttp.responseText.trim();
 }
-
 function sugerirBienes(input){
 	var key = input;
 	var dataString = 'key='+key;
@@ -396,7 +442,6 @@ function sugerirObservaciones2(input,idd,y){
             }
     });    
 }
-
 function buscarDatos(consulta,u,uID,uP){ 
 	//alert(consulta+", "+u+", "+uID+", "+uP);
 	$.ajax({
@@ -412,7 +457,6 @@ function buscarDatos(consulta,u,uID,uP){
 		console.log("error");
 	})	
 }
-
 function buscarBienes(busqueda,u,uID,uP,boton){
 	// alert(busqueda);
 	if(event.keyCode==13||boton==1){
@@ -424,7 +468,6 @@ function buscarBienes(busqueda,u,uID,uP,boton){
 		}
 	}
 }
-
 function mostrarEdicionDetalles(event,dCB,dNB,dDB,q){
 	//alert(dNB+"," +dDB+"," +q);	
 	var v =$('#formEditDet').css('visibility');
@@ -464,53 +507,43 @@ function mostrarEdicionDetalles(event,dCB,dNB,dDB,q){
 	  	// }	  		    
 	  }	 
 }
-
 function ucwords(f){
     return f.replace(/^([a-z\u00E0-\u00FC])|\s+([a-z\u00E0-\u00FC])/g, function($1){
        return $1.toUpperCase(); 
     });
 }
-
 function actualizarRegistroDetBien(q){
 	//alert(q);
-
 	var id=document.getElementById("detNomBien");
 	id=(id.innerHTML.split(":")[0]).substring(12,id.innerHTML.length);
-
 	var vlr1=ucwords(document.getElementById("carEspecial").value);
 	var vlr2=ucwords(document.getElementById("tamano").value);
 	var vlr3=ucwords(document.getElementById("material").value);
 	var vlr4=ucwords(document.getElementById("color").value);
 	var vlr5=ucwords(document.getElementById("marca").value);
-	var vlr6=ucwords(document.getElementById("otra").value);	
-
+	var vlr6=ucwords(document.getElementById("otra").value);
 	// alert(id+"; "+vlr1+"; "+vlr2+"; "+vlr3+"; "+vlr4+"; "+vlr5+"; "+vlr6+"; "+q);
 	//valor=valor.toUpperCase();
 	var xmlhttp = new XMLHttpRequest();
 	xmlhttp.open("GET", "../bdBienes/04.02-actualizarDetBien.php?id="+id+"&vlr1="+vlr1+"&vlr2="+vlr2+"&vlr3="+vlr3+"&vlr4="+vlr4+"&vlr5="+vlr5+"&vlr6="+vlr6, false);
 	xmlhttp.send();
-
-	// alert(xmlhttp.responseText.trim());
-	
+	// alert(xmlhttp.responseText.trim());	
 	var xmlhttp = new XMLHttpRequest();	
 	xmlhttp.open("GET","../bdBienes/01.00-cargarArchivos.php"+q,false);
 	xmlhttp.send();
 	document.getElementById("contenedorTablaBienes").innerHTML=""
 	document.getElementById("contenedorTablaBienes").innerHTML=xmlhttp.responseText.trim();
 }
-
-function mostrarEdicionBienes(event,q,tipo,eCB,eNB,eDB,eEB,eTI,eDp,eOr,eFA,ePr,eCnt,eAlm,eMant,eObs){
-	//alert(eCB+","+eNB+"," +eDB+"," +q+"," +tipo);	
+function mostrarEdicionBienes(event,q,tipo,eCB,u,uID,uP,eNB,eDB,eEB,eTI,eDp,eOr,eFA,ePr,eCnt,eAlm,eMant,eObs){	
+	//alert(q+","+tipo+","+eCB+","+u+","+uID+","+uP);	
 	var v =$('#formEditBienes').css('visibility');
 	// alert($('#formEditBienes').css('visibility'));	
-	
 	var xmlhttp = new XMLHttpRequest();
-	xmlhttp.open("GET","../bdBienes/03.01-formularioCrearBienes.php"+q+"&id="+eCB,false);
+	xmlhttp.open("GET","../bdBienes/03.01-formularioCrearBienes.php?&id="+eCB+"&u="+u+"&uID="+uID+"&uP="+uP,false);	
 	xmlhttp.send();
 	// alert(xmlhttp.responseText.trim());
 	document.getElementById("fAB").innerHTML="";
 	document.getElementById("fAB").innerHTML=xmlhttp.responseText.trim();
-
 	if(tipo==1){
 		var forCodBien = document.getElementById("forCodBien");
 		forCodBien.innerHTML = "Registro No. "+eCB;
@@ -531,7 +564,6 @@ function mostrarEdicionBienes(event,q,tipo,eCB,eNB,eDB,eEB,eTI,eDp,eOr,eFA,ePr,e
 		var selMant=document.getElementById("selMant");
 		var inputObserv=document.getElementById("inputObserv");
 
-
 		forCodBien.innerHTML = "Registro No. "+eCB+": "+eNB;
 		spanNomBien.innerHTML="Descripción del Bien: ";
 		inputNomBien.value=eDB;
@@ -548,8 +580,7 @@ function mostrarEdicionBienes(event,q,tipo,eCB,eNB,eDB,eEB,eTI,eDp,eOr,eFA,ePr,e
 		inputCant.value=eCnt;
 		selAlmacen.value=eAlm;
 		selMant.value=eMant;
-		inputObserv.value=eObs;
-		
+		inputObserv.value=eObs;		
 	}
 
 	if(v!='hidden') {			
@@ -563,7 +594,6 @@ function mostrarEdicionBienes(event,q,tipo,eCB,eNB,eDB,eEB,eTI,eDp,eOr,eFA,ePr,e
 	    $('#formEditBienes').css('left', "50px");	    
 	  }	 
 }
-
 (document).ready(function() {//mover formulario formEditDet
 	$("#formEditDet").draggable({stack:"#formEditDet"}, {handle:"#formEditDetheader"});
 });//mover formulario formEditDet
