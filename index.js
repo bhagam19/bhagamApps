@@ -392,6 +392,7 @@ function validarContrasenaSegura(id){
 		return false;
 	}
 }
+
 function mostrarFormCargueExcel(){
   if( $('#formCargueExcel').css('visibility') !== 'hidden') {
 	    $('#formCargueExcel').css('visibility', 'hidden');	    

@@ -1,0 +1,5 @@
+Para personalizar los iconos del modo jarvis:
+https://www.flaticon.es/icono-gratis/administrador-web_1640922?k=1638042202899
+Cuando está logueado permite modificar colores
+OnActiva: #ABE2F8
+OnPasiva: #80C0FC
