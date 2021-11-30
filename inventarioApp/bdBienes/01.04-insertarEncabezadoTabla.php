@@ -23,7 +23,7 @@
 									}
 								echo 
 									'										
-										<th colspan="2"><img style="width:20px;height:20px;z-index:99;" title ="Agregar un bien." src="../art/agregar.svg" onclick=" mostrarEdicionBienes(event,\''.$queryUrl.'\',1,'.$codBien.')"/></th>
+										<th colspan="2"><img style="width:20px;height:20px;z-index:99;" title ="Agregar un bien." src="../art/agregar.svg" onclick="mostrarEdicionBienes(event,\''.$queryUrl.'\',1,'.$codBien.',\''.$u.'\',\''.$uID.'\',\''.$uP.'\')"/></th>
 									';		
 							}	
 
