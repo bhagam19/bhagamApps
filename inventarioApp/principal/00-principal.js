@@ -206,13 +206,10 @@ function registrarUsuario(id){ //id=1 representa que no hay formulario que ocult
 } //id=1 representa que no hay formulario que ocultar. (e.g. formularioNuevoUsuario.php)
 
 function validarLogin(usuario,contrasena){
-	var xmlhttp = new XMLHttpRequest();
-        
+	var xmlhttp = new XMLHttpRequest();        
         xmlhttp.open("GET", "../login/01-login.php?usuario="+usuario+"&contrasena="+contrasena, false);
         xmlhttp.send();
-
-        //alert(xmlhttp.responseText.trim());
-        
+        //alert(xmlhttp.responseText.trim());        
         if("si" === xmlhttp.responseText.trim()){
         	return true;
         }else if(xmlhttp.responseText.trim()==="cambiar"){
@@ -228,7 +225,6 @@ function validarLogin(usuario,contrasena){
 }
 
 function validarNuevaContrasena(actual,nueva,confirmacion){
-
 	if(actual===""){
 		alert("Por favor, ingrese la contraseña actual para poder continuar.");
 		document.getElementById("contrasenaActual").focus();
@@ -242,21 +238,16 @@ function validarNuevaContrasena(actual,nueva,confirmacion){
 	    	document.getElementById("confirmacionContrasena").value=confirmacionContrasena;
 	    	document.getElementById("confirmacionContrasena").focus();
 		}else{
-			var xmlhttp = new XMLHttpRequest();
-			        
-	        xmlhttp.open("GET", "../login/cambiarContrasena.php?actual="+actual+"&nueva="+nueva, false);
+			var xmlhttp = new XMLHttpRequest();			        
+	        xmlhttp.open("GET", "../login/05-cambiarContrasena.php?actual="+actual+"&nueva="+nueva, false);
 	        xmlhttp.send();
-
-	        // alert(xmlhttp.responseText.trim());
-	        
+	        //alert(xmlhttp.responseText.trim());	        
 	        if("si" === xmlhttp.responseText.trim()){
 	        	alert("La contraseña se cambió exitosamente");
-
 	        	document.getElementById("contrasenaActual").value="";
 	        	document.getElementById("nuevaContrasena").value="";
 		    	document.getElementById("confirmacionContrasena").value="";
-		    	$('.formularioNuevaContrasena').css('visibility', 'hidden');
-	        	
+		    	$('.formularioNuevaContrasena').css('visibility', 'hidden');	        	
 	        }else{        	
 	        	alert("La contraseña no se pudo cambiar");
 	        }		
