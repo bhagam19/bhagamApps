@@ -360,7 +360,6 @@ a.cerrar{
   overflow: hidden;
   transition: max-height 0.2s ease-out;
 }
-
 /*====CuerpoPrincipal====*/
 #contenedor{
 	position:absolute;
@@ -370,11 +369,9 @@ a.cerrar{
 	font-family: arial, serif;	
 	font-size:10px;
 	font-weight:normal;
-	background: white;
 	z-index: 1;
-  overflow: scroll;
+  	overflow: scroll;
 }
-
 /*-- -- */
 #reestablecerBD{	
 	position:relative;
@@ -514,6 +511,12 @@ a.cerrar{
 }
 
 /*====Tabla Principal====*/
+.tituloBD{
+	position: relative;
+	left:10px;
+	font-size: 20px;
+	font-weight: bolder;
+}
 .tablaBD  tbody tr:nth-child(even) {
 	background-color:#E8F4FA;
 }
@@ -527,13 +530,6 @@ a.cerrar{
 	border:2px solid black;
 	background:white;
 }
-.tituloBD{
-	position: relative;
-	left:10px;
-	font-size: 20px;
-	font-weight: bolder;
-}
-
 .tablaBD th img, .tablaBD td img{
 	height:10px;
 	width: 10px;
