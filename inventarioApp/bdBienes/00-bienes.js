@@ -182,8 +182,8 @@ function cambiarFondoInput(id){//Esta función reestablece el color del fondo de
 	document.getElementById(id).style.boxShadow="0 1px 1px rgba(47, 144, 14, 0.075)inset, 0 0 8px rgba(96, 228, 51,0.6)";
 }
 function agregarBien(qry,id,nomBien,cEspecial,cTamano,material,color,marca,otra,estBien,tipoInv,depend,origen,fecha,precio,cant,almacen,mant,observ){
-	//alert(qry+", "+id);
-	
+	//alert("hola");
+	//alert(qry+", "+id);	
 	//alert(id+", "+nomBien+", "+cEspecial+", "+cTamano+", "+material+", "+color+", "+marca+", "+otra+", "+estBien+", "+tipoInv+", "+depend+", "+origen+", "+fecha+", "+precio+", "+cant+", "+almacen+", "+mant+", "+observ);
 	nomBien=ucwords(nomBien.toLowerCase());
 	cEspecial=ucwords(cEspecial.toLowerCase());
@@ -508,7 +508,7 @@ function mostrarEdicionDetalles(event,dCB,dNB,dDB,q){
 	  }	 
 }
 function ucwords(f){
-    return f.replace(/^([a-z\u00E0-\u00FC])|\s+([a-z\u00E0-\u00FC])/g, function($1){
+    return f.replace(/^([a-z\u00E0-\u00FC])|[\s()-]+([a-z\u00E0-\u00FC])/g, function($1){
        return $1.toUpperCase(); 
     });
 }

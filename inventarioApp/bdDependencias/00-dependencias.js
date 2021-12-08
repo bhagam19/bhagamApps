@@ -12,10 +12,7 @@ function registrarDependencia(){
 	var dependencia= document.getElementById("dependencia").value;
 	var ubicacion= document.getElementById("ubicacion").value;
 	var nomResponsable= document.getElementById("nomResponsable").value;
-
-	dependencia=dependencia.toUpperCase();
-	//alert(dependencia);
-
+	dependencia=ucwords(dependencia.toLowerCase());
 	if(dependencia===""){
 		alert("Por favor, ingrese una dependencia. Por ejemplo, \"AULA B1 A-101 (03A)\".");
 		document.getElementById("dependencia").focus();
@@ -110,12 +107,10 @@ function cancelarAccionDependencia(){
 }
 
 function eliminarRegistroDependencia(id){
-	alert(id);
-	
 	var xmlhttp = new XMLHttpRequest();
 	xmlhttp.open("GET","../bdDependencias/05-eliminarDependencia.php?codDependencia="+id,false);
 	xmlhttp.send();
-		
+	alert("El registro "+id+" fue eliminado con éxito.");
 	xmlhttp.open("GET","../bdDependencias/02-cargarDependencias.php",false);
 	xmlhttp.send();
 	document.getElementById("actualizable").innerHTML="";
