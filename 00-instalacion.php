@@ -2,16 +2,12 @@
 	<head>
 		<link rel="stylesheet" type="text/css" href="appsConexion/instalacion.css">
 	</head>
-
 	<body>
-
 <?php
 	//Establecer conexion
 	include('appsConexion/datosConexion.php');
-
 	echo "<div> <a href='index.php'>Volver</a> || <a href='mostrarTablasenBD.php'>Mostrar Base de Datos</a> <br><br></div>";
 	echo "<div> <H1>===== RESUMEN DE INSTALACIÓN ===== </H1><br><br></div>";
-
 //################### Creamos las funciones ejecutarConsulta() e insertar(). ###################		
 function ejecutarConsulta(){
 	global $sql;
@@ -24,8 +20,7 @@ function ejecutarConsulta(){
 		echo "<div>===== CREACIÓN DE LA TABLA '".$tabla."' =====<br><br></div>";
 		echo "<div>No se pudo crear la tabla <span>'".$tabla."'</span>. Razón: <span>[".mysqli_error($conexion)."]</span><br><br></div>";		
 	}
-}
-	
+}	
 function insertar(){
 	global $sql;
 	global $conexion;		
@@ -37,7 +32,6 @@ function insertar(){
 		echo "<div>No se insertaron los datos. <span>".mysqli_error($conexion)."</span><br><br></div>";		
 	}
 }	
-
 //########## CREAR UNA TABLA DE "INSTALACION" ##########
 	// Preparamos la consulta SQL
 	$tabla = 'instalacion';

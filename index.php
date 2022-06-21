@@ -5,7 +5,7 @@
   //### 1. Realizamos la conexion al servidor y a la base de datos a traves del archivo 'datosConexion.php'
 	include('appsConexion/datosConexion.php');
  	//Verificamos si existe la tabla "instalacion" y el campo "confirmacion" con valor "1"  
-    $consulta=mysqli_query($conexion,"SELECT * FROM instalacion WHERE confirmacion=1");
+	@$consulta=$conexion->query("SELECT * FROM instalacion WHERE confirmacion=1");
     if(!$consulta){//Si la consulta no se efectua, es porque no existe la tabla "instalacion", entonces se procede con la instalación de las tablas.
       echo "
         <html>

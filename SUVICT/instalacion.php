@@ -33,8 +33,7 @@ function ejecutarConsulta(){
 		echo "<div id='instalacion'>===== CREACIÓN DE LA TABLA '".$tabla."' =====<br><br></div>";
 		echo "<div id='instalacion'>No se pudo crear la tabla <span id='span'>'".$tabla."'</span>. Razón: <span>[".mysqli_error($conexion)."]</span><br><br></div>";		
 	}
-}
-	
+}	
 function insertar(){
 	global $sql;
 	global $conexion;		
@@ -46,7 +45,6 @@ function insertar(){
 		echo "<div id='instalacion'>No se insertaron los datos. <span id='span'>".mysqli_error($conexion)."</span><br><br></div>";		
 	}
 }	
-
 //########## CREAR UNA TABLA DE "INSTALACION" ##########
 	// Preparamos la consulta SQL
 	$tabla = 'instalacion';
