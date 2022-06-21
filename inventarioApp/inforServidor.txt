@@ -1,8 +1,0 @@
-https://dorianrh.com:2083/
-usuario: dorianrh
-pass: D0r14nrh123#
-
-"host": "adolforuiz.site",
-"user": "ftpalrh@adolforuiz.site",
-"password": "Bhagam19#",
-"port": "21",

@@ -1,0 +1,26 @@
+{
+    "remotePath": "./",
+    "host": "bhagamapps.com",
+    "username": "Adolfo_bhagamapps",
+    "password": "ijkY89&sd",
+    "port": 21,
+    "secure": false,
+    "protocol": "ftp",
+    "uploadOnSave": true,
+    "passive": false,
+    "debug": false,
+    "privateKeyPath": null,
+    "passphrase": null,
+    "agent": null,
+    "allow": [],
+    "ignore": [
+        "\\.vscode",
+        "\\.git"
+    ],
+    "generatedFiles": {
+        "extensionsToInclude": [
+            ".php, .js, .html, .css"
+        ],
+        "path": ""
+    }
+}
