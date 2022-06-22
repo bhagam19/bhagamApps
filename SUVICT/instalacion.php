@@ -3,16 +3,12 @@
 		<link rel="stylesheet" type="text/css" href="../conexion/instalacion.css">
 		<link rel="stylesheet" type="text/css" href="conexion/instalacion.css">
 	</head>
-
 	<body>
-
 <?php
 	//Establecer conexion
 	$url = $_SERVER['PHP_SELF'];//Para saber si la instalacion se ejecuta desde adentro o fuera de la aplicacion.	
-
 	include('conexion/datosConexion.php');
 	echo"<br><br><br><br><br>";
-
 	if(strpos($url,"principal")){
 		echo "<div id='instalacion'> <a href='principal.php'>Volver</a><br></div>";
 		echo "<div id='instalacion'> <H1>===== RESUMEN DE INSTALACIÓN ===== </H1><br><br></div>";
@@ -20,7 +16,6 @@
 		echo "<div id='instalacion'> <a href='index.php'>Volver</a> || <a href='mostrarTablasenBD.php'>Mostrar Base de Datos</a> <br><br></div>";
 		echo "<div id='instalacion'> <H1>===== RESUMEN DE INSTALACIÓN ===== </H1><br><br></div>";
 	}
-
 //################### Creamos las funciones ejecutarConsulta() e insertar(). ###################		
 function ejecutarConsulta(){
 	global $sql;
@@ -58,13 +53,10 @@ function insertar(){
 		';
 	//Ejecutar
 	ejecutarConsulta();
-
-//########## INGRESAR CONTENIDO A LA TABLA "INSTALACION" ##########
-	
+//########## INGRESAR CONTENIDO A LA TABLA "INSTALACION" ##########	
 	$sql='INSERT INTO '.$tabla.' (codInstalacion, confirmacion) 
 			VALUES (1,1)';
 			insertar();		
-
 //################### CREAR UNA TABLA DE "DOCENTES". ###################
 	//Preparar consulta SQL
 	$tabla='docentes';
@@ -80,14 +72,11 @@ function insertar(){
 			genero int(1) NOT NULL,
 		    permiso int(1) NOT NULL,
 			PRIMARY KEY(cod)
-		)';
-	
+		)';	
 	//Ejecutar	
-	ejecutarConsulta();
-	
+	ejecutarConsulta();	
 //################### CONTENIDO DE PRUEBA PARA LA TABLA "DOCENTES". ###################
 	$usuarios = array( 
-
 		array(59823938,"Bolaños Ramos","Mónica Esther",59823938,"cteApp",0,1),
 		array(24866257,"Ospina Hoyos","Judith",24866257,"cteApp",0,1),
 		array(21812797,"Morales Piedrahita","Gladys Elena",21812797,"cteApp",0,1),
@@ -127,14 +116,12 @@ function insertar(){
 		array(78115091,"Moncaleano Monterrosa","Ricardo ",78115091,"cteApp",1,1),
 		array(71379517,"Ruiz Hernández","Adolfo León",71379517,"cteApp",1,3),
 		array(70877012,"Gallo Mesa","Oscar Fernando",70877012,"cteApp",1,1)
-		);
-	
+		);	
 	foreach ($usuarios as $usuario){
 		$sql='INSERT INTO '.$tabla.' (id, apellidos, nombres, usuario, contrasena, genero, permiso) 
 			VALUES ('.$usuario[0].',"'.$usuario[1].'","'.$usuario[2].'","'.$usuario[3].'","'.$usuario[4].'",'.$usuario[5].','.$usuario[6].')';
 			insertar();		
-	}				
-
+	}
 //########## CREAR UNA TABLA DE "AREAS" ##########
 	// Preparamos la consulta SQL
 	$tabla = 'areas';
@@ -148,7 +135,6 @@ function insertar(){
 		';
 	//Ejecutar
 	ejecutarConsulta();
-
 //########## INGRESAR CONTENIDO A LA TABLA "AREAS" ##########
 	$areas = array(
 		array("Ciencias Naturales, Física y Química"),
@@ -161,14 +147,12 @@ function insertar(){
 		array("Matemáticas, Contabilidad, Estadística"),
 		array("Metodología de la Investigación, Proyecto de Grado"),
 		array("Tecnología, Informática, Programación")
-		);
-	
+		);	
 	foreach ($areas as $area){
 		$sql='INSERT INTO '.$tabla.' (area) 
 			VALUES ("'.$area[0].'")';
 			insertar();		
 	}
-
 //########## CREAR UNA TABLA DE "ASIGNATURAS" ##########
 	// Preparamos la consulta SQL
 	$tabla = 'asignaturas';
@@ -184,16 +168,13 @@ function insertar(){
 		';
 	//Ejecutar
 	ejecutarConsulta();
-
 //########## INGRESAR CONTENIDO A LA TABLA "ASIGNATURAS" ##########
-
 	if(strpos($url,"principal")){
 		$instalacion=0;
 	}else{
 		$instalacion=1;
 	}
-	include('bdAsignaturas/cargarExcel.php'); 
-
+	//include('bdAsignaturas/cargarExcel.php'); 
 //########## CREAR UNA TABLA DE "SEDES" ##########
 	// Preparamos la consulta SQL
 	$tabla = 'sedes';
@@ -340,7 +321,7 @@ function insertar(){
 	}else{
 		$instalacion=1;	
 	}
-	include('bdAsignacionAcademica/cargarExcel.php');
+	//include('bdAsignacionAcademica/cargarExcel.php');
 
 
 //################### CREAR UNA TABLA DE "ESTUDIANTES". ###################
@@ -371,7 +352,7 @@ function insertar(){
 	}else{
 		$instalacion=1;
 	}
-	include('bdEstudiantes/leerExcel.php'); 
+	//include('bdEstudiantes/leerExcel.php'); 
 
 //########## CREAR UNA TABLA DE "CONDICIONES DE TALENTO" ##########
 	// Preparamos la consulta SQL
@@ -396,7 +377,7 @@ function insertar(){
 	}else{
 		$instalacion=1;
 	}
-	include('bdNominaciones/leerExcel01.php');
+	//include('bdNominaciones/leerExcel01.php');
 
 //########## CREAR UNA TABLA DE "RAZONES SUGERENCIAS" ##########
 	// Preparamos la consulta SQL
@@ -418,7 +399,7 @@ function insertar(){
 	}else{
 		$instalacion=1;
 	}
-	include('bdSugerencias/leerExcel01.php'); 
+	//include('bdSugerencias/leerExcel01.php'); 
 
 //########## CREAR UNA TABLA DE "SUBRAZONES SUGERENCIAS" ##########
 	// Preparamos la consulta SQL
@@ -442,7 +423,7 @@ function insertar(){
 	}else{
 		$instalacion=1;
 	}
-	include('bdSugerencias/leerExcel02.php'); 
+	//include('bdSugerencias/leerExcel02.php'); 
 
 //########## CREAR UNA TABLA DE "ESTUDIANTES NOMINADOS" ##########
 	// Preparamos la consulta SQL

@@ -79,7 +79,7 @@
 					$datosApp=array(
 					array("planeaApp/00-index.php","appsArt/planeador.png","Planeador"),
 					array("eduInclusiva/index.php","appsArt/DUA.png","EduInclusiva"),
-					array("CTEApp","appsArt/cteApp.jpg","CTE App"),
+					array("SUVICT","appsArt/cteApp.jpg","SUVICT"),
 					array("creaExamen/index.php","appsArt/examCreator.jpg","Creador de Exámenes"),
 					array("inventarioApp","appsArt/inventApp.png","Inventario App"),
 					array("biblioTaparto/index.php","appsArt/biblioAppOnPasiva.png","Biblio App"),
