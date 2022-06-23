@@ -5,6 +5,7 @@
 	</head>
 	<body>
 <?php
+	
 	//Establecer conexion
 	$url = $_SERVER['PHP_SELF'];//Para saber si la instalacion se ejecuta desde adentro o fuera de la aplicacion.	
 	include('conexion/datosConexion.php');
@@ -174,7 +175,7 @@ function insertar(){
 	}else{
 		$instalacion=1;
 	}
-	//include('bdAsignaturas/cargarExcel.php'); 
+	include('bdAsignaturas/cargarExcel.php'); 
 //########## CREAR UNA TABLA DE "SEDES" ##########
 	// Preparamos la consulta SQL
 	$tabla = 'sedes';
@@ -315,15 +316,12 @@ function insertar(){
 	ejecutarConsulta();
 
 //########## INGRESAR CONTENIDO A LA TABLA "ASIGNACIÓN ACADÉMICA" ##########
-
 	if(strpos($url,"principal")){
 		$instalacion=0;	
 	}else{
 		$instalacion=1;	
 	}
-	//include('bdAsignacionAcademica/cargarExcel.php');
-
-
+	include('bdAsignacionAcademica/cargarExcel.php');
 //################### CREAR UNA TABLA DE "ESTUDIANTES". ###################
 	//Preparar consulta SQL
 	$tabla='estudiantes';
@@ -346,14 +344,12 @@ function insertar(){
 	ejecutarConsulta();
 	
 //################### CONTENIDO DE PRUEBA PARA LA TABLA "ESTUDIANTES". ###################	
-
 	if(strpos($url,"principal")){
 		$instalacion=0;
 	}else{
 		$instalacion=1;
 	}
-	//include('bdEstudiantes/leerExcel.php'); 
-
+	include('bdEstudiantes/leerExcel.php'); 
 //########## CREAR UNA TABLA DE "CONDICIONES DE TALENTO" ##########
 	// Preparamos la consulta SQL
 	$tabla = 'condiciones';
@@ -377,7 +373,7 @@ function insertar(){
 	}else{
 		$instalacion=1;
 	}
-	//include('bdNominaciones/leerExcel01.php');
+	include('bdNominaciones/leerExcel01.php');
 
 //########## CREAR UNA TABLA DE "RAZONES SUGERENCIAS" ##########
 	// Preparamos la consulta SQL
@@ -399,8 +395,7 @@ function insertar(){
 	}else{
 		$instalacion=1;
 	}
-	//include('bdSugerencias/leerExcel01.php'); 
-
+	include('bdSugerencias/leerExcel01.php'); 
 //########## CREAR UNA TABLA DE "SUBRAZONES SUGERENCIAS" ##########
 	// Preparamos la consulta SQL
 	$tabla = 'subrazones';
@@ -423,9 +418,9 @@ function insertar(){
 	}else{
 		$instalacion=1;
 	}
-	//include('bdSugerencias/leerExcel02.php'); 
-
+	include('bdSugerencias/leerExcel02.php'); 
 //########## CREAR UNA TABLA DE "ESTUDIANTES NOMINADOS" ##########
+	error_reporting(-1);
 	// Preparamos la consulta SQL
 	$tabla = 'estNominados';
 	$sql=
@@ -435,20 +430,17 @@ function insertar(){
 				codEstudiante int(4),
 				codArea int(4),
 				docNominador int(2),
-				codCondicion int(4),
-				tipoCondicion int(2),
+				codCondicion int(2),
 				frecCondicion int(2),
 				PRIMARY KEY(cod),
 				FOREIGN KEY(codEstudiante) REFERENCES estudiantes (cod),
 				FOREIGN KEY(codArea) REFERENCES areas (cod),
 				FOREIGN KEY(docNominador) REFERENCES docentes (cod),
-				FOREIGN KEY(codCondicion) REFERENCES condiciones (cod),
-				FOREIGN KEY(tipoCondicion) REFERENCES condiciones (tipoCondicion)
+				FOREIGN KEY(codCondicion) REFERENCES condiciones (cod)
 			)
 		';
 	//Ejecutar
 	ejecutarConsulta();
-
 //########## CREAR UNA TABLA DE "ESTUDIANTES SUGERIDOS" ##########
 	// Preparamos la consulta SQL
 	$tabla = 'estSugeridos';
@@ -501,7 +493,6 @@ function insertar(){
 	}
 		
 //################### CONTENIDO DE PRUEBA PARA LA TABLA DE LOGS. ###################
-	
 	//Preparar
 	$tabla='logs';
 	$sql=
@@ -510,7 +501,7 @@ function insertar(){
 			VALUES (0000000000,2011,02,07,21,03,00,"127.0.0.1","chrome","jocarsa","jocarsa","<a href=http://../principal.php>principal</a>")			
 		';	
 	//Insertar
-	insertar();
+	//insertar();
 	
 	//Cerrar
 	mysqli_close($conexion);

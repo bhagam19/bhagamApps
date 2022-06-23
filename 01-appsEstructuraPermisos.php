@@ -85,7 +85,8 @@
 					array("biblioTaparto/index.php","appsArt/biblioAppOnPasiva.png","Biblio App"),
 					array("prestamoTabletas/index.php","appsArt/tablet.jpg","Préstamo de Tabletas"),
 					array("pollaMundialista/index.php","appsArt/pollaMundialista.png","Polla Mundialista"),
-					array("ironManProject/index.html","appsArt/arcReactor.png","Proyecto Ironman")
+					array("ironManProject/index.html","appsArt/arcReactor.png","Proyecto Ironman"),
+					array("SvS","appsArt/SvS.png","SINAI vs SIMAT")
 			);
 			foreach ($datosApp as $App) {
 				echo '

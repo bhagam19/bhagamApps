@@ -1,6 +1,6 @@
 <?php
-	// @session_start();	
-	include('../conexion/datosConexion.php');
+	//session_start();	
+	include('../conexion/datosConexion.php');	
 	@$docNominador= mysqli_real_escape_string($conexion, $_POST["docNominador"]);
 	if(!$docNominador){
 		@session_start();

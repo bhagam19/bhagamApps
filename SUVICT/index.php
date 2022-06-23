@@ -1,15 +1,11 @@
 <?php
     session_name("CTEApp");
     session_start();
-
 	//### 1. Realizamos la conexion al servidor y a la base de datos a traves del archivo 'datosConexion.php'
 	include('conexion/datosConexion.php');
-
  	//Verificamos si existe la tabla "instalacion" y el campo "confirmacion" con valor "1"  
-    //$sql=mysqli_query($conexion,"SELECT * FROM instalacion WHERE confirmacion=1");
     $consulta=$conexion->query("SELECT * FROM instalacion WHERE confirmacion=1");
-    $row = mysqli_num_rows($consulta); //Verificamos cuántas filas cumplen con la consulta "$sql"
-            
+    $row = mysqli_num_rows($consulta); //Verificamos cuántas filas cumplen con la consulta "$sql"            
     if(!$consulta){//Si la consulta no se efectua, es porque no existe la tabla "instalacion", entonces se procede con la instalación de las tablas.
         echo "
             <html>
@@ -37,6 +33,5 @@
                 </head>
             </html>";  
         */
-    }  
-   
+    }     
 ?>
