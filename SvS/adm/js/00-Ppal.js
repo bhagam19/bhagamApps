@@ -14,9 +14,13 @@ function cargarReporte(v){
         case "4":
             url="adm/02-vst/00-Ppal/03-reporte04.php";
         break;
+        case "5":
+            url="adm/02-vst/00-Ppal/03-reporte05.php";
+        break;
     }
     xmlhttp.open("GET",url,false);
 	xmlhttp.send();
 	document.getElementById("reporte").innerHTML="";
 	document.getElementById("reporte").innerHTML=xmlhttp.responseText.trim();	
+    document.getElementById("reporte").style.visibility="visible";
 }

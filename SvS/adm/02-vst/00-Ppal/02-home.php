@@ -39,9 +39,10 @@
             <option value=2>EPS</option>
             <option value=3>Teléfono</option>
             <option value=4>País</option>
+            <option value=5>Desertores</option>
         </select>
     ';
 
-    echo '<div id="reporte"></div>';  
+    echo '<br><br><div id="reporte"></div>';  
     
 ?>

@@ -1,18 +1,21 @@
 <?php
     include('../../01-mdl/cnx.php');//Agregamos la conexión
-    echo'<br>';
     echo'Estudiantes con telefono diferente en SIMAT';
-    echo '<table border=1>
-			<tr>
-				<td>GRUPO</td>
-				<td>ESTADO</td>
-                <td>APELLIDOS</td>
-                <td>NOMBRES</td>
-                <td>TIPO DOC</td>
-                <td>DOCUMENTO</td>
-                <td>TELÉFONO SINAI</td>
-                <td>TELÉFONO SIMAT</td>
-			</tr>';
+    echo '
+        <table class="tablaBD tablaBienes" border=1>
+            <thead>
+                <tr class="stickyHead1">
+                    <th>GRUPO</th>
+                    <th>ESTADO</th>
+                    <th>APELLIDOS</th>
+                    <th>NOMBRES</th>
+                    <th>TIPO DOC</th>
+                    <th>DOCUMENTO</th>
+                    <th>TELÉFONO SINAI</th>
+                    <th>TELÉFONO SIMAT</th>
+                </tr>
+            </thead>
+    ';
     $consulta=$cnx->query('SELECT sinai.grupo, sinai.estado, sinai.apellidos, sinai.nombres, sinai.tipoDoc, sinai.numDoc, sinai.telefono, simat.telefono FROM sinai INNER JOIN simat 
                             ON NOT sinai.telefono=simat.telefono WHERE sinai.estado="MATRICULADO" AND simat.estado="MATRICULADO" AND sinai.numDoc=simat.numDoc
                             ORDER BY sinai.grupo ASC, sinai.apellidos, sinai.nombres ASC');

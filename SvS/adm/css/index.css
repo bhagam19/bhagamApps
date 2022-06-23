@@ -169,11 +169,11 @@ html {
 }
 #reporte{/*Solo para Bienes*/
 	position: relative;
+	visibility: hidden;
 	width:auto;
 	height:650px;
     overflow: scroll;
 }
-
 .tablaBD tbody tr:nth-child(even) {
 	background-color:#e8eef1;
 }
@@ -226,8 +226,6 @@ html {
 	border-bottom:0.2px solid lightgray;
 	z-index: 2;
 }
-
-
 /*==========ADAPTABILIDAD===============*/
 @media screen and (max-width:1400px) {
 	html {

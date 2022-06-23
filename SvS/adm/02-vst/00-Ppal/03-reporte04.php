@@ -1,18 +1,18 @@
 <?php
     include('../../01-mdl/cnx.php');//Agregamos la conexión
-    echo'<br>';
     echo'Estudiantes con país diferente en SIMAT';
-    echo '<table class="tablaBD tablaBienes" border=1>
+    echo '
+        <table class="tablaBD tablaBienes" border=1>
             <thead>
                 <tr class="stickyHead1">
-				<th>GRUPO</th>
-				<th>ESTADO</th>
-                <th>APELLIDOS</th>
-                <th>NOMBRES</th>
-                <th>TIPO DOC</th>
-                <th>DOCUMENTO</th>
-                <th>PAÍS SINAI</th>
-                <th>PAÍS SIMAT</th>
+                    <th>GRUPO</th>
+                    <th>ESTADO</th>
+                    <th>APELLIDOS</th>
+                    <th>NOMBRES</th>
+                    <th>TIPO DOC</th>
+                    <th>DOCUMENTO</th>
+                    <th>PAÍS SINAI</th>
+                    <th>PAÍS SIMAT</th>
 			    </tr>
             </thead> 
     ';
