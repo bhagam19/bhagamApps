@@ -162,57 +162,72 @@ html {
 }
 /*====CuerpoPrincipal====*/
 #appsContenedor {
-	position: relative;
+	position: fixed;
     display: inline-block;
 	top:80px;
 	margin: 0 auto;
 }
-#boton {
-	display: inline-block;
-	width: 150px;
-	text-align: center;
-	margin: 50px;
-	border: 1px solid var(--OnPasivo);
-	border-radius: 15px 0;
-	background: var(--fondo03);
-}
-#boton:hover {
-	border: 1px solid var(--OnActivo);
-	border-radius: 15px 0;
-	background: var(--fondo05);
-	box-shadow: 1px 1px 5px var(--OnActivo);
-}
-#boton img {
-	height: 120px;
-	width: 120px;
-	margin: 0 auto;
-	border-radius: 15px;
-	border: 1px solid var(--OnActivo);
-	box-shadow: 1px 1px 5px var(--OnActivo);
-}
-#boton p {
-	font-weight: normal;
-	line-height: auto;
-	font-size: 14px;
-	color: #8895bf;
-	color: var(--OnPasivo);
-}
-#boton:hover p{
-	color: var(--OnActivo);
-	text-shadow: 0px 0px 10px var(--OnActivo);
-}
-#boton a {
-	text-decoration: none;
-}
-#h2 {
+#reporte{/*Solo para Bienes*/
 	position: relative;
-	top: 180px;
-	text-align: center;
-	color: var(--OnActivo);
-	text-shadow: 0px 0px 10px var(--OnActivo);
-	z-index: 3;
-	
+	width:auto;
+	height:650px;
+    overflow: scroll;
 }
+
+.tablaBD tbody tr:nth-child(even) {
+	background-color:#e8eef1;
+}
+.tablaBD tbody tr:hover {
+	background-color: #d9e7fa;
+}
+.tablaBD{
+	position: relative;
+	left:10px;
+	border-collapse: collapse;
+	background:white;
+	border-right: 1px solid black;
+	border-left: 1px solid black;
+	border-top: 1px solid black;
+	border-bottom: 1px solid black;
+}
+.tablaBD th img, .tablaBD td img{
+	height:10px;
+	width: 10px;
+	cursor:pointer;
+	padding:0px 3px;
+}
+.tablaBD th img:hover, .tablaBD td img:hover{
+	background:white;
+	border-radius: 5px;
+}
+.tablaBD thead th{	
+	top:0;
+	height: 20px;	
+	padding:0px 5px;
+	font-weight:bolder;
+	text-align:center;
+	color:white;
+	white-space:nowrap;
+	background:#084B8A;
+}
+.tablaBD td{
+	height: 20px;	
+	padding:3px 10px;
+	border-right:0.2px solid white;
+	border-bottom:0.2px solid lightgray;
+	white-space:nowrap;
+	text-overflow: ellipsis;
+	overflow:hidden;
+}
+.stickyHead1{
+	position:sticky;
+	top:0px;
+	border-right:0.2px solid white;
+	border-bottom:0.2px solid lightgray;
+	z-index: 2;
+}
+
+
 /*==========ADAPTABILIDAD===============*/
 @media screen and (max-width:1400px) {
 	html {
