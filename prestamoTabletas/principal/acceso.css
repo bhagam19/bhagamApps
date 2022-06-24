@@ -1,0 +1,820 @@
+html{
+	background: -webkit-gradient(linear, 100% 100%, 0 0, from(#0B610B), to(#61210B));
+	background: -webkit-linear-gradient(bottom right, #CEF6D8,#F5A9BC);
+	background: -moz-linear-gradient(bottom right, #61210B,#0B610B);
+	background: -o-linear-gradient(bottom right, #61210B,#0B610B);
+	background: linear-gradient(bottom right, #0B610B,#61210B); 
+	
+}
+#contenedor{
+	width:850px;
+	height:auto;
+	margin:0 auto;
+	padding:10px;
+	background:white;
+	box-shadow:1px 1px 3px 1px #61210B;
+	border-radius:5px;
+	z-index:1;
+	overflow:hidden;
+}
+#encabezado{
+	position:relative;
+	width:auto;
+	height:155px;
+	padding:10px;
+	background:lightblue;
+	box-shadow:1px 1px 3px 1px #61210B;
+	border-radius:10px;
+	background: -webkit-gradient(linear, 100% 100%, 0 0, from(#61210B), to(#0B610B));
+	background: -webkit-linear-gradient(bottom right, #61210B,#0B610B);
+	background: -moz-linear-gradient(bottom right, #61210B,#0B610B);
+	background: -o-linear-gradient(bottom right, #61210B,#0B610B);
+	background: linear-gradient(bottom right, #61210B,#0B610B); 
+}
+#encabezado-presentacion{
+	position:relative;
+	width:65%;
+	height:60px;
+	padding:10px;
+	/*box-shadow:1px 1px 3px 1px black;*/
+	border-radius:10px; /* For Safari 5.1 to 6.0 */
+}
+
+.formularioNuevoUsuario, .formularioAsignaturasxDocente, .formularioGruposxDocente{
+	position:fixed;
+	top:-500px;
+	left:0px;
+	right:0px;
+	margin:0 auto;
+	width:400px;
+	height:auto;
+	z-index:11;
+	border:1px solid green;
+	background:white;	
+	box-shadow:0px 0px 20px white;
+	border-radius:10px;
+	padding-bottom:20px;
+}
+.formularioNuevoUsuario a, .formularioMisReservaciones a, .formularioMiPerfil a{
+    padding:1px;
+    background:blue;
+    border-radius:5px;
+    margin-top:10px;
+    text-decoration:none;
+    font-weight: bold;
+    color:#F2F2F2;
+}
+.formularioNuevoUsuario a:hover,.formularioMisReservaciones a:hover, .formularioMiPerfil a:hover{
+    background:brown;
+    cursor:pointer;
+}
+#x{
+	background:red;
+	position:relative;
+	top:-30px;
+	left:250px;
+	border-radius:25px;
+	color:white;
+	padding:5px;
+	display:none;
+}
+#x .contrasena{
+	display:inline;
+}
+
+#separador{
+	position:fixed;
+	background:white;
+	opacity:0.8;
+    top:0px;
+    bottom:0px;
+    left:0px;
+    right:0px;
+    z-index:10;
+}
+#handler{
+	height:auto;
+	background:#088A29;
+	border:1px solid #F5ECCE;
+	text-align:center;
+	color:white;
+	font-weight:bold;
+	border-radius:10px 10px 0px 0px;
+	border-bottom:3px solid gray;
+	cursor:move;
+} 
+#handler p{
+	position:relative;
+	top:-5px;
+	text-shadow:2px 2px 6px lightblue;	
+	line-height:2px;
+}
+a.cerrar{
+    float:right;
+    width:20px;
+    height:20px;
+    margin-top:-10px;
+    margin-right:-10px;
+    cursor:pointer;
+	border-radius:25px;
+	border:2px solid black;	
+	padding-bottom:-2px;
+}
+
+.logo{
+    position:relative;
+    height:150px;
+    width:150px;
+    top:-10px;
+    left:-5px;
+    border-radius: 10px;
+}
+.titulo-aplicacion{
+	position:relative;
+	top: -110px;
+	left:15px;
+	width:100px;
+	height:80%;
+	background:white;
+	opacity: 0.6;
+	font-family:verdana;
+	font-size:20px;
+	font-weight:bolder;
+	text-align:center;
+	box-shadow:3px 3px 20px 20px white;
+	border-radius:20px;	
+}
+.fachada{
+	width:640px;
+	 height:150px;
+	 position:relative;
+	 top:-212px;
+	 left:170px;
+	 margin-left:2%;
+	 box-shadow:1px 1px 15px 2px #CEF6EC;
+	 border-radius: 10px;
+}
+
+#usuario-registrado{
+	position:relative;
+	top:80px;
+	width:70%;
+	height:60px;
+	padding:10px;
+	border-radius:10px;
+	float:right;
+	z-index:2;
+}
+.usuario-registrado{
+	position:relative;
+	width:100%;
+	height:auto;
+	padding:2px;
+	right:100px;
+	border-radius:10px;
+	text-align:right;
+	font-size:17px;
+	font-weight:bolder;
+	float:right;
+}
+.boton-cerrar{
+	position:relative;
+	width:100%;
+	height:auto;
+	top:-27px;
+	right:-20px;
+	padding:2px;
+	border-radius:10px;
+	text-align:right;
+	font-size:18px;
+	float:right;
+}
+.boton-cerrar a{
+	border:1px solid #91b41a; 
+	border-radius: 5px;
+			-webkit-border-radius: 3px; 
+			-moz-border-radius: 3px;
+	font-size:12px;
+	font-family:arial, helvetica, sans-serif; 
+	padding: 3px 5px 3px 5px; 
+	text-decoration:none;
+	font-weight:bolder;
+	/*box-shadow:1px 1px 5px 1px white;*/
+	display:inline-block;
+	text-shadow: -1px -1px 0 rgba(0,0,0,0.3);
+	color: white; 
+	background-color:#0431B4;
+	background-image: linear-gradient(to bottom, #0431B4, #0B0B3B);
+			background-image: -webkit-gradient(linear, left top, left bottom, from(#0431B4), to(#0B0B3B));
+			background-image: -webkit-linear-gradient(top,#0431B4, #0B0B3B);
+			background-image: -moz-linear-gradient(top, #0431B4, #0B0B3B);
+			background-image: -ms-linear-gradient(top, #0431B4, #0B0B3B);
+			background-image: -o-linear-gradient(top, #0431B4, #0B0B3B);
+			filter:progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr=#0431B4, endColorstr=#0B0B3B);
+}
+.boton-cerrar a:hover{
+	color:#D8F6CE;
+	border:1px solid #718c14;
+	/*box-shadow:1px 1px 10px 5px #A9D0F5;*/
+	background-color: #2E9AFE; 
+	background-image: linear-gradient(to bottom, #5882FA, #0404B4);
+			 background-image: -webkit-gradient(linear, left top, left bottom, from(#5882FA), to(#0404B4));
+			 background-image: -webkit-linear-gradient(top, #5882FA, #0404B4);
+			 background-image: -moz-linear-gradient(top, #5882FA, #0404B4);
+			 background-image: -ms-linear-gradient(top, #5882FA, #0404B4);
+			 background-image: -o-linear-gradient(top, #5882FA, #0404B4);
+			 filter:progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr=#5882FA, endColorstr=#0404B4);
+}
+
+#cuerpo-principal{	
+	position:relative;
+	width:98%;
+	height:auto;
+	top:30px;
+	padding:10px;
+	margin-bottom:30px;
+	background:transparent;
+	box-shadow:1px 1px 3px 1px #0B610B;
+	border-radius:10px;
+}
+
+#formularioLogin{
+	position:relative;
+	top:215px;
+	width:200px;
+	height:auto;
+	margin-left:30%;
+	padding:10px;
+	/*box-shadow:1px 1px 3px 1px black;
+	border-radius:2px;*/
+	overflow:hide;
+}
+.acceso-registrado{
+	position:relative;
+	top:-210px;
+	margin:0 auto;
+	width:400px;
+	height:260px;
+	padding:10px;
+	background:transparent;
+	border-radius:10px;
+	box-shadow:1px 1px 3px 3px #61210B;
+}
+.acceso-registrado:hover{
+	box-shadow:1px 1px 20px 5px #0B610B;
+	
+}
+.acceso-registrado table{					
+	position:relative;
+	width:350px;
+	height:240px;
+	top:10px;
+	background:#088A29;
+	margin:0 auto;
+	border-radius:10px;
+	color:white;
+	font-weight:bolder;
+	box-shadow:0 0 5px 2px #8A2908;						
+}
+.acceso-registrado input:focus{
+	box-shadow:0 0 5px 3px #FFFF00 !important;
+}
+.acceso-registrado span, .formulario span{
+	margin-top:30px;
+	margin-left:30px;
+}
+.acceso-registrado input[type="text"], .acceso-registrado input[type="password"],
+.acceso-registrado select, .formulario select{
+    border: none;
+    color: #525252;
+    height: 25px;
+    line-height:15px;
+    margin-bottom: 5px;
+    margin-right: 30px;
+    margin-left:30px;
+    margin-top: 2px;
+    outline: 0 none;
+    padding: 5px 0px 5px 5px;
+    width: 70%;
+    border-radius: 2px;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    -moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+    background: #DFDFDF;
+}
+.acceso-registrado input[type="text"]:hover, .acceso-registrado input[type="password"]:hover,.acceso-registrado select:hover{
+    box-shadow:0 0 1px 1px black;
+}
+.acceso-registrado input[type="submit"],.acceso-registrado input[type="button"], .formulario input[type="submit"]{
+	position:relative;
+    background: #FFCC02;
+    padding: 5px 5px 5px 5px;
+    color: #585858;
+    border-radius: 4px;
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+    text-shadow: 1px 1px 1px #FFE477;
+    font-weight: bold;
+    box-shadow: 1px 1px 1px #3D3D3D;
+    -webkit-box-shadow:1px 1px 1px #3D3D3D;
+    -moz-box-shadow:1px 1px 1px #3D3D3D;
+}
+.acceso-registrado input[type="submit"]:hover,.acceso-registrado input[type="button"]:hover, .formulario input[type="submit"]:hover{
+    color: #333;
+    background-color: #EBEBEB;
+}
+
+.expandible{
+	height:300px;
+	overflow:auto;
+}
+.formulario ul{
+    list-style:none;
+}
+.formulario li{
+	position:relative;
+	display:inline;
+	left:-50px;
+	top:20px;
+    width:100px;
+    padding:5px;
+    background:blue;
+    border-radius:5px;
+    margin-top:10px;
+    text-decoration:none;
+    font-weight: bold;
+    color:#F2F2F2;
+    cursor:pointer;
+    z-index:14;
+}
+.formulario li:hover {
+    background:white;
+}
+
+.formularioMisReservaciones{
+	position:fixed;
+	top:-7500px;
+	left:0px;
+	right:0px;
+	margin:0 auto;
+	width:950px;
+	height:auto;
+	z-index:11;
+	border:1px solid green;
+	background:white;	
+	box-shadow:0px 0px 20px white;
+	border-radius:10px;
+	padding-bottom:20px;
+}
+.formularioMisReservaciones li{
+	position:relative;
+	left:0px;
+	top:0px;
+	padding:0px 5px 0px 5px;
+	border:1px solid #6E6E6E;
+	border-radius:5px;
+	font-weight:bolder;
+	color:#424242;
+	background:#BDBDBD;
+	background-image: linear-gradient(to bottom, #BDBDBD, #A4A4A4);
+			background-image: -webkit-gradient(linear, left top, left bottom, from(#BDBDBD), to(#A4A4A4));
+			background-image: -webkit-linear-gradient(top,#D8D8D8, #A4A4A4);
+			background-image: -moz-linear-gradient(top,#BDBDBD, #A4A4A4);
+			background-image: -ms-linear-gradient(top, #BDBDBD, #A4A4A4);
+			background-image: -o-linear-gradient(top,#BDBDBD, #A4A4A4);
+			filter:progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr=#BDBDBD, endColorstr=#A4A4A4);
+}
+.formularioMisReservaciones li:hover{
+	background:brown;
+	cursor:pointer;
+	background-image: linear-gradient(to bottom, #FFFFFF, #BDBDBD);
+			background-image: -webkit-gradient(linear, left top, left bottom, from(#FFFFFF), to(#BDBDBD));
+			background-image: -webkit-linear-gradient(top,#FFFFFF, #BDBDBD);
+			background-image: -moz-linear-gradient(top,#FFFFFF, #BDBDBD);
+			background-image: -ms-linear-gradient(top, #FFFFFF, #BDBDBD);
+			background-image: -o-linear-gradient(top,#FFFFFF, #BDBDBD);
+			filter:progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr=#FFFFFF, endColorstr=#BDBDBD);
+}
+.formularioMisReservaciones td{
+	text-align:center;
+	white-space:nowrap;
+}
+
+.formularioMiPerfil{
+	position:fixed;
+	top:-7500px;
+	left:0px;
+	right:0px;
+	margin:0 auto;
+	width:800px;
+	height:450px;
+	z-index:11;
+	border:1px solid green;
+	background:white;	
+	box-shadow:0px 0px 20px white;
+	border-radius:10px;
+	padding-bottom:20px;
+}
+.formularioMiPerfil li, .tablaAdministrador li{
+	position:relative;
+	left:0px;
+	top:0px;
+	width:100px !important;
+	padding:0px 5px 0px 5px;
+	border:1px solid #6E6E6E;
+	border-radius:5px;
+	font-weight:bolder;
+	color:#424242;
+	background:#BDBDBD;
+	background-image: linear-gradient(to bottom, #BDBDBD, #A4A4A4);
+			background-image: -webkit-gradient(linear, left top, left bottom, from(#BDBDBD), to(#A4A4A4));
+			background-image: -webkit-linear-gradient(top,#D8D8D8, #A4A4A4);
+			background-image: -moz-linear-gradient(top,#BDBDBD, #A4A4A4);
+			background-image: -ms-linear-gradient(top, #BDBDBD, #A4A4A4);
+			background-image: -o-linear-gradient(top,#BDBDBD, #A4A4A4);
+			filter:progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr=#BDBDBD, endColorstr=#A4A4A4);
+}
+.formularioMiPerfil li:hover, .tablaAdministrador li:hover{
+	background:brown;
+	cursor:pointer;
+	background-image: linear-gradient(to bottom, #FFFFFF, #BDBDBD);
+			background-image: -webkit-gradient(linear, left top, left bottom, from(#FFFFFF), to(#BDBDBD));
+			background-image: -webkit-linear-gradient(top,#FFFFFF, #BDBDBD);
+			background-image: -moz-linear-gradient(top,#FFFFFF, #BDBDBD);
+			background-image: -ms-linear-gradient(top, #FFFFFF, #BDBDBD);
+			background-image: -o-linear-gradient(top,#FFFFFF, #BDBDBD);
+			filter:progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr=#FFFFFF, endColorstr=#BDBDBD);
+}
+.formularioMiPerfil td{
+	text-align:center;
+	white-space:nowrap;
+}
+
+.miPerfil label{
+	position:relative;
+	display: block;
+	width:400px;
+    left:20px;
+    border:1px solid lightblue;
+    padding-bottom:15px;
+    padding-left:5px;
+    border-radius:5px;
+}
+.miPerfil label>span {
+	float: left;
+    width: 80px;
+    text-align: left;
+    padding-right: 10px;
+    font-weight: bold;
+    margin-top:6px;
+}
+.miPerfil valor{
+	position:relative;
+	top:1px;
+	float:left;
+	width:200px;
+	height: 20px;
+    padding: 5px;
+}
+.miPerfil btn{
+	position:relative;
+	top:6px;
+	height: 20px;
+    padding: 5px;
+    margin-bottom:10px;
+}
+.miPerfil btn:hover{
+	background:#F2F2F2;
+	cursor:pointer;
+	border-radius:5px;
+}
+.miPerfil .tick-cross{
+	border-radius:25px;
+	box-shadow:0 0 1px 1px black;
+	width:20px;
+	height:20px;
+	cursor:pointer;
+	margin:0 5px 0 5px;
+}
+
+#cambiarContrasena{
+	position:relative;
+	width:360px;
+	height:100px;
+	left:428px;
+	top:-432px;
+	border:1px solid lightblue;
+	border-radius:5px;
+	display:none;
+	background:#E0F8F7;
+}
+#cambiarContrasena label{
+	position:relative;
+	display: block;
+	width:300px;
+    left:10px;
+}
+#cambiarContrasena label>span {
+	float: left;
+    width: 80px;
+    text-align: right;
+    padding-right: 10px;
+    font-weight: bold;
+    margin-top:5px;
+}
+#cambiarContrasena valor{
+	position:relative;
+	top:1px;
+	float:left;
+	width:170px;
+	height: 20px;
+    padding: 5px;
+    z-index:3;
+}
+#cambiarContrasena .tick-cross{
+	border-radius:25px;
+	box-shadow:0 0 1px 1px black;
+	width:20px;
+	height:20px;
+	cursor:pointer;
+	margin:0 5px 0 5px;
+}
+
+.tablaMiPerfil{
+	position:relative;
+	top:10px;
+}
+.tablaMiPerfil label{
+	position:relative;
+	display: block;
+	width:640px;
+    left:-30px;
+    padding-bottom:15px;
+    padding-left:5px;
+}
+.tablaMiPerfil label>span {
+	float: left;
+    width: 200px;
+    text-align: left;
+    padding-right: 10px;
+    font-weight: bold;
+    margin-top:6px;
+}
+.tablaMiPerfil table{
+	position:relative;
+	top:10px;
+	float:left;
+	width:200px;
+	height: 15px;
+    padding: 2px;
+    box-shadow:none !important;
+}
+.tablaMiPerfil td {
+    padding:2px;
+    text-align: left;  
+    white-space:nowrap;
+}
+.tablaMiPerfil select{
+	border: 1px solid black !important ;
+    color: black !important;
+    height: 20px !important;
+    line-height:0px !important;
+    font-size:10px;
+    margin-bottom: 0px !important;
+    margin-right: 30px;
+    margin-left:0px !important;
+    margin-top: 0px !important;
+    outline: 0 none;
+    padding: 2px 0px 2px 2px !important;
+    width: 90% !important;
+    border-radius: 5px !important;
+    background: none !important;
+}
+
+.tablaAdministrador{
+	position:relative;
+	top:10px;
+}
+.tablaAdministrador label{
+	position:relative;
+	display: block;
+	width:720px;
+    padding-bottom:15px;
+    padding-left:5px;
+}
+.tablaAdministrador label>span {
+	float: left;
+    width: 250px;
+    text-align: left;
+    padding-right: 5px;
+    font-weight: bold;
+    margin-top:6px;
+    margin-left:10px;
+}
+.tablaAdministrador table{
+	position:relative;
+	top:5px;
+	float:left;
+	width:300px;
+	height: 15px;
+    padding: 2px;
+    box-shadow:none !important;
+}
+.tablaAdministrador td {
+    padding:2px;
+    text-align: left;  
+    white-space:nowrap;
+}
+.tablaAdministrador select{
+	border: 1px solid black !important ;
+    color: black !important;
+    height: 20px !important;
+    line-height:0px !important;
+    font-size:10px;
+    margin-bottom: 0px !important;
+    margin-right: 20px;
+    margin-left:0px !important;
+    margin-top: 0px !important;
+    outline: 0 none;
+    padding: 2px 0px 2px 2px !important;
+    width: 80% !important;
+    border-radius: 5px !important;
+    background: none !important;
+}
+
+#menuUsuarios{
+	position:relative;
+	float:right;
+	right:-40px;
+	z-index:2;
+}
+#menuUsuarios ul{
+    position:relative;
+    top:-10px;
+	list-style:none;
+	width:150px;
+}
+#menuUsuarios li{
+	position:relative;
+	display:block;
+	width:95%;
+	margin-top:2px;
+	left:-40px;
+	padding-left:10px;	
+	border:1px solid #6E6E6E;
+	border-radius:5px;
+	/*box-shadow:1px 1px 5px 1px #D8D8D8;*/
+	font-weight:bolder;
+	color:#424242;
+	background:#BDBDBD;
+	background-image: linear-gradient(to bottom, #BDBDBD, #A4A4A4);
+			background-image: -webkit-gradient(linear, left top, left bottom, from(#BDBDBD), to(#A4A4A4));
+			background-image: -webkit-linear-gradient(top,#D8D8D8, #A4A4A4);
+			background-image: -moz-linear-gradient(top,#BDBDBD, #A4A4A4);
+			background-image: -ms-linear-gradient(top, #BDBDBD, #A4A4A4);
+			background-image: -o-linear-gradient(top,#BDBDBD, #A4A4A4);
+			filter:progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr=#BDBDBD, endColorstr=#A4A4A4);
+}
+#menuUsuarios li:hover{
+	color:black;	
+	/*box-shadow:2px 2px 20px 2px #A9D0F5;*/
+	cursor:pointer;
+	background-image: linear-gradient(to bottom, #FFFFFF, #BDBDBD);
+			background-image: -webkit-gradient(linear, left top, left bottom, from(#FFFFFF), to(#BDBDBD));
+			background-image: -webkit-linear-gradient(top,#FFFFFF, #BDBDBD);
+			background-image: -moz-linear-gradient(top,#FFFFFF, #BDBDBD);
+			background-image: -ms-linear-gradient(top, #FFFFFF, #BDBDBD);
+			background-image: -o-linear-gradient(top,#FFFFFF, #BDBDBD);
+			filter:progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr=#FFFFFF, endColorstr=#BDBDBD);
+}
+
+#menuAdministrador{
+	position:relative;
+	top:30px;
+	width:250px;
+	margin:0 auto;
+}
+#menuAdministrador ul{
+    position:relative;
+    top:-10px;
+	list-style:none;
+	width:200px;
+}
+#menuAdministrador li{
+	position:relative;
+	display:block;
+	width:95%;
+	margin-top:2px;
+	left:-40px;
+	padding-left:10px;	
+	border:1px solid #6E6E6E;
+	border-radius:5px;
+	text-align:center;
+	/*box-shadow:1px 1px 5px 1px #D8D8D8;*/
+	font-weight:bolder;
+	color:#424242;
+	background:#BDBDBD;
+	background-image: linear-gradient(to bottom, #BDBDBD, #A4A4A4);
+			background-image: -webkit-gradient(linear, left top, left bottom, from(#BDBDBD), to(#A4A4A4));
+			background-image: -webkit-linear-gradient(top,#D8D8D8, #A4A4A4);
+			background-image: -moz-linear-gradient(top,#BDBDBD, #A4A4A4);
+			background-image: -ms-linear-gradient(top, #BDBDBD, #A4A4A4);
+			background-image: -o-linear-gradient(top,#BDBDBD, #A4A4A4);
+			filter:progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr=#BDBDBD, endColorstr=#A4A4A4);
+}
+#menuAdministrador li:hover{
+	color:black;	
+	/*box-shadow:2px 2px 20px 2px #A9D0F5;*/
+	cursor:pointer;
+	background-image: linear-gradient(to bottom, #FFFFFF, #BDBDBD);
+			background-image: -webkit-gradient(linear, left top, left bottom, from(#FFFFFF), to(#BDBDBD));
+			background-image: -webkit-linear-gradient(top,#FFFFFF, #BDBDBD);
+			background-image: -moz-linear-gradient(top,#FFFFFF, #BDBDBD);
+			background-image: -ms-linear-gradient(top, #FFFFFF, #BDBDBD);
+			background-image: -o-linear-gradient(top,#FFFFFF, #BDBDBD);
+			filter:progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr=#FFFFFF, endColorstr=#BDBDBD);
+}
+
+#aviso{
+	position:relative;
+	width:670px;
+	margin:auto;
+	border:1px solid green;
+	border-radius:5px;
+	padding:5px;
+	margin-bottom:10px;
+	box-shadow:1px 1px 10px green;
+}
+#aviso ul{
+	list-style:none;
+	margin-top:250px;
+}
+#aviso li{
+	position:relative;
+	display:inline;
+	color:#B43104;
+	cursor:pointer;
+	padding:2px 5px 2px 5px;
+	margin:15px 15px 15px 15px;
+	left:10px;
+	border-radius:5px;
+	box-shadow:1px 1px 5px #61210B;
+}
+#aviso li:hover{
+	background:#E0F8E6;
+	box-shadow:1px 1px 5px #B43104;
+}
+
+#piedepagina {
+   position:relative;
+   margin:0 auto;
+   height:20px;  
+   width:100%;
+   box-shadow: 1px 1px 5px #61210B;
+   border-radius: 5px;
+}
+.contenido-piedepagina {
+	padding-top: 9px;
+	font-size: 12px;
+	line-height: 0;
+}
+.content {
+	padding:0 20px;
+}
+.contenido-piedepagina ul {
+	color:#999;
+	float:right;
+	max-width:100%;
+}
+.contenido-piedepagina ul li {
+   display:inline;
+   padding:0px 10px 50px 30px;
+}
+#corte{
+	clear:both;
+}
+
+.formularioNuevoUsuario table{
+	position:relative;
+	top:10px;
+	margin:auto;
+	
+}
+
+
+@media screen and (max-width:240px) {
+	#encabezado{display:none;}
+	#contenedor{width:90%;}
+	#cinta{font-size:8px;}
+	#cuerpo-principal{width:90%;}
+	.acceso-registrado{
+		width:80%;
+		left:-90px;
+		margin-left:30px;
+	}
+	.acceso-registrado table{					
+	position:relative;
+	width:90%;
+	font-size:10px;						
+}
+}

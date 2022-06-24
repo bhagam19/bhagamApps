@@ -1,0 +1,4 @@
+$mysql_host = "mysql13.000webhost.com";
+$mysql_database = "a9085806_iens";
+$mysql_user = "a9085806_iens";
+$mysql_password = "iens2015";

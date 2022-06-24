@@ -1,0 +1,12 @@
+div {
+	position:relative;
+	text-align:center; 
+	font-weight:bolder;
+	width:900px;
+	margin:0 auto;
+}
+
+span{
+	font-weight:bolder;
+	color:red;
+}

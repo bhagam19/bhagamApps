@@ -32,7 +32,6 @@ html {
 	font-size: 16px;
 	width: 99%;	
 	background:#f9f9fa;
-	background-image:url("appsArt/fondo.jpg");
 }
 #appsContenedorGlobal {
 	position: absolute;
@@ -167,7 +166,7 @@ html {
 	top:80px;
 	margin: 0 auto;
 }
-#reporte{/*Solo para Bienes*/
+#reporte{
 	position: relative;
 	visibility: hidden;
 	width:auto;
@@ -226,6 +225,24 @@ html {
 	border-bottom:0.2px solid lightgray;
 	z-index: 2;
 }
+::-webkit-scrollbar {
+	width: 5px;
+	height: 5px;
+}
+::-webkit-scrollbar-track {
+	background: #dcf3fc;
+	box-shadow: inset 0 0 6px #cee0e7; 
+    border-radius: 10px;
+}
+::-webkit-scrollbar-thumb {
+	background: #084B8A;
+	border-radius: 10px;
+    box-shadow: inset 0 0 6px #1d3faf; 
+}
+::-webkit-scrollbar-thumb:hover {
+	background: #0e2263;	
+	box-shadow: 2px 1px 15px 1px #081338;	
+}
 /*==========ADAPTABILIDAD===============*/
 @media screen and (max-width:1400px) {
 	html {
@@ -244,7 +261,7 @@ html {
 	/* Esta es para mi celular*/
 	#appsContenedorGlobal {
 		position: absolute;
-		top: 150px;
+		top: 0px;
 		left: 0;
 		width: 100%;
 	}
@@ -304,152 +321,10 @@ html {
 		font-size: 5vw;
 		user-select: none;
 	}
-	/*==== Login====*/
-#appsFormulario {
-	position: absolute;
-	visibility: hidden;
-	padding: 10px;
-	font-weight: bold;
-	font-size: 5vw;
-	border: 1px solid #0B0B61;
-	background: white;
-	box-shadow: 0px 0px 5px 0px gray;
-	border-radius: 5px;
-	z-index: 4;
-}
-.appsFormularioLogin {
-	top:	30px;
-	right: 20px;
-	width: 480px;
-}
-#appsFormulario input {
-	font-weight: normal;
-	font-size: 5vw;
-	border: 1px solid #0B0B61;
-	border-radius: 5px;
-}
-#appsFormulario input:focus {
-	border-color: #0B0B61;
-	box-shadow: 0 1px 1px rgba(14, 35, 144, 0.075)inset, 0 0 8px rgba(51, 228, 130,0.6);
-	outline: 0 none;
-}
-#appsFormulario .btnLogin {
-	left: 30px;
-	color: #0B0B61;
-	font-weight: bold;
-	font-size: 5vw;
-	border: 1px solid #0B0B61;
-	border-radius: 5px;
-	background: #e4e3e8;
-	cursor: pointer;
-}
-#appsFormulario .btnLogin:hover {
-	background: #EBEEF8;
-	box-shadow: 0px 0px 2px 0px #EBEEF8;
-}
-	/*==== LogedIn====*/
-	#appsSesionLogedIn {
-		position: relative;
-		top: -255px;
-		right: 30px;
-		width: 85px;
-		height:85px;
-		border: 1px solid #0B0B61;
-		border-radius: 50px;
-	}
-	.appsSesionNom {
-		position: relative;
-		right: -100px;
-		padding: 2px 10px;
-		font-size: 2.3vw;
-		font-weight: bold;
-	}
-	.appsSesionImg img{
-		position: absolute;
-		top:3px;
-		right:3px;
-		width: 80px;
-		height: 80px;
-		border: 1px solid #0B0B61;
-		border-radius: 50px;
-	}
-	.sesionNom .nom {
-		position: relative;
-		top: 0px;
-		right: -20px;
-		text-align: right;
-	}
-	#sesionLogedIn .btn {
-		position: relative;
-		top: 0px;
-		right: 0px;
-		padding: 3px 4px;
-		font-size: 3.5vw;
-		font-weight: bold;
-		color: #0B0B61;
-		border: 1px solid #0B0B61;
-		border-radius: 5px;
-		background: #EBEEF8;
-	}
-	.formularioLogin {
-		position: absolute;
-		top: 190px;
-		right: -45px;
-		width: auto;
-		border: 1px solid #0B0B61;
-		font-size: 4.5vw;
-		font-weight: bold;
-		box-shadow: 0px 0px 5px 0px gray;
-		border-radius: 5px;
-		z-index: 3;
-		background: white;
-	}
-	.formularioLogin input {
-		font-weight: normal;
-		font-size: 4.5vw;
-		border: 1px solid #0B0B61;
-		border-radius: 5px;
-	}
-	.formularioLogin input:focus {
-		border-color: #0B0B61;
-		box-shadow: 0 1px 1px rgba(14, 35, 144, 0.075)inset, 0 0 8px rgba(51, 228, 130,0.6);
-		outline: 0 none;
-	}
-	.formularioLogin .btnLogin {
-		left: 30px;
-		color: #0B0B61;
-		font-weight: bold;
-		font-size: 4.5vw;
-		border: 1px solid #0B0B61;
-		border-radius: 5px;
-		background: white;
-	}
-	#parche {
-		position: fixed;
-		top: 130px;
-		height: 160px;
-		width: 100%;
-		font-size: 3vw;
-		text-align: center;
-		color: #1a3799;
-		z-index: 2;
-		background: white;
-		user-select: none;
-	}	/*actua como un separador*/
-	#h2 {
-		position: fixed;
-		top: 200px;
-		font-size: 3vw;
-		width: 100%;
-		text-align: center;
-		color: #1a3799;
-		z-index: 3;
-		user-select: none;
-	}	
 	#appsContenedor {
-		position: relative; 
-		top: 270px;
-		user-select: none;
+		position: fixed; 
+		top: 140px;
+		user-select: none;	
 	}
 	#boton {
 		position:relative;
