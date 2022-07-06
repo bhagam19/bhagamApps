@@ -12,7 +12,7 @@
 		<ul>
 			<li>SINAI vs SIMAT</li>
 			<li>Version: 0.1.0	</li>
-			<li>Creado por: RH+ © 2022</a></li>
+			<li>Creado por: Adolfo Ruiz © 2022</a></li>
 		</ul>	
 	</div>
 	
