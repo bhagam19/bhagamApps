@@ -2142,6 +2142,68 @@
 	//Ejecutar
 	ejecutarConsulta();
     
+//########## CREAR UNA TABLA DE "OCUPACIONES" ##########
+	// Preparamos la consulta SQL
+    $tabla = 'ocupaciones';
+	$sql=
+		'
+			CREATE TABLE IF NOT EXISTS '.$tabla.'(
+				id int(2) NOT NULL AUTO_INCREMENT,
+				name varchar(80) CHARACTER SET utf8 COLLATE utf8_spanish_ci NOT NULL,
+				PRIMARY KEY(id)
+			)
+		';
+	//Ejecutar
+	ejecutarConsulta();
+
+    //########## INGRESAR CONTENIDO A LA TABLA "GRUPOS ÉTNICOS" ##########
+        $ocupaciones = array(
+            array(1,"Ama de Casa"),
+            array(2,"Enfermero(a)"),
+            array(3,"Recepcionista"),
+            array(4,"Abogado(a)"),
+            );
+        
+        foreach ($ocupaciones as $ocupacion){
+            $sql='INSERT INTO '.$tabla.' (id, name) 
+                VALUES ('.$ocupacion[0].',"'.$ocupacion[1].'")';
+                insertar();		
+        }     
+//########## CREAR UNA TABLA DE "NIVELES EDUCATIVOS" ##########
+	// Preparamos la consulta SQL
+    $tabla = 'nivelesEducativos';
+	$sql=
+		'
+			CREATE TABLE IF NOT EXISTS '.$tabla.'(
+				id int(2) NOT NULL AUTO_INCREMENT,
+				name varchar(80) CHARACTER SET utf8 COLLATE utf8_spanish_ci NOT NULL,
+				PRIMARY KEY(id)
+			)
+		';
+	//Ejecutar
+	ejecutarConsulta();
+
+    //########## INGRESAR CONTENIDO A LA TABLA "NIVELES EDUCATIVOS" ##########
+        $nivelesEdu = array(
+            array(1,"Analfabeta"),
+            array(2,"Básica Primaria"),
+            array(3,"Básica Secundaria"),
+            array(4,"Media Académica"),
+            array(5,"Media Técnica"),
+            array(6,"Técnico"),
+            array(7,"Tecnólogo"),
+            array(8,"Profesional"),
+            array(9,"Especialización"),
+            array(10,"Maestría"),
+            array(11,"Doctorado"),
+            );
+        
+        foreach ($nivelesEdu as $nivelEdu){
+            $sql='INSERT INTO '.$tabla.' (id, name) 
+                VALUES ('.$nivelEdu[0].',"'.$nivelEdu[1].'")';
+                insertar();		
+        }     
+     
 //########## CREAR UNA TABLA DE "MADRES" ##########
 	// Preparamos la consulta SQL
     $tabla = 'madres';
@@ -2151,27 +2213,109 @@
 				id int NOT NULL AUTO_INCREMENT,
                 nomMadre(80) CHARACTER SET utf8 COLLATE utf8_spanish_ci NOT NULL,
                 docMadre int(10) NOT NULL,
-                
+                idOcupacion int(2) NOT NULL,
+                idNivelEdu int(2) NOT NULL,                
+				PRIMARY KEY(id),
+                FOREIGN KEY(idOcupacion) REFERENCES ocupaciones (id),
+                FOREIGN KEY(idNivelEdu) REFERENCES nivelesEducativos (id)
+			)
+		';
+	//Ejecutar
+	ejecutarConsulta();
+
+//########## CREAR UNA TABLA DE "PADRES" ##########
+	// Preparamos la consulta SQL
+    $tabla = 'padres';
+	$sql=
+		'
+			CREATE TABLE IF NOT EXISTS '.$tabla.'(
+				id int NOT NULL AUTO_INCREMENT,
+                nomPadre(80) CHARACTER SET utf8 COLLATE utf8_spanish_ci NOT NULL,
+                docPadre int(10) NOT NULL,
+                idOcupacion int(2) NOT NULL,
+                idNivelEdu int(2) NOT NULL,                
+				PRIMARY KEY(id),
+                FOREIGN KEY(idOcupacion) REFERENCES ocupaciones (id),
+                FOREIGN KEY(idNivelEdu) REFERENCES nivelesEducativos (id)
+			)
+		';
+	//Ejecutar
+	ejecutarConsulta();
+
+//########## CREAR UNA TABLA DE "PARENTESCOS" ##########
+	// Preparamos la consulta SQL
+    $tabla = 'parentescos';
+	$sql=
+		'
+			CREATE TABLE IF NOT EXISTS '.$tabla.'(
+				id int(2) NOT NULL AUTO_INCREMENT,
+				name varchar(80) CHARACTER SET utf8 COLLATE utf8_spanish_ci NOT NULL,
 				PRIMARY KEY(id)
 			)
 		';
 	//Ejecutar
 	ejecutarConsulta();
-  //########## CREAR UNA TABLA DE "ENTORNO FAMILIAR" ##########
+
+    //########## INGRESAR CONTENIDO A LA TABLA "PARENTESCOS" ##########
+        $parentescos = array(
+            array(1,"Bisabuela(o)"),
+            array(2,"Abuela(o)"),
+            array(3,"Madre"),
+            array(4,"Padre"),
+            array(5,"Tía(o)"),
+            array(6,"Hermana(o)"),
+            array(7,"Tutor Legal"),
+            /*array(8,""),
+            array(9,""),
+            array(10,""),
+            array(11,""),*/
+            );
+        
+        foreach ($parentescos as $parentesco){
+            $sql='INSERT INTO '.$tabla.' (id, name) 
+                VALUES ('.$parentesco[0].',"'.$parentesco[1].'")';
+                insertar();		
+        }     
+     
+
+//########## CREAR UNA TABLA DE "CUIDADORES" ##########
+	// Preparamos la consulta SQL
+    $tabla = 'cuidadores';
+	$sql=
+		'
+			CREATE TABLE IF NOT EXISTS '.$tabla.'(
+				id int NOT NULL AUTO_INCREMENT,
+                nomCuidador(80) CHARACTER SET utf8 COLLATE utf8_spanish_ci NOT NULL,
+                docCuidador int(10) NOT NULL,
+                idOcupacion int(2) NOT NULL,
+                idNivelEdu int(2) NOT NULL,
+                idParentesco int(2) NOT NULL,                
+				PRIMARY KEY(id),
+                FOREIGN KEY(idOcupacion) REFERENCES ocupaciones (id),
+                FOREIGN KEY(idNivelEdu) REFERENCES nivelesEducativos (id),
+                FOREIGN KEY(idParentesco) REFERENCES parentescos (id)
+			)
+		';
+	//Ejecutar
+	ejecutarConsulta();
+
+//########## CREAR UNA TABLA DE "ENTORNO FAMILIAR" ##########
 	// Preparamos la consulta SQL
     $tabla = 'entornoFamiliar';
 	$sql=
 		'
 			CREATE TABLE IF NOT EXISTS '.$tabla.'(
 				id int NOT NULL AUTO_INCREMENT,
-                nomMadre(80) CHARACTER SET utf8 COLLATE utf8_spanish_ci NOT NULL,
-                docMadre int(10) NOT NULL,
-                terapia2 varchar(80) CHARACTER SET utf8 COLLATE utf8_spanish_ci NOT NULL,
-                terapia3 varchar(80) CHARACTER SET utf8 COLLATE utf8_spanish_ci NOT NULL,
-                idFrecuencia1 int(2) NOT NULL,
-                idFrecuencia2 int(2) NOT NULL,
-                idFrecuencia3 int(2) NOT NULL,
-				PRIMARY KEY(id)
+                apoyoCrianza varchar(80) CHARACTER SET utf8 COLLATE utf8_spanish_ci NOT NULL,
+                numHermanos int(2) NOT NULL,
+                bajoProteccion int(2) NOT NULL,
+                idMadres int(2) NOT NULL,
+                idPadres int(2) NOT NULL,
+                idCuidadores int(2) NOT NULL,
+				PRIMARY KEY(id),
+                FOREIGN KEY(idMadres) REFERENCES madres (id),
+                FOREIGN KEY(idPadres) REFERENCES padres (id),
+                FOREIGN KEY(idCuidadores) REFERENCES cuidadores (id)
 			)
 		';
 	//Ejecutar
