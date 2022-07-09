@@ -85,16 +85,7 @@
         )
     ';
 	//Ejecutar
-	ejecutarConsulta();
-    //########## INGRESAR CONTENIDO A LA TABLA "sinai" ##########
-    /* Solamente se crea la tabla pero no se ingresan datos
-    if(strpos($url,"principal")){
-		$instalacion=0;	
-	}else{
-		$instalacion=1;	
-	}
-	include('bdAsignacionAcademica/cargarExcel.php');
-    */
+	ejecutarConsulta();    
 //########## CREAR UNA TABLA DE "simat" ##########
 	// Preparamos la consulta SQL
 	$tabla = 'simat';
@@ -112,20 +103,12 @@
             eps varchar(40) CHARACTER SET utf8 COLLATE utf8_spanish_ci,
             direccion varchar(100) CHARACTER SET utf8 COLLATE utf8_spanish_ci,
             pais varchar(40) CHARACTER SET utf8 COLLATE utf8_spanish_ci,
+            estrategiaPAE int(1) NOT NULL,
             PRIMARY KEY(id)
         )
     ';
 	//Ejecutar
-	ejecutarConsulta();
-    //########## INGRESAR CONTENIDO A LA TABLA "simat" ##########
-    /* Solamente se crea la tabla pero no se ingresan datos
-    if(strpos($url,"principal")){
-		$instalacion=0;	
-	}else{
-		$instalacion=1;	
-	}
-	include('bdAsignacionAcademica/cargarExcel.php');
-    */
+	ejecutarConsulta();    
 //Cerrar
 	mysqli_close($cnx);	
 	echo "<div> ===== INSTALACIÓN FINALIZADA =====<br><br> <a href='index.php'>Volver</a> </div>";

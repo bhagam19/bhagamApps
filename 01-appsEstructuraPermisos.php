@@ -10,7 +10,7 @@
 					array("","appsArt/DUA.png","EduInclusiva"),
 					array("","appsArt/cteApp.jpg","CTE App"),
 					array("","appsArt/examCreator.jpg","Creador de Exámenes"),
-					array("","appsArt/inventApp.png","Inventario App"),
+					array("inventarioApp","appsArt/inventApp.png","Inventario App"),
 					array("","appsArt/biblioAppOnPasiva.png","Biblio App"),
 					array("","appsArt/tablet.jpg","Préstamo de Tabletas"),
 					array("","appsArt/pollaMundialista.png","Polla Mundialista"),

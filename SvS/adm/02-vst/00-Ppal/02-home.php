@@ -32,6 +32,16 @@
     ';
 
     echo '
+        <div id="reestablecerBD">            
+            <form enctype="multipart/form-data" action="adm/03-cnt/03-cargarCsvEstPAE.php" method="POST">                    
+                <input type="hidden" name="MAX_FILE_SIZE" value="2000000" />
+                <input name="subir_archivo" type="file" />
+                <input type="submit" value="Importar Datos Estrategia Permanencia" />
+            </form>
+        </div>
+    ';
+
+    echo '
         Seleccione el reporte deseado:
         <select name="reportes" id="reportes" onchange="cargarReporte(this.value)">
             <option value=0>Seleccione...</option>
@@ -40,6 +50,7 @@
             <option value=3>Teléfono</option>
             <option value=4>País</option>
             <option value=5>Desertores</option>
+            <option value=6>PAE</option>
         </select>
     ';
 

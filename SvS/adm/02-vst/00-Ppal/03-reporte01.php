@@ -15,7 +15,9 @@
             </thead> 
     ';
     $consulta=$cnx->query('SELECT * FROM sinai WHERE estado ="MATRICULADO" AND numDoc NOT IN (SELECT numDoc FROM simat)');
+    $cant=0;
     while ($fila=mysqli_fetch_array($consulta)){
+        $cant++;
         echo '
             <tr>
                 <td>'.$fila['grupo'].'</td>
@@ -27,6 +29,7 @@
             </tr>
         ';
     }
+    echo "Total: ".$cant;
     echo'</table><br>';
     echo'Estudiantes en SIMAT pero no aparecen en SINAI';
     echo '
@@ -43,7 +46,9 @@
             </thead> 
     ';
     $consulta=$cnx->query('SELECT * FROM simat WHERE estado ="MATRICULADO" AND numDoc NOT IN (SELECT numDoc FROM sinai)');
+    $cant=0;
     while ($fila=mysqli_fetch_array($consulta)){
+        $cant++;
         echo '
             <tr>
                 <td>'.$fila['grupo'].'</td>
@@ -55,6 +60,7 @@
             </tr>
         ';
     }
+    echo "Total: ".$cant;
     echo'</table><br>';
 
     echo'Estudiantes en grupos diferentes en SIMAT';
@@ -74,7 +80,9 @@
     ';
     $consulta=$cnx->query('SELECT simat.grupo,sinai.grupo,sinai.estado, sinai.apellidos, sinai.nombres, sinai.tipoDoc, sinai.numDoc FROM sinai INNER JOIN simat 
                             ON NOT sinai.grupo=simat.grupo WHERE sinai.estado="MATRICULADO" AND simat.estado="MATRICULADO" AND sinai.numDoc=simat.numDoc');
+    $cant=0;
     while ($fila=mysqli_fetch_array($consulta)){
+        $cant++;
         echo '
             <tr>
                 <td>'.$fila[0].'</td>
@@ -87,6 +95,7 @@
             </tr>
         ';
     }
+    echo "Total: ".$cant;
     echo'</table><br>';
 
 ?>

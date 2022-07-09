@@ -1,4 +1,4 @@
-function cargarReporte(v){
+function cargarReporte(v){    
     var url='';
     switch(v){
         case '1':
@@ -16,7 +16,10 @@ function cargarReporte(v){
         case '5':
             url='adm/02-vst/00-Ppal/03-reporte05.php';
         break;
-    }       
+        case '6':
+            url='adm/02-vst/00-Ppal/03-reporte06.php';
+        break;
+    }     
     fetch(url)
         .then(texto => {
             return texto.text();
