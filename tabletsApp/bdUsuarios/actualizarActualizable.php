@@ -3,7 +3,7 @@
 				
     $tabla='usuarios';
 	$consultaSql=mysqli_query($conexion,"SELECT * FROM ".$tabla); 
-	$respuesta;
+	$respuesta="";
 	
 	while($fila=mysqli_fetch_array($consultaSql)){	
 	    

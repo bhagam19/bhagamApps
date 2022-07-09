@@ -11,14 +11,8 @@
 		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
 		<script src="//code.jquery.com/jquery-1.10.2.js"></script>
   		<script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
-  		<script type="text/javascript" src="acceso.js"></script>
-		<!--<script>
-			alert(window.innerWidth);
-		</script>-->
-		
-	</head>
-
-	
+  		<script type="text/javascript" src="acceso.js"></script>		
+	</head>	
 	<body>				
 		<div id="contenedor">	
 			<div id="cinta" style="margin-bottom:5px;background:#0B6121;color:white;border-radius:10px;font-weight:bold;">
@@ -28,13 +22,11 @@
 					<li style="position:relative;list-style:none;display:inline;padding:10px;margin:10px;">Creado por: <a href="https://www.facebook.com/adolfo.ruiz.79" target="_blank" style="text-decoration:none;color:white">Adolfo Ruiz</a></li>
 				</ul>					
 			</div>
-
 <?php
-    session_name("presTablet");
+    session_name("tabletsApp");
 	session_start();
     include('encabezado.php');
 ?>
-
 			<div id="cuerpo-principal">
 				<?php
 					if(isset($_SESSION['usuario'])){

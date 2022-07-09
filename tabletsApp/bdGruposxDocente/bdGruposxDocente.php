@@ -37,6 +37,7 @@
 			}
 		}
 		function cargarGrupo(docenteID){
+			alert(docenteID);
 			var xmlhttp = new XMLHttpRequest();
 	        xmlhttp.open("GET","adminActGrp.php?docenteID="+docenteID,false);
 			xmlhttp.send();
@@ -107,20 +108,18 @@
 											while($fila=mysqli_fetch_array($consultaSql)){
 												$docentesI[$contador]=$fila["docenteID"];
 												$contador++;
-											}
-											
+											}											
 											$contador=0;
 											foreach($docentesI as $docente){
 												if(!in_array($docente,$docentesF)){
 													$docentesF[$contador]=$docente;
 													$contador++;
 												}
-											}
-											
+											}											
 											$consulta=mysqli_query($conexion,"SELECT * FROM docentes ORDER BY docenteID ASC");
 											$contador=0;
 											while($fila=mysqli_fetch_array($consulta)){
-												//echo $fila["docenteID"]." docentesF[".$contador."]=".$docentesF[$contador].", ";
+												echo $fila["docenteID"]." docentesF[".$contador."]=".$docentesF[$contador].", ";
 												if($fila["docenteID"]==$docentesF[$contador]){
 													echo '<option value='.$fila["docenteID"].'>'.$fila["nombres"]." ".$fila["apellidos"].'</option>';
 													$contador++;	
@@ -153,7 +152,7 @@
 								    	</thead>
 								    	<tbody  id="actualiza-Grp" style="height:100px;overflow:auto;">
 											';
-											include('adminActGrp.php');
+											//include('adminActGrp.php');
 									echo'
 								        </tbody>
 							    	</table>			

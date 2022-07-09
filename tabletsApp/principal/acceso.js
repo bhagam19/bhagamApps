@@ -74,12 +74,10 @@ function registrarUsuario(id){ //id=1 representa que no hay formulario que ocult
 	
 } //id=1 representa que no hay formulario que ocultar. (e.g. formularioNuevoUsuario.php)
 function validarLogin(usuario,contrasena){
-	var xmlhttp = new XMLHttpRequest();
-        
+	var xmlhttp = new XMLHttpRequest();        
         xmlhttp.open("GET", "../login/login.php?usuario="+usuario+"&contrasena="+contrasena, false);
         xmlhttp.send();
-        
-        if("si" == xmlhttp.responseText.trim()){
+		if("si" == xmlhttp.responseText.trim()){
         	return true;
         }else{        	
         	alert("El usuario y la contraseña no coinciden.");

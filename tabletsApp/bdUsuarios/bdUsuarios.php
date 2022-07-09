@@ -11,8 +11,8 @@
 	</head>
 	
 	<?php
-		session_name("presTablet");
-	session_start();
+		session_name("tabletsApp");
+		session_start();
 		if(isset($_SESSION['usuario'])){
 			$codigo=$_SESSION['permiso'];
 			if($codigo==1){

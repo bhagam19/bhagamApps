@@ -64,6 +64,7 @@
 	</script>
 	
 	<?php
+		session_name('tabletsApp');
 		session_start();
 		if(isset($_SESSION['usuario'])){
 			$codigo=$_SESSION['permiso'];	
@@ -107,24 +108,24 @@
 											while($fila=mysqli_fetch_array($consultaSql)){
 												$docentesI[$contador]=$fila["docenteID"];
 												$contador++;
-											}
-											
+											}											
 											$contador=0;
 											foreach($docentesI as $docente){
 												if(!in_array($docente,$docentesF)){
 													$docentesF[$contador]=$docente;
 													$contador++;
 												}
-											}
-											
+											}											
 											$consulta=mysqli_query($conexion,"SELECT * FROM docentes ORDER BY docenteID ASC");
 											$contador=0;
 											while($fila=mysqli_fetch_array($consulta)){
-												//echo $fila["docenteID"]." docentesF[".$contador."]=".$docentesF[$contador].", ";
+												echo $fila["docenteID"]." docentesF[".$contador."]=".$docentesF[$contador].", ";
 												if($fila["docenteID"]==$docentesF[$contador]){
 													echo '<option value='.$fila["docenteID"].'>'.$fila["nombres"]." ".$fila["apellidos"].'</option>';
 													$contador++;	
 												}
+												echo '<option value='.$fila["docenteID"].'>'.$fila["nombres"]." ".$fila["apellidos"].'</option>';
+													$contador++;
 											}
 									echo '
 										</select>
@@ -151,7 +152,7 @@
 								    	</thead>
 								    	<tbody  id="actualiza-Asg" style="height:100px;overflow:auto;">
 											';
-											include('adminActAsig.php');
+											//include('adminActAsig.php');
 									echo'
 								        </tbody>
 							    	</table>			

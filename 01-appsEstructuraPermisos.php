@@ -15,7 +15,8 @@
 					array("","appsArt/tablet.jpg","Préstamo de Tabletas"),
 					array("","appsArt/pollaMundialista.png","Polla Mundialista"),
 					array("","appsArt/arcReactorOnPasiva.png","Proyecto Ironman"),
-					array("JMproyects/JmLobby.html","https://i.imgflip.com/2/uab2a.jpg","Jm Lobby")
+					array("JMproyects/JmLobby.html","https://i.imgflip.com/2/uab2a.jpg","Jm Lobby"),
+					array("SvS","appsArt/SvS.png","SINAI vs SIMAT")
 				);
 				foreach ($datosApp as $App) {
 					echo '

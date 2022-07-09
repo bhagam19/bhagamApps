@@ -344,7 +344,8 @@
 
 #volver{
     position:relative;
-    top:40px;
+    top:20px;
+    z-index:9;
 }
 #volver a{
     position:relative;
