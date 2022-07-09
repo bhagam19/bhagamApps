@@ -15,7 +15,9 @@
             </thead> 
     ';
     $consulta=$cnx->query('SELECT * FROM sinai WHERE estado ="DESERTOR"');
+    $cant=0;
     while ($fila=mysqli_fetch_array($consulta)){
+        $cant++;
         echo '
             <tr>
                 <td>'.$fila['grupo'].'</td>
@@ -27,5 +29,6 @@
             </tr>
         ';
     }
+    echo "Total: ".$cant;
     echo'</table><br>';
 ?>

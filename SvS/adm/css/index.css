@@ -36,7 +36,7 @@ html {
 #appsContenedorGlobal {
 	position: absolute;
 	top: 0px;
-	left: 0;
+	left: 100px;
 	width: 100%;
 	height:100%;	
 	/*background: rgb(52,111,176);

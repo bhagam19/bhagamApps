@@ -36,70 +36,72 @@
     $cnt=1;
     $file = fopen($nombreArchivo,"r");
     while(($col=fgetcsv($file,10000,";")) !== FALSE){
-        $grupo=$col[14];
-        switch($grupo){
-            case '2301':
-                $grupo = 'C3-01';
-                break;
-            case '2302':
-                $grupo = 'C3-02';
-                break;
-            case '2401':
-                $grupo = 'C4-01';
-                break;
-            case '2402':
-                $grupo = 'C4-02';
-                break;
-            case '2501':
-                $grupo = 'C5-01';
-                break;
-            case '2502':
-                $grupo = 'C5-02';
-                break;
-            case '2601':
-                $grupo = 'C6-01';
-                break;
-            case '2602':
-                $grupo = 'C6-02';
-                break;
-            case '9901':
-                $grupo = '05-AC';
-                break;
-            default:
-            $grupo = substr($col[14],0,2)."-".substr($col[14],2,3);
+        if($cnt>1){
+            $grupo=$col[14];
+            switch($grupo){
+                case '2301':
+                    $grupo = 'C3-01';
+                    break;
+                case '2302':
+                    $grupo = 'C3-02';
+                    break;
+                case '2401':
+                    $grupo = 'C4-01';
+                    break;
+                case '2402':
+                    $grupo = 'C4-02';
+                    break;
+                case '2501':
+                    $grupo = 'C5-01';
+                    break;
+                case '2502':
+                    $grupo = 'C5-02';
+                    break;
+                case '2601':
+                    $grupo = 'C6-01';
+                    break;
+                case '2602':
+                    $grupo = 'C6-02';
+                    break;
+                case '9901':
+                    $grupo = '05-AC';
+                    break;
+                default:
+                $grupo = substr($col[14],0,2)."-".substr($col[14],2,3);
+            }
+            $estado = $col[2];
+            $apellidos = $col[25]." ".$col[26];
+            $nombres = $col[27]." ".$col[28]; 
+            $tipoDoc = substr($col[24],0,strpos($col[24],":"));
+            $numDoc = $col[23];
+            $fechaNacimiento = $col[30];
+            $telefono = "";
+            $eps = $col[32];
+            $direccion = $col[31];
+            $pais = $col[41];
+            echo '<tr>';
+            echo '<td>'.$cnt.'</td>';
+            echo '<td>'.$grupo.'</td>';
+            echo '<td>'.$estado.'</td>';
+            echo '<td>'.$apellidos.'</td>';
+            echo '<td>'.$nombres.'</td>';
+            echo '<td>'.$tipoDoc.'</td>';
+            echo '<td>'.$numDoc.'</td>';
+            echo '<td>'.$fechaNacimiento.'</td>';
+            echo '<td>'.$telefono.'</td>';
+            echo '<td>'.$eps.'</td>';
+            echo '<td>'.$direccion.'</td>';
+            echo '<td>'.$pais.'</td>';
+            echo '</tr>';			
+            $sql='
+                INSERT INTO simat(grupo,estado,apellidos,nombres,tipoDoc,numDoc,fechaNacimiento,telefono,eps,direccion,pais) 
+                VALUES ("'.$grupo.'","'.$estado.'","'.$apellidos.'","'.$nombres.'","'.$tipoDoc.'","'.$numDoc.'","'.$fechaNacimiento.'","'.$telefono.'","'.$eps.'","'.$direccion.'","'.$pais.'")
+            ';
+            if(!mysqli_query($cnx,$sql)){
+                echo "NO ".$cnt."<BR>";
+                $MALOS++;
+            }
         }
-		$estado = $col[2];
-        $apellidos = $col[25]." ".$col[26];
-        $nombres = $col[27]." ".$col[28]; 
-        $tipoDoc = substr($col[24],0,strpos($col[24],":"));
-        $numDoc = $col[23];
-        $fechaNacimiento = $col[30];
-        $telefono = "";
-        $eps = $col[32];
-        $direccion = $col[31];
-        $pais = $col[41];
-        echo '<tr>';
-		echo '<td>'.$cnt.'</td>';
-		echo '<td>'.$grupo.'</td>';
-		echo '<td>'.$estado.'</td>';
-        echo '<td>'.$apellidos.'</td>';
-        echo '<td>'.$nombres.'</td>';
-        echo '<td>'.$tipoDoc.'</td>';
-        echo '<td>'.$numDoc.'</td>';
-        echo '<td>'.$fechaNacimiento.'</td>';
-        echo '<td>'.$telefono.'</td>';
-        echo '<td>'.$eps.'</td>';
-        echo '<td>'.$direccion.'</td>';
-        echo '<td>'.$pais.'</td>';
-		echo '</tr>';			
-		$sql='
-            INSERT INTO simat(grupo,estado,apellidos,nombres,tipoDoc,numDoc,fechaNacimiento,telefono,eps,direccion,pais) 
-            VALUES ("'.$grupo.'","'.$estado.'","'.$apellidos.'","'.$nombres.'","'.$tipoDoc.'","'.$numDoc.'","'.$fechaNacimiento.'","'.$telefono.'","'.$eps.'","'.$direccion.'","'.$pais.'")
-        ';
-		if(!mysqli_query($cnx,$sql)){
-			echo "NO ".$cnt."<BR>";
-			$MALOS++;
-		}
         $cnt++;
     }
 	echo '</table>';
