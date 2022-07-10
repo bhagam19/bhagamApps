@@ -255,19 +255,23 @@ html {
 		height: 160px;
 		width: 160px;
 	}
-
 }
 @media screen and (max-width:800px) {
 	/* Esta es para mi celular*/
+	html {		
+		background:#fff;
+		font-size: 14px;
+	}
 	#appsContenedorGlobal {
-		position: absolute;
-		top: 0px;
-		left: 0;
-		width: 100%;
+		top:0px;		
+		left: 0px;
 	}
 	#appsEncabezadoGral {
 		height: 100px;
 		z-index: 99;
+		background:#f5f9ff;
+		border-radius: unset;
+		width: fit-content;
 	}
 	.appsBtnMenu {
 		position: relative;
@@ -303,61 +307,72 @@ html {
 	}
 	.appsContenidoCinta {
 		position: relative;
-		top: -130px;
+		top: -133px;
 		left: 0px;
 		width: 100%;
 		height: auto;
-		padding: 5px 0px;
-		font-size: 2.2vw;
+		padding: 0px 0px;
+		font-size: 4vw;
 		color: black;
 		box-shadow: 1px 1px 1px 1px gray;
 		background: white;
 		user-select: none;
+	}		
+	.appsContenidoCinta li {
+		margin: 10.0%;
 	}
 	.appsInicioSesionCinta {
 		position: relative;
-		top: -130px;
 		left: -15px;
 		font-size: 5vw;
 		user-select: none;
+		background: #f5f9ff;
 	}
-	#appsContenedor {
-		position: fixed; 
-		top: 140px;
+/*actua como un separador*/
+	#h2 {
+		top: -1650px;
+		font-size: 3vw;
+		width: 100%;
+		text-align: center;
+		color: var(--OnActivo);
+		z-index: 3;
 		user-select: none;	
-	}
-	#boton {
-		position:relative;
-		top:0px;
-		width: 96%;
-		height: 100px;
-		margin-bottom: 15px;
-		border-radius: 5px;
-		box-shadow: 0px 0px 1px #021860;
-		border: 0px solid #021860;
+	}	
+	#appsContenedor {
+		position: relative;
+		top: 180px;
+		left: 25px;
+		display:flex;
+		flex-wrap: wrap;
 		user-select: none;
 	}
+	#boton {
+		width: 96%;
+		height: 100px;
+		margin:10px;
+		border-radius: 5px;
+		user-select: none;		
+		background: #f5f9ff;
+	}
+	#boton a {
+		display:flex;
+		flex-wrap: nowrap;
+	}
 	#boton img {
-		position: relative;
-		top: 4px;
-		left:-260px;
-		height: 90px;
-		width: 90px;
+		height: 97px;
+		width: 97px;
 		border-radius: 5px;
 		box-shadow: 1px 1px 5px #EBE6EC;
 		user-select: none;
 	}
 	#boton p {
-		position: absolute;
-		top: -20px;
-		left: 140px;
-		width: 500px;
+		width: 600px;
 		color: black;
 		font-weight: normal;
 		text-align: left;
-		line-height: auto;
-		font-size: 48px;
+		font-size: 2em;
 		user-select: none;
+		padding-left: 25px	;
 	}
 	
 	/*====Menú de Navegación====*/

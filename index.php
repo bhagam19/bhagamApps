@@ -19,7 +19,7 @@
 <html>
 	<head>
     <meta http-equiv="Content-Type" content="text/html; charset='UTF-8'" />
-		<meta name="viewport" content="width=device-width, user-scalable=yes, initial-scale=0.6, maximun-scale=1.0, minimun-scale=0.2"/>
+		<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=0.6, maximun-scale=1.0, minimun-scale=0.2"/>
 		<title>Bhagam's Apps</title>
 		<link rel="shortcut icon" href="appsArt/aIcon.png"/>
 		<link rel="stylesheet" media="screen" type="text/css" href="index.css"/>
