@@ -1,10 +1,8 @@
 <?php
-    include('../conexion/datosConexion.php');
-				
+    include('../conexion/datosConexion.php');				
     $tabla='docentes';
 	$consultaSql=mysqli_query($conexion,"SELECT * FROM ".$tabla); 
-	$respuesta;
-	
+	$respuesta="";	
 	while($fila=mysqli_fetch_array($consultaSql)){	
 	    
 		$respuesta .='

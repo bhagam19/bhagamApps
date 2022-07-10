@@ -120,7 +120,7 @@
 		function actualizarInput(tdId,numReg,campo,inpId){
 			/*alert(tdId+", "+numReg+", "+campo+", "+inpId);*/
 			var td=document.getElementById(tdId);
-			var contenido =	'<input type="text" id="'+inpId+'" value="'+td.innerHTML+'"></br>'+
+			var contenido =	'<input type="text" id="'+inpId+'" value="'+td.innerHTML+'">'+
 				   			'<input type="button" value="OK" onclick="actualizarRegistro('+numReg+','+inpId+'.value,\''+campo+'\')">'+
 	        				'<input type="button" value="Cancelar" onclick="cancelarAccion()">';
 			td.innerHTML=contenido;
@@ -153,16 +153,19 @@
 			document.getElementById("actualizable").innerHTML=xmlhttp.responseText.trim();
 		}
 		function eliminarRegistro(id){
-			/*alert(id);*/
-			var xmlhttp = new XMLHttpRequest();
-			xmlhttp.open("GET","eliminarAsignatura.php?id="+id,false);
-			xmlhttp.send();
-			
-			var xmlhttp = new XMLHttpRequest();
-			xmlhttp.open("GET","actualizarActualizable.php",false);
-			xmlhttp.send();
-			document.getElementById("actualizable").innerHTML=""
-			document.getElementById("actualizable").innerHTML=xmlhttp.responseText.trim();
+			var confirmar=confirm("¿Realmente desea elimar el registro no. "+id+"?\n\nEsta acción no se puede deshacer.");
+			if(confirmar){
+				var xmlhttp = new XMLHttpRequest();
+				xmlhttp.open("GET","eliminarAsignatura.php?id="+id,false);
+				xmlhttp.send();				
+				var xmlhttp = new XMLHttpRequest();
+				xmlhttp.open("GET","actualizarActualizable.php",false);
+				xmlhttp.send();
+				document.getElementById("actualizable").innerHTML=""
+				document.getElementById("actualizable").innerHTML=xmlhttp.responseText.trim();
+			}else{
+				alert("No se eliminó la asignatura");
+			}			
 		}
 	</script>
 	<?php

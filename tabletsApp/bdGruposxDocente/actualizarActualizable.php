@@ -1,7 +1,7 @@
 <?php
     include('../conexion/datosConexion.php');
 				
-    $respuesta;
+    $respuesta="";
 	$tabla='gruposxDocente';
 	$consultaSql=mysqli_query($conexion,"SELECT * FROM ".$tabla); 
 	while($fila=mysqli_fetch_array($consultaSql)){

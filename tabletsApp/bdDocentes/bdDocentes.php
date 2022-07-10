@@ -170,16 +170,19 @@
 			document.getElementById("actualizable").innerHTML=xmlhttp.responseText.trim();
 		}
 		function eliminarRegistro(id){
-			/*alert(id);*/
-			var xmlhttp = new XMLHttpRequest();
-			xmlhttp.open("GET","eliminarDocente.php?id="+id,false);
-			xmlhttp.send();
-			
-			var xmlhttp = new XMLHttpRequest();
-			xmlhttp.open("GET","actualizarActualizable.php",false);
-			xmlhttp.send();
-			document.getElementById("actualizable").innerHTML=""
-			document.getElementById("actualizable").innerHTML=xmlhttp.responseText.trim();
+			var confirmar=confirm("¿Realmente desea elimar el registro no. "+id+"?\n\nEsta acción no se puede deshacer.");
+			if(confirmar){
+				var xmlhttp = new XMLHttpRequest();
+				xmlhttp.open("GET","eliminarDocente.php?id="+id,false);
+				xmlhttp.send();
+								var xmlhttp = new XMLHttpRequest();
+				xmlhttp.open("GET","actualizarActualizable.php",false);
+				xmlhttp.send();
+				document.getElementById("actualizable").innerHTML=""
+				document.getElementById("actualizable").innerHTML=xmlhttp.responseText.trim();
+			}else{
+				alert("No se eliminó el registro.");
+			}
 		}
 	</script>
 	<?php

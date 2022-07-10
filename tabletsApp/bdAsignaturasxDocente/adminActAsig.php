@@ -1,13 +1,9 @@
 <?php
-    include('../conexion/datosConexion.php');
-    
-    $docenteID=$_REQUEST["docenteID"];
-    
+    include('../conexion/datosConexion.php');    
+    $docenteID=$_REQUEST["docenteID"];    
     $tabla='asignaturasxDocente';
-	$sqlAsignaturas=mysqli_query($conexion,"SELECT * FROM ".$tabla." WHERE docenteID='".$docenteID."' ORDER BY asignatura");
-    
-    $respuesta="";
-    
+	$sqlAsignaturas=mysqli_query($conexion,"SELECT * FROM ".$tabla." WHERE docenteID='".$docenteID."' ORDER BY asignatura");    
+    $respuesta="";    
     while($asignatura=mysqli_fetch_array($sqlAsignaturas)){
         $tabla='asignaturas';
 	    $sqlNombreAsignatura=mysqli_query($conexion,"SELECT * FROM ".$tabla." WHERE asignaturaID='".$asignatura["asignatura"]."'");
@@ -19,9 +15,6 @@
                             </tr>
                           '; 
     	}
-    }
-    
-    echo $respuesta;
-    
-?>
-            
+    }    
+    echo $respuesta;    
+?>            

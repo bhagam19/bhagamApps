@@ -1,7 +1,6 @@
 <?php
-    include('../conexion/datosConexion.php');
-				
-    $respuesta;
+    include('../conexion/datosConexion.php');				
+    $respuesta="";
 	$tabla='asignaturasxDocente';
 	$consultaSql=mysqli_query($conexion,"SELECT * FROM ".$tabla); 
 	while($fila=mysqli_fetch_array($consultaSql)){
@@ -16,8 +15,7 @@
 		$sql=mysqli_query($conexion,"SELECT * FROM asignaturas WHERE asignaturaID=".$fila["asignatura"]);
 		while($fila2=mysqli_fetch_array($sql)){
 			$asignatura=$fila2["asignatura"];
-		}
-	    
+		}	    
 		$respuesta .='
 						<tr>
 							<td>'.$fila["asignaturaID"].'</td>
@@ -26,7 +24,6 @@
 							<td style="text-align:left;!important" id="tdAsignatura'.$fila["asignaturaID"].'" onclick="actualizarInput(this.id,'.$fila["asignaturaID"].',\'asignatura\',\'asignaturaAct'.$fila["asignaturaID"].'\')">'.$asignatura.'</td>
 						</tr>
 					';			
-	}
-	
+	}	
 	echo $respuesta;
 ?>
