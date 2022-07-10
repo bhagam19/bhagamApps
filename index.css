@@ -8,7 +8,7 @@
 	--RojoOnPasivo:#d80202;
 	--RojoOff:#960404;  
     --fondo01:rgba(117, 208, 250, 0.1);
-    --fondo03:rgba(117, 208, 250, 0.3);
+    --fondo03:#f5f9ff;
     --fondo05:rgba(117, 208, 250, 0.5); /*Estado inactivo*/
     --fondo07:rgba(117, 208, 250, 0.7);
     --fondo09:rgba(117, 208, 250,0.9); /*Estado activo*/
@@ -30,8 +30,7 @@
 html {
 	font-family: calibri, asap;
 	width: 99%;	
-	background:#020a22;
-	background-image:url("appsArt/fondo.jpg");
+	background:#fff;
 }
 #appsContenedorGlobal {
 	position: absolute;
@@ -43,16 +42,16 @@ html {
 	background: radial-gradient(circle, rgba(52,111,176,1) 0%, rgba(63,72,117,1) 100%);*/
 }
 #appsEncabezadoGral {
-	position: fixed;
-	top: 0;
-	left: 0;
+	position: fixed;	
 	width: 100%;
 	height: 50px;
-	margin: 0 auto;
 	border:1px solid var(--Off);	
 	background: var(--fondo03);
-	border-radius: 15px 0px 15px 0px;
 	z-index: 3;
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: space-between;
 }
 #appsEncabezadoGral:hover{
 	border:1px solid var(--OnActivo);
@@ -71,65 +70,46 @@ html {
 	color: var(--RojoOnActivo);
 	text-shadow: 0px 0px 10px var(--RojoOnActivo);
 }
-.appsBtnMenu {
-	position: relative;
-	width: 30px;
-	top: 13px;
-	left: 10px;
+.appsBtnMenu {	
+	position:relative;
+	left:10px;
 	cursor: pointer;
 }
 .appsBtnMenu img {
-	width: 20px;
-	height: 20px
+	width: 30px;
+	height: 30px
 }
-.appsLogo {
-	position: relative;
-	height: 45px;
-	width: 45px;
-	top: -22px;
-	left: 41px;
-	border-radius: 0;
+.appsLogo{
+	position:fixed;
+	left:60px;
 }
 .appsLogo img {
 	height: 45px;
 	width: 45px;
 }
-.appsTituloCinta {
-	position: relative;
-	top: -68px;
-	left: 90px;
-	width: 180px;
-	height: 45px;
+.appsTituloCinta {	
+	position:fixed;
+	left:120px;
 	font-size: 18px;
 	font-weight: bolder;	
 	color: var(--RojoOnPasivo);
 	text-align: center;
-	padding-left: 3px;
 }
 .appsContenidoCinta {
-	position: relative;
-	width: 50%;
-	top: -100px;
-	left: 340px;
 	font-weight: normal;
 	font-size: 14px;
 	color: var(--OnPasivo);
 	text-align: center;
-	padding-left: 5px;
 }
 .appsContenidoCinta ul {
-	position: relative;
-	left: 0;
+	margin:0;
+	padding:0;
 	list-style: none;
-	display: inline;
+	display: flex;
 }
 .appsContenidoCinta li {
-	position: relative;
-	width: auto;
-	left: -20px;
-	list-style: none;
-	display: inline;
-	margin: 4.0%;
+	margin:0 4.0%;
+	padding: 0 20px;
 }
 .appsContenidoCinta li a{
 	font-weight: 900;
@@ -137,10 +117,6 @@ html {
 	color:var(--RojoOnPasivo);
 }
 .appsInicioSesionCinta {
-	position: relative;
-	float: right;
-	top: -125px;
-	width: auto;
 	margin: 3px;
 	padding: 2px 5px;
 	text-align: center;
@@ -148,7 +124,7 @@ html {
 	font-weight: bold;
 	font-size: 16px;
 	border: 1px solid var(--Off);
-	border-radius: 10px 0px ;
+	border-radius: 10px;
 	background: var(--fondo01);		
 	cursor: pointer;
 }
@@ -475,65 +451,42 @@ html {
 }
 @media screen and (max-width:800px) {
 	/* Esta es para mi celular*/
-	#appsContenedorGlobal {
-		position: absolute;
-		top: 150px;
-		left: 0;
-		width: 100%;
-	}
 	#appsEncabezadoGral {
 		height: 100px;
-		z-index: 99;
-	}
-	.appsBtnMenu {
-		position: relative;
-		top: 20px;
-		left: 40px;
-		width: 60px;
-		height: 60px;
-		cursor: pointer;
-	}
+	}	
 	.appsBtnMenu img {
 		width: 60px;
 		height: 60px;
 	}
 	.appsLogo {
-		position: relative;
-		top: -55px;
 		left: 120px;
-		height: 90px;
-		width: 90px;
 	}
 	.appsLogo img {
 		height: 90px;
 		width: 90px;
 	}
 	.appsTituloCinta {
-		position: relative;
-		top: -140px;
 		left: 215px;
 		width: 450px;
-		height: auto;
 		font-size: 5vw;
 		user-select: none;
 	}
 	.appsContenidoCinta {
-		position: relative;
-		top: -130px;
-		left: 0px;
+		position: fixed;
+		top:100px;
 		width: 100%;
 		height: auto;
 		padding: 5px 0px;
-		font-size: 2.2vw;
+		font-size: 3vw;
 		color: black;
 		box-shadow: 1px 1px 1px 1px gray;
 		background: white;
 		user-select: none;
 	}
 	.appsInicioSesionCinta {
-		position: relative;
-		top: -130px;
-		left: -15px;
+		position: fixed;
+		top:170px;
+		left:470px;
 		font-size: 5vw;
 		user-select: none;
 	}
@@ -657,48 +610,41 @@ html {
 		border-radius: 5px;
 		background: white;
 	}
-	#parche {
-		position: fixed;
-		top: 130px;
-		height: 160px;
-		width: 100%;
-		font-size: 3vw;
-		text-align: center;
-		color: #1a3799;
-		z-index: 2;
-		background: white;
-		user-select: none;
-	}	/*actua como un separador*/
+		/*actua como un separador*/
 	#h2 {
-		position: fixed;
-		top: 200px;
+		top: -1100px;
 		font-size: 3vw;
 		width: 100%;
 		text-align: center;
 		color: #1a3799;
-		z-index: 3;
+		z-index: 0	;
 		user-select: none;
 	}	
 	#appsContenedor {
-		position: relative;
-		display:inline-block;
-		top: 270px;
+		display:flex;
+		flex-wrap: wrap;
+		justify-content: center;
+		top: 300px;
 		user-select: none;
 	}
 	#boton {
-		position:relative;
-		top:0px;
 		width: 96%;
 		height: 100px;
-		margin-bottom: 15px;
+		margin: 5px;
 		border-radius: 5px;
 		box-shadow: 0px 0px 1px #021860;
 		border: 0px solid #021860;
 		user-select: none;
 	}
+	#boton a{
+		height: 100px;
+		margin: 0;
+		display: flex;
+		flex-wrap: nowrap;
+		align-items: center;
+		justify-content: space-between;
+	}
 	#boton img {
-		position: relative;
-		top: 4px;
 		left:-260px;
 		height: 90px;
 		width: 90px;
@@ -707,15 +653,14 @@ html {
 		user-select: none;
 	}
 	#boton p {
-		position: absolute;
-		top: -20px;
 		left: 140px;
-		width: 500px;
+		margin:0;
+		padding-left: 25px;
+		width: 550px;
 		color: black;
 		font-weight: normal;
 		text-align: left;
-		line-height: auto;
-		font-size: 48px;
+		font-size: 3em;
 		user-select: none;
 	}
 	

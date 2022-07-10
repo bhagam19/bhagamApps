@@ -86,14 +86,6 @@ $(document).ready(function(){ //ocultar formularios
 		});
 	});
 });//ocultar formularios
-$(document).ready(function() {//mover formularios
-				$("#formulario").draggable({stack:"#formulario"}, {handle:"#handler"});
-			});//mover formularios
-
-$(document).ready(function() {//mover formulario Mis Reservaciones
-	$("#formulario").draggable({stack:"#formulario"}, {handle:"#handler"});
-});//mover formulario Mis Reservaciones
-
 function cambiarFondoInput(id){//Esta función reestablece el color del fondo de un input después de haberse puesto rojo como validación de dato fatante o equivocado.
 	//alert(id);
 	document.getElementById(id).style.boxShadow="0 1px 10px #abe2f8 inset, 0 0 8px #0076fc";
