@@ -19,6 +19,9 @@ function cargarReporte(v){
         case '6':
             url='adm/02-vst/00-Ppal/03-reporte06.php';
         break;
+        case '7':
+            url='adm/02-vst/00-Ppal/03-reporte07.php';
+        break;
     }     
     fetch(url)
         .then(texto => {

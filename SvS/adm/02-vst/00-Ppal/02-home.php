@@ -7,9 +7,11 @@
                     <input type="hidden" name="MAX_FILE_SIZE" value="2000000" />
                     <input name="subir_archivo" type="file" />
                     <input type="submit" value="Importar Datos SINAI" />
+                    Última versión: '.date('F d Y',filemtime(dirname(__FILE__).'/../../archivos/sinai.xlsx')).'
                 </form>
             </div>
         ';
+    
     
     echo '
         <div id="reestablecerBD">            
@@ -17,16 +19,17 @@
                 <input type="hidden" name="MAX_FILE_SIZE" value="2000000" />
                 <input name="subir_archivo" type="file" />
                 <input type="submit" value="Importar Datos SIMAT" />
+                Última versión: '.date('F d Y',filemtime(dirname(__FILE__).'/../../archivos/simat.csv')).'
             </form>
         </div>
     ';
-
-    echo '
+   echo '
         <div id="reestablecerBD">            
             <form enctype="multipart/form-data" action="adm/03-cnt/02-cargarCsv6AFUC.php" method="POST">                    
                 <input type="hidden" name="MAX_FILE_SIZE" value="2000000" />
                 <input name="subir_archivo" type="file" />
                 <input type="submit" value="Importar Datos Anexo 6A FUC" />
+                Última versión: '.date('F d Y',filemtime(dirname(__FILE__).'/../../archivos/Anexo6AFUC.csv')).'
             </form>
         </div>
     ';
@@ -37,6 +40,7 @@
                 <input type="hidden" name="MAX_FILE_SIZE" value="2000000" />
                 <input name="subir_archivo" type="file" />
                 <input type="submit" value="Importar Datos Estrategia Permanencia" />
+                Última versión: '.date('F d Y',filemtime(dirname(__FILE__).'/../../archivos/estPAE.csv')).'
             </form>
         </div>
     ';
@@ -51,6 +55,7 @@
             <option value=4>País</option>
             <option value=5>Desertores</option>
             <option value=6>PAE</option>
+            <option value=7>Retirados SIMAT</option>
         </select>
     ';
 
