@@ -164,15 +164,88 @@ html {
 	position: fixed;
     display: inline-block;
 	top:80px;
+	left: 20px;
 	margin: 0 auto;
 }
 #reporte{
 	position: relative;
-	visibility: hidden;
-	width:auto;
+	visibility: hidden;	
+	width: 98%;
+}
+#numEst{
+	display: flex;
+	flex-wrap: nowrap;
+	text-align: center;
+	align-items: center;
+	justify-content: center;
+	background: rgb(57, 57, 226);
+	color:white;
+	font-size: 2rem;
+	margin:5px;
+	border-radius: 25px;
+}
+#contenedorTabla{
+	margin-top:5px;
 	height:650px;
     overflow: scroll;
+	user-select: none;
 }
+#contenedorTabla>div:nth-child(odd) {
+	background-color:#dae4e9;	
+}
+.grid{	
+	display: grid;
+	grid-template-columns: 100px 40px 100px 40px 40px 60px 100px 200px 300px 300px 80px 60px 60px 60px 60px 60px 60px;
+	gap:0.1em;
+	align-items:center;
+	text-align: center;
+}
+.encabezado{
+	position:sticky;
+	top:0px;
+	user-select: none;
+	z-index: 2;
+}
+.tituloGrid{	
+	border-radius: 5px;
+	background:#084B8A;
+	font-weight: 900;	
+	min-height:40px;	
+}
+.filtro{
+	position:sticky;
+	top:32px;
+	user-select: none;
+	z-index: 2;
+}
+.filtroGrid{
+	background:#084B8A;
+	min-height:40px;	
+}
+select{
+	padding: 2px;
+	background-color: white;
+	border-radius: 5px;
+	border:1px solid black;
+	box-shadow: 0px 0px 1px 0px black;
+	outline: 0 none;
+	overflow: visible !important;
+}
+.cuerpoGrid{	
+	position: relative;
+	top:40px;
+	border-left: 1px solid #a7a7a7;
+	border-bottom: 1px solid #a7a7a7;
+	height: 40px;
+	overflow: hidden;
+}
+.cuerpo:hover {
+	background-color: #d9e7fa !important;
+}
+.cuerpoGrid:hover{	
+	background-color: #bcd1ee !important;
+}
+
 .tablaBD tbody tr:nth-child(even) {
 	background-color:#e8eef1;
 }

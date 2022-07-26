@@ -1,7 +1,7 @@
 <?php
     error_reporting(-1);    
 	$directorio = '../archivos/';
-	$subir_archivo = $directorio.'AnalisisPreguntas.csv';
+	$subir_archivo = $directorio.'analisisPreguntas.csv';
     move_uploaded_file($_FILES['subir_archivo']['tmp_name'], $subir_archivo);
     $nombreArchivo = $subir_archivo; //Variable con el nombre del archivo
     echo $nombreArchivo."<br>";
@@ -42,17 +42,17 @@
                 <td>opcH</td>
 			</tr>';
 	$MALOS=0;
-    $cnt=1;
+    $cnt=0;
     $file = fopen($nombreArchivo,"r");
     while(($col=fgetcsv($file,10000,",")) !== FALSE){	
         $cnt++;	
         if($cnt>1){
-            $idPregunta = $col[0];
-            $clave = $col[1];
-            $grado = $col[2];
-            $grupo = $col[3];
-            $instrumento = $col[4];
-            $cuadernillo = $col[5];
+            $instrumento = $col[0];
+            $cuadernillo = $col[1];
+            $idPregunta = $col[2];
+            $clave = $col[3];
+            $grado = $col[4];
+            $grupo = $col[5];            
             $componente = $col[6];
             $competencia = $col[7];
             $afirmacion = $col[8];
@@ -63,7 +63,7 @@
             $opcA = $col[13];
             $opcB = $col[14];
             $opcC = $col[15];
-            $opcD = 0;
+            $opcD = $col[16];
             $opcE = 0;
             $opcF = 0;
             $opcG = 0;
@@ -109,6 +109,7 @@
 	}else{
 		echo "No se pudieron guardar ".$MALOS." registros!!!";		
 	}
+    
     echo"
         <html>
             <head>

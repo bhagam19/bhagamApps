@@ -15,19 +15,14 @@
 					array("","appsArt/tablet.jpg","Préstamo de Tabletas"),
 					array("","appsArt/pollaMundialista.png","Polla Mundialista"),
 					array("","appsArt/arcReactorOnPasiva.png","Proyecto Ironman"),
-<<<<<<< HEAD
-					array("JMproyects/JmLobby.html","https://i.imgflip.com/2/uab2a.jpg","Jm Lobby"),						
-					array("SvS","appsArt/SvS.png","SINAI vs SIMAT"),
-					array("eduinclusivareact","appsArt/reacct.png","eduInclusivaReact")
-=======
 					array("JMproyects/JmLobby.html","https://i.imgflip.com/2/uab2a.jpg","Jm Lobby"),
-					array("SvS","appsArt/SvS.png","SINAI vs SIMAT")
->>>>>>> 9e7801469dfabb45f3349030bea5f7f8da805d8c
+					array("SvS","appsArt/SvS.png","SINAI vs SIMAT"),
+					array("EvPAv","appsArt/EvPAv.png","Evaluar para Avanzar")
 				);
 				foreach ($datosApp as $App) {
 					echo '
 						<div id="boton">
-							<a href='.$App[0].'><img src='.$App[1].'><p>'.$App[2].'</p></a>
+							<a href='.$App[0].' target="_blank"><img src='.$App[1].'><p>'.$App[2].'</p></a>
 						</div>
 					';
 				}

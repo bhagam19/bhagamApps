@@ -1,92 +1,96 @@
 <?php
     include('../../01-mdl/cnx.php');//Agregamos la conexión
-    echo'Estudiantes en SINAI pero no aparecen en SIMAT';
+    $numAreas=mysqli_num_rows($cnx->query('SELECT DISTINCT instrumento FROM analisisPreguntas')); 
     echo '
-        <table class="tablaBD tablaBienes" border=1>
-            <thead>
-                <tr class="stickyHead1">
-                    <th>GRUPO</th>
-                    <th>ESTADO</th>
-                    <th>APELLIDOS</th>
-                    <th>NOMBRES</th>
-                    <th>TIPO DOC</th>
-                    <th>DOCUMENTO</th>
-			    </tr>
-            </thead> 
+        <div id="numEst">
+            Se evaluaron '.$numAreas.' areas.
+        </div>
     ';
-    $consulta=$cnx->query('SELECT * FROM sinai WHERE estado ="MATRICULADO" AND numDoc NOT IN (SELECT numDoc FROM simat)');
+    echo '   
+        <div id="contenedorTabla">     
+            <div class="grid encabezado">
+                <div class="tituloGrid" title="Instrumento">INSTRUM.</div>
+                <div class="tituloGrid" title="Cuadernillo">CD.</div>
+                <div class="tituloGrid" title="Id Pregunta">ID</div>
+                <div class="tituloGrid" title="Clave">CL</div>
+                <div class="tituloGrid" title="Grado">GD</div>
+                <div class="tituloGrid" title="Grupo">GRP</div>
+                <div class="tituloGrid">COMPONENTE</div>
+                <div class="tituloGrid">COMPETENCIA</div>
+                <div class="tituloGrid">AFIRMACIÓN</div>
+                <div class="tituloGrid">EVIDENCIA</div>
+                <div class="tituloGrid">DIFICULTAD</div>
+                <div class="tituloGrid" title="Respuestas Correctas">RESP. CORR.</div>
+                <div class="tituloGrid" title="Respuestas Omitidas">RESP. OMIT.</div>
+                <div class="tituloGrid">OPC A</div>
+                <div class="tituloGrid">OPC B</div>
+                <div class="tituloGrid">OPC C</div>
+                <div class="tituloGrid">OPC D</div>
+            </div>
+            <div class="grid filtro">
+                <div class="filtroGrid">
+                    <select onchange="aplicarFiltro()">
+                        <option>por Inst...</option>
+                    </select>
+                </div>
+                <div class="filtroGrid"></div>
+                <div class="filtroGrid"></div>
+                <div class="filtroGrid"></div>
+                <div class="filtroGrid">
+                    <select onchange="aplicarFiltro()">
+                        <option>por Grado...</option>
+                    </select>
+                </div>
+                <div class="filtroGrid">
+                    <select onchange="aplicarFiltro()">
+                        <option>por Grupo...</option>
+                    </select>
+                </div>
+                <div class="filtroGrid">
+                    <select onchange="aplicarFiltro()">
+                        <option>por Comp...</option>
+                    </select>
+                </div>
+                <div class="filtroGrid"></div>
+                <div class="filtroGrid"></div>
+                <div class="filtroGrid"></div>
+                <div class="filtroGrid"></div>
+                <div class="filtroGrid"></div>
+                <div class="filtroGrid"></div>
+                <div class="filtroGrid"></div>
+                <div class="filtroGrid"></div>
+                <div class="filtroGrid"></div>
+                <div class="filtroGrid"></div>
+            </div>
+       
+    ';
+    $consulta=$cnx->query('SELECT * FROM analisisPreguntas');
     while ($fila=mysqli_fetch_array($consulta)){
-        echo '
-            <tr>
-                <td>'.$fila['grupo'].'</td>
-                <td>'.$fila['estado'].'</td>
-                <td>'.$fila['apellidos'].'</td>
-                <td>'.$fila['nombres'].'</td>
-                <td>'.$fila['tipoDoc'].'</td>
-                <td>'.$fila['numDoc'].'</td>
-            </tr>
+        echo '        
+            <div class="grid cuerpo">
+                <div class="cuerpoGrid">'.$fila['instrumento'].'</div>
+                <div class="cuerpoGrid">'.$fila['cuadernillo'].'</div>
+                <div class="cuerpoGrid">'.$fila['idPregunta'].'</div>
+                <div class="cuerpoGrid">'.$fila['clave'].'</div>
+                <div class="cuerpoGrid">'.$fila['grado'].'</div>
+                <div class="cuerpoGrid">'.$fila['grupo'].'</div>
+                <div class="cuerpoGrid">'.$fila['componente'].'</div>
+                <div class="cuerpoGrid">'.$fila['competencia'].'</div>
+                <div class="cuerpoGrid">'.$fila['afirmacion'].'</div>
+                <div class="cuerpoGrid ancho">'.$fila['evidencia'].'</div>
+                <div class="cuerpoGrid">'.$fila['nivelDificultad'].'</div>
+                <div class="cuerpoGrid">'.$fila['respCorrectas'].'</div>
+                <div class="cuerpoGrid">'.$fila['omisiones'].'</div>
+                <div class="cuerpoGrid">'.$fila['opcA'].'</div>
+                <div class="cuerpoGrid">'.$fila['opcB'].'</div>
+                <div class="cuerpoGrid">'.$fila['opcC'].'</div>
+                <div class="cuerpoGrid">'.$fila['opcD'].'</div>
+            </div>
         ';
     }
-    echo'</table><br>';
-    echo'Estudiantes en SIMAT pero no aparecen en SINAI';
-    echo '
-        <table class="tablaBD tablaBienes" border=1>
-            <thead>
-                <tr class="stickyHead1">
-                    <th>GRUPO</th>
-                    <th>ESTADO</th>
-                    <th>APELLIDOS</th>
-                    <th>NOMBRES</th>
-                    <th>TIPO DOC</th>
-                    <th>DOCUMENTO</th>
-			    </tr>
-            </thead> 
+    echo'
+           
+        </div>
+        <br>
     ';
-    $consulta=$cnx->query('SELECT * FROM simat WHERE estado ="MATRICULADO" AND numDoc NOT IN (SELECT numDoc FROM sinai)');
-    while ($fila=mysqli_fetch_array($consulta)){
-        echo '
-            <tr>
-                <td>'.$fila['grupo'].'</td>
-                <td>'.$fila['estado'].'</td>
-                <td>'.$fila['apellidos'].'</td>
-                <td>'.$fila['nombres'].'</td>
-                <td>'.$fila['tipoDoc'].'</td>
-                <td>'.$fila['numDoc'].'</td>
-            </tr>
-        ';
-    }
-    echo'</table><br>';
-
-    echo'Estudiantes en grupos diferentes en SIMAT';
-    echo '
-        <table class="tablaBD tablaBienes" border=1>
-            <thead>
-                <tr class="stickyHead1">
-                    <th>GRUPO SINAI</th>
-                    <th>GRUPO SIMAT</th>
-                    <th>ESTADO</th>
-                    <th>APELLIDOS</th>
-                    <th>NOMBRES</th>
-                    <th>TIPO DOC</th>
-                    <th>DOCUMENTO</th>
-			    </tr>
-            </thead> 
-    ';
-    $consulta=$cnx->query('SELECT simat.grupo,sinai.grupo,sinai.estado, sinai.apellidos, sinai.nombres, sinai.tipoDoc, sinai.numDoc FROM sinai INNER JOIN simat 
-                            ON NOT sinai.grupo=simat.grupo WHERE sinai.estado="MATRICULADO" AND simat.estado="MATRICULADO" AND sinai.numDoc=simat.numDoc');
-    while ($fila=mysqli_fetch_array($consulta)){
-        echo '
-            <tr>
-                <td>'.$fila[0].'</td>
-                <td>'.$fila[1].'</td>
-                <td>'.$fila[2].'</td>
-                <td>'.$fila[3].'</td>
-                <td>'.$fila[4].'</td>
-                <td>'.$fila[5].'</td>
-                <td>'.$fila[6].'</td>
-            </tr>
-        ';
-    }
-    echo'</table><br>';
-
 ?>
