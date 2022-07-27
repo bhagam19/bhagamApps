@@ -160,12 +160,20 @@ html {
 	background: var(--fondo03);		
 }
 /*====CuerpoPrincipal====*/
-#appsContenedor {
+#appsContenedor {	
 	position: fixed;
+	width: 100%;
     display: inline-block;
 	top:80px;
 	left: 20px;
 	margin: 0 auto;
+}
+#contImportarDatos{
+	visibility: visible	;
+}
+#contForm{
+	display: grid;
+	grid-template-columns: 200px 350px 200px;
 }
 #reporte{
 	position: relative;
@@ -244,6 +252,40 @@ select{
 }
 .cuerpoGrid:hover{	
 	background-color: #bcd1ee !important;
+}
+
+#inputID {
+    display: grid;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    padding: 25px;
+}
+#idNum {
+    padding: 10px;
+    font-size: 18px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    text-align: center;
+}
+#btnBuscar {
+    padding: 15px;
+    font-size: 18px;
+    width: 300px;
+    height: 50px;
+    background: azure;
+    border-radius: 5px;
+    box-shadow: 2px 2px 10px 0px black;
+}
+
+#contenedorReporteIndividual{	
+	display:flex;
+	flex-wrap: nowrap;
+	align-items: center;
+	justify-content: center;
+	background-color: #1d3faf;
+	border-radius: 25px;
+	box-shadow: 1px 1px 1px 10px blue;
 }
 
 .tablaBD tbody tr:nth-child(even) {

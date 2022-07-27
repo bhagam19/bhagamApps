@@ -29,3 +29,9 @@ function cargarReporte(v){
         .catch(error => console.log('Hubo un problema con la petición Fetch:' + error.message));
     
 }
+
+function buscar(v){
+    alert(v);
+    document.getElementById('contenedorReporteIndividual').innerHTML='';
+    document.getElementById('contenedorReporteIndividual').innerHTML='<div> Hola '+ v +' </div>';
+}

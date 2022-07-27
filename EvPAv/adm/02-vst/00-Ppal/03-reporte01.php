@@ -6,8 +6,8 @@
             Se evaluaron '.$numAreas.' areas.
         </div>
     ';
-    echo '   
-        <div id="contenedorTabla">     
+    echo '
+        <div id="contenedorTabla">
             <div class="grid encabezado">
                 <div class="tituloGrid" title="Instrumento">INSTRUM.</div>
                 <div class="tituloGrid" title="Cuadernillo">CD.</div>

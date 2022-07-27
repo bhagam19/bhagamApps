@@ -1,40 +1,12 @@
 <?php
-    include('../../01-mdl/cnx.php');//Agregamos la conexión
-    echo'Estudiantes con telefono diferente en SIMAT';
+    include dirname(__FILE__).'/../../01-mdl/cnx.php';
     echo '
-        <table class="tablaBD tablaBienes" border=1>
-            <thead>
-                <tr class="stickyHead1">
-                    <th>GRUPO</th>
-                    <th>ESTADO</th>
-                    <th>APELLIDOS</th>
-                    <th>NOMBRES</th>
-                    <th>TIPO DOC</th>
-                    <th>DOCUMENTO</th>
-                    <th>TELÉFONO SINAI</th>
-                    <th>TELÉFONO SIMAT</th>
-                </tr>
-            </thead>
-    ';
-    $consulta=$cnx->query('SELECT sinai.grupo, sinai.estado, sinai.apellidos, sinai.nombres, sinai.tipoDoc, sinai.numDoc, sinai.telefono, simat.telefono FROM sinai INNER JOIN simat 
-                            ON NOT sinai.telefono=simat.telefono WHERE sinai.estado="MATRICULADO" AND simat.estado="MATRICULADO" AND sinai.numDoc=simat.numDoc
-                            ORDER BY sinai.grupo ASC, sinai.apellidos, sinai.nombres ASC');
-    $cant=0;
-    while ($fila=mysqli_fetch_array($consulta)){
-        echo '
-            <tr>
-                <td>'.$fila[0].'</td>
-                <td>'.$fila[1].'</td>
-                <td>'.$fila[2].'</td>
-                <td>'.$fila[3].'</td>
-                <td>'.$fila[4].'</td>
-                <td>'.$fila[5].'</td>
-                <td>'.$fila[6].'</td>
-                <td>'.$fila[7].'</td>
-            </tr>
+            <div id="inputID">            
+                <input type="text" name="idNum" id="idNum"/>
+                <input type="submit" id="btnBuscar" value="Buscar" onclick="buscar(idNum.value)" />               
+            </div>
+            <div id="contenedorReporteIndividual">
+            
+            </div>
         ';
-        $cant++;
-    }
-    echo "Total: ".$cant;
-    echo'</table><br>';   
 ?>
