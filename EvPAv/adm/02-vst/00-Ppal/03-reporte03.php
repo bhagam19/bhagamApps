@@ -5,8 +5,7 @@
                 <input type="text" name="idNum" id="idNum"/>
                 <input type="submit" id="btnBuscar" value="Buscar" onclick="buscar(idNum.value)" />               
             </div>
-            <div id="contenedorReporteIndividual">
-            
+            <div id="contenedorReporteIndividual">            
             </div>
         ';
 ?>
