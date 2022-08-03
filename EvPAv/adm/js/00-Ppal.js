@@ -55,6 +55,7 @@ function hacerFetch(url, data, flag){
     }).then(respTexto=> {
             console.log(respTexto);                        
             if (flag == 1){
+            document.getElementById("contenedorReporteIndividual").style.visibility="visible";
             document.getElementById("contenedorReporteIndividual").innerHTML=""
             document.getElementById("contenedorReporteIndividual").innerHTML=respTexto.trim();
             }

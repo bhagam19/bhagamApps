@@ -18,14 +18,16 @@
         $estudiante=$fila['estudiante'];
     }
     echo "
-        <div>Hola, ".$estudiante."</div>
-        <div>Presentaste ".$numPruebas." pruebas:</div>
+        <div class='encabezadoReporte'>
+            <div>Hola, ".ucwords(strtolower($estudiante))."</div>
+            <div>Presentaste ".$numPruebas." pruebas:</div>
+        </div>
     ";    
     $consulta=$cnx->query('SELECT DISTINCT instrumento FROM analisisEstudiantes WHERE idEstudiante="'.$id.'"');    
     $cnt=0;
     while($fila=mysqli_fetch_array($consulta)){
         $cnt++;
-        echo "<div>";
+        echo "<div class='cuerpoReporte'>";
         echo "<div>".$cnt.") ".$fila['instrumento']."</div>";
         $consultaTtlResp=$cnx->query('SELECT DISTINCT idPregunta FROM analisisEstudiantes WHERE idEstudiante="'.$id.'" 
                             AND instrumento="'.$fila['instrumento'].'" AND NOT idPregunta="Total resp"');
