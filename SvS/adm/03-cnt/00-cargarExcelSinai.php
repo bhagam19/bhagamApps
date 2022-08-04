@@ -37,6 +37,7 @@
                 <td>eps</td>
                 <td>direccion</td>
                 <td>pais</td>
+                <td>fechaEstado</td>
 			</tr>';
 	echo $numRows.' ||<br>';
 	$MALOS=0;
@@ -52,6 +53,7 @@
         $eps = $objPHPExcel->getActiveSheet()->getCell('AN'.$i)->getCalculatedValue();
         $direccion = $objPHPExcel->getActiveSheet()->getCell('AH'.$i)->getCalculatedValue();
         $pais = $objPHPExcel->getActiveSheet()->getCell('BA'.$i)->getCalculatedValue();	
+        $fechaEstado = $objPHPExcel->getActiveSheet()->getCell('N'.$i)->getCalculatedValue();
 		echo '<tr>';
 		echo '<td>'.$i.'</td>';
 		echo '<td>'.$grupo.'</td>';
@@ -65,10 +67,11 @@
         echo '<td>'.$eps.'</td>';
         echo '<td>'.$direccion.'</td>';
         echo '<td>'.$pais.'</td>';
+        echo '<td>'.$fechaEstado.'</td>';
 		echo '</tr>';			
 		$sql='
-            INSERT INTO sinai(grupo,estado,apellidos,nombres,tipoDoc,numDoc,fechaNacimiento,telefono,eps,direccion,pais) 
-            VALUES ("'.$grupo.'","'.$estado.'","'.$apellidos.'","'.$nombres.'","'.$tipoDoc.'","'.$numDoc.'","'.$fechaNacimiento.'","'.$telefono.'","'.$eps.'","'.$direccion.'","'.$pais.'")
+            INSERT INTO sinai(grupo,estado,apellidos,nombres,tipoDoc,numDoc,fechaNacimiento,telefono,eps,direccion,pais,fechaEstado) 
+            VALUES ("'.$grupo.'","'.$estado.'","'.$apellidos.'","'.$nombres.'","'.$tipoDoc.'","'.$numDoc.'","'.$fechaNacimiento.'","'.$telefono.'","'.$eps.'","'.$direccion.'","'.$pais.'","'.$fechaEstado.'")
         ';
 		if(!mysqli_query($cnx,$sql)){
 			echo "NO ".$i."<BR>";

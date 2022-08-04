@@ -36,13 +36,15 @@
         <table class="tablaBD tablaBienes" border=1>
             <thead>
                 <tr class="stickyHead1">
-                    <th>GRUPO</th>                    
+                    <th>ESTADO SIMAT</th>
+                    <th>FECHA SIMAT</th>
+                    <th>ESTADO SINAI</th>
+                    <th>FECHA SINAI</th>
                     <th>APELLIDOS</th>
                     <th>NOMBRES</th>
                     <th>TIPO DOC</th>
-                    <th>DOCUMENTO</th>
-                    <th>ESTADO SINAI</th>
-                    <th>ESTADO SIMAT</th>
+                    <th>DOCUMENTO</th>                    
+                    <th>GRUPO</th>
 			    </tr>
             </thead> 
     ';
