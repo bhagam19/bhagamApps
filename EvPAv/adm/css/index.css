@@ -217,28 +217,74 @@ select{
 #contenedorReporteIndividual{	
 	visibility: hidden;
 	width:100%;
-	height: 600px;
 	margin: 0 auto;
-	display:grid;
-	grid-template-columns: repeat(2,1fr);
+	display:flex;
+	flex-wrap: wrap;
 	align-items: center;
-	justify-content: center;
-	border-radius: 25px;
-	box-shadow: 1px 1px 1px 10px blue;
+	justify-content: center;	
+	font-size: 1em;
 }
-.encabezadoReporte {
-    grid-column: 1/3;
-}
+/*
 #contenedorReporteIndividual>div{
 	padding:10px;
-	margin:10px;
-	border: 2px solid #084B8A;
-	border-radius: 15px;
-	font-size: 1em;
+	margin:10px;	
 }
 #contenedorReporteIndividual>div p{
 	margin: 0px;
 }
+*/
+.encabezadoReporte {
+	width: 100%;
+   	display: flex;
+	flex-wrap: wrap;
+	gap: 1px;
+}
+.reporteSaludo {
+    width: 100%;
+    padding: 10px;
+    text-align: center;
+    border: 1px solid black;
+    border-radius: 10px;
+}
+.reporteCantidadPruebas {
+    padding: 10px;
+    border: 1px solid black;
+    border-radius: 10px;
+    width: 100%;
+    margin-top: 10px;
+}
+.reporteCuerpo {
+	width: 100%;	
+	height: 600px;
+	display: grid;
+	grid-template-columns: repeat(auto-fill,minmax(30em,1fr));
+	gap: 1px;
+    border: 1px solid black;
+    border-radius: 10px;    
+    overflow: scroll;
+}
+.reporteInstrumento {
+    border: 1px solid black;
+    border-radius: 10px;
+    margin: 0.5em;
+	padding: 0.5em;
+}
+.reporteTituloInstrumento {
+    padding: 0.2em;
+}
+.reporteTituloRespuestasCorrectas {
+    padding: 0.2em;
+}
+.reporteTituloRespuestasIncorrectas {
+    padding: 0.2em;
+}
+.reporteResumenRespuestas p{
+	margin: 0;
+}
+
+
+
+
 .tablaBD tbody tr:nth-child(even) {
 	background-color:#e8eef1;
 }
