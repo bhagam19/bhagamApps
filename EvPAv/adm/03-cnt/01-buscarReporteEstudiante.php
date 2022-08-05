@@ -51,7 +51,7 @@
                     <p class='contenedorRespuesta buena'>
                         <span class='pregunta'>Pregunta</span><span class='idPregunta'>".$fila4['idPregunta']."</span>
                         <span class='respuesta'>Tu respuesta</span> <span class='respEstudiante'>".$fila4['respEstudiante']."</span>
-                        <span class='calificacion'>Bien</span>
+                        <span class='calificacion'><span class='calificacion'><img src='../../../appsArt/Ok.png'/ alter='Bien'></span></span>
                     </p>"
                 ;
             }else{
@@ -59,7 +59,7 @@
                     <p class='contenedorRespuesta mala'>
                         <span class='pregunta'>Pregunta</span><span class='idPregunta'>".$fila4['idPregunta']."</span>
                         <span class='respuesta'>Tu respuesta</span> <span class='respEstudiante'>".$fila4['respEstudiante']."</span>
-                        <span class='calificacion'>Mal</span>
+                        <span class='calificacion'><span class='calificacion'><img src='../../../appsArt/cancelar.png'/ alter='X'></span></span>
                     </p>"
                 ;
             }            
