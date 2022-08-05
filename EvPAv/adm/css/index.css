@@ -278,8 +278,25 @@ select{
 .reporteTituloRespuestasIncorrectas {
     padding: 0.2em;
 }
-.reporteResumenRespuestas p{
+.reporteResumenRespuestas {
+    display: grid;
+    grid-template-columns: repeat(auto-fill,minmax(8em,1fr));
+    gap: 0.2em;
+    align-items: center;
+    justify-content: space-evenly;
+}
+.contenedorRespuesta {
+    border-radius: 10px;
+    padding: 0.5em;
 	margin: 0;
+    min-height: 5em;
+    min-width: 3em;
+}
+.contenedorRespuesta buena{
+    background: mediumseagreen;
+}
+.contenedorRespuesta mala{
+    background: indianred;
 }
 
 

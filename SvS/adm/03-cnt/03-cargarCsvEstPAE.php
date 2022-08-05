@@ -12,7 +12,9 @@
     $file = fopen($nombreArchivo,"r");
     while(($col=fgetcsv($file,10000,";")) !== FALSE){
         if ($cnt>1){
-            $numDOC=$col[9];	
+            $numDOC=$col[21];
+            $finEstrategia=$col[21];
+            $	
             $sql='UPDATE simat SET estrategiaPAE=1 WHERE numDOC="'.$numDOC.'"';
             mysqli_query($cnx,$sql);
             $consulta=mysqli_query($cnx,"SELECT * FROM simat WHERE numDoc='".$numDOC."'");

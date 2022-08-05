@@ -47,9 +47,21 @@
         echo "<div class='reporteResumenRespuestas'>";
         while($fila4=mysqli_fetch_array($consultaRespuestas)){
             if($fila4['respEstudiante']===$fila4['clave']){
-                echo "<p class='respuestaBuena'>Pregunta ".$fila4['idPregunta']." = respuesta: ".$fila4['respEstudiante']." = Bien.</p>";
+                echo "
+                    <p class='contenedorRespuesta buena'>
+                        <span class='pregunta'>Pregunta</span><span class='idPregunta'>".$fila4['idPregunta']."</span>
+                        <span class='respuesta'>Tu respuesta</span> <span class='respEstudiante'>".$fila4['respEstudiante']."</span>
+                        <span class='calificacion'>Bien</span>
+                    </p>"
+                ;
             }else{
-                echo "<p class='respuestaMala'>Pregunta ".$fila4['idPregunta']." = respuesta: ".$fila4['respEstudiante']." = Mal. Clave: ".$fila4['clave']."</p>";
+                echo "
+                    <p class='contenedorRespuesta mala'>
+                        <span class='pregunta'>Pregunta</span><span class='idPregunta'>".$fila4['idPregunta']."</span>
+                        <span class='respuesta'>Tu respuesta</span> <span class='respEstudiante'>".$fila4['respEstudiante']."</span>
+                        <span class='calificacion'>Mal</span>
+                    </p>"
+                ;
             }            
         }        
         echo"</div>";
