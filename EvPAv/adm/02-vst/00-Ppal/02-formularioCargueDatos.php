@@ -35,4 +35,15 @@
             </div>
         </div>
         ';
+        echo '
+            <div id="contForm">
+                <div id="formLabel">ID Estudiantes</div>        
+                <form enctype="multipart/form-data" action="adm/03-cnt/00-cargarCsvSimat.php" method="POST">                    
+                    <input name="subir_archivo" type="file" /><br>
+                    <input type="submit" value="Enviar" />                    
+                </form>    
+                <div>Última versión: '.date('F d Y',filemtime(dirname(__FILE__).'/../../archivos/simat.csv')).'</div>             
+            </div>
+        </div>
+        ';
 ?>

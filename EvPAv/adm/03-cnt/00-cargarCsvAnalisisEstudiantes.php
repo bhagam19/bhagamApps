@@ -36,7 +36,7 @@
         $cnt++;	
         if($cnt>1){
             $idEstudiante = $col[0];
-            $estudiante = $col[1];
+            $estudiante = preg_replace(array('/\s{2,}/', '/[\t\n]/'), ' ', $col[1]);
             $grado = $col[2];
             $grupo = $col[3];            
             $instrumento = $col[4];

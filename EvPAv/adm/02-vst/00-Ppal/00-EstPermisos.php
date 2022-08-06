@@ -4,6 +4,7 @@
 		//include dirname(__FILE__).'../../01-crudLogin/00-formularioLogin.php';
 		//include dirname(__FILE__).'../../01-crudLogin/06-formularioNuevoUsuario.php';		
 		echo'<div id="appsContenedor">';
+		//include('02-formularioCargueDatos.php');
 		include('02-seleccionTipoReporte.php');				
 		echo'</div>';
 	}else{

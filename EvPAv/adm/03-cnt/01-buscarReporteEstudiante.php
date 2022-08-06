@@ -10,7 +10,7 @@
         $id = $decoded_params->id;
     }
     include dirname(__FILE__).'../../01-mdl/cnx.php';
-    $consulta=$cnx->query('SELECT DISTINCT instrumento, estudiante FROM analisisEstudiantes WHERE idEstudiante="'.$id.'"');
+    $consulta=$cnx->query('SELECT DISTINCT instrumento, estudiante FROM analisisEstudiantes WHERE numDoc="'.$id.'"');
     $numPruebas=mysqli_num_rows($consulta);    
     $estudiante="";
     
@@ -24,19 +24,19 @@
         </div>
         <div class='reporteCuerpo'>
     ";    
-    $consulta=$cnx->query('SELECT DISTINCT instrumento FROM analisisEstudiantes WHERE idEstudiante="'.$id.'"');    
+    $consulta=$cnx->query('SELECT DISTINCT instrumento FROM analisisEstudiantes WHERE numDoc="'.$id.'"');    
     $cnt=0;
     while($fila=mysqli_fetch_array($consulta)){
         $cnt++;        
         echo "<div class='reporteInstrumento'>";
         echo "<div class='reporteTituloInstrumento'>".$cnt.") ".$fila['instrumento']."</div>";
-        $consultaTtlResp=$cnx->query('SELECT DISTINCT idPregunta FROM analisisEstudiantes WHERE idEstudiante="'.$id.'" 
+        $consultaTtlResp=$cnx->query('SELECT DISTINCT idPregunta FROM analisisEstudiantes WHERE numDoc="'.$id.'" 
                             AND instrumento="'.$fila['instrumento'].'" AND NOT idPregunta="Total resp"');
-        $consultaRespCorrecta=$cnx->query('SELECT DISTINCT idPregunta, respEstudiante FROM analisisEstudiantes WHERE idEstudiante="'.$id.'" 
+        $consultaRespCorrecta=$cnx->query('SELECT DISTINCT idPregunta, respEstudiante FROM analisisEstudiantes WHERE numDoc="'.$id.'" 
                             AND instrumento="'.$fila['instrumento'].'" AND NOT idPregunta="Total resp" AND clave = respEstudiante');
-        $consultaRespIncorrecta=$cnx->query('SELECT DISTINCT idPregunta, clave, respEstudiante FROM analisisEstudiantes WHERE idEstudiante="'.$id.'" 
+        $consultaRespIncorrecta=$cnx->query('SELECT DISTINCT idPregunta, clave, respEstudiante FROM analisisEstudiantes WHERE numDoc="'.$id.'" 
                             AND instrumento="'.$fila['instrumento'].'" AND NOT idPregunta="Total resp" AND NOT clave = respEstudiante'); 
-        $consultaRespuestas=$cnx->query('SELECT DISTINCT idPregunta, clave, respEstudiante FROM analisisEstudiantes WHERE idEstudiante="'.$id.'" 
+        $consultaRespuestas=$cnx->query('SELECT DISTINCT idPregunta, clave, respEstudiante FROM analisisEstudiantes WHERE numDoc="'.$id.'" 
                             AND instrumento="'.$fila['instrumento'].'" AND NOT idPregunta="Total resp"');                            
         $ttlResp=mysqli_num_rows($consultaTtlResp);
         $respCorrectas=mysqli_num_rows($consultaRespCorrecta);
