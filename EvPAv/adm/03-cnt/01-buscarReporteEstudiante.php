@@ -29,7 +29,8 @@
     while($fila=mysqli_fetch_array($consulta)){
         $cnt++;        
         echo "<div class='reporteInstrumento'>";
-        echo "<div class='reporteTituloInstrumento'>".$cnt.") ".$fila['instrumento']."</div>";
+        echo "<button class='reporteTituloInstrumento accordion' onclick='acordeon()'>".$cnt.") ".$fila['instrumento']."</button>";
+        echo "<div class='panel'>";
         $consultaTtlResp=$cnx->query('SELECT DISTINCT idPregunta FROM analisisEstudiantes WHERE numDoc="'.$id.'" 
                             AND instrumento="'.$fila['instrumento'].'" AND NOT idPregunta="Total resp"');
         $consultaRespCorrecta=$cnx->query('SELECT DISTINCT idPregunta, respEstudiante FROM analisisEstudiantes WHERE numDoc="'.$id.'" 
@@ -51,7 +52,7 @@
                     <p class='contenedorRespuesta buena'>
                         <span class='pregunta'>Pregunta</span><span class='idPregunta'>".$fila4['idPregunta']."</span>
                         <span class='respuesta'>Tu respuesta</span> <span class='respEstudiante'>".$fila4['respEstudiante']."</span>
-                        <span class='calificacion'><span class='calificacion'><img src='../../../appsArt/Ok.png'/ alter='Bien'></span></span>
+                        <span class='calificacion'><span class='calificacion'><img src='../../../appsArt/bien.png'/ alter='Bien'></span></span>
                     </p>"
                 ;
             }else{
@@ -59,13 +60,14 @@
                     <p class='contenedorRespuesta mala'>
                         <span class='pregunta'>Pregunta</span><span class='idPregunta'>".$fila4['idPregunta']."</span>
                         <span class='respuesta'>Tu respuesta</span> <span class='respEstudiante'>".$fila4['respEstudiante']."</span>
-                        <span class='calificacion'><span class='calificacion'><img src='../../../appsArt/cancelar.png'/ alter='X'></span></span>
+                        <span class='calificacion'><span class='calificacion'><img src='../../../appsArt/mal.png'/ alter='X'></span></span>
                     </p>"
                 ;
             }            
         }        
         echo"</div>";
-        echo "</div>";
+        echo"</div>";
+        echo "</div>";        
     }       
     mysqli_close($cnx);
 ?>
