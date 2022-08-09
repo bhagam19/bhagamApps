@@ -10,24 +10,22 @@
 	$MALOS=0;
     $cnt=1;
     $file = fopen($nombreArchivo,"r");
+    $sql='UPDATE simat SET estrategiaPAE=0';
+    mysqli_query($cnx,$sql);
     while(($col=fgetcsv($file,10000,";")) !== FALSE){
         if ($cnt>1){
             $numDOC=$col[21];
-            $finEstrategia=$col[21];
-            $	
-            $sql='UPDATE simat SET estrategiaPAE=1 WHERE numDOC="'.$numDOC.'"';
-            mysqli_query($cnx,$sql);
-            $consulta=mysqli_query($cnx,"SELECT * FROM simat WHERE numDoc='".$numDOC."'");
-            $row = mysqli_num_rows($consulta);
-            if($row){                
-                echo ($cnt-1)." - ". $numDOC.": ";
-                while($fila=mysqli_fetch_array($consulta)){
-                    echo $fila['grupo']." ".$fila['numDoc']." ".$fila['apellidos']." ".$fila['nombres']."<br>";
-                }
+            $finEstrategia=$col[26];            
+            if($finEstrategia===""){
+                $sql='UPDATE simat SET estrategiaPAE=1 WHERE numDOC="'.$numDOC.'"';
+                if(mysqli_query($cnx,$sql)){
+                    echo ($cnt-1)." - ". $numDOC.": CON ESTRATEGIA.<br>";
+                }else{
+                    $MALOS++;
+                }                
             }else{
-                $MALOS++;
-                echo ($cnt-1)." - ". $numDOC.": NO SE ENCUENTRA.<br>";
-            }          	
+                echo ($cnt-1).' - Sin estrategia: '.$numDOC=$col[21]." - ".$finEstrategia.'<br>';
+            }                        	
         }        	
         $cnt++;
     }
@@ -36,7 +34,7 @@
 	}else{
 		echo "No se pudieron guardar ".$MALOS." registros!!!";		
 	}
-    
+    /*
     echo"
         <html>
             <head>
@@ -44,4 +42,5 @@
             </head>
         </html>
     ";    
+    */
 ?>
