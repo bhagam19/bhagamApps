@@ -81,6 +81,7 @@
             eps varchar(40) CHARACTER SET utf8 COLLATE utf8_spanish_ci,
             direccion varchar(100) CHARACTER SET utf8 COLLATE utf8_spanish_ci,
             pais varchar(40) CHARACTER SET utf8 COLLATE utf8_spanish_ci,
+            fechaEstado date,
             PRIMARY KEY(id)
         )
     ';

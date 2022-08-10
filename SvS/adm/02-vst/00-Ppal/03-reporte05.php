@@ -7,6 +7,7 @@
                 <tr class="stickyHead1">
                     <th>GRUPO</th>
                     <th>ESTADO</th>
+                    <th>FECHA ESTADO</th>
                     <th>APELLIDOS</th>
                     <th>NOMBRES</th>
                     <th>TIPO DOC</th>
@@ -22,6 +23,7 @@
             <tr>
                 <td>'.$fila['grupo'].'</td>
                 <td>'.$fila['estado'].'</td>
+                <td>'.$fila['fechaEstado'].'</td>
                 <td>'.$fila['apellidos'].'</td>
                 <td>'.$fila['nombres'].'</td>
                 <td>'.$fila['tipoDoc'].'</td>

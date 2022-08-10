@@ -1,7 +1,7 @@
 <?php
     error_reporting(0);
     //include ('../../01-mdl/cnx.php');//Agregamos la conexión
-    include dirname(__FILE__).'/../../01-mdl/cnx.php';
+    //include dirname(__FILE__).'/../../01-mdl/cnx.php';
     echo '
         <div id="contImportarDatos">
             <h1>Importar Datos</h1>
@@ -35,15 +35,15 @@
             </div>
         </div>
         ';
-    
-    echo '
-        Seleccione el reporte deseado:
-        <select name="reportes" id="reportes" onchange="cargarReporte(this.value)">
-            <option value=0>Seleccione...</option>
-            <option value=1>Análisis de Preguntas</option>
-            <option value=2>Análisis de Áreas</option>
-            <option value=3>Desempeños Individuales</option>
-        </select>
-    ';
-    echo '<br><br><div id="reporte"></div>';
+        echo '
+            <div id="contForm">
+                <div id="formLabel">ID Estudiantes</div>        
+                <form enctype="multipart/form-data" action="adm/03-cnt/00-cargarCsvSimat.php" method="POST">                    
+                    <input name="subir_archivo" type="file" /><br>
+                    <input type="submit" value="Enviar" />                    
+                </form>    
+                <div>Última versión: '.date('F d Y',filemtime(dirname(__FILE__).'/../../archivos/simat.csv')).'</div>             
+            </div>
+        </div>
+        ';
 ?>
