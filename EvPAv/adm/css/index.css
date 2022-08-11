@@ -302,6 +302,30 @@ select{
 	overflow: hidden;
 }
 
+/* Analisis Preguntas */
+.contenedor-instrumentos {
+    background: aliceblue;
+    border-radius: 15px;
+    border: 1px solid black;
+    padding: 10px;
+}
+.titulo-instrumento {
+    background: beige;
+    padding: 10px;
+    border-radius: 15px;
+    box-shadow: 4px 4px 10px 1px lightgrey;
+}
+.titulo-componente {
+    background: azure;
+    padding: 10px;
+    box-shadow: 4px 4px 10px 1px lightblue;
+    border-radius: 15px;
+}
+
+
+
+
+
 .reporteTituloRespuestasCorrectas {
     background: #b8dfca;
     margin: 0.2em;
