@@ -314,13 +314,35 @@ select{
     padding: 10px;
     border-radius: 15px;
     box-shadow: 4px 4px 10px 1px lightgrey;
+    grid-column: 1/10;
+    font-weight: 900;
+}
+.contenedor-componentes {
+    display: grid;
+    grid-template-columns: repeat(auto-fill,minmax(20em,1fr));
+    align-items: center;
+    justify-content: space-evenly;
+}
+.contenedor-componente {
+    background: azure;
+    box-shadow: 4px 4px 10px 1px lightblue;
+    border-radius: 15px;
+    margin: 0.1em;
 }
 .titulo-componente {
-    background: azure;
+    background: #fff9f0;
     padding: 10px;
     box-shadow: 4px 4px 10px 1px lightblue;
     border-radius: 15px;
+    font-weight: 900;
 }
+.contenedor-competencias {
+    padding: 0.5em;
+}
+.titulo-competencia {
+    padding: 0.2em;
+}
+
 
 
 

@@ -10,23 +10,33 @@
     $numPruebas=mysqli_num_rows($consulta); 
     while($f1=mysqli_fetch_array($consulta)){
         echo'
-            <div class="contenedor-instrumentos">
+            <div class="contenedor-instrumentos">                
                 <div class="titulo-instrumento">'.$f1['instrumento'].'</div>
+                <div class="contenedor-componentes">                
         ';
         $consultaComponentes=$cnx->query('SELECT DISTINCT componente FROM analisisPreguntas WHERE instrumento="'.$f1['instrumento'].'"');
         while($f2=mysqli_fetch_array($consultaComponentes)){
-            echo'            
-                <div class="titulo-componente">'.$f2['componente'].'</div>
+            echo'      
+                <div class="contenedor-componente"> 
+                    <div class="titulo-componente">'.$f2['componente'].'</div>
+                    <div class="contenedor-competencias">                 
             ';
             $consultaCompetencia=$cnx->query('SELECT DISTINCT competencia FROM analisisPreguntas WHERE instrumento="'.$f1['instrumento'].'" 
                                             AND componente="'.$f2['componente'].'"');                                  
             while($f3=mysqli_fetch_array($consultaCompetencia)){
-                echo'            
+                echo'  
+                <div class="contenedor-competencia">             
                     <div class="titulo-competencia">'.$f3['competencia'].'</div>
+                </div>
                 ';
             }
+            echo'
+                    </div>
+                </div>
+            ';
         }
         echo'                
+                </div>
             </div>
         ';
     }
