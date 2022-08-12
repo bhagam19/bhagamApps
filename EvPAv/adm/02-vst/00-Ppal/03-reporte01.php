@@ -6,6 +6,7 @@
             Se evaluaron '.$numAreas.' areas.
         </div>
     ';
+    /*
     $consulta=$cnx->query('SELECT DISTINCT instrumento FROM analisisPreguntas');
     $numPruebas=mysqli_num_rows($consulta); 
     while($f1=mysqli_fetch_array($consulta)){
@@ -40,6 +41,7 @@
             </div>
         ';
     }
+    */
     echo '
         <div id="contenedorTabla">
             <div class="grid encabezado">

@@ -338,9 +338,40 @@ select{
 }
 .contenedor-competencias {
     padding: 0.5em;
+	overflow: hidden;
+  	max-height: 0;
+	transition: all 0.3s ease-in-out;
+	overflow: hidden;
 }
+#state:checked ~ .contenedor-competencias  {  
+	max-height: 150px;
+  }
 .titulo-competencia {
     padding: 0.2em;
+}
+
+.contenedor-grafica{
+	display: grid;
+	grid-template-columns: repeat(2,1fr);
+}
+.barra{
+	border-radius: 0.2em;
+	padding: 0.2em;
+}
+.barra.superior{
+	background:rgb(88, 88, 240)
+}
+.barra.alto{
+	background:rgb(148, 235, 148)
+}
+.barra.basico{
+	background:rgb(230, 247, 157)
+}
+.barra.bajo{
+	background:rgb(247, 212, 160)
+}
+.barra.min{
+	background:rgb(247, 170, 165)
 }
 
 
