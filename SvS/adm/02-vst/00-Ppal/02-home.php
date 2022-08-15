@@ -3,11 +3,11 @@
     include dirname(__FILE__).'/../../01-mdl/cnx.php';
     echo '
             <div id="reestablecerBD">            
-                <form enctype="multipart/form-data" action="adm/03-cnt/00-cargarExcelSinai.php" method="POST">                    
+                <form enctype="multipart/form-data" action="adm/03-cnt/00-cargarCsvSinai.php" method="POST">                    
                     <input type="hidden" name="MAX_FILE_SIZE" value="2000000" />
                     <input name="subir_archivo" type="file" />
                     <input type="submit" value="Importar Datos SINAI" />
-                    Última versión: '.date('F d Y',filemtime(dirname(__FILE__).'/../../archivos/sinai.xlsx')).'
+                    Última versión: '.date('F d Y',filemtime(dirname(__FILE__).'/../../archivos/sinai.csv')).'
                 </form>
             </div>
         ';
