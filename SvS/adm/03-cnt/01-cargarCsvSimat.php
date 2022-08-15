@@ -73,7 +73,7 @@
             $apellidos = $col[25]." ".$col[26];
             $nombres = $col[27]." ".$col[28]; 
             $tipoDoc = substr($col[24],0,strpos($col[24],":"));
-            $numDoc = $col[23];
+            $numDoc = trim($col[23]);
             $fechaNacimiento = $col[30];
             $telefono = "";
             $eps = $col[32];
@@ -110,7 +110,7 @@
 	}else{
 		echo "No se pudieron guardar ".$MALOS." registros!!!";		
 	}
-    /*
+    
     echo"
         <html>
             <head>
@@ -118,6 +118,6 @@
             </head>
         </html>
     ";
-    */
+    
     
 ?>

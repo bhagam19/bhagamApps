@@ -46,7 +46,7 @@
             $apellidos = $col[18];
             $nombres = $col[19]; 
             $tipoDoc = $col[21];
-            $numDoc = $col[22];
+            $numDoc = trim($col[22]);
             $fechaNacimiento = date("Y-m-d",(strtotime(str_replace("/","-",$col[24]))));;
             $telefono = $col[31];
             $eps = $col[36];
