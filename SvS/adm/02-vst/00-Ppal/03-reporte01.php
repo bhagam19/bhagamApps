@@ -7,6 +7,7 @@
                 <tr class="stickyHead1">
                     <th>GRUPO</th>
                     <th>ESTADO SINAI</th>
+                    <th>FECHA ESTADO</th>
                     <th>APELLIDOS</th>
                     <th>NOMBRES</th>
                     <th>TIPO DOC</th>
@@ -23,6 +24,7 @@
             <tr>
                 <td>'.$fila['grupo'].'</td>
                 <td>'.$fila['estado'].'</td>
+                <td>'.$fila['fechaEstado'].'</td>
                 <td>'.$fila['apellidos'].'</td>
                 <td>'.$fila['nombres'].'</td>
                 <td>'.$fila['tipoDoc'].'</td>
@@ -31,7 +33,7 @@
             </tr>
         ';
     }
-    $consulta=$cnx->query('SELECT sinai.grupo,sinai.estado,sinai.apellidos,sinai.nombres,sinai.tipoDoc,sinai.numDoc,simat.estado
+    $consulta=$cnx->query('SELECT sinai.grupo,sinai.estado,sinai.fechaEstado,sinai.apellidos,sinai.nombres,sinai.tipoDoc,sinai.numDoc,simat.estado
                             FROM sinai LEFT JOIN simat
                             ON sinai.numDoc=simat.numDoc
                             WHERE sinai.estado="MATRICULADO" AND simat.estado!="MATRICULADO"');
@@ -46,6 +48,7 @@
                 <td>'.$fila[4].'</td>
                 <td>'.$fila[5].'</td>
                 <td>'.$fila[6].'</td>
+                <td>'.$fila[7].'</td>
             </tr>
         ';
     }
