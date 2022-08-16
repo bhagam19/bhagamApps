@@ -35,3 +35,12 @@ function cargarReporte(v){
         .catch(error => console.log('Hubo un problema con la petición Fetch:' + error.message));
     
 }
+function mostrarCargadorDatos(){
+    //var c=$('.cargadorDatos').css('visibility');
+    alert("cr");
+    if( $('.cargadorDatos').css('visibility') !== 'hidden' ) {
+	    $('.cargadorDatos').css('visibility', 'hidden');
+	  } else {
+	    $('.cargadorDatos').css('visibility', 'visible');
+	  }    
+}

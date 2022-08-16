@@ -161,16 +161,45 @@ html {
 }
 /*====CuerpoPrincipal====*/
 #appsContenedor {
-	position: fixed;
-    display: inline-block;
+	width: 90%;
+	position: fixed;	
 	top:80px;
 	margin: 0 auto;
+}
+.cargadorDatos {
+    position: absolute;
+	top:0px;
+    visibility: visible;
+    background: white;
+    padding: 15px;
+    border-radius: 15px;
+    z-index: 3;
+    float: right;
+    right:0px;
+}
+.btnCargarDatos {
+	visibility: hidden;
+    width: 250px;
+    box-shadow: 6px 6px 10px 1px lightblue;
+    border: 1px solid lightblue;
+    border-radius: 10px;
+    text-align: center;
+    padding: 0.5em;
+    margin-bottom: 0.5em;
+	user-select: none;
+	cursor: pointer;
+}
+select{
+    width: 200px;
+    padding: 0.2em;
+    border-radius: 0.3em;
+    box-shadow: 2px 2px 10px 1px lightblue;
 }
 #reporte{
 	position: relative;
 	visibility: hidden;
 	width:auto;
-	height:650px;
+	height:750px;
     overflow: scroll;
 }
 .tablaBD tbody tr:nth-child(even) {

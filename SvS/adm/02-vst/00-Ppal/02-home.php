@@ -1,7 +1,8 @@
 <?php
     //include ('../../01-mdl/cnx.php');//Agregamos la conexión
     include dirname(__FILE__).'/../../01-mdl/cnx.php';
-    echo '
+    echo '<div class="cargadorDatos">';
+        echo '
             <div id="reestablecerBD">            
                 <form enctype="multipart/form-data" action="adm/03-cnt/00-cargarCsvSinai.php" method="POST">                    
                     <input type="hidden" name="MAX_FILE_SIZE" value="2000000" />
@@ -10,9 +11,7 @@
                     Última versión: '.date('F d Y',filemtime(dirname(__FILE__).'/../../archivos/sinai.csv')).'
                 </form>
             </div>
-        ';
-    
-    
+        ';    
     echo '
         <div id="reestablecerBD">            
             <form enctype="multipart/form-data" action="adm/03-cnt/01-cargarCsvSimat.php" method="POST">                    
@@ -33,7 +32,6 @@
             </form>
         </div>
     ';
-
     echo '
         <div id="reestablecerBD">            
             <form enctype="multipart/form-data" action="adm/03-cnt/03-cargarCsvEstPAE.php" method="POST">                    
@@ -43,9 +41,10 @@
                 Última versión: '.date('F d Y',filemtime(dirname(__FILE__).'/../../archivos/estPAE.csv')).'
             </form>
         </div>
-    ';
-
+    ';    
+    echo'</div>';    
     echo '
+        <div class="btnCargarDatos" onclick="mostrarCargadorDatos()">Mostrar Cargadores de Datos</div> 
         Seleccione el reporte deseado:
         <select name="reportes" id="reportes" onchange="cargarReporte(this.value)">
             <option value=0>Seleccione...</option>

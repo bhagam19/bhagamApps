@@ -6,11 +6,12 @@
             <thead>
                 <tr class="stickyHead1">
                     <th>GRUPO</th>
-                    <th>ESTADO</th>
+                    <th>ESTADO SINAI</th>
                     <th>APELLIDOS</th>
                     <th>NOMBRES</th>
                     <th>TIPO DOC</th>
                     <th>DOCUMENTO</th>
+                    <th>ESTADO SIMAT</th>
 			    </tr>
             </thead> 
     ';
@@ -26,6 +27,25 @@
                 <td>'.$fila['nombres'].'</td>
                 <td>'.$fila['tipoDoc'].'</td>
                 <td>'.$fila['numDoc'].'</td>
+                <td></td>
+            </tr>
+        ';
+    }
+    $consulta=$cnx->query('SELECT sinai.grupo,sinai.estado,sinai.apellidos,sinai.nombres,sinai.tipoDoc,sinai.numDoc,simat.estado
+                            FROM sinai LEFT JOIN simat
+                            ON sinai.numDoc=simat.numDoc
+                            WHERE sinai.estado="MATRICULADO" AND simat.estado!="MATRICULADO"');
+    while ($fila=mysqli_fetch_array($consulta)){
+        $cant++;
+        echo '
+            <tr>
+                <td>'.$fila[0].'</td>
+                <td>'.$fila[1].'</td>
+                <td>'.$fila[2].'</td>
+                <td>'.$fila[3].'</td>
+                <td>'.$fila[4].'</td>
+                <td>'.$fila[5].'</td>
+                <td>'.$fila[6].'</td>
             </tr>
         ';
     }

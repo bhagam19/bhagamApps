@@ -39,7 +39,7 @@
     $cnt=1;
     $file = fopen($nombreArchivo,"r");
     while(($col=fgetcsv($file,10000,",")) !== FALSE){
-        if($cnt>5){
+        if($cnt>4){
             $grupo=$col[7];            
             $estado = $col[9];
             $fechaEstado =date("Y-m-d",(strtotime(str_replace("/","-",$col[10]))));
