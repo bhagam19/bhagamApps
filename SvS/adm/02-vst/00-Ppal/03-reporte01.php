@@ -13,6 +13,7 @@
                     <th>TIPO DOC</th>
                     <th>DOCUMENTO</th>
                     <th>ESTADO SIMAT</th>
+                    <th>FECHA ESTADO</th>
 			    </tr>
             </thead> 
     ';
@@ -30,10 +31,11 @@
                 <td>'.$fila['tipoDoc'].'</td>
                 <td>'.$fila['numDoc'].'</td>
                 <td></td>
+                <td></td>
             </tr>
         ';
     }
-    $consulta=$cnx->query('SELECT sinai.grupo,sinai.estado,sinai.fechaEstado,sinai.apellidos,sinai.nombres,sinai.tipoDoc,sinai.numDoc,simat.estado
+    $consulta=$cnx->query('SELECT sinai.grupo,sinai.estado,sinai.fechaEstado,sinai.apellidos,sinai.nombres,sinai.tipoDoc,sinai.numDoc,simat.estado,simat.fechaEstado
                             FROM sinai LEFT JOIN simat
                             ON sinai.numDoc=simat.numDoc
                             WHERE sinai.estado="MATRICULADO" AND simat.estado!="MATRICULADO"');
@@ -49,6 +51,7 @@
                 <td>'.$fila[5].'</td>
                 <td>'.$fila[6].'</td>
                 <td>'.$fila[7].'</td>
+                <td>'.$fila[8].'</td>
             </tr>
         ';
     }

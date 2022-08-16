@@ -21,6 +21,7 @@
 				<td>id</td>
 				<td>grupo</td>
 				<td>estado</td>
+                <td>fechaEstado</td>
                 <td>apellidos</td>
                 <td>nombres</td>
                 <td>tipoDoc</td>
@@ -70,11 +71,12 @@
                 $grupo = substr($col[14],0,2)."-".substr($col[14],2,3);
             }
             $estado = $col[2];
+            $fechaEstado =date("Y-m-d",(strtotime(str_replace("/","-",$col[17]))));
             $apellidos = $col[25]." ".$col[26];
             $nombres = $col[27]." ".$col[28]; 
             $tipoDoc = substr($col[24],0,strpos($col[24],":"));
             $numDoc = trim($col[23]);
-            $fechaNacimiento = $col[30];
+            $fechaNacimiento = date("Y-m-d",(strtotime(str_replace("/","-",$col[30]))));
             $telefono = "";
             $eps = $col[32];
             $direccion = $col[31];
@@ -83,6 +85,7 @@
             echo '<td>'.$cnt.'</td>';
             echo '<td>'.$grupo.'</td>';
             echo '<td>'.$estado.'</td>';
+            echo '<td>'.$fechaEstado.'</td>';
             echo '<td>'.$apellidos.'</td>';
             echo '<td>'.$nombres.'</td>';
             echo '<td>'.$tipoDoc.'</td>';
@@ -94,8 +97,8 @@
             echo '<td>'.$pais.'</td>';
             echo '</tr>';			
             $sql='
-                INSERT INTO simat(grupo,estado,apellidos,nombres,tipoDoc,numDoc,fechaNacimiento,telefono,eps,direccion,pais) 
-                VALUES ("'.$grupo.'","'.$estado.'","'.$apellidos.'","'.$nombres.'","'.$tipoDoc.'","'.$numDoc.'","'.$fechaNacimiento.'","'.$telefono.'","'.$eps.'","'.$direccion.'","'.$pais.'")
+                INSERT INTO simat(grupo,estado,fechaEstado,apellidos,nombres,tipoDoc,numDoc,fechaNacimiento,telefono,eps,direccion,pais) 
+                VALUES ("'.$grupo.'","'.$estado.'","'.$fechaEstado.'","'.$apellidos.'","'.$nombres.'","'.$tipoDoc.'","'.$numDoc.'","'.$fechaNacimiento.'","'.$telefono.'","'.$eps.'","'.$direccion.'","'.$pais.'")
             ';
             if(!mysqli_query($cnx,$sql)){
                 echo "NO ".$cnt."<BR>";
@@ -110,7 +113,6 @@
 	}else{
 		echo "No se pudieron guardar ".$MALOS." registros!!!";		
 	}
-    
     echo"
         <html>
             <head>
@@ -118,6 +120,4 @@
             </head>
         </html>
     ";
-    
-    
 ?>
