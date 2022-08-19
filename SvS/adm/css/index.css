@@ -73,26 +73,21 @@ html {
 	flex-wrap: wrap;
 	align-items: center;
 	justify-content: space-evenly;
-	grid-column:4/19;
+	grid-column:6/17;
 	font-weight: normal;
 	color: var(--OnPasivo);
 	text-align: center;
 }
 .appsInicioSesionCinta {
-	position: relative;
-	float: right;
-	top: -125px;
-	width: auto;
-	margin: 3px;
-	padding: 2px 5px;
-	text-align: center;
-	color: var(--OnPasivo);
-	font-weight: bold;
-	font-size: 16px;
-	border: 1px solid var(--Off);
-	border-radius: 10px 0px ;
-	background: var(--fondo01);		
-	cursor: pointer;
+   	width: auto;
+    margin: 3px;
+    padding: 5px;
+    text-align: center;
+    font-weight: bold;
+    border: 1px solid var(--Off);
+    border-radius: 10px;
+    cursor: pointer;
+    grid-column: 19/17;
 }
 .appsInicioSesionCinta:hover {
 	color: var(--OnActivo);

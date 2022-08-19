@@ -72,6 +72,7 @@
             id int(4) NOT NULL AUTO_INCREMENT,
             grupo varchar(5) CHARACTER SET utf8 COLLATE utf8_spanish_ci,
             estado varchar(20) CHARACTER SET utf8 COLLATE utf8_spanish_ci,
+            fechaEstado date,
             apellidos varchar(40) CHARACTER SET utf8 COLLATE utf8_spanish_ci,
             nombres varchar(40) CHARACTER SET utf8 COLLATE utf8_spanish_ci,
             tipoDoc varchar(40) CHARACTER SET utf8 COLLATE utf8_spanish_ci,
@@ -81,7 +82,6 @@
             eps varchar(40) CHARACTER SET utf8 COLLATE utf8_spanish_ci,
             direccion varchar(100) CHARACTER SET utf8 COLLATE utf8_spanish_ci,
             pais varchar(40) CHARACTER SET utf8 COLLATE utf8_spanish_ci,
-            fechaEstado date,
             PRIMARY KEY(id)
         )
     ';
@@ -95,6 +95,7 @@
             id int(4) NOT NULL AUTO_INCREMENT,
             grupo varchar(5) CHARACTER SET utf8 COLLATE utf8_spanish_ci,
             estado varchar(20) CHARACTER SET utf8 COLLATE utf8_spanish_ci,
+            fechaEstado date,
             apellidos varchar(40) CHARACTER SET utf8 COLLATE utf8_spanish_ci,
             nombres varchar(40) CHARACTER SET utf8 COLLATE utf8_spanish_ci,
             tipoDoc varchar(40) CHARACTER SET utf8 COLLATE utf8_spanish_ci,
@@ -105,12 +106,55 @@
             direccion varchar(100) CHARACTER SET utf8 COLLATE utf8_spanish_ci,
             pais varchar(40) CHARACTER SET utf8 COLLATE utf8_spanish_ci,
             estrategiaPAE int(1) NOT NULL,
+            estrategiaTransporte int(1) NOT NULL,
             PRIMARY KEY(id)
         )
     ';
 	//Ejecutar
 	ejecutarConsulta();    
-//Cerrar
+//################### CREAR UNA TABLA DE "USUARIOS". ###################
+	//Preparar consulta SQL
+	$tabla='usuarios';
+	$sql='
+        CREATE TABLE '.$tabla.'(			
+            institucionID int NOT NULL AUTO_INCREMENT,
+            dane varchar(20) CHARACTER SET utf8 COLLATE utf8_spanish_ci NOT NULL,
+            contrasena varchar(200) CHARACTER SET utf8 COLLATE utf8_spanish_ci NOT NULL,
+            institucion varchar(100) CHARACTER SET utf8 COLLATE utf8_spanish_ci NOT NULL,
+            correoInstitucional varchar(200) CHARACTER SET utf8 COLLATE utf8_spanish_ci NOT NULL,
+            defUsuario int NOT NULL ,
+            permiso int(1) NOT NULL,
+            PRIMARY KEY(usuarioID)			
+            )
+    ';	
+	//Ejecutar	
+	ejecutarConsulta();
+	
+//################### CONTENIDO DE PRUEBA PARA LA TABLA "USUARIOS". ###################
+	$usuarios = array(
+		//(responsableCED, usuario, contrasena, nombres, apellidos, defUsuario, permiso)
+		/*
+			Niveles de usuarios
+				
+				0	Visitante //Usuario visitante (No tiene bienes a cargos, no administra)
+				1	Usuario 	//User resp [sug. add, sug. mod, sug. del], bienes propios unic. No admin. (Doc, Aux no confianza)
+				2	Usuario 	//User no resp de bienes. Admin bás. [sug. add, sug. mod, sug. del], todos los bienes. (SSO)
+				3	Usuario 	//User resp de bienes y Admin bás. [sug. add, sug. mod, sug. del], todos los bienes. (Docente apoyo inventario)
+				4	Usuario 	//User resp de bienes y Admin avdc. [add, mod, del], todos los bienes.(Coord., Secret., Aux. de Confianza)
+				5	Usuario 	//Usuario SuperAdministrador Frontend (Rector)	
+				6	Usuario 	//Usuario SuperAdministrador Frontend y Backend (Desarrollador) 
+		*/
+		array(105254000013,"SvS1234*","IE Entrerríos","ieerectoria2021@gmail.com",1,6),
+		array(205034000248,"SvS1234*","IE Tapartó","ieerectoria2021@gmail.com",1,1)
+		);	
+	foreach ($usuarios as $usuario){
+		$sql='INSERT INTO '.$tabla.' (usuario, contrasena, nombres, apellidos, correo, usuarioCED, defUsuario, permiso) 
+			VALUES ("'.$usuario[0].'","'.$usuario[1].'","'.$usuario[2].'","'.$usuario[3].'","'.$usuario[4].'",'.$usuario[5].','.$usuario[6].','.$usuario[7].')';
+			insertar();		
+	}
+
+
+    //Cerrar
 	mysqli_close($cnx);	
 	echo "<div> ===== INSTALACIÓN FINALIZADA =====<br><br> <a href='index.php'>Volver</a> </div>";
 ?>
