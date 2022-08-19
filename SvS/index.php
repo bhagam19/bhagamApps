@@ -21,6 +21,7 @@
     <title>SINAI vs SIMAT</title>
     <link rel="shortcut icon" href="../appsArt/SvS.png"/>
     <link rel="stylesheet" media="screen" type="text/css" href="adm/css/index.css"/>
+    <script src="https://code.jquery.com/jquery-3.2.1.js"></script>
     <script type="text/javascript" src="adm/js/00-Ppal.js"></script>
 </head>
 <body >

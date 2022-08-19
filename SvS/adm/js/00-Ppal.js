@@ -36,11 +36,12 @@ function cargarReporte(v){
     
 }
 function mostrarCargadorDatos(){
-    //var c=$('.cargadorDatos').css('visibility');
-    alert("cr");
-    if( $('.cargadorDatos').css('visibility') !== 'hidden' ) {
+    //Requiere https://code.jquery.com/jquery-3.2.1.js
+	if( $('.cargadorDatos').css('visibility') !== 'hidden' ) {
 	    $('.cargadorDatos').css('visibility', 'hidden');
+        document.getElementById("btnCargarDatos").innerHTML="Mostrar Cargadores de Datos";
 	  } else {
 	    $('.cargadorDatos').css('visibility', 'visible');
-	  }    
+        document.getElementById("btnCargarDatos").innerHTML="Ocultar Cargadores de Datos";
+	  }
 }

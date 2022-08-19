@@ -9,11 +9,9 @@
 	   RH+<br>Apps
 	</div>
 	<div class="appsContenidoCinta">
-		<ul>
-			<li>SINAI vs SIMAT</li>
-			<li>Version: 0.1.0	</li>
-			<li>Creado por: Adolfo Ruiz © 2022</a></li>
-		</ul>	
+		<div>SINAI vs SIMAT</div>
+		<div>Version: 0.1.0	</div>
+		<div>Creado por: Adolfo Ruiz © 2022</div>	
 	</div>
 	
 </div>
