@@ -52,7 +52,6 @@
     ';    
     echo'</div>';    
     echo '
-        <div id="btnCargarDatos" class="btnCargarDatos" onclick="mostrarCargadorDatos()">Mostrar Cargadores de Datos</div> 
         <div>Seleccione el reporte deseado:</div>
         <select name="reportes" id="reportes" onchange="cargarReporte(this.value)">
             <option value=0>Seleccione...</option>

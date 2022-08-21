@@ -25,42 +25,50 @@
 	color:#e6ff07;
 	color:#8bff07;
 	color:#0f0f0f;
-
   }
 html {
 	font-family: calibri, asap;
 	font-size: 16px;
-	width: 99%;	
 	background:#f9f9fa;
 }
 #appsContenedorGlobal {
+	position:absolute;
+	width:100%;
+	top: 0px;
+	left:0px;
 	display: flex;
 	flex-wrap: wrap;
-	justify-content: center;
+	justify-content: center;	
 }
+/*==== Encabezado====*/
 #appsEncabezadoGral {
-	width: 100%;
-	display: grid;
-	grid-template-columns: repeat(auto-fit, minmax(1em, 1fr));
-	align-items: center;	
-	margin-bottom: 1em;
-	border:1px solid var(--Off);	
-	background: var(--fondo03);
-	z-index: 3;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(1em, 1fr));
+    align-items: center;
+	border-radius: 0 0 10px 10px;
+    background: lightsteelblue;
+    box-shadow: 1px 1px 10px 1px lightblue;
+	border: 1px solid lightslategray;
+    z-index: 3;
 }
 .appsBtnMenu {
+	display: flex;
+	justify-content: center;
 	cursor: pointer;
 }
 .appsBtnMenu img {
 	width: 40%;
 }
 .appsLogo {
+	display: flex;
+	justify-content: center;
 	cursor: pointer;
 }
 .appsLogo img {
 	width: 60%;
-	border-radius:10px;
-	box-shadow: 0px 0px 6px 2px gray;
+	border-radius:25px;
+	box-shadow: 1px 1px 10px 1px lightgrey;
 }
 .appsTituloCinta {
 	font-size: 1.5em;
@@ -96,27 +104,170 @@ html {
 	box-shadow: 2px 1px 5px 1px var(--luzOn);
 	background: var(--fondo03);		
 }
+/*==== Formularios Login====*/
+#appsFormulario {
+	position: absolute;
+	visibility: hidden;
+	padding: 10px;
+	border-radius: 10px;
+	border: 1px solid lightgrey;
+	background: white;
+    box-shadow: 1px 1px 10px 1px lightblue;
+	z-index: 3;
+	font-weight: 500px;
+}
+#appsFormulario input {
+	border-radius: 5px;
+	background: #eafaff;	
+	padding: 5px 8px;
+	font-size: 1.1em;
+}
+#appsFormulario .btnLogin {
+	left: 30px;
+	color: var(--OnPasivo);
+	border: 1px solid var(--OnPasivo);
+	background: var(--fondo01);	
+	cursor: pointer;
+}
+#appsFormulario .btnLogin:hover {
+	color: var(--OnActivo);
+	border-color: var(--OnActivo);
+	background:var(--fondo03);	
+}
+.appsFormularioLogin {
+	top: 60px;
+	right: 5px;
+}
+.appsFormularioNuevoUsuario{
+	top: -500px;
+	right: 0;
+}
+.appsFormularioNuevoUsuario .cerrar{
+	padding:0 5px;
+	color: var(--OnPasivo);
+	border-radius: 50px;
+	border: 1px solid var(--OnActivo);
+	box-shadow: 0px 0px 5px 0px var(--luzOn);
+	cursor: pointer;
+}
+.appsFormularioNuevoUsuario .cerrar:hover{
+	color: var(--OnActivo);
+	text-shadow: 0px 0px 10px var(--OnActivo);
+	border: 1px solid var(--OnActivo);
+	box-shadow: 0 1px 10px var(--OnActivo)inset, 0 0 8px var(--luzOn);
+	background: var(--fondo01);
+}
+.appsFormularioNuevoUsuario #contrasenaCheckList{
+	position: absolute;
+	visibility: hidden;
+	top: 270px;
+	left:-210px;
+	padding: 10px;
+	color: var(--OnActivo);
+	text-shadow: 0px 0px 10px var(--OnActivo);
+	border-radius: 15px 0;
+	border: 1px solid var(--OnActivo);
+	box-shadow: 0 1px 10px var(--OnActivo)inset, 0 0 8px var(--luzOn);
+	border: 1px solid var(--OnActivo);
+	box-shadow: 0px 0px 25px 0px var(--OnActivo);
+	background: var(--fondoOff09);	
+}
+/*==== LoggedIn====*/
+#appsSesionLogedIn {
+	position: relative;
+	width: auto;
+	top: -125px;
+	float: right;
+	cursor: pointer;
+	color: #0B0B61;
+	padding: 2px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border: 1px solid #0B0B61;
+	border-radius: 25px;
+	/*box-shadow:1px 1px 2px 1px #0B0B61;	*/
+	background: white;
+}
+#appsSesionLogedIn:hover {
+	background: #AABAF6;
+	box-shadow: 0px 0px 5px 0px #EBEEF8;
+}
+.appsSesionImg {
+	float: right;
+	width: 30px;
+	height: 30px;
+}
+/*====Formularios LoggedIn=====*/
+.appsFormularioDatosUsuario {
+	top: 50px;
+	right: 0;
+}
+.datosPersonales {
+	border-bottom: 1px solid gray;
+	margin: 10px 0px;
+	padding: 10px 0px;
+}
+.sesionImgInside {
+	margin: auto;
+	padding: 10px;
+	width: 50px;
+	height: 50px;
+}
+.appsFormularioDatosUsuario .etiqueta {
+	font-weight: bold;
+	padding: 10px 0px;
+}
+.appsFormularioDatosUsuario .datos {
+	font-weight: normal;
+	font-style: italic;
+}
+.appsFormularioDatosUsuario .btn {
+	width: auto;
+	left: 30px;
+	color: var(--OnPasivo);
+	font-weight: normal;
+	font-size: 0.8vw;
+	text-align: center;
+	border: 1px solid var(--OnPasivo);
+	border-radius: 5px;
+	background: var(--fondo03);;
+	cursor: pointer;
+	padding: 0px 5px;
+}
+.appsFormularioDatosUsuario .btn:hover {
+	font-weight: bold;
+	color: var(--OnActivo);
+	text-shadow: 10px var(--OnActivo);
+	border: 1px solid var(--OnActivo);
+	box-shadow: 2px 1px 5px 1px var(--luzOn);
+	background: var(--fondo01);		
+}
+.appsFormularioNuevaContrasena{
+	top: 231px;
+	right: 192px;
+}
+.appsFormularioNuevaContrasena #contrasenaCheckList{
+	position: absolute;
+	visibility: hidden;
+	top: 70px;
+	left:-210px;
+	padding: 10px;
+	color: var(--OnActivo);
+	text-shadow: 0px 0px 10px var(--OnActivo);
+	border-radius: 15px 0;
+	border: 1px solid var(--OnActivo);
+	box-shadow: 0 1px 10px var(--OnActivo)inset, 0 0 8px var(--luzOn);
+	border: 1px solid var(--OnActivo);
+	box-shadow: 0px 0px 25px 0px var(--OnActivo);
+	background: var(--fondoOff09);	
+}
 /*====CuerpoPrincipal====*/
 #appsContenedor {
 	width: 100%;
+	padding:10px;
 	display: grid;
-	gap: 0.5em;
-}
-.btnCargarDatos {
-	visibility: visible;
-    width: 300px;
-    box-shadow: 6px 6px 10px 1px lightblue;
-    border: 1px solid lightblue;
-    border-radius: 10px;
-    text-align: center;
-    padding: 0.5em;
-    margin-bottom: 0.5em;
-	user-select: none;
-	cursor: pointer;
-}
-.btnCargarDatos:hover{
-	background: lightskyblue;
-	box-shadow: 6px 6px 10px 1px rgb(123, 175, 192);
+	gap: 0.5em;	
 }
 .cargadorDatos {
     width: auto;
@@ -167,7 +318,7 @@ select{
 	position: relative;
 	visibility: hidden;
 	width:auto;
-	height:750px;
+	/*height:750px;*/
     overflow: scroll;
 }
 .tablaBD tbody tr:nth-child(even) {
@@ -244,7 +395,7 @@ select{
 
 @media screen and (max-width:800px) {
 	html{
-		font-size: 1.4em;
+		font-size: 1em;
 	}
 	#appsEncabezadoGral {
 		grid-template-columns: repeat(3, 1fr);
@@ -252,12 +403,18 @@ select{
 	.appsContenidoCinta {
 		width: 100%;
 		grid-column: 1/4;
-		display: flex;
 		flex-wrap:nowrap;
-		align-items: center;
-		justify-content: space-evenly;
 		background-color: white;
-		border:1px solid gray;
+		border:1px solid lightgray;
+	}
+	.appsInicioSesionCinta{
+		grid-column: 3/4;
+	}
+	.appsFormularioLogin {
+		top: 150px;
+	}
+	#appsContenedor {
+		margin-top: 150px;
 	}
 	select{
 		font-size: 1em;

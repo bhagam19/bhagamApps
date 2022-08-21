@@ -1,5 +1,4 @@
 //version 2020-04-28 4:25 pm
-
 function mostrarLogin(){
 	alert("Hola");
 	if( $('.appsFormularioLogin').css('visibility') !== 'hidden' ) {
@@ -384,7 +383,6 @@ function validarContrasenaSegura(id){
 		return false;
 	}
 }
-
 function mostrarFormCargueExcel(){
   if( $('#formCargueExcel').css('visibility') !== 'hidden') {
 	    $('#formCargueExcel').css('visibility', 'hidden');	    

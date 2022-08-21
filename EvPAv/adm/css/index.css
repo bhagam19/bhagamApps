@@ -38,6 +38,7 @@ html {
 	flex-wrap: wrap;
 	justify-content: center;
 }
+/*==== Encabezado====*/
 #appsEncabezadoGral {
 	width: 100%;
 	display: grid;
