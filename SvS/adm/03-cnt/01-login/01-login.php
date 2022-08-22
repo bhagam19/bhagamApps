@@ -8,5 +8,5 @@
 	require('../../03-cnt/index.php');
     $dato=new modeloController();
     $respuesta=$dato->validarLogin($tabla,$condicion,$contrasena);
-	echo $respuesta;	
+	echo $respuesta;
 ?>

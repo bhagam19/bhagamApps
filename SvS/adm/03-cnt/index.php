@@ -32,9 +32,7 @@
             require('adm/01-mdl/footerInstallBD.php');
                                       
         }       
-        static function index($tabla,$condicion){
-            $registro=new Modelo();
-            $dato= $registro->mostrar($tabla,$condicion);
+        static function index(){
             require('adm/02-vst/index.php');
         }
         static function validarLogin($tabla,$condicion,$contrasena){
@@ -64,6 +62,23 @@
                 }                
             }
             return $respuesta;
+        }
+        static function cargarUsuarioActivo(){
+            $tabla='usuarios';
+            $condicion='dane='.$_SESSION['usuario'];
+            $registro=new Modelo();
+            $dato= $registro->mostrar($tabla,$condicion);
+            return $dato;            
+        }
+        static function consultar($tabla,$condicion){
+            $registro=new Modelo();
+            $dato= $registro->mostrar($tabla,$condicion);
+            return $dato;
+        }
+        static function consultarJoin($columnas,$tabla1,$tipoJoin,$tabla2,$On,$condicion){
+            $registro=new Modelo();
+            $dato= $registro->mostrarJoin($columnas,$tabla1,$tipoJoin,$tabla2,$On,$condicion);
+            return $dato;
         }
     }
 ?>

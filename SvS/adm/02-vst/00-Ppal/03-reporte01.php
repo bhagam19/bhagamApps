@@ -1,127 +1,123 @@
 <?php
-    include('../../01-mdl/cnx.php');//Agregamos la conexión
-    echo'Estudiantes en SINAI pero no aparecen en SIMAT';
-    echo '
-        <table class="tablaBD tablaBienes" border=1>
-            <thead>
-                <tr class="stickyHead1">
-                    <th>GRUPO</th>
-                    <th>ESTADO SINAI</th>
-                    <th>FECHA ESTADO</th>
-                    <th>APELLIDOS</th>
-                    <th>NOMBRES</th>
-                    <th>TIPO DOC</th>
-                    <th>DOCUMENTO</th>
-                    <th>ESTADO SIMAT</th>
-                    <th>FECHA ESTADO</th>
-			    </tr>
-            </thead> 
-    ';
-    $consulta=$cnx->query('SELECT * FROM sinai WHERE estado ="MATRICULADO" AND numDoc NOT IN (SELECT numDoc FROM simat)');
-    $cant=0;
-    while ($fila=mysqli_fetch_array($consulta)){
-        $cant++;
-        echo '
-            <tr>
-                <td>'.$fila['grupo'].'</td>
-                <td>'.$fila['estado'].'</td>
-                <td>'.$fila['fechaEstado'].'</td>
-                <td>'.$fila['apellidos'].'</td>
-                <td>'.$fila['nombres'].'</td>
-                <td>'.$fila['tipoDoc'].'</td>
-                <td>'.$fila['numDoc'].'</td>
-                <td></td>
-                <td></td>
-            </tr>
-        ';
-    }
-    $consulta=$cnx->query('SELECT sinai.grupo,sinai.estado,sinai.fechaEstado,sinai.apellidos,sinai.nombres,sinai.tipoDoc,sinai.numDoc,simat.estado,simat.fechaEstado
-                            FROM sinai LEFT JOIN simat
-                            ON sinai.numDoc=simat.numDoc
-                            WHERE sinai.estado="MATRICULADO" AND simat.estado!="MATRICULADO"');
-    while ($fila=mysqli_fetch_array($consulta)){
-        $cant++;
-        echo '
-            <tr>
-                <td>'.$fila[0].'</td>
-                <td>'.$fila[1].'</td>
-                <td>'.$fila[2].'</td>
-                <td>'.$fila[3].'</td>
-                <td>'.$fila[4].'</td>
-                <td>'.$fila[5].'</td>
-                <td>'.$fila[6].'</td>
-                <td>'.$fila[7].'</td>
-                <td>'.$fila[8].'</td>
-            </tr>
-        ';
-    }
-    echo "Total: ".$cant;
-    echo'</table><br>';
-    echo'Estudiantes en SIMAT pero no aparecen en SINAI';
-    echo '
-        <table class="tablaBD tablaBienes" border=1>
-            <thead>
-                <tr class="stickyHead1">
-                    <th>GRUPO</th>
-                    <th>ESTADO</th>
-                    <th>APELLIDOS</th>
-                    <th>NOMBRES</th>
-                    <th>TIPO DOC</th>
-                    <th>DOCUMENTO</th>
-			    </tr>
-            </thead> 
-    ';
-    $consulta=$cnx->query('SELECT * FROM simat WHERE estado ="MATRICULADO" AND numDoc NOT IN (SELECT numDoc FROM sinai)');
-    $cant=0;
-    while ($fila=mysqli_fetch_array($consulta)){
-        $cant++;
-        echo '
-            <tr>
-                <td>'.$fila['grupo'].'</td>
-                <td>'.$fila['estado'].'</td>
-                <td>'.$fila['apellidos'].'</td>
-                <td>'.$fila['nombres'].'</td>
-                <td>'.$fila['tipoDoc'].'</td>
-                <td>'.$fila['numDoc'].'</td>
-            </tr>
-        ';
-    }
-    echo "Total: ".$cant;
-    echo'</table><br>';
-
-    echo'Estudiantes en grupos diferentes en SIMAT';
-    echo '
-        <table class="tablaBD tablaBienes" border=1>
-            <thead>
-                <tr class="stickyHead1">
-                    <th>GRUPO SINAI</th>
-                    <th>GRUPO SIMAT</th>
-                    <th>ESTADO</th>
-                    <th>APELLIDOS</th>
-                    <th>NOMBRES</th>
-                    <th>TIPO DOC</th>
-                    <th>DOCUMENTO</th>
-			    </tr>
-            </thead> 
-    ';
-    $consulta=$cnx->query('SELECT sinai.grupo,simat.grupo,sinai.estado, sinai.apellidos, sinai.nombres, sinai.tipoDoc, sinai.numDoc FROM sinai INNER JOIN simat 
-                            ON NOT sinai.grupo=simat.grupo WHERE sinai.estado="MATRICULADO" AND simat.estado="MATRICULADO" AND sinai.numDoc=simat.numDoc');
-    $cant=0;
-    while ($fila=mysqli_fetch_array($consulta)){
-        $cant++;
-        echo '
-            <tr>
-                <td>'.$fila[0].'</td>
-                <td>'.$fila[1].'</td>
-                <td>'.$fila[2].'</td>
-                <td>'.$fila[3].'</td>
-                <td>'.$fila[4].'</td>
-                <td>'.$fila[5].'</td>
-                <td>'.$fila[6].'</td>
-            </tr>
-        ';
-    }
-    echo "Total: ".$cant;
-    echo'</table><br>';
-
+    require('../../03-cnt/00-Ppal/reporte01.php');
+    if($respuesta1!=NULL):
 ?>
+<div class="enunciado">Estudiantes MATRICULADOS en SINAI pero no en SIMAT. TOTAL: <?php echo (count($respuesta1)+count($respuesta2)); ?></div>
+<div class="contenedor-Tabla">    
+    <div class="grid encabezado">   
+        <div class="tituloGrid">No.</div>
+        <?php
+            foreach($tituloEncabezado1 as $t1){
+                echo '<div class="tituloGrid">'.$t1.'</div>';
+            }            
+        ?>
+    </div>    
+        <?php
+            $cnt=0;
+           foreach($respuesta1 as $registro1){
+                $cnt++;
+                echo'<div class="grid cuerpo">';                    
+                    echo '<div class="cuerpoGrid">'.$cnt.'</div>';
+                    echo '<div class="cuerpoGrid">'.$registro1['apellidos'].'</div>';
+                    echo '<div class="cuerpoGrid">'.$registro1['nombres'].'</div>';
+                    echo '<div class="cuerpoGrid">'.$registro1['tipoDoc'].'</div>';
+                    echo '<div class="cuerpoGrid">'.$registro1['numDoc'].'</div>';
+                    echo '<div class="cuerpoGrid">-</div>';
+                    echo '<div class="cuerpoGrid">'.$registro1['grupo'].'</div>';
+                    echo '<div class="cuerpoGrid">'.$registro1['estado'].'</div>';
+                    echo '<div class="cuerpoGrid">'.$registro1['fechaEstado'].'</div>';
+                    echo '<div class="cuerpoGrid">-</div>';
+                    echo '<div class="cuerpoGrid">-</div>';
+                echo'</div>';
+            } 
+            foreach($respuesta2 as $registro2){
+                $cnt++;
+                echo'<div class="grid cuerpo">';                    
+                    echo '<div class="cuerpoGrid">'.$cnt.'</div>';
+                    echo '<div class="cuerpoGrid">'.$registro2['apellidos'].'</div>';
+                    echo '<div class="cuerpoGrid">'.$registro2['nombres'].'</div>';
+                    echo '<div class="cuerpoGrid">'.$registro2['tipoDoc'].'</div>';
+                    echo '<div class="cuerpoGrid">'.$registro2['numDoc'].'</div>';
+                    echo '<div class="cuerpoGrid">-</div>';
+                    echo '<div class="cuerpoGrid">'.$registro2['grupo'].'</div>';
+                    echo '<div class="cuerpoGrid">'.$registro2['estadoSinai'].'</div>';
+                    echo '<div class="cuerpoGrid">'.$registro2['fechaSinai'].'</div>';
+                    echo '<div class="cuerpoGrid">'.$registro2['estadoSimat'].'</div>';
+                    echo '<div class="cuerpoGrid">'.$registro2['fechaSimat'].'</div>';
+                echo'</div>';
+            }            
+        ?>    
+</div>
+<?php  else: ?>
+<div class="enunciado">Estudiantes MATRICULADOS en SINAI pero no en SIMAT. TOTAL: 0</div>
+<?php 
+    endif;
+    if($respuesta3!=NULL):
+?>
+<div class="enunciado">Estudiantes MATRICULADOS en SIMAT pero no en SINAI. TOTAL: <?php echo count($respuesta3); ?></div>
+<div class="contenedor-Tabla">    
+    <div class="grid encabezado">   
+        <div class="tituloGrid">No.</div>
+        <?php
+            foreach($tituloEncabezado2 as $t2){
+                echo '<div class="tituloGrid">'.$t2.'</div>';
+            }            
+        ?>
+    </div>    
+        <?php
+            $cnt=0;
+           foreach($respuesta3 as $registro3){
+                $cnt++;
+                echo'<div class="grid cuerpo">';                    
+                    echo '<div class="cuerpoGrid">'.$cnt.'</div>';
+                    echo '<div class="cuerpoGrid">'.$registro3['apellidos'].'</div>';
+                    echo '<div class="cuerpoGrid">'.$registro3['nombres'].'</div>';
+                    echo '<div class="cuerpoGrid">'.$registro3['tipoDoc'].'</div>';
+                    echo '<div class="cuerpoGrid">'.$registro3['numDoc'].'</div>';
+                    echo '<div class="cuerpoGrid">-</div>';
+                    echo '<div class="cuerpoGrid">'.$registro3['grupo'].'</div>';
+                    echo '<div class="cuerpoGrid">'.$registro3['estado'].'</div>';
+                    echo '<div class="cuerpoGrid">'.$registro3['fechaEstado'].'</div>';
+                    echo '<div class="cuerpoGrid">-</div>';
+                    echo '<div class="cuerpoGrid">-</div>';
+                echo'</div>';
+            }         
+        ?>    
+</div>
+<?php  else: ?>
+<div class="enunciado">Estudiantes MATRICULADOS en SIMAT pero no en SINAI. TOTAL: 0</div>
+<?php 
+    endif; 
+    if($respuesta4!=NULL):
+?>
+<div class="enunciado">Estudiantes en grupos diferentes en SIMAT. TOTAL: <?php echo count($respuesta4); ?></div>
+<div class="contenedor-Tabla">    
+    <div class="grid encabezado">   
+        <div class="tituloGrid">No.</div>
+        <?php
+            foreach($tituloEncabezado3 as $t3){
+                echo '<div class="tituloGrid">'.$t3.'</div>';
+            }            
+        ?>
+    </div>    
+        <?php
+            $cnt=0;
+           foreach($respuesta4 as $registro4){
+                $cnt++;
+                echo'<div class="grid cuerpo">';                    
+                    echo '<div class="cuerpoGrid">'.$cnt.'</div>';
+                    echo '<div class="cuerpoGrid">'.$registro4['apellidos'].'</div>';
+                    echo '<div class="cuerpoGrid">'.$registro4['nombres'].'</div>';
+                    echo '<div class="cuerpoGrid">'.$registro4['tipoDoc'].'</div>';
+                    echo '<div class="cuerpoGrid">'.$registro4['numDoc'].'</div>';
+                    echo '<div class="cuerpoGrid">-</div>';
+                    echo '<div class="cuerpoGrid">'.$registro4['estado'].'</div>';
+                    echo '<div class="cuerpoGrid">'.$registro4['grupoSinai'].'</div>';
+                    echo '<div class="cuerpoGrid">'.$registro4['grupoSimat'].'</div>';
+                echo'</div>';
+            }         
+        ?>    
+</div>
+<?php  else: ?>
+<div class="enunciado">Estudiantes en grupos diferentes en SIMAT. TOTAL: 0</div>
+<?php endif; ?>

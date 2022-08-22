@@ -106,7 +106,6 @@ html {
 }
 /*==== Formularios Login====*/
 #appsFormulario {
-	position: absolute;
 	visibility: hidden;
 	padding: 10px;
 	border-radius: 10px;
@@ -114,7 +113,6 @@ html {
 	background: white;
     box-shadow: 1px 1px 10px 1px lightblue;
 	z-index: 3;
-	font-weight: 500px;
 }
 #appsFormulario input {
 	border-radius: 5px;
@@ -134,9 +132,14 @@ html {
 	border-color: var(--OnActivo);
 	background:var(--fondo03);	
 }
-.appsFormularioLogin {
-	top: 60px;
-	right: 5px;
+.contenedor-formularioslogin{
+    position: absolute;
+    top: 3.2em;
+	right: 0.1em;
+    display: grid;
+    flex-wrap: wrap;
+    width: 20em;
+	gap:0.2em;
 }
 .appsFormularioNuevoUsuario{
 	top: -500px;
@@ -174,35 +177,23 @@ html {
 }
 /*==== LoggedIn====*/
 #appsSesionLogedIn {
-	position: relative;
-	width: auto;
-	top: -125px;
-	float: right;
+	width: 2em;
+	height: 2em;
 	cursor: pointer;
-	color: #0B0B61;
 	padding: 2px;
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	border: 1px solid #0B0B61;
 	border-radius: 25px;
-	/*box-shadow:1px 1px 2px 1px #0B0B61;	*/
 	background: white;
+	user-select: none;
 }
 #appsSesionLogedIn:hover {
 	background: #AABAF6;
 	box-shadow: 0px 0px 5px 0px #EBEEF8;
 }
-.appsSesionImg {
-	float: right;
-	width: 30px;
-	height: 30px;
-}
 /*====Formularios LoggedIn=====*/
-.appsFormularioDatosUsuario {
-	top: 50px;
-	right: 0;
-}
 .datosPersonales {
 	border-bottom: 1px solid gray;
 	margin: 10px 0px;
@@ -227,7 +218,6 @@ html {
 	left: 30px;
 	color: var(--OnPasivo);
 	font-weight: normal;
-	font-size: 0.8vw;
 	text-align: center;
 	border: 1px solid var(--OnPasivo);
 	border-radius: 5px;
@@ -244,23 +234,17 @@ html {
 	background: var(--fondo01);		
 }
 .appsFormularioNuevaContrasena{
-	top: 231px;
-	right: 192px;
+	top: 207px;
+	right: 205px;
 }
-.appsFormularioNuevaContrasena #contrasenaCheckList{
-	position: absolute;
+.appsFormularioNuevaContrasena .contrasenaCheckList{
 	visibility: hidden;
-	top: 70px;
-	left:-210px;
 	padding: 10px;
 	color: var(--OnActivo);
-	text-shadow: 0px 0px 10px var(--OnActivo);
-	border-radius: 15px 0;
-	border: 1px solid var(--OnActivo);
-	box-shadow: 0 1px 10px var(--OnActivo)inset, 0 0 8px var(--luzOn);
-	border: 1px solid var(--OnActivo);
-	box-shadow: 0px 0px 25px 0px var(--OnActivo);
-	background: var(--fondoOff09);	
+	border-radius: 10px;
+	border: 1px solid lightgrey;
+	background: white;
+    box-shadow: 1px 1px 10px 1px lightblue;
 }
 /*====CuerpoPrincipal====*/
 #appsContenedor {
@@ -270,17 +254,16 @@ html {
 	gap: 0.5em;	
 }
 .cargadorDatos {
-    width: auto;
-    position: absolute;
-    top: 0px;
-    visibility: hidden;
-    background: white;
+	visibility: hidden;
+	position: absolute;	
+    width: 20em;    
+    left: 0px;
+    top: 4em;    
     box-shadow: 2px 2px 5px 1px lightblue;
     padding: 15px;
     border-radius: 15px;
+	background: white;
     z-index: 3;
-    float: right;
-    right: 0px;
 }
 .btnCerrarCargadorDatos{
 	box-shadow: 1px 1px 2px 1px grey;
@@ -306,7 +289,7 @@ form {
     gap: 0.5em;
 }
 input[type="submit"] {
-    width: 50%;
+    
 }
 select{
     width: 200px;
@@ -314,13 +297,60 @@ select{
     border-radius: 0.3em;
     box-shadow: 2px 2px 10px 1px lightblue;
 }
+/*====Tablas Reportes====*/
 #reporte{
 	position: relative;
 	visibility: hidden;
 	width:auto;
-	/*height:750px;*/
+	height:auto;
     overflow: scroll;
+	padding-bottom: 20px;
 }
+.enunciado{
+	width: 50%;
+	margin: 15px 0;
+	background-color: rgb(236, 185, 185);
+	padding: 10px;
+	border-radius: 5px;
+	box-shadow: 1px 1px 10px 1px lightblue;
+}
+.contenedor-Tabla{
+	margin-top: 5px;
+    width: 90%;
+    user-select: none;
+}
+.contenedor-Tabla>div:nth-child(odd) {
+	background-color:#b1c3cc;	
+}
+.grid {
+    display: grid;
+    grid-template-columns: 3em 12em 14em 2em 8em 11em 11em 10em 8em 10em 8em;
+    gap: 0.1em;
+    align-items: center;
+    text-align: center;
+}
+.encabezado {
+    position: sticky;
+    top: 0px;
+    user-select: none;
+    z-index: 2;
+}
+.tituloGrid {
+    border-radius: 5px;
+    background: #084B8A;
+    font-weight: 900;
+    line-height: 1.5em;
+	color: white;
+}
+.cuerpoGrid {
+    border-left: 1px solid #a7a7a7;
+    border-bottom: 1px solid #a7a7a7;
+    line-height: 1.5em;
+    overflow: hidden;
+}
+
+
+
 .tablaBD tbody tr:nth-child(even) {
 	background-color:#e8eef1;
 }
@@ -374,8 +404,8 @@ select{
 	z-index: 2;
 }
 ::-webkit-scrollbar {
-	width: 5px;
-	height: 5px;
+	width: 10px;
+	height: 10px;
 }
 ::-webkit-scrollbar-track {
 	background: #dcf3fc;
@@ -410,14 +440,43 @@ select{
 	.appsInicioSesionCinta{
 		grid-column: 3/4;
 	}
-	.appsFormularioLogin {
-		top: 150px;
+	#appsSesionLogedIn {
+		grid-column: 3/4;
 	}
+	.contenedor-formularioslogin{
+		top: 8.1em;
+		right: 1.3em;
+		width: 15em;
+	}	
 	#appsContenedor {
-		margin-top: 150px;
+		margin-top: 0.5em;
+	}
+	.cargadorDatos {
+		width: 92%;    
+		left: 0px;
+		top: 9em; 
 	}
 	select{
 		font-size: 1em;
+	}
+	#reporte{
+		width:1200px;
+	}
+	.grid {
+		display: flex;
+		flex-wrap: nowrap;
+		align-items: center;
+		justify-content: space-evenly;
+		text-align: center;
+	}
+	.tituloGrid {
+		width: 100%;
+		line-height: 1.5em;
+	}
+	.cuerpoGrid {
+		width: 100%;
+		line-height: 1.5em;
+		text-align: start;
 	}
 	
 }	
