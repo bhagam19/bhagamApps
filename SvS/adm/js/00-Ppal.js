@@ -396,3 +396,11 @@ function mostrarCargadorDatos(){
         document.getElementById("btnCargarDatos").innerHTML="Ocultar Cargadores de Datos";
 	  }
 }
+function showCheckboxes(id) {
+	//$('.checkboxes').css('display','none');	
+	if( $('#checkboxes'+id).css('display') !== 'none') {
+		$('#checkboxes'+id).css('display', 'none');
+	}else{
+		$('#checkboxes'+id).css('display', 'block');
+	}
+}

@@ -288,9 +288,7 @@ form {
     flex-wrap: wrap;
     gap: 0.5em;
 }
-input[type="submit"] {
-    
-}
+
 select{
     width: 200px;
     padding: 0.2em;
@@ -349,7 +347,44 @@ select{
     overflow: hidden;
 }
 
-
+/* ===Select + Checkboxes*/
+.formFiltro{
+	margin-bottom: 0;
+}
+.selectBox {
+	position: relative;
+}
+.selectBox select {
+	width: 100%;
+	font-weight: bold;
+}
+.overSelect {
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+}
+#checkboxes{
+	display: none;
+}
+.checkboxes {
+	position: absolute;   
+	display: none;
+	text-align: start;
+    border: 1px #dadada solid;    
+    border-radius: 0 0 5px 5px;
+    box-shadow: 3px 5px 10px 1px #789da3;    
+	background: white;
+	z-index: 3;    
+}
+.checkboxes label {
+	display: block;
+	padding: 0 0.5em 0 0;
+}
+.checkboxes label:hover {
+	background-color: #b4dbd1;
+}
 
 .tablaBD tbody tr:nth-child(even) {
 	background-color:#e8eef1;

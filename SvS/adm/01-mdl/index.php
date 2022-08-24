@@ -41,13 +41,19 @@
         }
         public function mostrarJoin($columnas,$tabla1,$tipoJoin,$tabla2,$On,$condicion){
             $consulta ='SELECT '.$columnas.' FROM '.$tabla1.' '.$tipoJoin.' '.$tabla2.' ON '.$On.' WHERE '.$condicion;
-            //$consulta ='SELECT sinai.apellidos,sinai.nombres,sinai.tipoDoc,sinai.numDoc,sinai.estado,sinai.fechaEstado,sinai.grupo,simat.estado,simat.fechaEstado
-           // FROM sinai LEFT JOIN simat ON sinai.numDoc=simat.numDoc WHERE sinai.estado="MATRICULADO" AND simat.estado!="MATRICULADO"';
             $resultado=$this->cnx->query($consulta);
             while($fila=$resultado->fetch_assoc()){
                 $this->datos[]=$fila;
             }
            // var_dump($this->datos);
+            return $this->datos;
+        }
+        public function mostrarDistinct($columna, $tabla, $condicion){
+            $consulta ='SELECT DISTINCT '.$columna.' FROM '.$tabla.' WHERE '.$condicion;
+            $resultado=$this->cnx->query($consulta);
+            while($fila=$resultado->fetch_assoc()){
+                $this->datos[]=$fila;
+            }
             return $this->datos;
         }
     }

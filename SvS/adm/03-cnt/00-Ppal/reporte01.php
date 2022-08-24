@@ -1,4 +1,6 @@
 <?php
+//########## MATRICULADOS SINAI VS SIMAT ##########    
+    $tituloEncabezado1=["APELLIDOS","NOMBRES","TD","NUMDOC","SEDE","GRUPO","ESTADO SINAI","FECHA ESTADO","ESTADO SIMAT","FECHA ESTADO"];
     $tabla1='sinai';
     $condicion1;
     if(isset($_REQUEST['condicion1'])){
@@ -8,7 +10,21 @@
     }	
 	require_once('../../03-cnt/index.php');
     $respuesta1=modeloController::consultar($tabla1,$condicion1);
-    $tituloEncabezado1=["APELLIDOS","NOMBRES","TD","NUMDOC","SEDE","GRUPO","ESTADO SINAI","FECHA ESTADO","ESTADO SIMAT","FECHA ESTADO"];
+    /*===========*/
+    $col=0;
+    $keys=array();
+    $filtros=[];
+    foreach($respuesta1 as $registro){    
+        $keys=array_keys($registro);        
+    }
+    foreach($keys as $k){
+        $valores=array_column($respuesta1,$k);
+        sort($valores);
+        $filtros[$k]=array_unique($valores);
+    }
+    //var_dump($filtros);
+    //echo'<br>';
+    /*===========*/
 
     $columnas1='sinai.apellidos,sinai.nombres,sinai.tipoDoc,sinai.numDoc,sinai.estado estadoSinai,sinai.fechaEstado fechaSinai,sinai.grupo,
                 simat.estado estadoSimat,simat.fechaEstado fechaSimat';
@@ -24,7 +40,7 @@
     }
     require_once('../../03-cnt/index.php');
     $respuesta2=modeloController::consultarJoin($columnas1,$tablaJoin1,$tipoJoin1,$tablaJoin2,$On1,$condicion2);
-
+//########## MATRICULADOS SIMAT VS SINAI ##########
     $tabla2='simat';
     $condicion3;
     if(isset($_REQUEST['condicion3'])){
@@ -36,7 +52,7 @@
     $respuesta3=modeloController::consultar($tabla2,$condicion3);
     //var_dump($respuesta3);
     $tituloEncabezado2=["APELLIDOS","NOMBRES","TD","NUMDOC","SEDE","GRUPO","ESTADO SIMAT","FECHA ESTADO","ESTADO SINAI","FECHA ESTADO"];
-
+//########## GRUPOS DIFERENTES ##########
     $columnas2='sinai.apellidos, sinai.nombres,sinai.tipoDoc,sinai.numDoc,sinai.estado,sinai.grupo grupoSinai, simat.grupo grupoSimat';
     $tablaJoin3='sinai';
     $tipoJoin2='INNER JOIN';

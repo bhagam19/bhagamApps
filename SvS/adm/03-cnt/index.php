@@ -80,5 +80,10 @@
             $dato= $registro->mostrarJoin($columnas,$tabla1,$tipoJoin,$tabla2,$On,$condicion);
             return $dato;
         }
+        static function consultarDistinct($columna,$tabla,$condicion){
+            $registro=new Modelo();
+            $dato= $registro->mostrarDistinct($columna, $tabla,$condicion);
+            return $dato;
+        }
     }
 ?>
