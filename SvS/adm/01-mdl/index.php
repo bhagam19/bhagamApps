@@ -22,7 +22,7 @@
             ';                
             endif;             
         }
-        public function insertarValores($tabla, $valores){
+        public function insertarValores($tabla, $valores){            
             $consulta='INSERT INTO '.$tabla.' values(null,'.$valores.')';
             $resultado=$this->cnx->query($consulta);
             if($resultado){
@@ -55,6 +55,15 @@
                 $this->datos[]=$fila;
             }
             return $this->datos;
+        }
+        public function borrar($tabla, $condicion){
+            $consulta ='DELETE FROM '.$tabla.$condicion;
+            $this->cnx->query($consulta);
+        }
+        public function volverEnumerar($tabla){
+            $consulta='SET @count=0; ';
+            $consulta.='UPDATE '.$tabla.' SET '.$tabla.'.id=@count:=@count+1; ';
+            $this->cnx->multi_query($consulta);
         }
     }
 ?>  

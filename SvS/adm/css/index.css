@@ -194,16 +194,33 @@ html {
 	box-shadow: 0px 0px 5px 0px #EBEEF8;
 }
 /*====Formularios LoggedIn=====*/
-.datosPersonales {
+.contenedor-gral-datos-usuario{
+	display:flex;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: space-evenly;
+	cursor: pointer;
+}
+.contenedor-division {
 	border-bottom: 1px solid gray;
 	margin: 10px 0px;
 	padding: 10px 0px;
+	align-items: center;
+	justify-content: space-evenly;
+	text-align: center;
 }
 .sesionImgInside {
 	margin: auto;
 	padding: 10px;
 	width: 50px;
 	height: 50px;
+}
+.datos-usuarios{
+	margin: 5px;
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: space-between;
 }
 .appsFormularioDatosUsuario .etiqueta {
 	font-weight: bold;
@@ -232,6 +249,9 @@ html {
 	border: 1px solid var(--OnActivo);
 	box-shadow: 2px 1px 5px 1px var(--luzOn);
 	background: var(--fondo01);		
+}
+.appsFormularioDatosUsuario .cambiar-contrasena {
+	user-select: none;
 }
 .appsFormularioNuevaContrasena{
 	top: 207px;
@@ -304,18 +324,27 @@ select{
     overflow: scroll;
 	padding-bottom: 20px;
 }
-.enunciado{
+.enunciado{	
 	width: 50%;
 	margin: 15px 0;
-	background-color: rgb(236, 185, 185);
+	font-style: italic;
+	font-weight: 700;
+	background-color:var(--fondoOff03);
 	padding: 10px;
 	border-radius: 5px;
 	box-shadow: 1px 1px 10px 1px lightblue;
+	
+}
+.enunciado .span-total{
+	color:#331daf;
+	font-size: 1.5em;
+}
+.enunciado .ult-version{
+	color:#cd0000;
 }
 .contenedor-Tabla{
 	margin-top: 5px;
     width: 90%;
-    user-select: none;
 }
 .contenedor-Tabla>div:nth-child(odd) {
 	background-color:#b1c3cc;	
@@ -343,8 +372,11 @@ select{
 .cuerpoGrid {
     border-left: 1px solid #a7a7a7;
     border-bottom: 1px solid #a7a7a7;
-    line-height: 1.5em;
+    min-height: 3em;
     overflow: hidden;
+}
+.cuerpo:hover {
+	background-color:rgba(15, 25, 44, 0.5) !important;
 }
 
 /* ===Select + Checkboxes*/

@@ -26,5 +26,4 @@
 			<span><img id="check05" style="width:15px; padding:0 5px;" src="../appsArt/mal.png">Al menos un símbolo.</span><br>
 		</div>
 	</div>
-	<script type="text/javascript">document.getElementById("usuarioLogin").focus();</script>
 </div>

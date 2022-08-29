@@ -35,7 +35,8 @@
         static function index(){
             require('adm/02-vst/index.php');
         }
-        static function validarLogin($tabla,$condicion,$contrasena){
+        static function validarLogin($tabla,$usuario,$contrasena){
+            $condicion ='dane='.$usuario;
             $registro=new Modelo();
             $dato= $registro->mostrar($tabla,$condicion);
             $respuesta;
@@ -43,16 +44,16 @@
                 $respuesta="NE";    
             }else{
                 foreach($dato as $key=>$v){
-                    $usuarioBD=$v['dane'];
+                    $usuario=$v['dane'];
                     $dbHash=$v['contrasena'];
-                    $institucionIDBD=$v['institucionID'];
-                    $permisoBD=$v['permiso'];
+                    $id=$v['id'];
+                    $permiso=$v['permiso'];
                     if($contrasena==$dbHash||crypt($contrasena,$dbHash) == $dbHash){
-                        $_SESSION['usuario']=$usuarioBD;
-                        $_SESSION['usuarioID']=$institucionIDBD;
-                        $_SESSION['permiso']=$permisoBD;
+                        $_SESSION['usuario']=$usuario;
+                        $_SESSION['id']=$id;
+                        $_SESSION['permiso']=$permiso;
                         if($dbHash=="SvS1234*"){
-                            $respuesta="C";                        
+                            $respuesta="C";
                         }else{
                             $respuesta="S";
                         }
@@ -69,7 +70,7 @@
             $registro=new Modelo();
             $dato= $registro->mostrar($tabla,$condicion);
             return $dato;            
-        }
+        }        
         static function consultar($tabla,$condicion){
             $registro=new Modelo();
             $dato= $registro->mostrar($tabla,$condicion);
@@ -84,6 +85,19 @@
             $registro=new Modelo();
             $dato= $registro->mostrarDistinct($columna, $tabla,$condicion);
             return $dato;
+        }
+        static function insertarDatos($tabla,$valores){
+            $registro=new Modelo();
+            $registro->insertarValores($tabla,$valores);
+
+        }
+        static function borrarDatos($tabla,$condicion){
+            $registro=new Modelo();
+            $registro->borrar($tabla,$condicion);
+        }
+        static function volverEnumerar($tabla){
+            $registro=new Modelo();
+            $registro->volverEnumerar($tabla);
         }
     }
 ?>

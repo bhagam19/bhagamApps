@@ -1,23 +1,24 @@
 <div class="cargadorDatos">
     <h3>Importar Datos</h3>
 <?php
+    $dane=$_SESSION['usuario'];
     $datosComponente=[
         [
             'titulo'=>'Datos SINAI',
             'ruta'=>'00-cargarCsvSinai',
-            'archivo'=>'sinai'
+            'archivo'=>'sinai'.$dane
         ],[
             'titulo'=>'Datos SIMAT',
             'ruta'=>'01-cargarCsvSimat',
-            'archivo'=>'simat'
+            'archivo'=>'simat'.$dane
         ],[
             'titulo'=>'Datos Anexo 6A',
             'ruta'=>'02-cargarCsv6AFUC',
-            'archivo'=>'Anexo6AFUC'
+            'archivo'=>'Anexo6AFUC'.$dane
         ],[
             'titulo'=>'Datos PAE',
             'ruta'=>'03-cargarCsvEstPAE',
-            'archivo'=>'estPAE'
+            'archivo'=>'estPAE'.$dane
         ]       
     ];
     foreach($datosComponente as $componente){

@@ -10,28 +10,27 @@
 	}
 ?>
 <div id="appsFormulario" class="appsFormularioDatosUsuario">
-	<div id="">
+	<div id="contenedor-gral-datos-usuario">
 		<div class="sesionImgInside" title="Click para cambiar foto." onclick="">
 			<img src="../appsArt/usuario.svg"/>
 		</div>		
-		<div class="datosPersonales">
-			<table class="" border=0>						
-				<tr>
-					<td><span class="etiqueta">DANE: <br></span></td>
-					<td><span class="datos"><?php echo $dane?></span></td>
-				</tr>
-				<tr>
-					<td><span class="etiqueta">Institución: <br></span></td>
-					<td><span class="datos"><?php echo $institucion?></span></td>
-				</tr>			
-			</table> 
+		<div class="contenedor-division">
+			<div class="contenedor-datos-usuarios">						
+				<div class="datos-usuarios">
+					<span class="etiqueta">DANE:</span>
+					<span class="datos"><?php echo $dane?></span>
+				</div>
+				<div class="datos-usuarios">
+					<span class="etiqueta">Institución:</span>
+					<span class="datos"><?php echo $institucion?></span>
+				</div>			
+			</div> 
 		</div>
-		<div class="datosPersonales" style="cursor:pointer;user-select:none" title="Click para mostrar y ocultar." onclick="mostrarCambiarContrasena()">
-			<span class="etiqueta">Cambiar Contraseña</span></td>
+		<div class="contenedor-division cambiar-contrasena" title="Click para mostrar y ocultar." onclick="mostrarCambiarContrasena()">
+			<span class="etiqueta">Cambiar Contraseña</span>
 		</div>	
 		<div class="btn" title="Click para cerrar sesión."  onclick="location.href='adm/03-cnt/01-login/02-cerrarSesion.php'">
 			Cerrar Sesión
 		</div>
-	</div> 
-	<script type="text/javascript">document.getElementById("usuarioLogin").focus();</script>
+	</div>
 </div>

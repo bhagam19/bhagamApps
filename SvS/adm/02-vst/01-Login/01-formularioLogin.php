@@ -21,5 +21,4 @@
 			</table>  
 		</div>
 	</div>
-	<script type="text/javascript">document.getElementById("usuarioLogin").focus();</script>
 </div>

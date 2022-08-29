@@ -138,13 +138,13 @@ function validarLogin(usuario,contrasena){
         return texto.text();
     })
     .then(respTexto => {
-        alert(respTexto.trim()); 
-        if(responseText.trim()==="S"){
+        //alert(respTexto.trim()); 
+        if(respTexto.trim()=="S"){
             return true;
-        }else if(xmlhttp.responseText.trim()==="C"){
+        }else if(respTexto.trim()=="C"){
             alert("Recuerde cambiar la contraseña asignada por el administrador. Es poco segura.");
             return true;
-            }else{        	
+        }else{        	
             alert("El usuario y la contraseña no coinciden.");
             document.getElementById("usuarioLogin").value=usuario;
             document.getElementById("contrasenaLogin").value="";
@@ -353,7 +353,7 @@ function cargarReporte(v){
     var url='';
     switch(v){
         case '1':
-            url='adm/02-vst/00-Ppal/03-reporte01.php';
+            url='adm/02-vst/00-Ppal/05-reporteBasico.php';
         break;
         case '2':
             url='adm/02-vst/00-Ppal/03-reporte02.php';
@@ -403,4 +403,21 @@ function showCheckboxes(id) {
 	}else{
 		$('#checkboxes'+id).css('display', 'block');
 	}
+}
+function filtrar(campo, valor,id){	
+	let c=" AND "+campo+"= '"+valor+"'";
+	var url="adm/02-vst/00-Ppal/05.03-reporteBasicoMatriculaSINAI.php?condicion1="+c;
+	var checkBox=document.getElementById(id);
+	if(checkBox.checked===true){
+		fetch(url)
+		.then(texto => {
+			return texto.text();
+		})
+		.then(respTexto => {
+			//alert(respTexto);
+			document.getElementById("contenedor-cuerpo").innerHTML="";
+			document.getElementById("contenedor-cuerpo").innerHTML=respTexto;
+		})
+		.catch(error => console.log('Hubo un problema con la petición Fetch:' + error.message));
+	}   
 }
