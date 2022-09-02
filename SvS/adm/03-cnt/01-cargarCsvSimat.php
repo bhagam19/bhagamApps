@@ -43,7 +43,7 @@
 	$MALOS=0;
     $cnt=1;
     $file = fopen($nombreArchivo,"r");
-    while(($col=fgetcsv($file,10000,";")) !== FALSE){
+    while(($col=fgetcsv($file,1000,";")) !== FALSE){
         if($cnt>1){
             $institucion=$id;
             $sede=$col[8];            
@@ -126,6 +126,7 @@
 	}else{
 		echo "No se pudieron guardar ".$MALOS." registros!!!";		
 	}
+    /*
     echo"
         <html>
             <head>
@@ -133,4 +134,5 @@
             </head>
         </html>
     ";
+    */
 ?>

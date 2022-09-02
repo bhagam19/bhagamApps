@@ -1,5 +1,5 @@
 <?php
-    ini_set('error_prepend_string', '<pre style="white-space: pre-wrap;">');
+    //ini_set('error_prepend_string', '<pre style="white-space: pre-wrap;">');
     error_reporting(-1);
     session_name("SINSIMAT");
     session_start();   
@@ -35,15 +35,28 @@
                 <td>fechaEstado</td>
                 <td>fechaNacimiento</td>
                 <td>telefono</td>
-                <td>eps</td>
+                <td>eps</td>    
                 <td>direccion</td>
                 <td>pais</td>                
 			</tr>
-    ';    
+    '; 
 	$MALOS=0;
     $cnt=1;
+    /*
+    if (($file = fopen($nombreArchivo,"r")) !== FALSE) {
+        while (($datos = fgetcsv($file)) !== FALSE) {
+            $numero = count($datos);
+            echo "<p> $numero campos en la línea $cnt: <br /></p>\n";
+            $cnt++;
+            for ($c=0; $c < $numero; $c++) {    
+                echo $datos[$c] . "<br />\n";
+            }
+        }
+        fclose($file);
+    }
+    */
     $file = fopen($nombreArchivo,"r");
-    while(($col=fgetcsv($file,10000,",")) !== FALSE){
+    while(($col=fgetcsv($file,10000,",")) !== FALSE){   
         if($cnt>4){
             $institucion=$id;
             $sede=$col[1];
@@ -58,7 +71,14 @@
             $telefono = $col[31];
             $eps = $col[36];
             $direccion = $col[30];
-            $pais = $col[49];                        
+            $pais = $col[49]; 
+            /*
+            echo '   
+                    '.$cnt.' || '.$institucion.' || '.$sede.' || '.$grupo.' || '.$estado.' || '.$fechaEstado.' || '.
+                    $apellidos.' || '.$nombres.' || '.$tipoDoc.' || '.$numDoc.' || '.$fechaNacimiento.' || '.$telefono.' || '.
+                    $eps.' || '.$direccion.' || '.$pais.' <br> '.
+            ';
+            */
             echo '<tr>';
             echo '<td>'.($cnt+1).'</td>';
             echo '<td>'.$institucion.'</td>';
@@ -75,7 +95,8 @@
             echo '<td>'.$eps.'</td>';
             echo '<td>'.$direccion.'</td>';
             echo '<td>'.$pais.'</td>';
-            echo '</tr>';            
+            echo '</tr>';  
+                      
             $valores= $id.",'".$sede."','".$grupo."','".$apellidos."','".$nombres."','".$tipoDoc."','".$numDoc."','".$estado."','".$fechaEstado."','".
                     $fechaNacimiento."','".$telefono."','".$eps."','".$direccion."','".$pais."'";
             modeloController::insertarDatos($tabla,$valores);
@@ -93,11 +114,11 @@
 	}else{
 		echo "No se pudieron guardar ".$MALOS." registros!!!";		
 	}    
-    echo"
+    /*echo"
         <html>
             <head>
                 <meta HTTP-equiv='REFRESH' content='0;url=../../'>
             </head>
         </html>
-    ";    
+    ";    */
 ?>

@@ -1,4 +1,8 @@
 <?php
+session_name("SINSIMAT");
+session_start();
+if(isset($_SESSION['id'])):
+    $id=$_SESSION['id'];
     include('../../01-mdl/cnx.php');//Agregamos la conexión
     echo'Estudiantes con país diferente en SIMAT';
     echo '
@@ -17,7 +21,7 @@
             </thead> 
     ';
     $consulta=$cnx->query('SELECT sinai.grupo, sinai.estado, sinai.apellidos, sinai.nombres, sinai.tipoDoc, sinai.numDoc, sinai.pais, simat.pais FROM sinai INNER JOIN simat 
-                            ON NOT sinai.pais=simat.pais WHERE sinai.estado="MATRICULADO" AND simat.estado="MATRICULADO" AND sinai.numDoc=simat.numDoc 
+                            ON NOT sinai.pais=simat.pais WHERE sinai.institucion='.$id.' AND simat.institucion='.$id.' AND sinai.estado="MATRICULADO" AND simat.estado="MATRICULADO" AND sinai.numDoc=simat.numDoc 
                             ORDER BY sinai.grupo ASC, sinai.apellidos, sinai.nombres ASC');
     $cant=0;
     while ($fila=mysqli_fetch_array($consulta)){
@@ -37,4 +41,5 @@
     }
     echo "Total: ".$cant;
     echo'</table><br>';    
+endif;
 ?>

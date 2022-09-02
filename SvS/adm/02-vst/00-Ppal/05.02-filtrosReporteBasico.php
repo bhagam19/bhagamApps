@@ -1,4 +1,3 @@
-
 <?php    
     $filterCol=[3,6,7,8];
     $keyIndex=[6,1,2,3];

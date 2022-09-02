@@ -1,3 +1,4 @@
+
 function mostrarLogin(){
 	if( $('.appsFormularioLogin').css('visibility') !== 'hidden' ) {
 	    $('.appsFormularioLogin').css('visibility', 'hidden');
@@ -349,8 +350,8 @@ function validarContrasenaSegura(id){
 		return false;
 	}
 }
-function cargarReporte(v){    
-    var url='';
+function cargarReporte(v){  
+	var url='';
     switch(v){
         case '1':
             url='adm/02-vst/00-Ppal/05-reporteBasico.php';
@@ -376,7 +377,7 @@ function cargarReporte(v){
     }     
     fetch(url)
         .then(texto => {
-            return texto.text();
+            return texto.text();			
         })
         .then(respTexto => {
             document.getElementById('reporte').style.visibility='visible';
@@ -420,4 +421,15 @@ function filtrar(campo, valor,id){
 		})
 		.catch(error => console.log('Hubo un problema con la petición Fetch:' + error.message));
 	}   
+}
+function mostrarDivs(c){
+	var acc = document.getElementById(c);
+	var panel = acc.nextElementSibling;
+	if(panel.style.display === "block"){ 
+		panel.style.display = "none";
+		acc.className="enunciado acordeon";
+	}else{
+		panel.style.display = "block";
+		acc.className="enunciado acordeon enunc-clicked";
+	}
 }
