@@ -28,7 +28,7 @@
 
   }
 html {
-	font-family: calibri, asap;
+	font-family: calibri, asap;	
 	font-size: 16px;
 	width: 99%;	
 	background:#f9f9fa;
@@ -38,6 +38,7 @@ html {
 	flex-wrap: wrap;
 	justify-content: center;
 }
+/*==== Encabezado====*/
 #appsEncabezadoGral {
 	width: 100%;
 	display: grid;
@@ -63,7 +64,7 @@ html {
 	box-shadow: 0px 0px 6px 2px gray;
 }
 .appsTituloCinta {
-	font-size: 1,5em;
+	font-size: 1.5em;
 	font-weight: bolder;	
 	color: var(--RojoOnPasivo);
 	text-align: center;
@@ -302,6 +303,83 @@ select{
 	overflow: hidden;
 }
 
+/* Analisis Preguntas */
+.contenedor-instrumentos {
+    background: aliceblue;
+    border-radius: 15px;
+    border: 1px solid black;
+    padding: 10px;
+}
+.titulo-instrumento {
+    background: beige;
+    padding: 10px;
+    border-radius: 15px;
+    box-shadow: 4px 4px 10px 1px lightgrey;
+    grid-column: 1/10;
+    font-weight: 900;
+}
+.contenedor-componentes {
+    display: grid;
+    grid-template-columns: repeat(auto-fill,minmax(20em,1fr));
+    align-items: center;
+    justify-content: space-evenly;
+}
+.contenedor-componente {
+    background: azure;
+    box-shadow: 4px 4px 10px 1px lightblue;
+    border-radius: 15px;
+    margin: 0.1em;
+}
+.titulo-componente {
+    background: #fff9f0;
+    padding: 10px;
+    box-shadow: 4px 4px 10px 1px lightblue;
+    border-radius: 15px;
+    font-weight: 900;
+}
+.contenedor-competencias {
+    padding: 0.5em;
+	overflow: hidden;
+  	max-height: 0;
+	transition: all 0.3s ease-in-out;
+	overflow: hidden;
+}
+#state:checked ~ .contenedor-competencias  {  
+	max-height: 150px;
+  }
+.titulo-competencia {
+    padding: 0.2em;
+}
+
+.contenedor-grafica{
+	display: grid;
+	grid-template-columns: repeat(2,1fr);
+}
+.barra{
+	border-radius: 0.2em;
+	padding: 0.2em;
+}
+.barra.superior{
+	background:rgb(88, 88, 240)
+}
+.barra.alto{
+	background:rgb(148, 235, 148)
+}
+.barra.basico{
+	background:rgb(230, 247, 157)
+}
+.barra.bajo{
+	background:rgb(247, 212, 160)
+}
+.barra.min{
+	background:rgb(247, 170, 165)
+}
+
+
+
+
+
+
 .reporteTituloRespuestasCorrectas {
     background: #b8dfca;
     margin: 0.2em;
@@ -458,6 +536,7 @@ span.respEstudiante {
 		justify-content: space-evenly;
 		background-color: white;
 		border:1px solid gray;
+		font-size: 2em;
 	}
 	
 }

@@ -34,7 +34,7 @@
 	}else{
 		echo "No se pudieron guardar ".$MALOS." registros!!!";		
 	}
-    /*
+    
     echo"
         <html>
             <head>
@@ -42,5 +42,5 @@
             </head>
         </html>
     ";    
-    */
+    
 ?>

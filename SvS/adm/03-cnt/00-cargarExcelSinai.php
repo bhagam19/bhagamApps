@@ -1,5 +1,5 @@
 <?php
-    error_reporting(0);    
+    error_reporting(-1);    
 	$directorio = '../archivos/';
 	$subir_archivo = $directorio.'sinai.xlsx';    
     move_uploaded_file($_FILES['subir_archivo']['tmp_name'], $subir_archivo);
@@ -23,7 +23,8 @@
 	//Borrar los registros actuales.
 	mysqli_query($cnx,"SET FOREIGN_KEY_CHECKS=0");
 	mysqli_query($cnx,"TRUNCATE TABLE sinai");	
-    echo '<table border=1>
+    echo '
+        <table border=1>
 			<tr>
 				<td>id</td>
 				<td>grupo</td>
@@ -38,7 +39,8 @@
                 <td>direccion</td>
                 <td>pais</td>
                 <td>fechaEstado</td>
-			</tr>';
+			</tr>
+    ';
 	echo $numRows.' ||<br>';
 	$MALOS=0;
 	for ($i=5;$i<=$numRows;$i++) {

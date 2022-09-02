@@ -1,7 +1,6 @@
 //version 2020-04-28 4:25 pm
-
 function mostrarLogin(){
-	//alert("Hola");
+	alert("Hola");
 	if( $('.appsFormularioLogin').css('visibility') !== 'hidden' ) {
 	    $('.appsFormularioLogin').css('visibility', 'hidden');
 	  } else {
@@ -384,7 +383,6 @@ function validarContrasenaSegura(id){
 		return false;
 	}
 }
-
 function mostrarFormCargueExcel(){
   if( $('#formCargueExcel').css('visibility') !== 'hidden') {
 	    $('#formCargueExcel').css('visibility', 'hidden');	    
