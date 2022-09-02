@@ -29,8 +29,7 @@
     while($fila=mysqli_fetch_array($consulta)){
         $cnt++;        
         echo "<div class='reporteInstrumento'>";
-        echo "<button class='reporteTituloInstrumento accordion' onclick='acordeon()'>".$cnt.") ".$fila['instrumento']."</button>";
-        echo "<div class='panel'>";
+        echo "<button class='reporteTituloInstrumento accordion' id='acordeon".$cnt."' onclick='mostrarDivs(this.id)'><span>".$cnt.") ".$fila['instrumento']."</span>";
         $consultaTtlResp=$cnx->query('SELECT DISTINCT idPregunta FROM analisisEstudiantes WHERE numDoc="'.$id.'" 
                             AND instrumento="'.$fila['instrumento'].'" AND NOT idPregunta="Total resp"');
         $consultaRespCorrecta=$cnx->query('SELECT DISTINCT idPregunta, respEstudiante FROM analisisEstudiantes WHERE numDoc="'.$id.'" 
@@ -44,7 +43,9 @@
         $respIncorrectas=mysqli_num_rows($consultaRespIncorrecta);
         echo "<div class='reporteTituloRespuestasCorrectas'>Respuestas correctas: ".$respCorrectas." de ".$ttlResp.
              " (".($respCorrectas*(5/$ttlResp))." - ".(($respCorrectas/$ttlResp)*100)."%) </div>";
-        echo "<div class='reporteTituloRespuestasIncorrectas'>Respuestas Incorrectas: ".$respIncorrectas."</div>";
+        echo "<div class='reporteTituloRespuestasIncorrectas'>Respuestas Incorrectas: ".$respIncorrectas."</div></button>";
+        
+        echo "<div class='panel'>";        
         echo "<div class='reporteResumenRespuestas'>";
         while($fila4=mysqli_fetch_array($consultaRespuestas)){
             if($fila4['respEstudiante']===$fila4['clave']){

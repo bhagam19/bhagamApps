@@ -29,7 +29,6 @@ function cargarReporte(v){
         .catch(error => console.log('Hubo un problema con la petición Fetch:' + error.message));
     
 }
-
 function buscar(v){
     let url='adm/03-cnt/01-buscarReporteEstudiante.php';
     let data={
@@ -38,7 +37,6 @@ function buscar(v){
     flag=1;
     hacerFetch(url, data, flag);
 }
-
 function hacerFetch(url, data, flag){
     var request = new Request(
         url, {
@@ -74,11 +72,22 @@ function acordeon(){
     acc[i].addEventListener('click', function() {
         this.classList.toggle('active');
         var panel = this.nextElementSibling;
-        if (panel.style.maxHeight) {
-        panel.style.maxHeight = null;
+        if (panel.style.display) {
+        panel.style.display = 'none';
         } else {
-        panel.style.maxHeight = panel.scrollHeight + 'px';
+        panel.style.display = 'block';
         } 
     });
     }
+}
+function mostrarDivs(c){
+	var acc = document.getElementById(c);
+	var panel = acc.nextElementSibling;
+	if(panel.style.display === "block"){ 
+		panel.style.display = "none";
+		acc.className="reporteTituloInstrumento accordion";
+	}else{
+		panel.style.display = "block";
+		acc.className="reporteTituloInstrumento accordion titulo-clicked";
+	}
 }
