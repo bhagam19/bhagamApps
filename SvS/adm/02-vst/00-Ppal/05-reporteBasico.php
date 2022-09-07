@@ -4,31 +4,38 @@
     if(isset($_SESSION['id'])):
     $id=$_SESSION['id'];
     require_once('../../03-cnt/00-Ppal/reporte01.php');
+    $m1=0;
+    $m2=0;
     if($respuesta1!=NULL):
-        echo'
-            <div class="enunciado acordeon" id="acc1" onclick="mostrarDivs(this.id)">Estudiantes MATRICULADOS en SINAI pero no en SIMAT. 
-                <span class="span-total"> TOTAL: '.(count($respuesta1)+count($respuesta2)).'</span>. 
-                <span class="ult-version">(Fecha SINAI: '.date('F d Y',filemtime(dirname(__FILE__).'/../../archivos/sinai'.$_SESSION['usuario'].'.csv')).')</span>
-                <span class="ult-version">(Fecha SIMAT: '.date('F d Y',filemtime(dirname(__FILE__).'/../../archivos/simat'.$_SESSION['usuario'].'.csv')).')</span>
-            </div>
-        ';
+        $m1=count($respuesta1);
+    endif;
+    if($respuesta2!=NULL):
+        $m2=count($respuesta2);
+    endif;
+    echo'
+        <div class="enunciado acordeon" id="acc1" onclick="mostrarDivs(this.id)">Estudiantes MATRICULADOS en SINAI pero no en SIMAT. 
+            <span class="span-total"> TOTAL: '.($m1+$m2).'</span>
+            <span class="ult-version">(Fecha SINAI: '.date('F d Y',filemtime(dirname(__FILE__).'/../../archivos/sinai'.$_SESSION['usuario'].'.csv')).')</span>
+            <span class="ult-version">(Fecha SIMAT: '.date('F d Y',filemtime(dirname(__FILE__).'/../../archivos/simat'.$_SESSION['usuario'].'.csv')).')</span>
+        </div>
+    ';        
         echo'<div class="contenedor-Tabla panel">';
             include('05.01-encabezadoReporteBasico.php');
             echo'<div class="grid filtro">';
                 include('05.02-filtrosReporteBasico.php');
             echo'</div>';
             echo'<div class="contenedor-cuerpo" id="contenedor-cuerpo">';
+            if($respuesta1!=NULL):
                 include('05.03-reporteBasicoMatriculaSINAI.php');
+            endif;
+            if($respuesta2!=NULL):
                 include('05.03.1-reporteBasicoMatriculaSINAI.php');
+            endif;
             echo'</div>';
-        echo'</div>';
-    else:
-        echo'<div class="enunciado acordeon">Estudiantes MATRICULADOS en SINAI pero no en SIMAT. <span class="span-total">TOTAL: 0</span></div>';
-    endif;
+        echo'</div>';    
 ?>
 
-<?php 
-    
+<?php    
     if($respuesta3!=NULL):
 ?>
 <div class="enunciado acordeon" id="acc2" onclick="mostrarDivs(this.id)">Estudiantes MATRICULADOS en SIMAT pero no en SINAI. 
@@ -53,7 +60,7 @@
             echo '<div class="cuerpoGrid">'.$registro3['nombres'].'</div>';
             echo '<div class="cuerpoGrid">'.$registro3['tipoDoc'].'</div>';
             echo '<div class="cuerpoGrid">'.$registro3['numDoc'].'</div>';
-            echo '<div class="cuerpoGrid">-</div>';
+            echo '<div class="cuerpoGrid">'.$registro3['sede'].'</div>';
             echo '<div class="cuerpoGrid">'.$registro3['grupo'].'</div>';
             echo '<div class="cuerpoGrid">'.$registro3['estado'].'</div>';
             echo '<div class="cuerpoGrid">'.$registro3['fechaEstado'].'</div>';
@@ -65,12 +72,14 @@
 ?>    
 </div>
 <?php  else: ?>
-<div class="enunciado acordeon">Estudiantes MATRICULADOS en SIMAT pero no en SINAI. <span class="span-total">TOTAL: 0</span></div>
+<div class="enunciado acordeon">Estudiantes MATRICULADOS en SIMAT pero no en SINAI. 
+    <span class="span-total">TOTAL: 0</span></div>
 <?php 
     endif; 
     if($respuesta4!=NULL):
 ?>
-<div class="enunciado acordeon">Estudiantes en grupos diferentes en SIMAT. <span class="span-total">TOTAL: <?php echo count($respuesta4); ?></span></div>
+<div class="enunciado acordeon" id="acc3" onclick="mostrarDivs(this.id)">Estudiantes en grupos diferentes en SIMAT. 
+    <span class="span-total">TOTAL: <?php echo count($respuesta4); ?></span></div>
 <div class="contenedor-Tabla panel">    
     <div class="grid encabezado">   
         <div class="tituloGrid">No.</div>
@@ -91,7 +100,7 @@
             echo '<div class="cuerpoGrid">'.$registro4['nombres'].'</div>';
             echo '<div class="cuerpoGrid">'.$registro4['tipoDoc'].'</div>';
             echo '<div class="cuerpoGrid">'.$registro4['numDoc'].'</div>';
-            echo '<div class="cuerpoGrid">-</div>';
+            echo '<div class="cuerpoGrid">'.$registro3['sede'].'</div>';
             echo '<div class="cuerpoGrid">'.$registro4['estado'].'</div>';
             echo '<div class="cuerpoGrid">'.$registro4['grupoSinai'].'</div>';
             echo '<div class="cuerpoGrid">'.$registro4['grupoSimat'].'</div>';

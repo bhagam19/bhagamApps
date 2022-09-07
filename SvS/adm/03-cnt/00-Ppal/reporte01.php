@@ -1,4 +1,6 @@
 <?php
+    ini_set('error_prepend_string', '<pre style="white-space: pre-wrap;">');
+    error_reporting(-1);
 //########## MATRICULADOS SINAI VS SIMAT ##########    
     $tituloEncabezado1=["APELLIDOS","NOMBRES","TD","NUMDOC","SEDE","GRUPO","ESTADO SINAI","FECHA ESTADO","ESTADO SIMAT","FECHA ESTADO"];
     $tabla1='sinai';    
