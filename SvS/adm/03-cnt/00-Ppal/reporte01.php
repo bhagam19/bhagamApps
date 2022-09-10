@@ -13,14 +13,16 @@
     /*===========*/
     $keys=array();
     $filtros=[];
-    foreach($respuesta1 as $registro){    
-        $keys=array_keys($registro);        
-    }
-    foreach($keys as $k){
-        $valores=array_column($respuesta1,$k);
-        sort($valores);
-        $filtros[$k]=array_unique($valores);
-    }
+    if($respuesta1!=NULL):        
+        foreach($respuesta1 as $registro){    
+            $keys=array_keys($registro);        
+        }
+        foreach($keys as $k){
+            $valores=array_column($respuesta1,$k);
+            sort($valores);
+            $filtros[$k]=array_unique($valores);
+        }
+    endif;
     /*===========*/
     $columnas1='sinai.institucion,sinai.sede,sinai.apellidos,sinai.nombres,sinai.tipoDoc,sinai.numDoc,sinai.estado estadoSinai,sinai.fechaEstado fechaSinai,sinai.grupo,
                 simat.estado estadoSimat,simat.fechaEstado fechaSimat';

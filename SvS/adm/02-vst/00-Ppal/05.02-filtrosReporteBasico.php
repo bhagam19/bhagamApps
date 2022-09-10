@@ -17,11 +17,13 @@
                     </div>
                     <div id="checkboxes'.$i.'" class="checkboxes">
             ';
-            foreach($filtros[$keys[$keyIndex[$cnt]]] as $f){  
-                echo'                    
-                    <label for='.$f.'><input type="checkbox" id='.$f.' onclick="filtrar(\''.$keys[$keyIndex[$cnt]].'\',\''.$f.'\',this.id)" />'.$f.'</label>
-                ';
-            } 
+            if(count($filtros)>0):
+                foreach($filtros[$keys[$keyIndex[$cnt]]] as $f){  
+                    echo'                    
+                        <label for='.$f.'><input type="checkbox" id='.$f.' onclick="filtrar(\''.$keys[$keyIndex[$cnt]].'\',\''.$f.'\',this.id)" />'.$f.'</label>
+                    ';
+                } 
+            endif;
             $cnt++;
             echo'
                         </div>
