@@ -253,18 +253,26 @@ select{
 	font-weight: 400;
 }
 .reporteCuerpo {
-	width: 100%;	
-	height: 600px;
+	width: 100%;
+	border-radius: 10px;  
+	/*
+	display:flex;
+	flex-wrap: wrap;
 	display: grid;
-	grid-template-columns: repeat(auto-fill,minmax(24em,1fr));
-    border-radius: 10px;    
+	grid-template-columns: repeat(auto-fill,minmax(24em,1fr));      
     overflow: scroll;
+	height: 600px;
+	*/
 }
 .reporteInstrumento {
-    border: 1px solid black;
+	width: 100%;    
     border-radius: 10px;
     margin: 0.5em;
+	/*
 	padding: 0.5em;
+	border: 1px solid black;
+	*/
+	
 }
 .reporteTituloInstrumento {
     background: #eddcc7;
@@ -274,6 +282,8 @@ select{
     font-weight: 900;
     box-shadow: 3px 3px 8px 0px #b5a591;
     border: 1px solid #b5a591;
+	display: flex;
+	justify-content: space-between;
 }
 .accordion{
 	transition: 0.4s;	
@@ -283,14 +293,14 @@ select{
 	background-color: #ccc;
   }
 .accordion:after {
-	content: '\002B';
+	content: '(\002B)';
 	color: #777;
 	font-weight: bold;
 	float: right;
 	margin-left: 5px;
 }
-.active:after {
-	content: "\2212";
+.titulo-clicked:after {
+	content: "(\2212)";
 }
 .panel {
     transition: max-height 0.2s ease-out;
@@ -299,8 +309,9 @@ select{
     background: black;
     border-radius: 10px;
     margin: 10px;	
-	max-height: 0;	
+	max-height:auto;	
 	overflow: hidden;
+	display: none;
 }
 
 /* Analisis Preguntas */

@@ -21,7 +21,7 @@
                     <label for="state">  
                         <div class="titulo-componente">'.$f2['grupo'].'</div>
                     </label>
-                    <input type="checkbox" id="state" hidden>
+                    <input type="checkbox" id="state" >
                         <div class="contenedor-competencias">                 
             ';
             $consultaEstudiantes=$cnx->query('SELECT DISTINCT estudiante FROM analisisAreas WHERE instrumento="'.$f1['instrumento'].'" 

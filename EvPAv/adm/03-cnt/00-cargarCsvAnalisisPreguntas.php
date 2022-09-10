@@ -46,7 +46,7 @@
     $file = fopen($nombreArchivo,"r");
     while(($col=fgetcsv($file,10000,",")) !== FALSE){	
         $cnt++;	
-        if($cnt>1){
+        if($cnt>2){
             $instrumento = $col[0];
             $cuadernillo = $col[1];
             $idPregunta = $col[2];
