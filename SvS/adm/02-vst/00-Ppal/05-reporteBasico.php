@@ -4,7 +4,8 @@
     if(isset($_SESSION['id'])):        
     $id=$_SESSION['id'];
     $condicion1='';
-    require_once('../../03-cnt/00-Ppal/reporte01.php');
+    require_once('../../03-cnt/00-Ppal/reporte01.1.1.php');
+    require_once('../../03-cnt/00-Ppal/reporte01.1.2.php');
     $m1=0;
     $m2=0;
     if($respuesta1!=NULL):
@@ -36,7 +37,8 @@
             echo'</div>';
         echo'</div>';    
 ?>
-<?php    
+<?php
+    require_once('../../03-cnt/00-Ppal/reporte01.2.php');
     if($respuesta3!=NULL):
 ?>
 <div class="enunciado acordeon" id="acc2" onclick="mostrarDivs(this.id)">Estudiantes MATRICULADOS en SIMAT pero no en SINAI. 
@@ -77,6 +79,7 @@
     <span class="span-total">TOTAL: 0</span></div>
 <?php 
     endif; 
+    require_once('../../03-cnt/00-Ppal/reporte01.3.php');
     if($respuesta4!=NULL):
 ?>
 <div class="enunciado acordeon" id="acc3" onclick="mostrarDivs(this.id)">Estudiantes en grupos diferentes en SIMAT. 

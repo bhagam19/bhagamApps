@@ -7,7 +7,7 @@
     }
     $condicion1=str_replace("'","\'",$condicion1);
     //echo $condicion1." en filtros... <br>";
-    require_once('../../03-cnt/00-Ppal/reporte01.php');    
+    require_once('../../03-cnt/00-Ppal/reporte01.1.1.php');    
     for($i=0;$i<count($tituloEncabezado1)+1;$i++){
         echo'
             <form class="formFiltro">
