@@ -405,34 +405,65 @@ function showCheckboxes(id) {
 		$('#checkboxes'+id).css('display', 'block');
 	}
 }
-function filtrar(condicion, campo,id,i){	
+function filtrar(condicion,i){	
 	let c=condicion;
 	var c1="";
 	console.clear();
 	console.log(c);
 	var cnt=0;
-	var div = document.getElementById(id).parentNode.parentNode;
-	var cntHijos=div.childNodes;
-	for(i=0;i<cntHijos.length;i++){
-		if(div.childNodes[i].nodeName==="LABEL"){
-			var label=div.childNodes[i];
-			var cntNietos=label.childNodes;			
-			for(j=0;j<cntNietos.length;j++){
-				if(label.childNodes[j].nodeName==="INPUT"){
-					var cb=label.childNodes[j];					
-					if(cb.checked===true){
-						if(cnt==0){
-							c1=c+" AND "+campo+"='"+cb.id+"'";
-						}else{
-							c1=c1+" OR "+c+" AND "+campo+"='"+cb.id+"'";
-						}						
-						console.log(c1);
-						cnt++;
+	var cbName="";	
+	var filtro =document.getElementById('filtro');
+	var cntHijoFiltro=filtro.childNodes.length;
+	for(k=0;k<cntHijoFiltro;k++){
+		if(filtro.childNodes[k].nodeName==="FORM"){
+			var form=filtro.childNodes[k];
+			var cntHijoForm=form.childNodes.length;
+			for(l=0;l<cntHijoForm;l++){
+				if(form.childNodes[l].nodeName==="DIV"){
+					var msl=form.childNodes[l];
+					var cntHijosMsl=msl.childNodes.length;
+					console.log(cntHijosMsl);
+					for(m=0;m<cntHijosMsl;m++){
+						if(msl.childNodes[m].className==="checkboxes"){
+							var div=msl.childNodes[m];
+							var cntHijos=div.childNodes;
+							for(i=0;i<cntHijos.length;i++){
+								if(div.childNodes[i].nodeName==="LABEL"){
+									var label=div.childNodes[i];
+									var cntNietos=label.childNodes;			
+									for(j=0;j<cntNietos.length;j++){
+										if(label.childNodes[j].nodeName==="INPUT"){
+											var cb=label.childNodes[j];																									
+											if(cb.checked===true){
+												if(cbName===cb.name){
+													if(cnt==0){
+														c1=c+" AND "+cb.name+"='"+cb.id+"'";
+													}else{
+														c1=c1+" OR "+c+" AND "+cb.name+"='"+cb.id+"'";
+													}
+												}else{
+													if(cnt==0){
+														c1=c+" AND "+cb.name+"='"+cb.id+"'";
+													}else{
+														c1=c1+" AND "+c+" AND "+cb.name+"='"+cb.id+"'";
+													}													
+												}
+												cbName=cb.name;																		
+												console.log(c1);
+												cnt++;
+											}
+										}
+									}
+								}
+							}
+
+						}
 					}
 				}
+				
 			}
-		}
-	}
+		}		
+	}	
 	var url="adm/02-vst/00-Ppal/05.03-reporteBasicoMatriculaSINAI.php?condicion1="+c1+"&i="+i;
 	if(cnt>0){
 		fetch(url)

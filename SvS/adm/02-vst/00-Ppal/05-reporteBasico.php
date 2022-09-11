@@ -22,7 +22,7 @@
     ';        
         echo'<div class="contenedor-Tabla panel">';
             include('05.01-encabezadoReporteBasico.php');
-            echo'<div class="grid filtro">';
+            echo'<div class="grid filtro" id="filtro">';
                 include('05.02-filtrosReporteBasico.php');
             echo'</div>';
             echo'<div class="contenedor-cuerpo" id="contenedor-cuerpo">';

@@ -1,6 +1,6 @@
 <?php    
-    $filterCol=[3,7,8,9];
-    $keyIndex=[6,8,9];
+    $filterCol=[3,8];
+    $keyIndex=[6,9];
     $cnt=0;
     if(isset($_GET['condicion1'])){
         $condicion1=$_GET['condicion1'];
@@ -26,7 +26,7 @@
             if(count($filtros)>0):
                 foreach($filtros[$keys[$keyIndex[$cnt]]] as $f){  
                     echo'                    
-                        <label for='.$f.'><input type="checkbox" id='.$f.' checked onclick="filtrar(\''.$condicion1.'\',\''.$keys[$keyIndex[$cnt]].'\',this.id,'.$id.')" />'.$f.'</label>
+                        <label for='.$f.'><input name="'.$keys[$keyIndex[$cnt]].'" type="checkbox" id='.$f.' checked onclick="filtrar(\''.$condicion1.'\','.$id.')" />'.$f.'</label>
                     ';
                 } 
             endif;
