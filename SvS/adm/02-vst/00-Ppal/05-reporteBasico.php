@@ -1,8 +1,9 @@
 <?php
     session_name("SINSIMAT");
     session_start();
-    if(isset($_SESSION['id'])):
+    if(isset($_SESSION['id'])):        
     $id=$_SESSION['id'];
+    $condicion1='';
     require_once('../../03-cnt/00-Ppal/reporte01.php');
     $m1=0;
     $m2=0;
@@ -26,6 +27,7 @@
             echo'</div>';
             echo'<div class="contenedor-cuerpo" id="contenedor-cuerpo">';
             if($respuesta1!=NULL):
+                //echo $condicion1." antes de 05.03.php <br>";
                 include('05.03-reporteBasicoMatriculaSINAI.php');
             endif;
             if($respuesta2!=NULL):
@@ -34,7 +36,6 @@
             echo'</div>';
         echo'</div>';    
 ?>
-
 <?php    
     if($respuesta3!=NULL):
 ?>
@@ -100,7 +101,7 @@
             echo '<div class="cuerpoGrid">'.$registro4['nombres'].'</div>';
             echo '<div class="cuerpoGrid">'.$registro4['tipoDoc'].'</div>';
             echo '<div class="cuerpoGrid">'.$registro4['numDoc'].'</div>';
-            echo '<div class="cuerpoGrid">'.$registro3['sede'].'</div>';
+            echo '<div class="cuerpoGrid">'.$registro4['sede'].'</div>';
             echo '<div class="cuerpoGrid">'.$registro4['estado'].'</div>';
             echo '<div class="cuerpoGrid">'.$registro4['grupoSinai'].'</div>';
             echo '<div class="cuerpoGrid">'.$registro4['grupoSimat'].'</div>';
@@ -111,7 +112,5 @@
 </div>
 <?php  else: ?>
 <div class="enunciado acordeon">Estudiantes en grupos diferentes en SIMAT. <span class="span-total">TOTAL: 0</span></div>
-
-
 <?php endif; ?>
 <?php endif; ?>

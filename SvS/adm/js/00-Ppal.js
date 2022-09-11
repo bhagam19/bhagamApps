@@ -405,11 +405,36 @@ function showCheckboxes(id) {
 		$('#checkboxes'+id).css('display', 'block');
 	}
 }
-function filtrar(campo, valor,id){	
-	let c=" AND "+campo+"= '"+valor+"'";
-	var url="adm/02-vst/00-Ppal/05.03-reporteBasicoMatriculaSINAI.php?condicion1="+c;
-	var checkBox=document.getElementById(id);
-	if(checkBox.checked===true){
+function filtrar(condicion, campo,id,i){	
+	let c=condicion;
+	var c1="";
+	console.clear();
+	console.log(c);
+	var cnt=0;
+	var div = document.getElementById(id).parentNode.parentNode;
+	var cntHijos=div.childNodes;
+	for(i=0;i<cntHijos.length;i++){
+		if(div.childNodes[i].nodeName==="LABEL"){
+			var label=div.childNodes[i];
+			var cntNietos=label.childNodes;			
+			for(j=0;j<cntNietos.length;j++){
+				if(label.childNodes[j].nodeName==="INPUT"){
+					var cb=label.childNodes[j];					
+					if(cb.checked===true){
+						if(cnt==0){
+							c1=c+" AND "+campo+"='"+cb.id+"'";
+						}else{
+							c1=c1+" OR "+c+" AND "+campo+"='"+cb.id+"'";
+						}						
+						console.log(c1);
+						cnt++;
+					}
+				}
+			}
+		}
+	}
+	var url="adm/02-vst/00-Ppal/05.03-reporteBasicoMatriculaSINAI.php?condicion1="+c1+"&i="+i;
+	if(cnt>0){
 		fetch(url)
 		.then(texto => {
 			return texto.text();

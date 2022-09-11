@@ -3,13 +3,12 @@
     error_reporting(-1);
 //########## MATRICULADOS SINAI VS SIMAT ##########    
     $tituloEncabezado1=["APELLIDOS","NOMBRES","TD","NUMDOC","SEDE","GRUPO","ESTADO SINAI","FECHA ESTADO","ESTADO SIMAT","FECHA ESTADO"];
-    $tabla1='sinai';    
-    $condicion1;
-    if(isset($_GET['condicion1'])){
-        $condicion1.=$_GET['condicion1'];
-    }else{
-        $condicion1='institucion='.$id.' AND estado ="MATRICULADO" AND numDoc NOT IN (SELECT numDoc FROM simat)';
+    $tabla1='sinai'; 
+    if(!isset($_GET['condicion1'])){
+        $condicion1='institucion='.$id.' AND estado =\'MATRICULADO\' AND numDoc NOT IN (SELECT numDoc FROM simat)';
     }
+    $condicion1=str_replace("\'","'",$condicion1);
+    //echo $condicion1." en reporte01.php <br>";
 	require_once('../../03-cnt/index.php');
     $respuesta1=modeloController::consultar($tabla1,$condicion1);
     /*===========*/
@@ -53,7 +52,7 @@
     //var_dump($respuesta3);
     $tituloEncabezado2=["APELLIDOS","NOMBRES","TD","NUMDOC","SEDE","GRUPO","ESTADO SIMAT","FECHA ESTADO","ESTADO SINAI","FECHA ESTADO"];
 //########## GRUPOS DIFERENTES ##########
-    $columnas2='sinai.institucion,sinai.apellidos, sinai.nombres,sinai.tipoDoc,sinai.numDoc,sinai.estado,sinai.grupo grupoSinai, simat.grupo grupoSimat';
+    $columnas2='sinai.institucion,sinai.apellidos, sinai.nombres,sinai.tipoDoc,sinai.numDoc,sinai.sede,sinai.estado,sinai.grupo grupoSinai, simat.grupo grupoSimat';
     $tablaJoin3='sinai';
     $tipoJoin2='INNER JOIN';
     $tablaJoin4='simat';

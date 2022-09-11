@@ -1,7 +1,13 @@
 <?php    
-    $filterCol=[3,6,7,8];
-    $keyIndex=[6,1,2,3];
+    $filterCol=[3,7,8,9];
+    $keyIndex=[6,8,9];
     $cnt=0;
+    if(isset($_GET['condicion1'])){
+        $condicion1=$_GET['condicion1'];
+    }
+    $condicion1=str_replace("'","\'",$condicion1);
+    //echo $condicion1." en filtros... <br>";
+    require_once('../../03-cnt/00-Ppal/reporte01.php');    
     for($i=0;$i<count($tituloEncabezado1)+1;$i++){
         echo'
             <form class="formFiltro">
@@ -20,7 +26,7 @@
             if(count($filtros)>0):
                 foreach($filtros[$keys[$keyIndex[$cnt]]] as $f){  
                     echo'                    
-                        <label for='.$f.'><input type="checkbox" id='.$f.' onclick="filtrar(\''.$keys[$keyIndex[$cnt]].'\',\''.$f.'\',this.id)" />'.$f.'</label>
+                        <label for='.$f.'><input type="checkbox" id='.$f.' checked onclick="filtrar(\''.$condicion1.'\',\''.$keys[$keyIndex[$cnt]].'\',this.id,'.$id.')" />'.$f.'</label>
                     ';
                 } 
             endif;

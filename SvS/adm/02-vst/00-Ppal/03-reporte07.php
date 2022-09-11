@@ -53,7 +53,7 @@ if(isset($_SESSION['id'])):
             </thead> 
     ';
     $consulta=$cnx->query('SELECT * FROM sinai WHERE institucion='.$id.' AND estado="RETIRADO" AND numDoc NOT IN (SELECT numDoc FROM simat) 
-                                                OR estado="DESERTOR" AND numDoc NOT IN (SELECT numDoc FROM simat)');
+                                                  OR institucion='.$id.' AND estado="DESERTOR" AND numDoc NOT IN (SELECT numDoc FROM simat)');
     $cant=0;
     while ($fila=mysqli_fetch_array($consulta)){
         $cant++;

@@ -1,4 +1,9 @@
-<?php
+<?php    
+    if(isset($_GET['condicion1'])){
+        $condicion1=$_GET['condicion1'];
+        $id=$_GET['i'];
+    }
+    //echo $condicion1." en 05.03... <br>";
     require_once('../../03-cnt/00-Ppal/reporte01.php');
     $cnt=0;
     foreach($respuesta1 as $registro1){
