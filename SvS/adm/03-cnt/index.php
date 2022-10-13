@@ -8,7 +8,7 @@
         } 
         static function verificarInstalacion(){
             $tabla='information_schema.tables';
-            $condicion='table_schema="Adolfo_SvS" AND table_name="instalacion"';
+            $condicion='table_schema="id19696923_sinsimat" AND table_name="instalacion"';
             $registro=new Modelo();
             $dato=$registro->mostrar($tabla,$condicion);            
             return $dato;
