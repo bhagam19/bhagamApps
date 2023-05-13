@@ -39,7 +39,7 @@
             $condicion ='dane='.$usuario;
             $registro=new Modelo();
             $dato= $registro->mostrar($tabla,$condicion);
-            $respuesta;
+            $respuesta="";
             if($dato===NULL){       
                 $respuesta="NE";    
             }else{

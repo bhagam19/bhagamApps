@@ -1,0 +1,49 @@
+body {
+	background-color: #161616;
+	color: #fff;
+}
+
+.jarvis {
+	margin: 0 auto;
+	max-width: 900px;
+	padding: 1rem;
+	text-align: center;
+}
+
+.jarvis-title {
+	font-size: 4rem;
+	margin-bottom: 2rem;
+}
+
+nav {
+	margin-bottom: 2rem;
+}
+
+nav ul {
+	display: flex;
+	justify-content: center;
+	list-style-type: none;
+	padding: 0;
+}
+
+nav li {
+	margin: 0 1rem;
+}
+
+nav a {
+	color: #fff;
+	font-size: 2rem;
+	text-decoration: none;
+}
+
+nav a:hover {
+	border-bottom: 2px solid #fff;
+}
+
+main {
+	margin-top: 3rem;
+	padding: 1rem;
+	background-color: #fff;
+	color: #161616;
+	font-size: 2rem;
+}

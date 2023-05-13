@@ -1,0 +1,188 @@
+body {
+    background-color: black;
+    font-family: Arial, sans-serif;
+    color: white;
+  }
+  
+  #container {
+    margin: 0 auto;
+    max-width: 800px;
+    text-align: center;
+  }
+  
+  h1 {
+    font-size: 6rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin: 3rem 0;
+  }
+  
+  #speech-bubble {
+    background-color: #3f3f3f;
+    border-radius: 15px;
+    padding: 10px 20px;
+    max-width: 60%;
+    margin: 0 auto;
+  }
+  
+  #speech-bubble p {
+    font-size: 2rem;
+    line-height: 1.5;
+    margin: 0;
+  }
+  
+  #speech-bubble:before {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -15px;
+    width: 0;
+    height: 0;
+    border-top: 15px solid #3f3f3f;
+    border-right: 15px solid transparent;
+    border-left: 15px solid transparent;
+  }
+  
+  #speech-bubble:after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -13px;
+    width: 0;
+    height: 0;
+    border-top: 13px solid black;
+    border-right: 13px solid transparent;
+    border-left: 13px solid transparent;
+  }
+/* Fuente personalizada */
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+/* Estilos generales */
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: #1d1f26;
+  color: #fff;
+}
+
+a {
+  color: #fff;
+}
+
+/* Barra de navegación */
+.navbar {
+  background-color: #212529;
+}
+
+.navbar-brand {
+  color: #fff;
+  font-size: 1.5rem;
+}
+
+.nav-link {
+  color: #fff;
+}
+
+/* Contenido principal */
+.container {
+  margin-top: 2rem;
+}
+
+.card {
+  background-color: #343a40;
+  color: #fff;
+}
+
+.card-header {
+  background-color: #212529;
+  border-color: #343a40;
+  color: #fff;
+}
+
+.card-body {
+  font-size: 1.2rem;
+}
+
+.btn-primary {
+  background-color: #007bff;
+  border-color: #007bff;
+}
+
+.btn-primary:hover {
+  background-color: #0069d9;
+  border-color: #0062cc;
+}
+/* Fondo negro con gradiente rojo */
+
+body {
+    background-color: #000000;
+    background-image: linear-gradient(to bottom, #ff0000, #000000);
+  }
+  
+  /* Letras blancas estilo JARVIS */
+  
+  h1, h2, h3, h4, h5, h6, p {
+    color: #ffffff;
+    font-family: 'Agency FB', 'Arial Narrow', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+  }
+  
+  /* Estilo botón */
+  
+  .button {
+    background-color: #ff0000;
+    color: #ffffff;
+    border-radius: 10px;
+    padding: 10px 20px;
+    text-transform: uppercase;
+    font-weight: bold;
+    letter-spacing: 2px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out;
+  }
+  
+  .button:hover {
+    background-color: #f20000;
+  }
+  
+  /* Estilo de los mensajes de JARVIS */
+  
+  .message {
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 10px;
+  }
+  
+  /* Estilo para las cajas de texto */
+  
+  input[type="text"], textarea {
+    background-color: rgba(255, 255, 255, 0.5);
+    color: #ffffff;
+    border-radius: 5px;
+    padding: 10px;
+    border: none;
+    font-family: 'Arial', sans-serif;
+  }
+  
+  input[type="text"]:focus, textarea:focus {
+    outline: none;
+    box-shadow: 0 0 5px #ff0000;
+  }
+  
+  /* Estilo para la imagen de JARVIS */
+  
+  #jarvis {
+    width: 300px;
+    height: 300px;
+    background-image: url('https://i.imgur.com/T3zNqPj.png');
+    background-size: cover;
+    background-position: center;
+    border-radius: 50%;
+    box-shadow: 0 0 20px #ff0000;
+  }
+    

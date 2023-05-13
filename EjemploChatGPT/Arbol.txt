@@ -1,0 +1,21 @@
+- ProyectoMVC
+  - css
+    - styles.css
+  - js
+    - script.js
+  - models
+    - User.php
+    - Task.php
+  - views
+    - users
+      - index.php
+      - create_user.php
+      - edit_user.php
+    - tasks
+      - index.php
+      - create_task.php
+      - edit_task.php
+  - controllers
+    - UserController.php
+    - TaskController.php
+  - index.php
