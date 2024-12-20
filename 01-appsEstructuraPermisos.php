@@ -2,7 +2,7 @@
 	if(!isset($_SESSION['usuario'])){//Usuario visitante (sin privilegios. No puede acceder a las Apps) 
 		include('02-appsEncabezadoGral.php');
 		include('appsLogin/00-formularioLogin.php');
-		include('appsLogin/06-formularioNuevoUsuario.php');
+		include('appsLogin/06-formularioNuevoUsuario.php');	
 		echo'
 			<div id="appsContenedor">';
 				$datosApp=array(
